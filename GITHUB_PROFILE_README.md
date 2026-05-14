@@ -11,6 +11,9 @@
   <a href="https://smits-portfolio-lilac.vercel.app">
     <img src="https://img.shields.io/badge/Portfolio-252525?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
   </a>
+  <a href="tel:8625001497">
+    <img src="https://img.shields.io/badge/862--500--1497-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="Phone" />
+  </a>
 </p>
 
 <br>

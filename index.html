@@ -85,61 +85,60 @@
     </div>
   </section>
 
-  <!-- ─── Neural Quality Core (AI Simulation) ─── -->
-  <section id="neural-core" class="container">
+  <!-- ─── Holographic ROI Dashboard (Theme 3) ─── -->
+  <section id="holographic-roi" class="container">
     <div class="exec-header fade-up">
-      <span class="section-label">Autonomous Engineering</span>
-      <h2 class="exec-title">Neural Quality Core</h2>
-      <p class="exec-subtitle">Deploying self-healing agents and AI-driven validation to eliminate flakiness and accelerate delivery.</p>
+      <span class="section-label">Quality Economics</span>
+      <h2 class="exec-title">Holographic ROI Dashboard</h2>
+      <p class="exec-subtitle">Interactive analysis of how strategic quality engineering drives business value and operational savings.</p>
     </div>
 
-    <div class="neural-dashboard glass-card fade-up">
-      <div class="neural-layout">
+    <div class="holographic-container fade-up">
+      <div class="glass-box roi-calculator">
+        <div class="calculator-header">
+          <span class="calc-icon">📊</span>
+          <h3>Strategy Impact Calculator</h3>
+        </div>
         
-        <!-- Left: Neural Visual -->
-        <div class="neural-visual">
-          <div class="neural-node node-1"></div>
-          <div class="neural-node node-2"></div>
-          <div class="neural-node node-3"></div>
-          <div class="neural-node node-center">
-            <div class="core-pulse"></div>
-            <span class="core-icon">🧠</span>
+        <div class="slider-group">
+          <div class="slider-item">
+            <div class="slider-info">
+              <label>Monthly Release Volume</label>
+              <span id="val-releases">4</span>
+            </div>
+            <input type="range" id="input-releases" min="1" max="20" value="4" class="roi-slider">
           </div>
-          <div class="synapse-line s1"></div>
-          <div class="synapse-line s2"></div>
-          <div class="synapse-line s3"></div>
-        </div>
-
-        <!-- Right: Self-Healing Terminal -->
-        <div class="healing-terminal">
-          <div class="terminal-header">
-            <span class="status-indicator"></span>
-            <span class="terminal-title">Self-Healing Agent: ACTIVE</span>
-          </div>
-          <div class="terminal-body" id="healing-logs">
-            <div class="log-line">> Scanning for flaky selectors...</div>
-            <div class="log-line">> Locating broken node: [button#submit]</div>
-            <div class="log-line highlight">> AI REPAIR: Switching to [data-testid="submit-main"]</div>
-            <div class="log-line success">> TEST REPAIRED: 100% Reliability Score</div>
+          
+          <div class="slider-item">
+            <div class="slider-info">
+              <label>Engineering Team Size</label>
+              <span id="val-team">12</span>
+            </div>
+            <input type="range" id="input-team" min="5" max="100" value="12" class="roi-slider">
           </div>
         </div>
 
+        <div class="roi-output-grid">
+          <div class="roi-card-mini">
+            <span class="roi-card-label">Annual Savings</span>
+            <div class="roi-card-val" id="roi-savings">$142K</div>
+          </div>
+          <div class="roi-card-mini">
+            <span class="roi-card-label">Time Reclaimed</span>
+            <div class="roi-card-val" id="roi-time">28%</div>
+          </div>
+        </div>
       </div>
 
-      <!-- Footer Metrics -->
-      <div class="neural-metrics">
-        <div class="n-metric">
-          <span class="n-val">99.9%</span>
-          <span class="n-label">Uptime Stability</span>
+      <div class="glass-box strategy-visualization">
+        <div class="hologram-glow"></div>
+        <div class="strategy-nodes">
+          <div class="s-node s-node-1">Shift-Left</div>
+          <div class="s-node s-node-2">AI-Automation</div>
+          <div class="s-node s-node-3">Risk-Modeling</div>
+          <div class="s-node s-node-center">ROI</div>
         </div>
-        <div class="n-metric">
-          <span class="n-val">AI-Assisted</span>
-          <span class="n-label">Test Generation</span>
-        </div>
-        <div class="n-metric">
-          <span class="n-val">0</span>
-          <span class="n-label">Flaky Failures</span>
-        </div>
+        <p class="hologram-text">Hover to rotate strategy matrix</p>
       </div>
     </div>
   </section>
@@ -624,27 +623,35 @@
       });
     });
 
-    // Neural Core Logic: Self-Healing Terminal Loop
-    const healingLogs = document.getElementById('healing-logs');
-    const scenarios = [
-      { search: "Scanning Playwright selectors...", repair: "Selector Fixed: data-testid='login'", score: "99.8%" },
-      { search: "Checking API schema drift...", repair: "Type-Sync: [id] string -> number", score: "100%" },
-      { search: "Validating Mobile UI elements...", repair: "Refactoring: Accessibility ID match", score: "99.9%" }
-    ];
+    // Holographic ROI Calculator Logic
+    const relInput = document.getElementById('input-releases');
+    const teamInput = document.getElementById('input-team');
+    const relVal = document.getElementById('val-releases');
+    const teamVal = document.getElementById('val-team');
+    const roiSavings = document.getElementById('roi-savings');
+    const roiTime = document.getElementById('roi-time');
 
-    let currentIdx = 0;
-    function cycleHealing() {
-      if (!healingLogs) return;
-      const s = scenarios[currentIdx];
-      healingLogs.innerHTML = `
-        <div class="log-line">> ${s.search}</div>
-        <div class="log-line">> Locating anomaly...</div>
-        <div class="log-line highlight">> AI REPAIR: ${s.repair}</div>
-        <div class="log-line success">> STABILITY SECURED: ${s.score} Reliability Score</div>
-      `;
-      currentIdx = (currentIdx + 1) % scenarios.length;
+    function updateROI() {
+      const releases = parseInt(relInput.value);
+      const team = parseInt(teamInput.value);
+      
+      relVal.textContent = releases;
+      teamVal.textContent = team;
+
+      // Logic: 
+      // Savings = (Releases * Team * $250 avg cost per hour saved)
+      const savings = Math.round((releases * team * 3200) / 1000);
+      const timeSaved = Math.round((releases * 5) + (team / 10));
+
+      roiSavings.textContent = `$${savings}K`;
+      roiTime.textContent = `${Math.min(timeSaved, 65)}%`;
     }
-    setInterval(cycleHealing, 4000);
+
+    if (relInput) {
+      relInput.addEventListener('input', updateROI);
+      teamInput.addEventListener('input', updateROI);
+      updateROI();
+    }
   </script>
 </body>
 

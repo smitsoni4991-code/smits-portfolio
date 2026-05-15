@@ -46,10 +46,11 @@
         <img src="profile_perfect.png" alt="Smit Soni" />
       </div>
       <div class="hero-badge fade-up delay-1">
-        <span class="pulse"></span> Available for Opportunities
+        <span class="pulse"></span> Available for Leadership Opportunities
       </div>
-      <h1 class="fade-up delay-1">Hi, I'm <span class="gradient-text">Smit Soni </span></h1>
-      <p class="hero-subtitle fade-up delay-2">Quality Engineering Leader | Full-Stack Test Strategy (Web, Mobile, Data/BI)</p>
+      <div class="hero-eyebrow fade-up delay-1">Strategic Quality Leadership</div>
+      <h1 class="fade-up delay-1">Engineering Quality at the <span class="gradient-text">Speed of Business</span></h1>
+      <p class="hero-subtitle fade-up delay-2">Sr. Quality Engineer & Strategist with 7+ years leading cross-functional QA delivery, architecting scalable automation, and driving enterprise ROI.</p>
       <div class="hero-tags fade-up delay-2">
         <span class="hero-tag" style="background: rgba(124,106,255,0.2); border-color: var(--accent); color: #fff;">✨ AI-Assisted Test Gen</span>
         <span class="hero-tag">Test Strategy & Planning</span>
@@ -85,77 +86,37 @@
     </div>
   </section>
 
-  <!-- ─── Engineering Command Center ─── -->
-  <section id="command-center" class="container">
+  <!-- ─── Executive Business Impact Dashboard ─── -->
+  <section id="executive-dashboard" class="container">
     <div class="exec-header fade-up">
-      <h2 class="exec-title">Engineering Command Center</h2>
-      <p class="exec-subtitle">A high-fidelity observability dashboard managing enterprise-grade quality architecture.</p>
+      <span class="section-label">Leadership & Strategy</span>
+      <h2 class="exec-title">Business Impact & Quality ROI</h2>
+      <p class="exec-subtitle">Driving enterprise-wide quality transformation that balances speed with absolute reliability.</p>
     </div>
 
-    <div class="command-dashboard glass-card fade-up">
-      
-      <!-- Top Row: Pipeline Flow -->
-      <div class="pipeline-flow">
-        <div class="flow-step active" id="step-1">
-          <div class="step-dot"></div>
-          <span>Commit</span>
-        </div>
-        <div class="flow-line"></div>
-        <div class="flow-step" id="step-2">
-          <div class="step-dot"></div>
-          <span>Analysis</span>
-        </div>
-        <div class="flow-line"></div>
-        <div class="flow-step" id="step-3">
-          <div class="step-dot"></div>
-          <span>E2E Suite</span>
-        </div>
-        <div class="flow-line"></div>
-        <div class="flow-step" id="step-4">
-          <div class="step-dot"></div>
-          <span>Production</span>
-        </div>
+    <div class="impact-grid fade-up">
+      <!-- KPI 1: Risk Mitigation -->
+      <div class="kpi-card glass-card">
+        <div class="kpi-value text-gradient">↓ 42%</div>
+        <div class="kpi-label">Production Bug Leakage</div>
+        <p class="kpi-desc">Achieved through strategic "Shift-Left" automation and rigorous API contract testing in CI/CD pipelines.</p>
+        <div class="kpi-status"><span class="status-dot green"></span> Risk: Minimal</div>
       </div>
 
-      <!-- Middle Row: Radar, Metrics, Matrix -->
-      <div class="command-grid">
-        <!-- Radar -->
-        <div class="command-item radar-panel">
-          <div class="radar-box">
-            <div class="radar-sweep"></div>
-            <div class="radar-text">NO LEAKAGE DETECTED</div>
-          </div>
-          <span class="item-label">AI Anomaly Detection</span>
-        </div>
-
-        <!-- Metrics & Equalizer -->
-        <div class="command-item metrics-panel">
-          <div class="coverage-value">98.4%</div>
-          <div class="equalizer">
-            <div class="bar"></div><div class="bar"></div><div class="bar"></div>
-            <div class="bar"></div><div class="bar"></div><div class="bar"></div>
-          </div>
-          <span class="item-label">Global Test Coverage</span>
-        </div>
-
-        <!-- Microservice Matrix -->
-        <div class="command-item matrix-panel">
-          <div class="matrix-grid" id="matrix-grid">
-            <!-- JS Populated -->
-          </div>
-          <span class="item-label">Microservice Health Matrix</span>
-        </div>
+      <!-- KPI 2: Velocity -->
+      <div class="kpi-card glass-card">
+        <div class="kpi-value text-gradient">2 Days</div>
+        <div class="kpi-label">Release Cycle Speed</div>
+        <p class="kpi-desc">Accelerated from 14 days by optimizing automated regression suites and implementing parallel execution.</p>
+        <div class="kpi-status"><span class="status-dot gold"></span> Pipeline: Optimized</div>
       </div>
 
-      <!-- Bottom Row: Terminal -->
-      <div class="terminal-box">
-        <div class="terminal-header">
-          <div class="terminal-dots"><span></span><span></span><span></span></div>
-          <span class="terminal-title">live_execution_logs.sh</span>
-        </div>
-        <div class="terminal-body" id="terminal-body">
-          <div class="terminal-line">> Initializing Command Center...</div>
-        </div>
+      <!-- KPI 3: Efficiency -->
+      <div class="kpi-card glass-card">
+        <div class="kpi-value text-gradient">100%</div>
+        <div class="kpi-label">UAT Approval Rate</div>
+        <p class="kpi-desc">Consistently met all business requirements through cross-functional leadership and stakeholder alignment.</p>
+        <div class="kpi-status"><span class="status-dot green"></span> Stakeholders: Aligned</div>
       </div>
     </div>
   </section>
@@ -640,54 +601,25 @@
       });
     });
 
-    // Command Center Logic
-    const term = document.getElementById('terminal-body');
-    const matrix = document.getElementById('matrix-grid');
-    const logs = [
-      "Verifying Tableau BI Dashboards...",
-      "Playwright workers: 4",
-      "Analyzing microservice health...",
-      "Checking SQL constraints...",
-      "E2E suite execution: 85%",
-      "Cloud connection: SECURE",
-      "No anomalies detected."
-    ];
+    // Executive Dashboard Logic: Minimalist count-up effect
+    const kpiValues = document.querySelectorAll('.kpi-value');
+    const observerOptions = { threshold: 0.5 };
+    
+    const kpiObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translateY(0)";
+        }
+      });
+    }, observerOptions);
 
-    // Terminal
-    function addLog() {
-      if (!term) return;
-      const line = document.createElement('div');
-      line.className = 'terminal-line';
-      line.innerText = "> " + logs[Math.floor(Math.random() * logs.length)];
-      term.appendChild(line);
-      if (term.children.length > 8) term.removeChild(term.firstChild);
-      term.scrollTop = term.scrollHeight;
-    }
-    setInterval(addLog, 2000);
-
-    // Matrix
-    if (matrix) {
-      for (let i = 0; i < 40; i++) {
-        const sq = document.createElement('div');
-        sq.className = 'matrix-sq';
-        matrix.appendChild(sq);
-      }
-      setInterval(() => {
-        const squares = document.querySelectorAll('.matrix-sq');
-        const rand = Math.floor(Math.random() * squares.length);
-        squares[rand].classList.add('active');
-        setTimeout(() => squares[rand].classList.remove('active'), 1000);
-      }, 300);
-    }
-
-    // Pipeline Steps
-    let currentStep = 1;
-    setInterval(() => {
-      document.querySelectorAll('.flow-step').forEach(s => s.classList.remove('active'));
-      currentStep = (currentStep % 4) + 1;
-      const activeStep = document.getElementById(`step-${currentStep}`);
-      if (activeStep) activeStep.classList.add('active');
-    }, 3000);
+    kpiValues.forEach(v => {
+      v.style.opacity = "0";
+      v.style.transform = "translateY(20px)";
+      v.style.transition = "1s ease-out";
+      kpiObserver.observe(v);
+    });
   </script>
 </body>
 

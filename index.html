@@ -85,43 +85,50 @@
     </div>
   </section>
 
-  <!-- ─── Executive Impact Scroll-Telling ─── -->
-  <section id="executive-impact" class="container">
+  <!-- ─── Test Execution Heatmap Dashboard ─── -->
+  <section id="execution-heatmap" class="container">
     <div class="exec-header fade-up">
-      <h2 class="exec-title">Quality at Enterprise Scale</h2>
-      <p class="exec-subtitle">Driving strategic automation and zero-defect releases across complex architectures.</p>
+      <h2 class="exec-title">Enterprise Test Execution</h2>
+      <p class="exec-subtitle">Orchestrating massive-scale parallel test suites across distributed architectures.</p>
     </div>
 
-    <div class="scroll-telling-wrapper">
+    <div class="heatmap-dashboard glass-card fade-up">
       
-      <!-- Card 1 -->
-      <div class="impact-card slide-up-card">
-        <div class="impact-content">
-          <div class="impact-label">Production Leakage</div>
-          <div class="impact-value text-gradient">↓ 35%</div>
-          <div class="impact-desc">Year-over-year reduction in critical production bugs by shifting automated quality gates left into the CI/CD pipeline.</div>
+      <!-- Live Heatmap Grid -->
+      <div class="heatmap-container">
+        <div class="heatmap-header">
+          <span>Live E2E Suite Execution Map</span>
+          <span class="pulse-status"><div class="live-dot"></div> Running on 128 Threads</span>
         </div>
-        <div class="impact-bg-text">IMPACT</div>
+        
+        <div class="heatmap-grid" id="heatmap-grid">
+          <!-- JS will populate 140 small squares here -->
+        </div>
       </div>
 
-      <!-- Card 2 -->
-      <div class="impact-card slide-up-card">
-        <div class="impact-content">
-          <div class="impact-label">Architecture Scale</div>
-          <div class="impact-value text-gradient">21+</div>
-          <div class="impact-desc">Enterprise microservices validated through robust API contract testing and data integrity pipelines.</div>
+      <!-- Live Terminal Output -->
+      <div class="live-log">
+        <div class="log-header">Worker Thread Logs</div>
+        <div class="log-body" id="heatmap-log">
+          <div class="log-line">➔ <span class="log-time">System</span> Initializing 128 parallel workers...</div>
+          <div class="log-line">➔ <span class="log-time">System</span> Connecting to headless grid... OK</div>
         </div>
-        <div class="impact-bg-text">SCALE</div>
       </div>
 
-      <!-- Card 3 -->
-      <div class="impact-card slide-up-card">
-        <div class="impact-content">
-          <div class="impact-label">Release Quality</div>
-          <div class="impact-value text-gradient">ZERO</div>
-          <div class="impact-desc">P1 production bugs introduced in the last 4 major enterprise releases, ensuring 100% stakeholder confidence.</div>
+      <!-- Dashboard Metrics -->
+      <div class="data-metrics">
+        <div class="d-metric">
+          <div class="d-val text-gradient">128</div>
+          <div class="d-label">Parallel CI Threads</div>
         </div>
-        <div class="impact-bg-text">QUALITY</div>
+        <div class="d-metric">
+          <div class="d-val">92<span class="d-unit">%</span></div>
+          <div class="d-label">E2E Test Coverage</div>
+        </div>
+        <div class="d-metric">
+          <div class="d-val">&lt;0.5<span class="d-unit">%</span></div>
+          <div class="d-label">Flakiness Rate</div>
+        </div>
       </div>
 
     </div>
@@ -607,7 +614,65 @@
       });
     });
 
-    // JS logic for impact cards removed in favor of pure CSS sticky scrolling
+    // Heatmap Logic
+    const grid = document.getElementById('heatmap-grid');
+    const heatLog = document.getElementById('heatmap-log');
+    
+    if (grid && heatLog) {
+      const TOTAL_CELLS = 140;
+      const cells = [];
+      
+      // Initialize grid
+      for (let i = 0; i < TOTAL_CELLS; i++) {
+        const cell = document.createElement('div');
+        cell.className = 'heat-cell';
+        grid.appendChild(cell);
+        cells.push(cell);
+      }
+
+      const services = ['Checkout_API', 'User_Auth', 'Payment_Gateway', 'Inventory_Sync', 'Notification_Svc'];
+      
+      setInterval(() => {
+        // Pick a random cell
+        const idx = Math.floor(Math.random() * cells.length);
+        const cell = cells[idx];
+        const svc = services[Math.floor(Math.random() * services.length)];
+        const time = new Date().toLocaleTimeString('en-US', { hour12: false });
+        
+        // Skip if already passed
+        if(cell.classList.contains('heat-pass')) return;
+
+        // Set to running
+        cell.className = 'heat-cell heat-run';
+        
+        // Add log
+        const line = document.createElement('div');
+        line.className = 'log-line';
+        line.innerHTML = `➔ <span class="log-time">${time}</span> [Thread-${Math.floor(Math.random()*128)}] Executing ${svc}...`;
+        heatLog.appendChild(line);
+        if(heatLog.children.length > 5) heatLog.removeChild(heatLog.firstChild);
+
+        // Resolve test
+        setTimeout(() => {
+          // 95% pass, 5% fail/retry
+          const isPass = Math.random() > 0.05;
+          cell.className = isPass ? 'heat-cell heat-pass' : 'heat-cell heat-fail';
+          
+          const endLine = document.createElement('div');
+          endLine.className = 'log-line';
+          if(isPass) {
+            endLine.innerHTML = `➔ <span class="log-time">${time}</span> [Thread-${Math.floor(Math.random()*128)}] ${svc} <span class="log-success">PASS</span> (1.2s)`;
+          } else {
+            endLine.innerHTML = `➔ <span class="log-time">${time}</span> [Thread-${Math.floor(Math.random()*128)}] ${svc} <span class="log-err">RETRYING</span> (Timeout)`;
+            // Reset failed cell after a bit
+            setTimeout(() => { cell.className = 'heat-cell'; }, 2000);
+          }
+          heatLog.appendChild(endLine);
+          if(heatLog.children.length > 5) heatLog.removeChild(heatLog.firstChild);
+        }, 800 + Math.random() * 1000);
+
+      }, 300); // Trigger a new test every 300ms
+    }
   </script>
 </body>
 

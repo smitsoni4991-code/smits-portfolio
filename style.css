@@ -223,38 +223,41 @@ nav.scrolled {
 .exec-subtitle { font-size: 1.1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
 .glass-card { background: rgba(30, 20, 50, 0.4); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 1.5rem; padding: 2.5rem; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.05); position: relative; overflow: hidden; }
 
-/* ─── Executive Impact Scroll-Telling ─── */
+/* ─── Test Execution Heatmap ─── */
 .exec-header { text-align: center; margin-bottom: 3rem; }
 .exec-title { font-size: 3rem; font-weight: 800; margin-bottom: 1rem; background: linear-gradient(to right, var(--text-primary), var(--sunset-4)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -0.03em; }
 .exec-subtitle { font-size: 1.1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
 .text-gradient { background: linear-gradient(135deg, #f5f3ff 0%, #d946ef 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-.scroll-telling-wrapper { display: flex; flex-direction: column; gap: 4rem; padding: 2rem 0 6rem; position: relative; }
+.heatmap-dashboard { display: flex; flex-direction: column; gap: 2rem; margin-bottom: 4rem; }
 
-/* Giant 3D Cards with Sticky Stacking */
-.impact-card { 
-  background: rgba(30, 20, 50, 0.85); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); 
-  border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 2rem; 
-  padding: 5rem 4rem; position: sticky; overflow: hidden; 
-  box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.1); 
-  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
-  margin-bottom: 2rem;
-}
-.impact-card:nth-child(1) { top: 120px; z-index: 10; transform: scale(1); }
-.impact-card:nth-child(2) { top: 150px; z-index: 11; transform: scale(0.98); }
-.impact-card:nth-child(3) { top: 180px; z-index: 12; transform: scale(0.96); }
+/* Heatmap Container */
+.heatmap-container { background: rgba(10, 5, 20, 0.6); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem; }
+.heatmap-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: #aaa; }
+.pulse-status { display: flex; align-items: center; gap: 8px; color: #4ade80; font-weight: bold; }
+.live-dot { width: 8px; height: 8px; background: #4ade80; border-radius: 50%; box-shadow: 0 0 10px #4ade80; animation: blink 0.8s infinite alternate; }
 
-.impact-card:hover { border-color: rgba(255, 255, 255, 0.3); box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(139, 92, 246, 0.2), inset 0 1px 0 rgba(255,255,255,0.2); transform: translateY(-5px); z-index: 20; }
+/* Grid */
+.heatmap-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(18px, 1fr)); gap: 4px; }
+.heat-cell { width: 100%; aspect-ratio: 1; background: rgba(255,255,255,0.05); border-radius: 3px; transition: background 0.3s ease, box-shadow 0.3s ease; border: 1px solid rgba(255,255,255,0.02); }
 
-/* Content inside cards */
-.impact-content { position: relative; z-index: 2; max-width: 600px; }
-.impact-label { font-size: 1.2rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1rem; }
-.impact-value { font-size: 7rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -0.05em; text-shadow: 0 10px 30px rgba(217, 70, 239, 0.3); }
-.impact-desc { font-size: 1.4rem; color: var(--text-primary); line-height: 1.6; font-weight: 400; opacity: 0.9; }
+/* Cell States */
+.heat-pass { background: #22c55e; box-shadow: 0 0 8px rgba(34, 197, 94, 0.4); border-color: rgba(34, 197, 94, 0.5); }
+.heat-run { background: #eab308; box-shadow: 0 0 10px rgba(234, 179, 8, 0.6); animation: cell-pulse 0.5s infinite alternate; border-color: rgba(234, 179, 8, 0.5); }
+.heat-fail { background: #ef4444; box-shadow: 0 0 8px rgba(239, 68, 68, 0.6); border-color: rgba(239, 68, 68, 0.5); }
 
-/* Massive background watermark text */
-.impact-bg-text { position: absolute; right: -5%; bottom: -15%; font-size: 16rem; font-weight: 900; color: rgba(255,255,255,0.02); line-height: 1; pointer-events: none; user-select: none; z-index: 1; transition: 0.5s ease-out; }
-.impact-card:hover .impact-bg-text { color: rgba(139, 92, 246, 0.05); transform: scale(1.05); }
+@keyframes cell-pulse { from { opacity: 0.6; transform: scale(0.9); } to { opacity: 1; transform: scale(1.1); } }
+
+/* Live Log */
+.live-log { background: #0a0a0c; border: 1px solid #222; border-radius: 8px; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; overflow: hidden; box-shadow: inset 0 5px 15px rgba(0,0,0,0.5); }
+.log-header { background: #1a1a1c; padding: 0.5rem 1rem; color: #888; border-bottom: 1px solid #222; font-weight: bold; letter-spacing: 0.05em; }
+.log-body { padding: 1rem; height: 120px; overflow-y: hidden; display: flex; flex-direction: column; justify-content: flex-end; gap: 0.3rem; }
+.log-line { color: #ccc; animation: log-fade 0.3s ease-out; }
+.log-time { color: #569cd6; }
+.log-success { color: #4ade80; font-weight: bold; }
+.log-warn { color: #fbbf24; font-weight: bold; }
+.log-err { color: #ef4444; font-weight: bold; }
+@keyframes log-fade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
 /* ─── Section Styles ─── */
 section { padding: 5rem 0; }
@@ -541,10 +544,7 @@ footer {
   .ai-chat-layout { grid-template-columns: 1fr; gap: 2rem; }
   .about-layout { grid-template-columns: 1fr; }
   .skills-grid, .cert-grid, .projects-grid, .edu-grid { grid-template-columns: 1fr; }
-  .impact-card { padding: 3rem 2rem; }
-  .impact-value { font-size: 4.5rem; }
-  .impact-desc { font-size: 1.1rem; }
-  .impact-bg-text { font-size: 8rem; right: -10%; bottom: -5%; }
+  .data-metrics { grid-template-columns: 1fr; }
   .stats-bar-inner { gap: 1.5rem; padding: 1.5rem; }
   .stat-number { font-size: 1.5rem; }
   .hero h1 { font-size: 2rem; }

@@ -85,63 +85,74 @@
     </div>
   </section>
 
-  <!-- ─── Playwright AI Studio ─── -->
-  <section id="ai-studio" class="container">
-    <div class="ide-wrapper fade-up">
-      <!-- IDE Header -->
-      <div class="ide-header">
-        <div class="ide-dots"><span></span><span></span><span></span></div>
-        <div class="ide-title">Smit_QA_Workspace - Visual Studio Code</div>
-      </div>
+  <!-- ─── Executive Command Center ─── -->
+  <section id="executive-dashboard" class="container">
+    <div class="exec-header fade-up">
+      <h2 class="exec-title">Quality Engineering Leadership</h2>
+      <p class="exec-subtitle">Driving enterprise-scale automation, AI integration, and zero-defect releases.</p>
+    </div>
+
+    <div class="exec-grid">
       
-      <div class="ide-body">
-        <!-- Sidebar -->
-        <div class="ide-sidebar">
-          <div class="sidebar-title">EXPLORER</div>
-          <div class="file-tree">
-            <div class="folder">▼ e2e-tests</div>
-            <div class="file active">📄 checkout.spec.ts</div>
-            <div class="file">📄 login.spec.ts</div>
-            <div class="file">📄 api_mock.ts</div>
-            <div class="folder" style="margin-top: 1rem;">▼ data-validation</div>
-            <div class="file">📄 tableau_bi.sql</div>
-          </div>
-        </div>
+      <!-- KPI Card 1 -->
+      <div class="glass-card kpi-card fade-up">
+        <div class="kpi-header">Production Leakage</div>
+        <div class="kpi-value text-gradient">↓ 35%</div>
+        <div class="kpi-footer">Year-over-Year Reduction</div>
+        <div class="kpi-bg-icon">🛡️</div>
+      </div>
 
-        <!-- Code Editor -->
-        <div class="ide-editor">
-          <div class="editor-tabs">
-            <div class="tab active">checkout.spec.ts</div>
-            <div class="ai-status-badge">✨ AI Co-Pilot Active</div>
-          </div>
-          <div class="code-content">
-            <div class="code-line"><span class="keyword">import</span> { test, expect } <span class="keyword">from</span> <span class="string">'@playwright/test'</span>;</div>
-            <div class="code-line">&nbsp;</div>
-            <div class="code-line"><span class="comment">// AI: Generating E2E script for secure checkout flow</span></div>
-            <div class="code-line"><span class="keyword">test</span>(<span class="string">'should complete purchase'</span>, <span class="keyword">async</span> ({ page }) => {</div>
-            <div class="code-line">  <span class="keyword">await</span> page.<span class="method">goto</span>(<span class="string">'/checkout'</span>);</div>
-            <div id="aiTypingCode"></div>
-            <div class="cursor"></div>
-          </div>
+      <!-- KPI Card 2: Radial Progress -->
+      <div class="glass-card kpi-card fade-up" style="transition-delay: 0.1s;">
+        <div class="kpi-header">E2E Automation Coverage</div>
+        <div class="radial-progress-container">
+          <svg class="radial-progress" viewBox="0 0 100 100">
+            <circle class="radial-bg" cx="50" cy="50" r="40"></circle>
+            <!-- 251.2 is circumference (2 * pi * 40). Dashoffset 251.2 = empty -->
+            <circle class="radial-bar" cx="50" cy="50" r="40" stroke-dasharray="251.2" stroke-dashoffset="251.2"></circle>
+          </svg>
+          <div class="radial-value">98<span style="font-size:1rem;">%</span></div>
         </div>
+        <div class="kpi-footer">Across 21 Microservices</div>
+      </div>
 
-        <!-- Live Browser Simulation -->
-        <div class="ide-preview">
-          <div class="browser-header">
-            <div class="browser-url">localhost:3000/checkout</div>
+      <!-- KPI Card 3 -->
+      <div class="glass-card kpi-card fade-up" style="transition-delay: 0.2s;">
+        <div class="kpi-header">Pipeline Velocity</div>
+        <div class="kpi-value text-gradient">4.2<span style="font-size:1.5rem; color:var(--text-primary)">m</span></div>
+        <div class="kpi-sparkline">
+          <div class="spark-bar" style="height:40%"></div>
+          <div class="spark-bar" style="height:55%"></div>
+          <div class="spark-bar" style="height:35%"></div>
+          <div class="spark-bar" style="height:60%"></div>
+          <div class="spark-bar" style="height:80%"></div>
+          <div class="spark-bar" style="height:25%"></div>
+        </div>
+        <div class="kpi-footer">Avg. CI/CD Gate Execution</div>
+      </div>
+
+      <!-- Wide Strategy Card -->
+      <div class="glass-card strategy-card fade-up" style="transition-delay: 0.3s; grid-column: 1 / -1;">
+        <div class="strategy-header">
+          <h3>Test Architecture & AI Integration</h3>
+          <span class="status-badge pulse-badge">System Optimized</span>
+        </div>
+        <div class="strategy-bars">
+          <div class="strat-item">
+            <div class="strat-info"><span>AI-Generated Test Scripts (Kiro)</span><span>100%</span></div>
+            <div class="strat-track"><div class="strat-fill" style="width: 100%;"></div></div>
           </div>
-          <div class="browser-body">
-            <div class="mock-ui">
-              <div class="ui-skeleton title"></div>
-              <div class="ui-skeleton input" id="mockInput1"></div>
-              <div class="ui-skeleton input" id="mockInput2"></div>
-              <div class="ui-skeleton btn" id="mockBtn"></div>
-              <div class="click-effect" id="mockClickEffect"></div>
-            </div>
-            <div class="test-passed-badge" id="testPassBadge" style="display:none;">✅ TEST PASSED</div>
+          <div class="strat-item">
+            <div class="strat-info"><span>Playwright Web & Mobile E2E</span><span>98%</span></div>
+            <div class="strat-track"><div class="strat-fill" style="width: 98%;"></div></div>
+          </div>
+          <div class="strat-item">
+            <div class="strat-info"><span>Tableau / BI Data Validation</span><span>88%</span></div>
+            <div class="strat-track"><div class="strat-fill" style="width: 88%;"></div></div>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -623,83 +634,24 @@
       });
     });
 
-    // Playwright AI Studio Logic
-    const aiTypingCode = document.getElementById('aiTypingCode');
-    const mockInput1 = document.getElementById('mockInput1');
-    const mockInput2 = document.getElementById('mockInput2');
-    const mockBtn = document.getElementById('mockBtn');
-    const mockClickEffect = document.getElementById('mockClickEffect');
-    const passBadge = document.getElementById('testPassBadge');
-
-    const codeSequence = [
-      { text: "  await page.locator('#username').fill('QA_User');", delay: 1500, action: () => mockInput1.classList.add('typing') },
-      { text: "  await page.locator('#password').fill('SecureP@ss');", delay: 1500, action: () => { mockInput1.classList.remove('typing'); mockInput2.classList.add('typing'); } },
-      { text: "  await page.locator('#login-btn').click();", delay: 1500, action: () => { 
-          mockInput2.classList.remove('typing'); 
-          mockBtn.classList.add('clicked');
-          mockClickEffect.style.top = (mockBtn.offsetTop + 10) + 'px';
-          mockClickEffect.style.left = (mockBtn.offsetLeft + mockBtn.offsetWidth/2) + 'px';
-          mockClickEffect.style.animation = 'click-ripple 0.6s ease-out';
-      }},
-      { text: "  await expect(page.locator('.dashboard')).toBeVisible();\n});", delay: 1000, action: () => {
-          mockBtn.classList.remove('clicked');
-          passBadge.style.display = 'block';
-      }}
-    ];
-
-    function runAISimulation() {
-      if(!aiTypingCode) return;
-      aiTypingCode.innerHTML = '';
-      passBadge.style.display = 'none';
-      mockClickEffect.style.animation = 'none';
-      
-      let step = 0;
-      function nextStep() {
-        if(step >= codeSequence.length) {
-          setTimeout(runAISimulation, 4000); // Loop the simulation
-          return;
-        }
-        
-        const lineDiv = document.createElement('div');
-        lineDiv.className = 'code-line';
-        aiTypingCode.appendChild(lineDiv);
-        
-        // Typing effect
-        let charIdx = 0;
-        const text = codeSequence[step].text;
-        const typeInterval = setInterval(() => {
-          lineDiv.innerText += text[charIdx];
-          charIdx++;
-          if(charIdx >= text.length) {
-            clearInterval(typeInterval);
-            // syntax highlighting hack for visual only
-            lineDiv.innerHTML = lineDiv.innerHTML
-              .replace(/await/g, '<span class="keyword">await</span>')
-              .replace(/page\.locator/g, 'page.<span class="method">locator</span>')
-              .replace(/fill/g, '<span class="method">fill</span>')
-              .replace(/click/g, '<span class="method">click</span>')
-              .replace(/expect/g, '<span class="method">expect</span>')
-              .replace(/toBeVisible/g, '<span class="method">toBeVisible</span>')
-              .replace(/'.*?'/g, match => `<span class="string">${match}</span>`);
-              
-            codeSequence[step].action();
-            step++;
-            setTimeout(nextStep, 800);
+    // Executive Dashboard Animations
+    const execObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          const radial = entry.target.querySelector('.radial-bar');
+          if (radial) {
+            // 251.2 * (1 - 0.98) = 5.024
+            setTimeout(() => {
+              radial.style.strokeDashoffset = '5.02';
+            }, 300);
           }
-        }, 30); // Typing speed
-      }
-      setTimeout(nextStep, 1000);
-    }
-    
-    // Start simulation when visible
-    const studioObserver = new IntersectionObserver((entries) => {
-      if(entries[0].isIntersecting) {
-        runAISimulation();
-        studioObserver.disconnect();
-      }
+          execObserver.disconnect();
+        }
+      });
     });
-    if(document.getElementById('ai-studio')) {
-      studioObserver.observe(document.getElementById('ai-studio'));
+    
+    if(document.getElementById('executive-dashboard')) {
+      execObserver.observe(document.getElementById('executive-dashboard'));
     }
   </script>
 </body>

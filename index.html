@@ -85,99 +85,62 @@
     </div>
   </section>
 
-  <!-- ─── Extraordinary Observability Console ─── -->
-  <section id="observability" class="container">
-    <div class="master-console fade-up">
-      <!-- Console Header -->
-      <div class="console-header">
-        <div class="console-branding">
-          <span class="blinking-cursor">_</span> SMIT.AI.QA_CORE_V2.0
-        </div>
-        <div class="console-status">
-          <span class="pulse-ring"></span> SYSTEM SECURE & OBSERVING
-        </div>
+  <!-- ─── Playwright AI Studio ─── -->
+  <section id="ai-studio" class="container">
+    <div class="ide-wrapper fade-up">
+      <!-- IDE Header -->
+      <div class="ide-header">
+        <div class="ide-dots"><span></span><span></span><span></span></div>
+        <div class="ide-title">Smit_QA_Workspace - Visual Studio Code</div>
       </div>
       
-      <!-- Console Body Grid -->
-      <div class="console-grid">
-        
-        <!-- Left Column: Terminal & Radar -->
-        <div class="console-col-left">
-          <div class="console-panel terminal-panel">
-            <div class="panel-header">LIVE_EXECUTION_LOGS</div>
-            <div class="terminal-window" id="simulatedTerminal">
-              <div>> Initializing AI QA Agents...</div>
-              <div style="color: #4ade80;">> Connected to Playwright Hub</div>
-            </div>
-          </div>
-          
-          <div class="console-panel radar-panel">
-            <div class="panel-header">AI_ANOMALY_DETECTION</div>
-            <div class="radar-container">
-              <div class="radar"></div>
-              <div class="radar-text">NO LEAKAGE DETECTED</div>
-            </div>
+      <div class="ide-body">
+        <!-- Sidebar -->
+        <div class="ide-sidebar">
+          <div class="sidebar-title">EXPLORER</div>
+          <div class="file-tree">
+            <div class="folder">▼ e2e-tests</div>
+            <div class="file active">📄 checkout.spec.ts</div>
+            <div class="file">📄 login.spec.ts</div>
+            <div class="file">📄 api_mock.ts</div>
+            <div class="folder" style="margin-top: 1rem;">▼ data-validation</div>
+            <div class="file">📄 tableau_bi.sql</div>
           </div>
         </div>
 
-        <!-- Middle Column: Heatmap & Big Metrics -->
-        <div class="console-col-mid">
-          <div class="console-panel metric-panel">
-            <div class="panel-header">SYSTEM_COVERAGE</div>
-            <div class="metric-value">98.4<span class="metric-percent">%</span></div>
-            <div class="audio-bars">
-               <div class="abar"></div><div class="abar"></div><div class="abar"></div><div class="abar"></div><div class="abar"></div><div class="abar"></div><div class="abar"></div><div class="abar"></div>
-            </div>
+        <!-- Code Editor -->
+        <div class="ide-editor">
+          <div class="editor-tabs">
+            <div class="tab active">checkout.spec.ts</div>
+            <div class="ai-status-badge">✨ AI Co-Pilot Active</div>
           </div>
-          
-          <div class="console-panel heatmap-panel">
-            <div class="panel-header">MICROSERVICE_HEALTH_MATRIX</div>
-            <div class="heatmap-grid" id="heatmapGrid">
-              <!-- JS Populated -->
-            </div>
+          <div class="code-content">
+            <div class="code-line"><span class="keyword">import</span> { test, expect } <span class="keyword">from</span> <span class="string">'@playwright/test'</span>;</div>
+            <div class="code-line">&nbsp;</div>
+            <div class="code-line"><span class="comment">// AI: Generating E2E script for secure checkout flow</span></div>
+            <div class="code-line"><span class="keyword">test</span>(<span class="string">'should complete purchase'</span>, <span class="keyword">async</span> ({ page }) => {</div>
+            <div class="code-line">  <span class="keyword">await</span> page.<span class="method">goto</span>(<span class="string">'/checkout'</span>);</div>
+            <div id="aiTypingCode"></div>
+            <div class="cursor"></div>
           </div>
         </div>
 
-        <!-- Right Column: Pipelines -->
-        <div class="console-col-right">
-          <div class="console-panel pipeline-panel">
-            <div class="panel-header">ACTIVE_PIPELINES</div>
-            <div class="pipeline-flow">
-              <div class="flow-step success">
-                <span class="step-icon">📦</span>
-                <div class="step-info">
-                  <div class="step-name">Code Commit</div>
-                  <div class="step-meta">Static AI Analysis: PASS</div>
-                </div>
-              </div>
-              <div class="flow-line"></div>
-              <div class="flow-step success">
-                <span class="step-icon">🤖</span>
-                <div class="step-info">
-                  <div class="step-name">Test Generation</div>
-                  <div class="step-meta">Kiro CLI: Scripts Ready</div>
-                </div>
-              </div>
-              <div class="flow-line"></div>
-              <div class="flow-step active-pulse">
-                <span class="step-icon">🎭</span>
-                <div class="step-info">
-                  <div class="step-name">Playwright E2E</div>
-                  <div class="step-meta" style="color:var(--sunset-3);">Executing 402 tests...</div>
-                </div>
-              </div>
-              <div class="flow-line"></div>
-              <div class="flow-step pending">
-                <span class="step-icon">🚀</span>
-                <div class="step-info">
-                  <div class="step-name">Prod Deployment</div>
-                  <div class="step-meta">Awaiting QA Gate</div>
-                </div>
-              </div>
+        <!-- Live Browser Simulation -->
+        <div class="ide-preview">
+          <div class="browser-header">
+            <div class="browser-url">localhost:3000/checkout</div>
+          </div>
+          <div class="browser-body">
+            <div class="mock-ui">
+              <div class="ui-skeleton title"></div>
+              <div class="ui-skeleton input" id="mockInput1"></div>
+              <div class="ui-skeleton input" id="mockInput2"></div>
+              <div class="ui-skeleton btn" id="mockBtn"></div>
+              <div class="click-effect" id="mockClickEffect"></div>
             </div>
+            <div class="test-passed-badge" id="testPassBadge" style="display:none;">✅ TEST PASSED</div>
           </div>
         </div>
-        
       </div>
     </div>
   </section>
@@ -660,42 +623,83 @@
       });
     });
 
-    // Master Console Dashboard Logic
-    const heatmap = document.getElementById('heatmapGrid');
-    if (heatmap) {
-      for(let i=0; i<40; i++) {
-        const box = document.createElement('div');
-        box.className = 'heat-box';
-        heatmap.appendChild(box);
-      }
-      setInterval(() => {
-        const boxes = heatmap.querySelectorAll('.heat-box');
-        const randomIdx = Math.floor(Math.random() * boxes.length);
-        boxes[randomIdx].classList.add('active');
-        setTimeout(() => boxes[randomIdx].classList.remove('active'), 800);
-      }, 800);
-    }
+    // Playwright AI Studio Logic
+    const aiTypingCode = document.getElementById('aiTypingCode');
+    const mockInput1 = document.getElementById('mockInput1');
+    const mockInput2 = document.getElementById('mockInput2');
+    const mockBtn = document.getElementById('mockBtn');
+    const mockClickEffect = document.getElementById('mockClickEffect');
+    const passBadge = document.getElementById('testPassBadge');
 
-    const terminal = document.getElementById('simulatedTerminal');
-    if (terminal) {
-      const logs = [
-        "> Running E2E regression suite...",
-        "> 21 microservices active.",
-        "> AI Anomaly detection: OK",
-        "> Playwright workers: 4",
-        "> Injecting test data via API...",
-        "> Verifying Tableau BI Dashboards...",
-        "> No layout shifts detected.",
-        "> Suite passed in 1m 24s."
-      ];
-      let logIdx = 0;
-      setInterval(() => {
-        const div = document.createElement('div');
-        div.innerText = logs[logIdx % logs.length];
-        terminal.appendChild(div);
-        terminal.scrollTop = terminal.scrollHeight;
-        logIdx++;
-      }, 2000);
+    const codeSequence = [
+      { text: "  await page.locator('#username').fill('QA_User');", delay: 1500, action: () => mockInput1.classList.add('typing') },
+      { text: "  await page.locator('#password').fill('SecureP@ss');", delay: 1500, action: () => { mockInput1.classList.remove('typing'); mockInput2.classList.add('typing'); } },
+      { text: "  await page.locator('#login-btn').click();", delay: 1500, action: () => { 
+          mockInput2.classList.remove('typing'); 
+          mockBtn.classList.add('clicked');
+          mockClickEffect.style.top = (mockBtn.offsetTop + 10) + 'px';
+          mockClickEffect.style.left = (mockBtn.offsetLeft + mockBtn.offsetWidth/2) + 'px';
+          mockClickEffect.style.animation = 'click-ripple 0.6s ease-out';
+      }},
+      { text: "  await expect(page.locator('.dashboard')).toBeVisible();\n});", delay: 1000, action: () => {
+          mockBtn.classList.remove('clicked');
+          passBadge.style.display = 'block';
+      }}
+    ];
+
+    function runAISimulation() {
+      if(!aiTypingCode) return;
+      aiTypingCode.innerHTML = '';
+      passBadge.style.display = 'none';
+      mockClickEffect.style.animation = 'none';
+      
+      let step = 0;
+      function nextStep() {
+        if(step >= codeSequence.length) {
+          setTimeout(runAISimulation, 4000); // Loop the simulation
+          return;
+        }
+        
+        const lineDiv = document.createElement('div');
+        lineDiv.className = 'code-line';
+        aiTypingCode.appendChild(lineDiv);
+        
+        // Typing effect
+        let charIdx = 0;
+        const text = codeSequence[step].text;
+        const typeInterval = setInterval(() => {
+          lineDiv.innerText += text[charIdx];
+          charIdx++;
+          if(charIdx >= text.length) {
+            clearInterval(typeInterval);
+            // syntax highlighting hack for visual only
+            lineDiv.innerHTML = lineDiv.innerHTML
+              .replace(/await/g, '<span class="keyword">await</span>')
+              .replace(/page\.locator/g, 'page.<span class="method">locator</span>')
+              .replace(/fill/g, '<span class="method">fill</span>')
+              .replace(/click/g, '<span class="method">click</span>')
+              .replace(/expect/g, '<span class="method">expect</span>')
+              .replace(/toBeVisible/g, '<span class="method">toBeVisible</span>')
+              .replace(/'.*?'/g, match => `<span class="string">${match}</span>`);
+              
+            codeSequence[step].action();
+            step++;
+            setTimeout(nextStep, 800);
+          }
+        }, 30); // Typing speed
+      }
+      setTimeout(nextStep, 1000);
+    }
+    
+    // Start simulation when visible
+    const studioObserver = new IntersectionObserver((entries) => {
+      if(entries[0].isIntersecting) {
+        runAISimulation();
+        studioObserver.disconnect();
+      }
+    });
+    if(document.getElementById('ai-studio')) {
+      studioObserver.observe(document.getElementById('ai-studio'));
     }
   </script>
 </body>

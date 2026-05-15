@@ -237,29 +237,50 @@ nav.scrolled {
 }
 .stat-label { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; margin-top: 0.25rem; }
 
-/* ─── Executive Dashboard ─── */
-.exec-header { text-align: center; margin-bottom: 4rem; }
-.exec-title { font-size: 3.5rem; margin-bottom: 1rem; }
-.exec-subtitle { font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto; font-weight: 300; }
+/* ─── Neural Quality Core ─── */
+.neural-dashboard { padding: 3rem; overflow: hidden; background: rgba(10, 10, 10, 0.4); border: 1px solid rgba(16, 185, 129, 0.1); border-radius: 1rem; }
+.neural-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 3rem; }
 
-.impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-.kpi-card { padding: 3rem 2rem; display: flex; flex-direction: column; gap: 1rem; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; position: relative; }
-.kpi-card:hover { transform: translateY(-10px); border-color: var(--accent-gold); box-shadow: 0 30px 60px rgba(0,0,0,0.4); }
+/* Neural Visuals */
+.neural-visual { height: 300px; position: relative; display: flex; align-items: center; justify-content: center; }
+.neural-node { position: absolute; width: 12px; height: 12px; background: var(--accent-emerald); border-radius: 50%; box-shadow: 0 0 15px var(--accent-emerald); }
+.node-1 { top: 20%; left: 20%; animation: nodePulse 2s infinite alternate; }
+.node-2 { bottom: 20%; left: 10%; animation: nodePulse 2s infinite alternate 0.5s; }
+.node-3 { top: 50%; right: 10%; animation: nodePulse 2s infinite alternate 1s; }
 
-.kpi-value { font-size: 4rem; font-weight: 900; font-family: 'Playfair Display', serif; line-height: 1; }
-.kpi-label { font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent-gold); }
-.kpi-desc { font-size: 1rem; color: var(--text-secondary); line-height: 1.5; font-weight: 300; }
+@keyframes nodePulse { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(1.5); opacity: 0.5; } }
 
-.kpi-status { display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-top: auto; color: var(--text-muted); }
-.status-dot { width: 6px; height: 6px; border-radius: 50%; }
-.status-dot.green { background: #4ade80; box-shadow: 0 0 10px #4ade80; }
-.status-dot.gold { background: var(--accent-gold); box-shadow: 0 0 10px var(--accent-gold); }
+.node-center { width: 60px; height: 60px; background: rgba(16, 185, 129, 0.1); border: 1px solid var(--accent-emerald); display: flex; align-items: center; justify-content: center; font-size: 2rem; border-radius: 50%; z-index: 2; position: relative; }
+.core-pulse { position: absolute; inset: -10px; border: 1px solid var(--accent-emerald); border-radius: 50%; animation: corePulse 2s infinite; opacity: 0; }
+@keyframes corePulse { 0% { transform: scale(1); opacity: 0.5; } 100% { transform: scale(1.5); opacity: 0; } }
 
-.text-gradient { background: linear-gradient(135deg, #fff 0%, var(--accent-gold) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.synapse-line { position: absolute; height: 2px; background: linear-gradient(90deg, var(--accent-emerald), transparent); transform-origin: left center; z-index: 1; opacity: 0.3; }
+.s1 { width: 100px; top: 35%; left: 25%; transform: rotate(-30deg); }
+.s2 { width: 120px; bottom: 35%; left: 15%; transform: rotate(20deg); }
+.s3 { width: 80px; top: 50%; right: 20%; transform: rotate(180deg); }
+
+/* Healing Terminal */
+.healing-terminal { background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 8px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+.terminal-header { background: #111; padding: 0.6rem 1rem; display: flex; align-items: center; gap: 0.75rem; border-bottom: 1px solid #222; }
+.status-indicator { width: 8px; height: 8px; background: #ef4444; border-radius: 50%; animation: blink 1s infinite; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+.terminal-title { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #888; text-transform: uppercase; letter-spacing: 0.1em; }
+.terminal-body { padding: 1.5rem; height: 180px; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; line-height: 1.8; color: #aaa; text-align: left; }
+.log-line { margin-bottom: 0.5rem; opacity: 0; animation: logFadeIn 0.5s forwards; }
+.log-line.highlight { color: var(--accent-emerald); font-weight: 700; }
+.log-line.success { color: #fff; background: rgba(16, 185, 129, 0.2); padding: 0 0.5rem; display: inline-block; }
+@keyframes logFadeIn { to { opacity: 1; } }
+
+/* Neural Metrics */
+.neural-metrics { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; }
+.n-metric { display: flex; flex-direction: column; gap: 0.25rem; align-items: center; }
+.n-val { font-size: 1.5rem; font-weight: 800; font-family: 'Playfair Display', serif; color: #fff; }
+.n-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.1em; }
+
+.text-gradient { background: linear-gradient(135deg, #fff 0%, var(--accent-emerald) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
 @media (max-width: 992px) {
-  .impact-grid { grid-template-columns: 1fr; }
-  .hero-content h1 { font-size: 3rem; }
+  .neural-layout { grid-template-columns: 1fr; gap: 2rem; }
 }
 
 /* ─── Section Styles ─── */

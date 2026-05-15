@@ -85,37 +85,61 @@
     </div>
   </section>
 
-  <!-- ─── Architectural Impact Dashboard ─── -->
-  <section id="executive-dashboard" class="container">
+  <!-- ─── Neural Quality Core (AI Simulation) ─── -->
+  <section id="neural-core" class="container">
     <div class="exec-header fade-up">
-      <span class="section-label">Quality Infrastructure</span>
-      <h2 class="exec-title">Architectural Impact & Velocity</h2>
-      <p class="exec-subtitle">Building unified quality governance across distributed microservices and enterprise platforms.</p>
+      <span class="section-label">Autonomous Engineering</span>
+      <h2 class="exec-title">Neural Quality Core</h2>
+      <p class="exec-subtitle">Deploying self-healing agents and AI-driven validation to eliminate flakiness and accelerate delivery.</p>
     </div>
 
-    <div class="impact-grid fade-up">
-      <!-- KPI 1: System Stability -->
-      <div class="kpi-card glass-card">
-        <div class="kpi-value text-gradient">98%</div>
-        <div class="kpi-label">Automation Coverage</div>
-        <p class="kpi-desc">Engineered a modular automation framework covering Web, Mobile, and API layers with 0.1% flaky test rate.</p>
-        <div class="kpi-status"><span class="status-dot green"></span> Health: Stable</div>
+    <div class="neural-dashboard glass-card fade-up">
+      <div class="neural-layout">
+        
+        <!-- Left: Neural Visual -->
+        <div class="neural-visual">
+          <div class="neural-node node-1"></div>
+          <div class="neural-node node-2"></div>
+          <div class="neural-node node-3"></div>
+          <div class="neural-node node-center">
+            <div class="core-pulse"></div>
+            <span class="core-icon">🧠</span>
+          </div>
+          <div class="synapse-line s1"></div>
+          <div class="synapse-line s2"></div>
+          <div class="synapse-line s3"></div>
+        </div>
+
+        <!-- Right: Self-Healing Terminal -->
+        <div class="healing-terminal">
+          <div class="terminal-header">
+            <span class="status-indicator"></span>
+            <span class="terminal-title">Self-Healing Agent: ACTIVE</span>
+          </div>
+          <div class="terminal-body" id="healing-logs">
+            <div class="log-line">> Scanning for flaky selectors...</div>
+            <div class="log-line">> Locating broken node: [button#submit]</div>
+            <div class="log-line highlight">> AI REPAIR: Switching to [data-testid="submit-main"]</div>
+            <div class="log-line success">> TEST REPAIRED: 100% Reliability Score</div>
+          </div>
+        </div>
+
       </div>
 
-      <!-- KPI 2: Pipeline Speed -->
-      <div class="kpi-card glass-card">
-        <div class="kpi-value text-gradient">↓ 75%</div>
-        <div class="kpi-label">Execution Time</div>
-        <p class="kpi-desc">Reduced CI/CD feedback loops from 2 hours to 30 minutes through parallel execution and smart test orchestration.</p>
-        <div class="kpi-status"><span class="status-dot green"></span> Pipeline: Ultra-Fast</div>
-      </div>
-
-      <!-- KPI 3: Engineering ROI -->
-      <div class="kpi-card glass-card">
-        <div class="kpi-value text-gradient">21+</div>
-        <div class="kpi-label">Microservices Scaled</div>
-        <p class="kpi-desc">Architected cross-functional quality standards across multiple enterprise domains including Healthcare and Retail.</p>
-        <div class="kpi-status"><span class="status-dot green"></span> Infrastructure: Unified</div>
+      <!-- Footer Metrics -->
+      <div class="neural-metrics">
+        <div class="n-metric">
+          <span class="n-val">99.9%</span>
+          <span class="n-label">Uptime Stability</span>
+        </div>
+        <div class="n-metric">
+          <span class="n-val">AI-Assisted</span>
+          <span class="n-label">Test Generation</span>
+        </div>
+        <div class="n-metric">
+          <span class="n-val">0</span>
+          <span class="n-label">Flaky Failures</span>
+        </div>
       </div>
     </div>
   </section>
@@ -600,25 +624,27 @@
       });
     });
 
-    // Executive Dashboard Logic: Minimalist count-up effect
-    const kpiValues = document.querySelectorAll('.kpi-value');
-    const observerOptions = { threshold: 0.5 };
-    
-    const kpiObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = "1";
-          entry.target.style.transform = "translateY(0)";
-        }
-      });
-    }, observerOptions);
+    // Neural Core Logic: Self-Healing Terminal Loop
+    const healingLogs = document.getElementById('healing-logs');
+    const scenarios = [
+      { search: "Scanning Playwright selectors...", repair: "Selector Fixed: data-testid='login'", score: "99.8%" },
+      { search: "Checking API schema drift...", repair: "Type-Sync: [id] string -> number", score: "100%" },
+      { search: "Validating Mobile UI elements...", repair: "Refactoring: Accessibility ID match", score: "99.9%" }
+    ];
 
-    kpiValues.forEach(v => {
-      v.style.opacity = "0";
-      v.style.transform = "translateY(20px)";
-      v.style.transition = "1s ease-out";
-      kpiObserver.observe(v);
-    });
+    let currentIdx = 0;
+    function cycleHealing() {
+      if (!healingLogs) return;
+      const s = scenarios[currentIdx];
+      healingLogs.innerHTML = `
+        <div class="log-line">> ${s.search}</div>
+        <div class="log-line">> Locating anomaly...</div>
+        <div class="log-line highlight">> AI REPAIR: ${s.repair}</div>
+        <div class="log-line success">> STABILITY SECURED: ${s.score} Reliability Score</div>
+      `;
+      currentIdx = (currentIdx + 1) % scenarios.length;
+    }
+    setInterval(cycleHealing, 4000);
   </script>
 </body>
 

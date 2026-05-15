@@ -85,61 +85,43 @@
     </div>
   </section>
 
-  <!-- ─── DevOps Infinity Loop Dashboard ─── -->
-  <section id="infinity-dashboard" class="container">
+  <!-- ─── Executive Impact Scroll-Telling ─── -->
+  <section id="executive-impact" class="container">
     <div class="exec-header fade-up">
-      <h2 class="exec-title">Continuous Quality & DevSecOps</h2>
-      <p class="exec-subtitle">Integrating Shift-Left AI testing and automated quality gates seamlessly into the CI/CD lifecycle.</p>
+      <h2 class="exec-title">Quality at Enterprise Scale</h2>
+      <p class="exec-subtitle">Driving strategic automation and zero-defect releases across complex architectures.</p>
     </div>
 
-    <div class="infinity-dashboard glass-card fade-up">
+    <div class="scroll-telling-wrapper">
       
-      <div class="infinity-wrapper">
-        <!-- SVG Infinity Path -->
-        <svg class="infinity-svg" viewBox="0 0 800 300" preserveAspectRatio="xMidYMid meet">
-          <!-- Background track -->
-          <path class="inf-bg" d="M 400 150 C 250 0 50 0 50 150 C 50 300 250 300 400 150 C 550 0 750 0 750 150 C 750 300 550 300 400 150 Z"></path>
-          <!-- Glowing animated track -->
-          <path class="inf-glow" d="M 400 150 C 250 0 50 0 50 150 C 50 300 250 300 400 150 C 550 0 750 0 750 150 C 750 300 550 300 400 150 Z"></path>
-        </svg>
-
-        <!-- DevOps Stages as Nodes -->
-        <div class="stage-node plan-node">
-          <div class="stage-icon">🧠</div><div class="stage-name">Plan (AI Scripts)</div>
+      <!-- Card 1 -->
+      <div class="impact-card slide-up-card">
+        <div class="impact-content">
+          <div class="impact-label">Production Leakage</div>
+          <div class="impact-value text-gradient">↓ 35%</div>
+          <div class="impact-desc">Year-over-year reduction in critical production bugs by shifting automated quality gates left into the CI/CD pipeline.</div>
         </div>
-        <div class="stage-node build-node">
-          <div class="stage-icon">🏗️</div><div class="stage-name">Code (Analysis)</div>
-        </div>
-        <div class="stage-node test-node">
-          <div class="stage-icon">🧪</div><div class="stage-name">Build (Playwright)</div>
-        </div>
-        <div class="stage-node deploy-node">
-          <div class="stage-icon">🚀</div><div class="stage-name">Deploy (CI Gates)</div>
-        </div>
-        
-        <!-- Center intersection pulse -->
-        <div class="center-pulse"></div>
+        <div class="impact-bg-text">IMPACT</div>
       </div>
 
-      <!-- Live Pipeline Status -->
-      <div class="pipeline-status">
-        <span class="pulse-dot"></span> <span id="pipeline-text">Pipeline Status: All Systems Operational</span>
+      <!-- Card 2 -->
+      <div class="impact-card slide-up-card">
+        <div class="impact-content">
+          <div class="impact-label">Architecture Scale</div>
+          <div class="impact-value text-gradient">21+</div>
+          <div class="impact-desc">Enterprise microservices validated through robust API contract testing and data integrity pipelines.</div>
+        </div>
+        <div class="impact-bg-text">SCALE</div>
       </div>
 
-      <!-- DevOps Metrics -->
-      <div class="data-metrics">
-        <div class="d-metric">
-          <div class="d-val">3<span class="d-unit">m</span></div>
-          <div class="d-label">Avg Pipeline Velocity</div>
+      <!-- Card 3 -->
+      <div class="impact-card slide-up-card">
+        <div class="impact-content">
+          <div class="impact-label">Release Quality</div>
+          <div class="impact-value text-gradient">ZERO</div>
+          <div class="impact-desc">P1 production bugs introduced in the last 4 major enterprise releases, ensuring 100% stakeholder confidence.</div>
         </div>
-        <div class="d-metric">
-          <div class="d-val text-gradient">4</div>
-          <div class="d-label">Automated CI/CD Gates</div>
-        </div>
-        <div class="d-metric">
-          <div class="d-val">0<span class="d-unit">%</span></div>
-          <div class="d-label">Manual Intervention</div>
-        </div>
+        <div class="impact-bg-text">QUALITY</div>
       </div>
 
     </div>
@@ -625,36 +607,17 @@
       });
     });
 
-    // DevOps Pipeline Status Logic
-    const pipelineText = document.getElementById('pipeline-text');
-    const statuses = [
-      "Pipeline Status: All Systems Operational",
-      "Running AI Gen Script Analysis...",
-      "Executing Playwright E2E Suite...",
-      "Validating API Contracts...",
-      "Pipeline Status: Auto-Deploy Ready"
-    ];
-    if(pipelineText) {
-      let idx = 0;
-      setInterval(() => {
-        idx = (idx + 1) % statuses.length;
-        pipelineText.innerText = statuses[idx];
-        
-        if (statuses[idx].includes('Ready') || statuses[idx].includes('Operational')) {
-          pipelineText.parentElement.style.color = '#4ade80';
-          pipelineText.parentElement.style.borderColor = 'rgba(34, 197, 94, 0.3)';
-          pipelineText.parentElement.style.background = 'rgba(34, 197, 94, 0.1)';
-          pipelineText.previousElementSibling.style.background = '#4ade80';
-          pipelineText.previousElementSibling.style.boxShadow = '0 0 10px #4ade80';
-        } else {
-          pipelineText.parentElement.style.color = '#fbbf24';
-          pipelineText.parentElement.style.borderColor = 'rgba(251, 191, 36, 0.3)';
-          pipelineText.parentElement.style.background = 'rgba(251, 191, 36, 0.1)';
-          pipelineText.previousElementSibling.style.background = '#fbbf24';
-          pipelineText.previousElementSibling.style.boxShadow = '0 0 10px #fbbf24';
+    // Executive Impact Scroll-Telling
+    const impactCards = document.querySelectorAll('.slide-up-card');
+    const impactObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('visible');
         }
-      }, 3000);
-    }
+      });
+    }, { threshold: 0.15 });
+
+    impactCards.forEach(card => impactObserver.observe(card));
   </script>
 </body>
 

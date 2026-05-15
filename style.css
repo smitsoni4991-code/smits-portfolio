@@ -199,7 +199,7 @@ nav.scrolled {
   transform: translateY(-2px);
 }
 
-/* ─── Stats Bar ─── */
+/* ─── Stats Bar (Legacy) ─── */
 .stats-bar { padding: 1rem 0; }
 .stats-bar-inner {
   display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;
@@ -216,6 +216,85 @@ nav.scrolled {
   background-clip: text;
 }
 .stat-label { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; margin-top: 0.25rem; }
+
+/* ─── Observability Dashboard ─── */
+.dashboard-wrapper {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  font-family: 'JetBrains Mono', monospace;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  margin-top: 0;
+}
+.dashboard-header {
+  background: #161b22;
+  padding: 0.85rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #30363d;
+}
+.dashboard-title {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-size: 0.85rem; font-weight: 600; color: #8b949e;
+}
+.dashboard-status {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-size: 0.8rem; font-weight: 600; color: #c9d1d9;
+}
+.status-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+}
+.status-dot.green {
+  background: #238636;
+  box-shadow: 0 0 12px #2ea043;
+  animation: pulse-green 2s infinite;
+}
+@keyframes pulse-green {
+  0% { box-shadow: 0 0 0 0 rgba(46, 160, 67, 0.4); }
+  70% { box-shadow: 0 0 0 8px rgba(46, 160, 67, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(46, 160, 67, 0); }
+}
+.dashboard-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
+  background: #30363d; /* Creates borders */
+}
+.dashboard-panel {
+  background: #0d1117; padding: 1.5rem; display: flex; flex-direction: column;
+}
+.dashboard-panel.col-span-2 { grid-column: span 2; }
+.panel-title { font-size: 0.75rem; color: #8b949e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+.panel-value { font-size: 2.2rem; font-weight: 700; color: #c9d1d9; line-height: 1.2; margin-bottom: 0.2rem;}
+.panel-value.highlight { color: #58a6ff; text-shadow: 0 0 15px rgba(88,166,255,0.3); }
+.panel-subtitle { font-size: 0.75rem; margin-bottom: 1.5rem; color: #8b949e; }
+.trend-up { color: #3fb950; font-weight: 600; }
+.mini-chart {
+  display: flex; align-items: flex-end; gap: 6px; height: 60px; margin-top: auto;
+}
+.mini-chart .bar {
+  flex: 1; background: #21262d; border-radius: 2px 2px 0 0; transition: height 1s ease;
+}
+.mini-chart .bar:hover { background: #30363d; }
+.mini-chart .highlight-bar { background: #58a6ff; box-shadow: 0 0 10px rgba(88,166,255,0.5); }
+.leakage-indicator { margin-top: auto; display: flex; flex-direction: column; }
+.leakage-track { width: 100%; height: 8px; background: #21262d; border-radius: 4px; overflow: hidden; }
+.leakage-fill { height: 100%; background: #3fb950; box-shadow: 0 0 10px rgba(63,185,80,0.5); }
+.pipeline-list { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.5rem; }
+.pipeline-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.75rem 1rem; background: #161b22; border: 1px solid #30363d; border-radius: 6px;
+  font-size: 0.85rem; transition: all 0.2s;
+}
+.pipeline-item:hover { background: #21262d; border-color: #8b949e; }
+.pipeline-name { color: #c9d1d9; font-weight: 500; display: flex; align-items: center; gap: 0.5rem; }
+.pipeline-name::before { content: '✓'; color: #3fb950; font-weight: 800; font-size: 1rem; }
+.pipeline-time { color: #8b949e; font-size: 0.75rem; margin-left: auto; margin-right: 1rem; }
+.pipeline-badge {
+  padding: 0.15rem 0.6rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.05em;
+}
+.pipeline-badge.success { background: rgba(46,160,67,0.15); color: #3fb950; border: 1px solid rgba(46,160,67,0.4); }
 
 /* ─── Section Styles ─── */
 section { padding: 5rem 0; }
@@ -502,6 +581,8 @@ footer {
   .ai-chat-layout { grid-template-columns: 1fr; gap: 2rem; }
   .about-layout { grid-template-columns: 1fr; }
   .skills-grid, .cert-grid, .projects-grid, .edu-grid { grid-template-columns: 1fr; }
+  .dashboard-grid { grid-template-columns: 1fr; }
+  .dashboard-panel.col-span-2 { grid-column: span 1; }
   .stats-bar-inner { gap: 1.5rem; padding: 1.5rem; }
   .stat-number { font-size: 1.5rem; }
   .hero h1 { font-size: 2rem; }

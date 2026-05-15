@@ -238,7 +238,40 @@ nav.scrolled {
 .stat-label { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; margin-top: 0.25rem; }
 
 /* ─── STLC Autopilot ─── */
-.autopilot-container { padding: 4rem; background: rgba(10, 10, 10, 0.4); border: 1px solid rgba(253, 224, 71, 0.1); border-radius: 1.5rem; position: relative; }
+.autopilot-container { padding: 4rem; background: rgba(10, 10, 10, 0.4); border: 1px solid rgba(253, 224, 71, 0.1); border-radius: 1.5rem; position: relative; overflow: hidden; }
+
+/* Live Status Badge */
+.live-status {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 255, 0, 0.05);
+  border: 1px solid rgba(0, 255, 0, 0.2);
+  border-radius: 2rem;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #00ff00;
+  letter-spacing: 0.1em;
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  background: #00ff00;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ff00;
+  animation: pulseGreen 2s infinite;
+}
+
+@keyframes pulseGreen {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
 
 /* Timeline Track */
 .timeline-track { position: relative; height: 4px; background: rgba(255,255,255,0.05); margin-bottom: 5rem; border-radius: 2px; display: flex; justify-content: space-between; align-items: center; }

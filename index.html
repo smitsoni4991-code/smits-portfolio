@@ -85,15 +85,21 @@
     </div>
   </section>
 
-  <!-- ─── Quality Transformation Engine: STLC Autopilot ─── -->
+  <!-- ─── Quality Transformation Engine: LIVE STLC Simulation ─── -->
   <section id="stlc-autopilot" class="container">
     <div class="exec-header fade-up">
-      <span class="section-label">Strategic Leadership</span>
-      <h2 class="exec-title">Quality Transformation Engine</h2>
-      <p class="exec-subtitle">Interactive simulation of my end-to-end Quality Engineering leadership—orchestrating AI-assisted testing and governance for zero-leakage releases.</p>
+      <span class="section-label">Autonomous Engineering</span>
+      <h2 class="exec-title">STLC Transformation Engine</h2>
+      <p class="exec-subtitle">A live simulation of my end-to-end Quality Engineering governance—orchestrating AI-assisted testing and zero-leakage releases.</p>
     </div>
 
     <div class="autopilot-container glass-card fade-up">
+      <!-- Live Status Indicator -->
+      <div class="live-status">
+        <span class="live-dot"></span>
+        <span>LIVE SIMULATION ACTIVE</span>
+      </div>
+
       <!-- Progressive Timeline Line -->
       <div class="timeline-track">
         <div class="timeline-progress" id="timeline-bar"></div>
@@ -132,12 +138,6 @@
             <span class="tech-tag">Risk Modeling</span>
           </div>
         </div>
-      </div>
-
-      <!-- Navigation Arrows -->
-      <div class="autopilot-nav">
-        <button id="prev-stlc" class="nav-btn">← PREV</button>
-        <button id="next-stlc" class="nav-btn">NEXT STEP →</button>
       </div>
     </div>
   </section>
@@ -622,7 +622,7 @@
       });
     });
 
-    // STLC Autopilot Logic
+    // STLC Autopilot Logic: LIVE CYCLE
     const stlcStages = [
       { num: "01", title: "Requirement Analysis", desc: "Implementing 'Shift-Left' by identifying edge cases and data gaps during the PRD phase, reducing downstream rework by 25%.", impact: "200+ Defects Prevented", insight: "Analyzing PRD for ambiguities... Detected 3 missing error-handling scenarios. Notifying product team.", tags: ["NLP Analysis", "Risk Modeling"] },
       { num: "02", title: "Automation Strategy", desc: "Architecting scalable Playwright & API frameworks. Transitioning from manual regression to 90% automation coverage across 21+ components.", impact: "↓ 70% Regression Time", insight: "Auto-generating baseline test scripts for new components... Integrating with CI/CD gates.", tags: ["Playwright", "CI/CD Gates"] },
@@ -632,6 +632,7 @@
     ];
 
     let currentStep = 0;
+    let autopilotInterval;
     const bar = document.getElementById('timeline-bar');
     const steps = document.querySelectorAll('.timeline-step');
     const title = document.getElementById('stage-title');
@@ -662,20 +663,25 @@
       });
     }
 
-    document.getElementById('next-stlc')?.addEventListener('click', () => {
-      if (currentStep < stlcStages.length - 1) updateAutopilot(currentStep + 1);
-      else updateAutopilot(0);
-    });
+    function startSimulation() {
+      autopilotInterval = setInterval(() => {
+        currentStep = (currentStep + 1) % stlcStages.length;
+        updateAutopilot(currentStep);
+      }, 5000); // Cycle every 5 seconds
+    }
 
-    document.getElementById('prev-stlc')?.addEventListener('click', () => {
-      if (currentStep > 0) updateAutopilot(currentStep - 1);
-      else updateAutopilot(stlcStages.length - 1);
-    });
+    function resetInterval() {
+      clearInterval(autopilotInterval);
+      startSimulation();
+    }
 
-    // Handle timeline clicks
-    steps.forEach((step, i) => {
-      step.addEventListener('click', () => updateAutopilot(i));
-    });
+    // Pause on hover
+    const autopilotContainer = document.getElementById('stlc-autopilot');
+    autopilotContainer.addEventListener('mouseenter', () => clearInterval(autopilotInterval));
+    autopilotContainer.addEventListener('mouseleave', () => startSimulation());
+
+    // Start on load
+    startSimulation();
   </script>
 </body>
 

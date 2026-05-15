@@ -1,28 +1,28 @@
 /* ══════════════════════════════════════════
-   MIDNIGHT CYBER NEON THEME
-   Electric Purple → Neon Magenta → Bright Cyan
+   OBSIDIAN MINIMAL THEME
+   Dark Slate → Silver → Pure White
    ══════════════════════════════════════════ */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  --bg-deep: #050510;
-  --bg-card: rgba(15, 10, 30, 0.65);
-  --bg-card-hover: rgba(25, 15, 45, 0.75);
-  --sunset-1: #3a0ca3;
-  --sunset-2: #7000FF;
-  --sunset-3: #FF007F;
-  --sunset-4: #00F0FF;
-  --text-primary: #f0f5ff;
-  --text-secondary: rgba(240, 245, 255, 0.65);
-  --text-muted: rgba(240, 245, 255, 0.4);
-  --border: rgba(0, 240, 255, 0.15);
-  --border-hover: rgba(255, 0, 127, 0.4);
+  --bg-deep: #000000;
+  --bg-card: rgba(20, 20, 22, 0.65);
+  --bg-card-hover: rgba(30, 30, 35, 0.75);
+  --sunset-1: #0f172a;
+  --sunset-2: #334155;
+  --sunset-3: #94a3b8;
+  --sunset-4: #ffffff;
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --border: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(255, 255, 255, 0.25);
   --radius: 1.25rem;
   --radius-sm: 0.75rem;
-  --glow-purple: rgba(112, 0, 255, 0.4);
-  --glow-orange: rgba(255, 0, 127, 0.35);
-  --glow-gold: rgba(0, 240, 255, 0.25);
+  --glow-purple: rgba(255, 255, 255, 0.05);
+  --glow-orange: rgba(255, 255, 255, 0.08);
+  --glow-gold: rgba(255, 255, 255, 0.03);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -40,7 +40,7 @@ body {
 /* ─── Animated Background ─── */
 .bg-sunset {
   position: fixed; inset: 0; z-index: -2;
-  background: linear-gradient(135deg, #050510 0%, #0a0a20 25%, #0d0d26 50%, #08081a 100%);
+  background: linear-gradient(135deg, #000000 0%, #050505 25%, #09090b 50%, #000000 100%);
 }
 
 .bg-orb {

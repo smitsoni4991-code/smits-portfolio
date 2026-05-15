@@ -1,28 +1,28 @@
 /* ══════════════════════════════════════════
-   WARM SUNSET GRADIENT THEME
-   Deep Purple → Burnt Orange → Gold
+   MIDNIGHT CYBER NEON THEME
+   Electric Purple → Neon Magenta → Bright Cyan
    ══════════════════════════════════════════ */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  --bg-deep: #0f0a1a;
-  --bg-card: rgba(30, 20, 45, 0.65);
-  --bg-card-hover: rgba(45, 30, 65, 0.75);
-  --sunset-1: #6b21a8;
-  --sunset-2: #c2410c;
-  --sunset-3: #d97706;
-  --sunset-4: #facc15;
-  --text-primary: #f5f0ff;
-  --text-secondary: rgba(245, 240, 255, 0.65);
-  --text-muted: rgba(245, 240, 255, 0.4);
-  --border: rgba(245, 240, 255, 0.08);
-  --border-hover: rgba(217, 119, 6, 0.35);
+  --bg-deep: #050510;
+  --bg-card: rgba(15, 10, 30, 0.65);
+  --bg-card-hover: rgba(25, 15, 45, 0.75);
+  --sunset-1: #3a0ca3;
+  --sunset-2: #7000FF;
+  --sunset-3: #FF007F;
+  --sunset-4: #00F0FF;
+  --text-primary: #f0f5ff;
+  --text-secondary: rgba(240, 245, 255, 0.65);
+  --text-muted: rgba(240, 245, 255, 0.4);
+  --border: rgba(0, 240, 255, 0.15);
+  --border-hover: rgba(255, 0, 127, 0.4);
   --radius: 1.25rem;
   --radius-sm: 0.75rem;
-  --glow-purple: rgba(107, 33, 168, 0.4);
-  --glow-orange: rgba(194, 65, 12, 0.35);
-  --glow-gold: rgba(250, 204, 21, 0.25);
+  --glow-purple: rgba(112, 0, 255, 0.4);
+  --glow-orange: rgba(255, 0, 127, 0.35);
+  --glow-gold: rgba(0, 240, 255, 0.25);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -40,7 +40,7 @@ body {
 /* ─── Animated Background ─── */
 .bg-sunset {
   position: fixed; inset: 0; z-index: -2;
-  background: linear-gradient(135deg, #0f0a1a 0%, #1a0d2e 25%, #1c1025 50%, #150e20 100%);
+  background: linear-gradient(135deg, #050510 0%, #0a0a20 25%, #0d0d26 50%, #08081a 100%);
 }
 
 .bg-orb {

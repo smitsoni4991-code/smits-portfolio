@@ -607,17 +607,7 @@
       });
     });
 
-    // Executive Impact Scroll-Telling
-    const impactCards = document.querySelectorAll('.slide-up-card');
-    const impactObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.15 });
-
-    impactCards.forEach(card => impactObserver.observe(card));
+    // JS logic for impact cards removed in favor of pure CSS sticky scrolling
   </script>
 </body>
 

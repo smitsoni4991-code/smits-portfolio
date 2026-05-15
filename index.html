@@ -85,56 +85,76 @@
     </div>
   </section>
 
-  <!-- ─── Data Mesh Transformation Engine ─── -->
-  <section id="data-mesh-engine" class="container">
+  <!-- ─── Engineering Command Center ─── -->
+  <section id="command-center" class="container">
     <div class="exec-header fade-up">
-      <h2 class="exec-title">Data Quality & BI Integrity</h2>
-      <p class="exec-subtitle">Automating complex ETL validation and ensuring 100% data accuracy from SQL to Tableau.</p>
+      <h2 class="exec-title">Engineering Command Center</h2>
+      <p class="exec-subtitle">A high-fidelity observability dashboard managing enterprise-grade quality architecture.</p>
     </div>
 
-    <div class="engine-dashboard glass-card fade-up">
-      <div class="factory-container">
-        <!-- Stage 1: Raw Data -->
-        <div class="factory-stage stage-raw">
-          <span class="stage-label">Inbound SQL/API</span>
-          <div class="stream-zone" id="raw-stream"></div>
+    <div class="command-dashboard glass-card fade-up">
+      
+      <!-- Top Row: Pipeline Flow -->
+      <div class="pipeline-flow">
+        <div class="flow-step active" id="step-1">
+          <div class="step-dot"></div>
+          <span>Commit</span>
         </div>
+        <div class="flow-line"></div>
+        <div class="flow-step" id="step-2">
+          <div class="step-dot"></div>
+          <span>Analysis</span>
+        </div>
+        <div class="flow-line"></div>
+        <div class="flow-step" id="step-3">
+          <div class="step-dot"></div>
+          <span>E2E Suite</span>
+        </div>
+        <div class="flow-line"></div>
+        <div class="flow-step" id="step-4">
+          <div class="step-dot"></div>
+          <span>Production</span>
+        </div>
+      </div>
 
-        <!-- Stage 2: Validation Engine -->
-        <div class="factory-stage stage-engine">
-          <div class="validation-core">
-            <div class="core-spinner"></div>
-            <span class="core-icon">⚙️</span>
+      <!-- Middle Row: Radar, Metrics, Matrix -->
+      <div class="command-grid">
+        <!-- Radar -->
+        <div class="command-item radar-panel">
+          <div class="radar-box">
+            <div class="radar-sweep"></div>
+            <div class="radar-text">NO LEAKAGE DETECTED</div>
           </div>
-          <span class="stage-label">QA Validation Engine</span>
+          <span class="item-label">AI Anomaly Detection</span>
         </div>
 
-        <!-- Stage 3: Warehouse -->
-        <div class="factory-stage stage-warehouse">
-          <span class="stage-label">Tableau Data Hub</span>
-          <div class="stream-zone" id="clean-stream"></div>
-          <div class="warehouse-node">🗄️</div>
+        <!-- Metrics & Equalizer -->
+        <div class="command-item metrics-panel">
+          <div class="coverage-value">98.4%</div>
+          <div class="equalizer">
+            <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+            <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+          </div>
+          <span class="item-label">Global Test Coverage</span>
+        </div>
+
+        <!-- Microservice Matrix -->
+        <div class="command-item matrix-panel">
+          <div class="matrix-grid" id="matrix-grid">
+            <!-- JS Populated -->
+          </div>
+          <span class="item-label">Microservice Health Matrix</span>
         </div>
       </div>
 
-      <!-- Live Logs -->
-      <div class="engine-logs">
-        <div id="engine-log-text">Initializing Data Integrity Check...</div>
-      </div>
-
-      <!-- Dashboard Metrics -->
-      <div class="data-metrics">
-        <div class="d-metric">
-          <div class="d-val">5,000</div>
-          <div class="d-label">Rows Validated/Sec</div>
+      <!-- Bottom Row: Terminal -->
+      <div class="terminal-box">
+        <div class="terminal-header">
+          <div class="terminal-dots"><span></span><span></span><span></span></div>
+          <span class="terminal-title">live_execution_logs.sh</span>
         </div>
-        <div class="d-metric">
-          <div class="d-val text-gradient">&lt;50<span class="d-unit">ms</span></div>
-          <div class="d-label">ETL Latency</div>
-        </div>
-        <div class="d-metric">
-          <div class="d-val">100<span class="d-unit">%</span></div>
-          <div class="d-label">Data Anomalies Caught</div>
+        <div class="terminal-body" id="terminal-body">
+          <div class="terminal-line">> Initializing Command Center...</div>
         </div>
       </div>
     </div>
@@ -620,57 +640,54 @@
       });
     });
 
-    // Data Mesh Engine Logic
-    const rawStream = document.getElementById('raw-stream');
-    const cleanStream = document.getElementById('clean-stream');
-    const logText = document.getElementById('engine-log-text');
-    
-    if (rawStream && cleanStream) {
-      const logs = [
-        "Verifying Schema Drifts...",
-        "Validating SQL Integrity...",
-        "Checking Tableau Aggregations...",
-        "ETL Sync: 100% Match",
-        "Null Values Detected: 0"
-      ];
+    // Command Center Logic
+    const term = document.getElementById('terminal-body');
+    const matrix = document.getElementById('matrix-grid');
+    const logs = [
+      "Verifying Tableau BI Dashboards...",
+      "Playwright workers: 4",
+      "Analyzing microservice health...",
+      "Checking SQL constraints...",
+      "E2E suite execution: 85%",
+      "Cloud connection: SECURE",
+      "No anomalies detected."
+    ];
 
-      function spawnBlock(parent, color, isClean) {
-        const block = document.createElement('div');
-        block.className = 'data-block';
-        block.style.color = color;
-        block.style.background = color;
-        block.style.left = '0%';
-        block.style.top = Math.random() * 80 + 10 + '%';
-        parent.appendChild(block);
-
-        const duration = isClean ? 1500 : 1000;
-        const animation = block.animate([
-          { left: '0%', opacity: 1 },
-          { left: '100%', opacity: isClean ? 1 : 0 }
-        ], {
-          duration: duration,
-          easing: 'linear'
-        });
-
-        animation.onfinish = () => block.remove();
-      }
-
-      setInterval(() => {
-        // Spawn chaotic raw data (Blue/Red)
-        const isBad = Math.random() > 0.7;
-        spawnBlock(rawStream, isBad ? '#ef4444' : '#3b82f6', false);
-        
-        // Spawn clean data (Green)
-        setTimeout(() => {
-          if (!isBad) spawnBlock(cleanStream, '#4ade80', true);
-        }, 1000);
-
-        // Update logs occasionally
-        if (logText && Math.random() > 0.8) {
-          logText.innerText = logs[Math.floor(Math.random() * logs.length)];
-        }
-      }, 400);
+    // Terminal
+    function addLog() {
+      if (!term) return;
+      const line = document.createElement('div');
+      line.className = 'terminal-line';
+      line.innerText = "> " + logs[Math.floor(Math.random() * logs.length)];
+      term.appendChild(line);
+      if (term.children.length > 8) term.removeChild(term.firstChild);
+      term.scrollTop = term.scrollHeight;
     }
+    setInterval(addLog, 2000);
+
+    // Matrix
+    if (matrix) {
+      for (let i = 0; i < 40; i++) {
+        const sq = document.createElement('div');
+        sq.className = 'matrix-sq';
+        matrix.appendChild(sq);
+      }
+      setInterval(() => {
+        const squares = document.querySelectorAll('.matrix-sq');
+        const rand = Math.floor(Math.random() * squares.length);
+        squares[rand].classList.add('active');
+        setTimeout(() => squares[rand].classList.remove('active'), 1000);
+      }, 300);
+    }
+
+    // Pipeline Steps
+    let currentStep = 1;
+    setInterval(() => {
+      document.querySelectorAll('.flow-step').forEach(s => s.classList.remove('active'));
+      currentStep = (currentStep % 4) + 1;
+      const activeStep = document.getElementById(`step-${currentStep}`);
+      if (activeStep) activeStep.classList.add('active');
+    }, 3000);
   </script>
 </body>
 

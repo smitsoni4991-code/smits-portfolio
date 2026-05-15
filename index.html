@@ -85,64 +85,58 @@
     </div>
   </section>
 
-  <!-- ─── Cloud Architecture Radar Dashboard ─── -->
-  <section id="cloud-radar" class="container">
+  <!-- ─── Data Mesh Transformation Engine ─── -->
+  <section id="data-mesh-engine" class="container">
     <div class="exec-header fade-up">
-      <h2 class="exec-title">Cloud Infrastructure Validation</h2>
-      <p class="exec-subtitle">Continuous security and resilience testing across AWS environments and serverless architectures.</p>
+      <h2 class="exec-title">Data Quality & BI Integrity</h2>
+      <p class="exec-subtitle">Automating complex ETL validation and ensuring 100% data accuracy from SQL to Tableau.</p>
     </div>
 
-    <div class="radar-dashboard glass-card fade-up">
-      
-      <!-- Radar Screen -->
-      <div class="radar-container">
-        <!-- Concentric rings -->
-        <div class="radar-ring ring-1"></div>
-        <div class="radar-ring ring-2"></div>
-        <div class="radar-ring ring-3"></div>
-        
-        <!-- The sweeping beam -->
-        <div class="radar-sweep"></div>
-        
-        <!-- Center Hub -->
-        <div class="radar-center">
-          <span>AWS</span>
+    <div class="engine-dashboard glass-card fade-up">
+      <div class="factory-container">
+        <!-- Stage 1: Raw Data -->
+        <div class="factory-stage stage-raw">
+          <span class="stage-label">Inbound SQL/API</span>
+          <div class="stream-zone" id="raw-stream"></div>
         </div>
 
-        <!-- Orbiting Infrastructure Nodes -->
-        <div class="radar-node node-s3" data-name="S3 Buckets">
-          <span class="node-icon">🪣</span>
-        </div>
-        <div class="radar-node node-rds" data-name="RDS Clusters">
-          <span class="node-icon">🗄️</span>
-        </div>
-        <div class="radar-node node-ec2" data-name="EC2 Instances">
-          <span class="node-icon">💻</span>
-        </div>
-        <div class="radar-node node-lambda" data-name="Lambda Funcs">
-          <span class="node-icon">⚡</span>
+        <!-- Stage 2: Validation Engine -->
+        <div class="factory-stage stage-engine">
+          <div class="validation-core">
+            <div class="core-spinner"></div>
+            <span class="core-icon">⚙️</span>
+          </div>
+          <span class="stage-label">QA Validation Engine</span>
         </div>
 
-        <!-- Live Ping Tooltip -->
-        <div id="radar-tooltip" class="radar-tooltip">Scanning...</div>
+        <!-- Stage 3: Warehouse -->
+        <div class="factory-stage stage-warehouse">
+          <span class="stage-label">Tableau Data Hub</span>
+          <div class="stream-zone" id="clean-stream"></div>
+          <div class="warehouse-node">🗄️</div>
+        </div>
+      </div>
+
+      <!-- Live Logs -->
+      <div class="engine-logs">
+        <div id="engine-log-text">Initializing Data Integrity Check...</div>
       </div>
 
       <!-- Dashboard Metrics -->
-      <div class="data-metrics mt-4">
+      <div class="data-metrics">
         <div class="d-metric">
-          <div class="d-val">99.9<span class="d-unit">%</span></div>
-          <div class="d-label">Environment Uptime</div>
+          <div class="d-val">5,000</div>
+          <div class="d-label">Rows Validated/Sec</div>
         </div>
         <div class="d-metric">
-          <div class="d-val text-gradient">15<span class="d-unit">k+</span></div>
-          <div class="d-label">IaC Tests Run</div>
+          <div class="d-val text-gradient">&lt;50<span class="d-unit">ms</span></div>
+          <div class="d-label">ETL Latency</div>
         </div>
         <div class="d-metric">
           <div class="d-val">100<span class="d-unit">%</span></div>
-          <div class="d-label">Sec Policies Validated</div>
+          <div class="d-label">Data Anomalies Caught</div>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -626,29 +620,56 @@
       });
     });
 
-    // Radar Logic
-    const tooltip = document.getElementById('radar-tooltip');
-    const nodes = document.querySelectorAll('.radar-node');
+    // Data Mesh Engine Logic
+    const rawStream = document.getElementById('raw-stream');
+    const cleanStream = document.getElementById('clean-stream');
+    const logText = document.getElementById('engine-log-text');
     
-    if (tooltip && nodes.length) {
-      setInterval(() => {
-        const idx = Math.floor(Math.random() * nodes.length);
-        const node = nodes[idx];
-        const name = node.getAttribute('data-name');
-        
-        node.classList.add('pinged');
-        tooltip.innerText = `Health Check OK: ${name}`;
-        tooltip.style.opacity = '1';
-        
-        setTimeout(() => {
-          node.classList.remove('pinged');
-        }, 800);
-        
-        setTimeout(() => {
-          tooltip.style.opacity = '0';
-        }, 1500);
+    if (rawStream && cleanStream) {
+      const logs = [
+        "Verifying Schema Drifts...",
+        "Validating SQL Integrity...",
+        "Checking Tableau Aggregations...",
+        "ETL Sync: 100% Match",
+        "Null Values Detected: 0"
+      ];
 
-      }, 2000); // ping a node every 2 seconds
+      function spawnBlock(parent, color, isClean) {
+        const block = document.createElement('div');
+        block.className = 'data-block';
+        block.style.color = color;
+        block.style.background = color;
+        block.style.left = '0%';
+        block.style.top = Math.random() * 80 + 10 + '%';
+        parent.appendChild(block);
+
+        const duration = isClean ? 1500 : 1000;
+        const animation = block.animate([
+          { left: '0%', opacity: 1 },
+          { left: '100%', opacity: isClean ? 1 : 0 }
+        ], {
+          duration: duration,
+          easing: 'linear'
+        });
+
+        animation.onfinish = () => block.remove();
+      }
+
+      setInterval(() => {
+        // Spawn chaotic raw data (Blue/Red)
+        const isBad = Math.random() > 0.7;
+        spawnBlock(rawStream, isBad ? '#ef4444' : '#3b82f6', false);
+        
+        // Spawn clean data (Green)
+        setTimeout(() => {
+          if (!isBad) spawnBlock(cleanStream, '#4ade80', true);
+        }, 1000);
+
+        // Update logs occasionally
+        if (logText && Math.random() > 0.8) {
+          logText.innerText = logs[Math.floor(Math.random() * logs.length)];
+        }
+      }, 400);
     }
   </script>
 </body>

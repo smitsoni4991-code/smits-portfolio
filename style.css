@@ -217,48 +217,112 @@ nav.scrolled {
 }
 .stat-label { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; margin-top: 0.25rem; }
 
-/* ─── Data Pipeline & BI Observatory ─── */
-.exec-header { text-align: center; margin-bottom: 3rem; }
-.exec-title { font-size: 3rem; font-weight: 800; margin-bottom: 1rem; background: linear-gradient(to right, var(--text-primary), var(--sunset-4)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -0.03em; }
-.exec-subtitle { font-size: 1.1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
-.glass-card { background: rgba(30, 20, 50, 0.4); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 1.5rem; padding: 2.5rem; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.05); position: relative; overflow: hidden; }
-
-/* ─── Cloud Architecture Radar ─── */
+/* ─── Data Mesh Transformation Engine ─── */
 .exec-header { text-align: center; margin-bottom: 3rem; }
 .exec-title { font-size: 3rem; font-weight: 800; margin-bottom: 1rem; background: linear-gradient(to right, var(--text-primary), var(--sunset-4)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -0.03em; }
 .exec-subtitle { font-size: 1.1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
 .text-gradient { background: linear-gradient(135deg, #f5f3ff 0%, #d946ef 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-.radar-dashboard { display: flex; flex-direction: column; gap: 2rem; margin-bottom: 4rem; align-items: center; }
+.engine-dashboard { display: flex; flex-direction: column; gap: 2rem; }
 
-/* Radar Container */
-.radar-container { position: relative; width: 350px; height: 350px; border-radius: 50%; background: rgba(10, 5, 20, 0.8); border: 2px solid rgba(139, 92, 246, 0.3); box-shadow: inset 0 0 50px rgba(139, 92, 246, 0.2), 0 0 30px rgba(0,0,0,0.5); overflow: hidden; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+.factory-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 250px;
+  position: relative;
+  background: rgba(0,0,0,0.2);
+  border-radius: 1rem;
+  padding: 0 2rem;
+  overflow: hidden;
+}
 
-/* Rings */
-.radar-ring { position: absolute; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 50%; }
-.ring-1 { width: 100px; height: 100px; }
-.ring-2 { width: 200px; height: 200px; }
-.ring-3 { width: 300px; height: 300px; border: 1px dashed rgba(255,255,255,0.05); }
+.factory-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  z-index: 2;
+  width: 120px;
+}
 
-/* Sweeping Beam */
-.radar-sweep { position: absolute; top: 50%; left: 50%; width: 175px; height: 175px; background: conic-gradient(from 0deg, rgba(34, 197, 94, 0) 70%, rgba(34, 197, 94, 0.6) 100%); transform-origin: 0% 0%; animation: radar-spin 4s linear infinite; border-right: 2px solid #4ade80; z-index: 1; }
-@keyframes radar-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.stage-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
 
-/* Center Hub */
-.radar-center { position: absolute; width: 40px; height: 40px; background: #1e1b4b; border: 2px solid var(--sunset-3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: bold; color: #fff; z-index: 5; box-shadow: 0 0 15px var(--sunset-3); }
+/* Stream Zones */
+.stream-zone {
+  position: absolute;
+  height: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+#raw-stream { left: 100px; width: 150px; }
+#clean-stream { right: 100px; width: 150px; }
 
-/* Orbiting Nodes */
-.radar-node { position: absolute; width: 30px; height: 30px; background: #111; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; z-index: 10; transition: 0.3s ease; box-shadow: 0 0 10px rgba(0,0,0,0.5); }
-.node-s3 { top: 20%; left: 30%; }
-.node-rds { top: 60%; left: 80%; }
-.node-ec2 { top: 75%; left: 25%; }
-.node-lambda { top: 30%; left: 70%; }
+/* The Engine Core */
+.validation-core {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-/* Ping Animation */
-.radar-node.pinged { background: rgba(34, 197, 94, 0.2); border-color: #4ade80; box-shadow: 0 0 15px #4ade80; transform: scale(1.2); }
+.core-spinner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 4px solid transparent;
+  border-top-color: var(--sunset-4);
+  border-bottom-color: var(--sunset-3);
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
 
-/* Live Tooltip */
-.radar-tooltip { position: absolute; bottom: 15px; background: rgba(0, 0, 0, 0.8); border: 1px solid #4ade80; color: #4ade80; padding: 0.3rem 0.8rem; border-radius: 12px; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; font-weight: bold; z-index: 20; opacity: 0; transition: opacity 0.2s; pointer-events: none; }
+.core-icon {
+  font-size: 2rem;
+  animation: pulse 2s infinite;
+}
+
+.warehouse-node {
+  font-size: 3rem;
+  filter: drop-shadow(0 0 10px var(--sunset-3));
+}
+
+/* Blocks */
+.data-block {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+  box-shadow: 0 0 10px currentColor;
+}
+
+/* Logs */
+.engine-logs {
+  background: rgba(0,0,0,0.4);
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: #4ade80;
+  text-align: center;
+  border: 1px solid rgba(74, 222, 128, 0.2);
+}
+
+/* Metrics Footer */
+.data-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; }
+.d-metric { display: flex; flex-direction: column; gap: 0.5rem; }
+.d-val { font-size: 3.5rem; font-weight: 900; line-height: 1; color: var(--text-primary); }
+.d-unit { font-size: 1.5rem; color: var(--sunset-3); }
+.d-label { font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
 
 .mt-4 { margin-top: 2rem; width: 100%; }
 

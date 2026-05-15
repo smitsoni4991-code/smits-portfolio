@@ -1,22 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap');
 
 :root {
-  --bg-deep: #0f172a; /* Dark Navy */
-  --bg-card: rgba(30, 41, 59, 0.5);
-  --bg-card-hover: rgba(51, 65, 85, 0.6);
-  --sunset-1: #0f172a;
-  --sunset-2: #1e293b;
-  --sunset-3: #38bdf8; /* Electric Blue */
-  --sunset-4: #7dd3fc;
+  --bg-deep: #0f172a; /* Deep Navy */
+  --bg-card: rgba(30, 41, 59, 0.4);
+  --bg-card-hover: rgba(51, 65, 85, 0.5);
+  --sunset-1: #334155;
+  --sunset-2: #475569;
+  --sunset-3: #fde047; /* Gold */
+  --sunset-4: #fef08a;
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
-  --border: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(56, 189, 248, 0.4);
-  --accent-blue: #38bdf8;
+  --border: rgba(255, 255, 255, 0.05);
+  --border-hover: rgba(253, 224, 71, 0.3);
+  --accent-gold: #fde047;
   --radius: 0.75rem;
   --radius-sm: 0.5rem;
-  --glow-blue: rgba(56, 189, 248, 0.2);
+  --glow-gold: rgba(253, 224, 71, 0.1);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -159,16 +159,14 @@ nav.scrolled {
 }
 
 .hero h1 {
-  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 800; 
-  line-height: 1.15;
-  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
   color: var(--text-primary);
-  max-width: 900px;
-  margin-inline: auto;
 }
 .gradient-text {
-  background: linear-gradient(135deg, #fff 0%, var(--accent-blue) 100%);
+  background: linear-gradient(135deg, #fde047 0%, #f97316 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text;
 }

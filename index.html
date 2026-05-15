@@ -85,60 +85,59 @@
     </div>
   </section>
 
-  <!-- ─── Holographic ROI Dashboard (Theme 3) ─── -->
-  <section id="holographic-roi" class="container">
+  <!-- ─── Quality Transformation Engine: STLC Autopilot ─── -->
+  <section id="stlc-autopilot" class="container">
     <div class="exec-header fade-up">
-      <span class="section-label">Quality Economics</span>
-      <h2 class="exec-title">Holographic ROI Dashboard</h2>
-      <p class="exec-subtitle">Interactive analysis of how strategic quality engineering drives business value and operational savings.</p>
+      <span class="section-label">Strategic Leadership</span>
+      <h2 class="exec-title">Quality Transformation Engine</h2>
+      <p class="exec-subtitle">Interactive simulation of my end-to-end Quality Engineering leadership—orchestrating AI-assisted testing and governance for zero-leakage releases.</p>
     </div>
 
-    <div class="holographic-container fade-up">
-      <div class="glass-box roi-calculator">
-        <div class="calculator-header">
-          <span class="calc-icon">📊</span>
-          <h3>Strategy Impact Calculator</h3>
-        </div>
-        
-        <div class="slider-group">
-          <div class="slider-item">
-            <div class="slider-info">
-              <label>Monthly Release Volume</label>
-              <span id="val-releases">4</span>
-            </div>
-            <input type="range" id="input-releases" min="1" max="20" value="4" class="roi-slider">
+    <div class="autopilot-container glass-card fade-up">
+      <!-- Progressive Timeline Line -->
+      <div class="timeline-track">
+        <div class="timeline-progress" id="timeline-bar"></div>
+        <div class="timeline-step active" data-step="1"></div>
+        <div class="timeline-step" data-step="2"></div>
+        <div class="timeline-step" data-step="3"></div>
+        <div class="timeline-step" data-step="4"></div>
+        <div class="timeline-step" data-step="5"></div>
+      </div>
+
+      <div class="autopilot-layout">
+        <!-- Left: Stage Card -->
+        <div class="stage-content" id="stage-card">
+          <div class="stage-header">
+            <span class="stage-number">Step 01</span>
+            <h3 id="stage-title">Requirement Analysis</h3>
           </div>
-          
-          <div class="slider-item">
-            <div class="slider-info">
-              <label>Engineering Team Size</label>
-              <span id="val-team">12</span>
-            </div>
-            <input type="range" id="input-team" min="5" max="100" value="12" class="roi-slider">
+          <p id="stage-desc">Implementing "Shift-Left" by identifying edge cases and data gaps during the PRD phase, reducing downstream rework by 25%.</p>
+          <div class="stage-metric">
+            <span class="m-label">Impact:</span>
+            <span class="m-val" id="stage-impact">200+ Defects Prevented</span>
           </div>
         </div>
 
-        <div class="roi-output-grid">
-          <div class="roi-card-mini">
-            <span class="roi-card-label">Annual Savings</span>
-            <div class="roi-card-val" id="roi-savings">$142K</div>
+        <!-- Right: AI Insight Sidecar -->
+        <div class="ai-sidecar">
+          <div class="sidecar-header">
+            <span class="ai-pulse"></span>
+            <span>AI INSIGHT ENGINE</span>
           </div>
-          <div class="roi-card-mini">
-            <span class="roi-card-label">Time Reclaimed</span>
-            <div class="roi-card-val" id="roi-time">28%</div>
+          <div class="sidecar-body">
+            <p id="ai-insight-text">"Analyzing PRD for ambiguities... Detected 3 missing error-handling scenarios. Notifying product team."</p>
+          </div>
+          <div class="sidecar-footer">
+            <span class="tech-tag">NLP Analysis</span>
+            <span class="tech-tag">Risk Modeling</span>
           </div>
         </div>
       </div>
 
-      <div class="glass-box strategy-visualization">
-        <div class="hologram-glow"></div>
-        <div class="strategy-nodes">
-          <div class="s-node s-node-1">Shift-Left</div>
-          <div class="s-node s-node-2">AI-Automation</div>
-          <div class="s-node s-node-3">Risk-Modeling</div>
-          <div class="s-node s-node-center">ROI</div>
-        </div>
-        <p class="hologram-text">Hover to rotate strategy matrix</p>
+      <!-- Navigation Arrows -->
+      <div class="autopilot-nav">
+        <button id="prev-stlc" class="nav-btn">← PREV</button>
+        <button id="next-stlc" class="nav-btn">NEXT STEP →</button>
       </div>
     </div>
   </section>
@@ -623,35 +622,60 @@
       });
     });
 
-    // Holographic ROI Calculator Logic
-    const relInput = document.getElementById('input-releases');
-    const teamInput = document.getElementById('input-team');
-    const relVal = document.getElementById('val-releases');
-    const teamVal = document.getElementById('val-team');
-    const roiSavings = document.getElementById('roi-savings');
-    const roiTime = document.getElementById('roi-time');
+    // STLC Autopilot Logic
+    const stlcStages = [
+      { num: "01", title: "Requirement Analysis", desc: "Implementing 'Shift-Left' by identifying edge cases and data gaps during the PRD phase, reducing downstream rework by 25%.", impact: "200+ Defects Prevented", insight: "Analyzing PRD for ambiguities... Detected 3 missing error-handling scenarios. Notifying product team.", tags: ["NLP Analysis", "Risk Modeling"] },
+      { num: "02", title: "Automation Strategy", desc: "Architecting scalable Playwright & API frameworks. Transitioning from manual regression to 90% automation coverage across 21+ components.", impact: "↓ 70% Regression Time", insight: "Auto-generating baseline test scripts for new components... Integrating with CI/CD gates.", tags: ["Playwright", "CI/CD Gates"] },
+      { num: "03", title: "Execution & Data", desc: "Driving full-stack validation across Web, Mobile, API, and SQL. Leading complex data integrity checks for high-volume enterprise systems.", impact: "98% Coverage Stability", insight: "Monitoring execution logs... AI detected flaky locator pattern in Mobile UI. Self-healing logic applied.", tags: ["API/SQL", "Mobile Test"] },
+      { num: "04", title: "UAT Leadership", desc: "Orchestrating cross-functional UAT cycles with stakeholders. Leading 12+ business users through 100% scenario coverage in Retail/Telecom.", impact: "0.2% Defect Leakage", insight: "Summarizing UAT feedback... Extracting actionable quality insights for stakeholder dashboard.", tags: ["Stakeholders", "UAT Strategy"] },
+      { num: "05", title: "Release Readiness", desc: "Making data-backed Go/No-Go decisions. Providing executive-level risk reports to leadership for zero-impact production launches.", impact: "100% Launch Success", insight: "Aggregating metrics... All quality gates PASSED. Release confidence score: 99.8%.", tags: ["Release Mgmt", "Executive ROI"] }
+    ];
 
-    function updateROI() {
-      const releases = parseInt(relInput.value);
-      const team = parseInt(teamInput.value);
+    let currentStep = 0;
+    const bar = document.getElementById('timeline-bar');
+    const steps = document.querySelectorAll('.timeline-step');
+    const title = document.getElementById('stage-title');
+    const desc = document.getElementById('stage-desc');
+    const impact = document.getElementById('stage-impact');
+    const insightText = document.getElementById('ai-insight-text');
+    const numDisplay = document.querySelector('.stage-number');
+    const tagsContainer = document.querySelector('.sidecar-footer');
+
+    function updateAutopilot(index) {
+      currentStep = index;
+      const s = stlcStages[index];
       
-      relVal.textContent = releases;
-      teamVal.textContent = team;
+      // Update Content
+      numDisplay.textContent = `Step ${s.num}`;
+      title.textContent = s.title;
+      desc.textContent = s.desc;
+      impact.textContent = s.impact;
+      insightText.textContent = `"${s.insight}"`;
+      
+      // Update Tags
+      tagsContainer.innerHTML = s.tags.map(t => `<span class="tech-tag">${t}</span>`).join('');
 
-      // Logic: 
-      // Savings = (Releases * Team * $250 avg cost per hour saved)
-      const savings = Math.round((releases * team * 3200) / 1000);
-      const timeSaved = Math.round((releases * 5) + (team / 10));
-
-      roiSavings.textContent = `$${savings}K`;
-      roiTime.textContent = `${Math.min(timeSaved, 65)}%`;
+      // Update Visuals
+      bar.style.width = `${(index / (stlcStages.length - 1)) * 100}%`;
+      steps.forEach((step, i) => {
+        step.classList.toggle('active', i <= index);
+      });
     }
 
-    if (relInput) {
-      relInput.addEventListener('input', updateROI);
-      teamInput.addEventListener('input', updateROI);
-      updateROI();
-    }
+    document.getElementById('next-stlc')?.addEventListener('click', () => {
+      if (currentStep < stlcStages.length - 1) updateAutopilot(currentStep + 1);
+      else updateAutopilot(0);
+    });
+
+    document.getElementById('prev-stlc')?.addEventListener('click', () => {
+      if (currentStep > 0) updateAutopilot(currentStep - 1);
+      else updateAutopilot(stlcStages.length - 1);
+    });
+
+    // Handle timeline clicks
+    steps.forEach((step, i) => {
+      step.addEventListener('click', () => updateAutopilot(i));
+    });
   </script>
 </body>
 

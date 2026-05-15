@@ -223,41 +223,44 @@ nav.scrolled {
 .exec-subtitle { font-size: 1.1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
 .glass-card { background: rgba(30, 20, 50, 0.4); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 1.5rem; padding: 2.5rem; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.05); position: relative; overflow: hidden; }
 
-/* ─── Test Execution Heatmap ─── */
+/* ─── Cloud Architecture Radar ─── */
 .exec-header { text-align: center; margin-bottom: 3rem; }
 .exec-title { font-size: 3rem; font-weight: 800; margin-bottom: 1rem; background: linear-gradient(to right, var(--text-primary), var(--sunset-4)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -0.03em; }
 .exec-subtitle { font-size: 1.1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
 .text-gradient { background: linear-gradient(135deg, #f5f3ff 0%, #d946ef 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-.heatmap-dashboard { display: flex; flex-direction: column; gap: 2rem; margin-bottom: 4rem; }
+.radar-dashboard { display: flex; flex-direction: column; gap: 2rem; margin-bottom: 4rem; align-items: center; }
 
-/* Heatmap Container */
-.heatmap-container { background: rgba(10, 5, 20, 0.6); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem; }
-.heatmap-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: #aaa; }
-.pulse-status { display: flex; align-items: center; gap: 8px; color: #4ade80; font-weight: bold; }
-.live-dot { width: 8px; height: 8px; background: #4ade80; border-radius: 50%; box-shadow: 0 0 10px #4ade80; animation: blink 0.8s infinite alternate; }
+/* Radar Container */
+.radar-container { position: relative; width: 350px; height: 350px; border-radius: 50%; background: rgba(10, 5, 20, 0.8); border: 2px solid rgba(139, 92, 246, 0.3); box-shadow: inset 0 0 50px rgba(139, 92, 246, 0.2), 0 0 30px rgba(0,0,0,0.5); overflow: hidden; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
 
-/* Grid */
-.heatmap-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(18px, 1fr)); gap: 4px; }
-.heat-cell { width: 100%; aspect-ratio: 1; background: rgba(255,255,255,0.05); border-radius: 3px; transition: background 0.3s ease, box-shadow 0.3s ease; border: 1px solid rgba(255,255,255,0.02); }
+/* Rings */
+.radar-ring { position: absolute; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 50%; }
+.ring-1 { width: 100px; height: 100px; }
+.ring-2 { width: 200px; height: 200px; }
+.ring-3 { width: 300px; height: 300px; border: 1px dashed rgba(255,255,255,0.05); }
 
-/* Cell States */
-.heat-pass { background: #22c55e; box-shadow: 0 0 8px rgba(34, 197, 94, 0.4); border-color: rgba(34, 197, 94, 0.5); }
-.heat-run { background: #eab308; box-shadow: 0 0 10px rgba(234, 179, 8, 0.6); animation: cell-pulse 0.5s infinite alternate; border-color: rgba(234, 179, 8, 0.5); }
-.heat-fail { background: #ef4444; box-shadow: 0 0 8px rgba(239, 68, 68, 0.6); border-color: rgba(239, 68, 68, 0.5); }
+/* Sweeping Beam */
+.radar-sweep { position: absolute; top: 50%; left: 50%; width: 175px; height: 175px; background: conic-gradient(from 0deg, rgba(34, 197, 94, 0) 70%, rgba(34, 197, 94, 0.6) 100%); transform-origin: 0% 0%; animation: radar-spin 4s linear infinite; border-right: 2px solid #4ade80; z-index: 1; }
+@keyframes radar-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
-@keyframes cell-pulse { from { opacity: 0.6; transform: scale(0.9); } to { opacity: 1; transform: scale(1.1); } }
+/* Center Hub */
+.radar-center { position: absolute; width: 40px; height: 40px; background: #1e1b4b; border: 2px solid var(--sunset-3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: bold; color: #fff; z-index: 5; box-shadow: 0 0 15px var(--sunset-3); }
 
-/* Live Log */
-.live-log { background: #0a0a0c; border: 1px solid #222; border-radius: 8px; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; overflow: hidden; box-shadow: inset 0 5px 15px rgba(0,0,0,0.5); }
-.log-header { background: #1a1a1c; padding: 0.5rem 1rem; color: #888; border-bottom: 1px solid #222; font-weight: bold; letter-spacing: 0.05em; }
-.log-body { padding: 1rem; height: 120px; overflow-y: hidden; display: flex; flex-direction: column; justify-content: flex-end; gap: 0.3rem; }
-.log-line { color: #ccc; animation: log-fade 0.3s ease-out; }
-.log-time { color: #569cd6; }
-.log-success { color: #4ade80; font-weight: bold; }
-.log-warn { color: #fbbf24; font-weight: bold; }
-.log-err { color: #ef4444; font-weight: bold; }
-@keyframes log-fade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+/* Orbiting Nodes */
+.radar-node { position: absolute; width: 30px; height: 30px; background: #111; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; z-index: 10; transition: 0.3s ease; box-shadow: 0 0 10px rgba(0,0,0,0.5); }
+.node-s3 { top: 20%; left: 30%; }
+.node-rds { top: 60%; left: 80%; }
+.node-ec2 { top: 75%; left: 25%; }
+.node-lambda { top: 30%; left: 70%; }
+
+/* Ping Animation */
+.radar-node.pinged { background: rgba(34, 197, 94, 0.2); border-color: #4ade80; box-shadow: 0 0 15px #4ade80; transform: scale(1.2); }
+
+/* Live Tooltip */
+.radar-tooltip { position: absolute; bottom: 15px; background: rgba(0, 0, 0, 0.8); border: 1px solid #4ade80; color: #4ade80; padding: 0.3rem 0.8rem; border-radius: 12px; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; font-weight: bold; z-index: 20; opacity: 0; transition: opacity 0.2s; pointer-events: none; }
+
+.mt-4 { margin-top: 2rem; width: 100%; }
 
 /* ─── Section Styles ─── */
 section { padding: 5rem 0; }

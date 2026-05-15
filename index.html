@@ -85,81 +85,68 @@
     </div>
   </section>
 
-  <!-- ─── Data Pipeline & BI Observatory ─── -->
-  <section id="data-observatory" class="container">
+  <!-- ─── Microservice Architecture Matrix ─── -->
+  <section id="microservice-matrix" class="container">
     <div class="exec-header fade-up">
-      <h2 class="exec-title">Data Quality & BI Architecture</h2>
-      <p class="exec-subtitle">Ensuring 100% data integrity from backend SQL/AWS databases directly into Tableau stakeholder dashboards.</p>
+      <h2 class="exec-title">Enterprise API & Microservices</h2>
+      <p class="exec-subtitle">Scaling automated contract testing and E2E integration across 21+ distributed microservices.</p>
     </div>
 
-    <div class="data-dashboard glass-card fade-up">
-      <div class="flow-diagram">
-        
-        <!-- Left: Data Sources -->
-        <div class="flow-column">
-          <div class="flow-node source-node">
-            <span class="node-icon">🗄️</span>
-            <span class="node-label">SQL Server DB</span>
-          </div>
-          <div class="flow-node source-node">
-            <span class="node-icon">☁️</span>
-            <span class="node-label">AWS Cloud Data</span>
-          </div>
-          <div class="flow-node source-node">
-            <span class="node-icon">🔌</span>
-            <span class="node-label">External APIs</span>
-          </div>
+    <div class="matrix-dashboard glass-card fade-up">
+      
+      <!-- Node Graph Map -->
+      <div class="node-map">
+        <!-- Central Gateway -->
+        <div class="center-node pulse-node">
+          <span class="node-icon">🌐</span>
+          <span class="node-label">API Gateway</span>
         </div>
 
-        <!-- Connection 1 -->
-        <div class="flow-path">
-          <div class="data-packet"></div>
-          <div class="data-packet delay-1"></div>
-          <div class="data-packet delay-2"></div>
-        </div>
+        <!-- Orbiting Service Nodes (CSS positions them) -->
+        <div class="service-node svc-1"><span>Auth Svc</span><div class="status-dot"></div></div>
+        <div class="service-node svc-2"><span>Payment Svc</span><div class="status-dot"></div></div>
+        <div class="service-node svc-3"><span>Cart Svc</span><div class="status-dot"></div></div>
+        <div class="service-node svc-4"><span>Inventory Svc</span><div class="status-dot"></div></div>
+        <div class="service-node svc-5"><span>User Svc</span><div class="status-dot"></div></div>
+        <div class="service-node svc-6"><span>Notification Svc</span><div class="status-dot"></div></div>
 
-        <!-- Middle: Validation Engine -->
-        <div class="flow-column center-col">
-          <div class="engine-node">
-            <div class="engine-core"></div>
-            <span class="node-icon">⚙️</span>
-            <span class="node-label">QA Validation Engine</span>
-            <div class="engine-status">Running Rulesets...</div>
-          </div>
-        </div>
-
-        <!-- Connection 2 -->
-        <div class="flow-path">
-          <div class="data-packet success-packet"></div>
-          <div class="data-packet success-packet delay-2"></div>
-        </div>
-
-        <!-- Right: BI Dashboard -->
-        <div class="flow-column">
-          <div class="flow-node target-node">
-            <span class="node-icon">📊</span>
-            <span class="node-label">Tableau BI Reports</span>
-            <span class="badge">100% Accurate</span>
-          </div>
-        </div>
-
+        <!-- Connection Lines (SVG) -->
+        <svg class="node-connections">
+          <line x1="50%" y1="50%" x2="15%" y2="15%" class="conn-line"></line>
+          <line x1="50%" y1="50%" x2="85%" y2="15%" class="conn-line"></line>
+          <line x1="50%" y1="50%" x2="8%" y2="50%" class="conn-line"></line>
+          <line x1="50%" y1="50%" x2="92%" y2="50%" class="conn-line"></line>
+          <line x1="50%" y1="50%" x2="25%" y2="85%" class="conn-line"></line>
+          <line x1="50%" y1="50%" x2="75%" y2="85%" class="conn-line"></line>
+        </svg>
       </div>
 
-      <!-- Dashboard Metrics -->
+      <!-- Live Test Log Simulation -->
+      <div class="live-log">
+        <div class="log-header">Live Contract Test Execution (Tail)</div>
+        <div class="log-body" id="api-log-body">
+          <div class="log-line">➔ <span class="log-time">10:41:02</span> [API Gateway] Handshake OK</div>
+          <div class="log-line">➔ <span class="log-time">10:41:03</span> [Auth Svc] Contract validated: <span class="log-success">PASS</span></div>
+          <div class="log-line">➔ <span class="log-time">10:41:04</span> [Payment Svc] Latency < 50ms: <span class="log-success">PASS</span></div>
+        </div>
+      </div>
+
+      <!-- Matrix Metrics -->
       <div class="data-metrics">
         <div class="d-metric">
-          <div class="d-val">4.2<span class="d-unit">M</span></div>
-          <div class="d-label">Rows Validated Daily</div>
+          <div class="d-val">98<span class="d-unit">%</span></div>
+          <div class="d-label">API Contract Coverage</div>
         </div>
         <div class="d-metric">
-          <div class="d-val">12</div>
-          <div class="d-label">Schema Drifts Blocked</div>
+          <div class="d-val text-gradient">21<span class="d-unit">+</span></div>
+          <div class="d-label">Microservices Validated</div>
         </div>
         <div class="d-metric">
-          <div class="d-val text-gradient">100<span class="d-unit">%</span></div>
-          <div class="d-label">BI Data Integrity</div>
+          <div class="d-val">0</div>
+          <div class="d-label">P1 Regressions</div>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -643,7 +630,44 @@
       });
     });
 
+    // Microservice Matrix Logic
+    const logBody = document.getElementById('api-log-body');
+    const svcs = ['Auth Svc', 'Payment Svc', 'Cart Svc', 'Inventory Svc', 'User Svc', 'Notification Svc'];
+    
+    if(logBody) {
+      setInterval(() => {
+        const nodes = document.querySelectorAll('.service-node .status-dot');
+        if(!nodes.length) return;
+        
+        // Pick random service
+        const idx = Math.floor(Math.random() * svcs.length);
+        const svcName = svcs[idx];
+        const dot = nodes[idx];
+        
+        // Visual node change
+        dot.classList.add('testing');
+        
+        // Log line 1 (Testing)
+        const time = new Date().toLocaleTimeString('en-US', { hour12: false });
+        const line1 = document.createElement('div');
+        line1.className = 'log-line';
+        line1.innerHTML = `➔ <span class="log-time">${time}</span> [${svcName}] Executing contract test... <span class="log-warn">RUNNING</span>`;
+        logBody.appendChild(line1);
+        if(logBody.children.length > 5) logBody.removeChild(logBody.firstChild);
 
+        // Resolve after 1.5s
+        setTimeout(() => {
+          dot.classList.remove('testing');
+          const time2 = new Date().toLocaleTimeString('en-US', { hour12: false });
+          const line2 = document.createElement('div');
+          line2.className = 'log-line';
+          line2.innerHTML = `➔ <span class="log-time">${time2}</span> [${svcName}] Contract validated: <span class="log-success">PASS</span>`;
+          logBody.appendChild(line2);
+          if(logBody.children.length > 5) logBody.removeChild(logBody.firstChild);
+        }, 1500);
+        
+      }, 3000);
+    }
   </script>
 </body>
 

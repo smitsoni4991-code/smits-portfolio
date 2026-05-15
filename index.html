@@ -165,11 +165,10 @@
           <h2>Ask My AI Assistant</h2>
           <p>I built this AI chat interface to quickly answer your questions about my Quality Engineering expertise. Select a prompt below to see it in action.</p>
           <div class="ai-prompts">
-            <button class="ai-prompt-btn" data-question="q1">How do you lead QA strategy across enterprise microservices?</button>
+            <button class="ai-prompt-btn" data-question="q1">How did you reduce production bugs by 35%?</button>
             <button class="ai-prompt-btn" data-question="q2">What is your Playwright automation strategy?</button>
             <button class="ai-prompt-btn" data-question="q3">How do you leverage AI in testing?</button>
-            <button class="ai-prompt-btn" data-question="q4">What is your approach to CI/CD and release gating?</button>
-            <button class="ai-prompt-btn" data-question="q5">How do you validate Data Quality and Tableau BI?</button>
+            <button class="ai-prompt-btn" data-question="q4">How do you manage and mentor your QA teams?</button>
           </div>
         </div>
         <div class="ai-chat-window card fade-up delay-1">
@@ -598,11 +597,10 @@
     const typingIndicator = document.getElementById('aiChatTyping');
     
     const responses = {
-      'q1': "As a Senior Lead, I focus on a 'Shift-Left' architecture. I define strict quality gates in the CI/CD pipeline, enforce API contract testing early, and ensure my teams build reusable automation frameworks that scale seamlessly across 21+ distributed microservices.",
+      'q1': "By shifting left! I implemented automated API contracts and E2E Playwright gates directly into the CI/CD pipeline, catching defects before they ever reached the main branch.",
       'q2': "I build scalable, data-driven Playwright frameworks. I focus on reusable page-objects, parallel execution for speed, and integrating with CI tools to ensure 98%+ coverage.",
       'q3': "I use custom AI tools (like Kiro) to auto-generate baseline test scripts, analyze failure logs instantly, and dynamically generate complex test data, cutting test creation time in half.",
-      'q4': "My philosophy is that CI/CD should be a fortress, not a bottleneck. I integrate Playwright and automated API tests as mandatory checks in GitHub Actions/Jenkins. If coverage drops or a critical flow fails, the deployment is automatically blocked. Zero human intervention needed.",
-      'q5': "Data is just as critical as the UI. I build automated data validation pipelines to ensure the integrity of backend databases (SQL/AWS) before they feed into Tableau BI dashboards, guaranteeing that stakeholders make decisions on 100% accurate data."
+      'q4': "I manage cross-functional teams of up to 6 SDETs. My management style is focused on mentorship and growth—I lead by example through hands-on code reviews, pair programming, and upskilling my team in modern tools like Playwright and AI-assisted testing."
     };
 
     document.querySelectorAll('.ai-prompt-btn').forEach(btn => {

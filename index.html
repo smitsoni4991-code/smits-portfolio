@@ -85,77 +85,99 @@
     </div>
   </section>
 
-  <!-- ─── Observability Dashboard ─── -->
-  <section id="observability" class="container" style="padding: 2rem 0;">
-    <div class="dashboard-wrapper fade-up">
-      <div class="dashboard-header">
-        <div class="dashboard-title">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
-          Smit.QA.Observability
+  <!-- ─── Extraordinary Observability Console ─── -->
+  <section id="observability" class="container">
+    <div class="master-console fade-up">
+      <!-- Console Header -->
+      <div class="console-header">
+        <div class="console-branding">
+          <span class="blinking-cursor">_</span> SMIT.AI.QA_CORE_V2.0
         </div>
-        <div class="dashboard-status">
-          <span class="status-dot green"></span>
-          All Pipelines Passing
+        <div class="console-status">
+          <span class="pulse-ring"></span> SYSTEM SECURE & OBSERVING
         </div>
       </div>
-      <div class="dashboard-grid">
-        <!-- Panel 1: Main Metric -->
-        <div class="dashboard-panel">
-          <div class="panel-title">End-to-End Test Coverage</div>
-          <div class="panel-value highlight">98.4%</div>
-          <div class="panel-subtitle trend-up">↑ 12% since AI Integration</div>
-          <div class="mini-chart">
-            <div class="bar" style="height: 30%"></div>
-            <div class="bar" style="height: 40%"></div>
-            <div class="bar" style="height: 45%"></div>
-            <div class="bar" style="height: 60%"></div>
-            <div class="bar" style="height: 75%"></div>
-            <div class="bar" style="height: 85%"></div>
-            <div class="bar" style="height: 92%"></div>
-            <div class="bar highlight-bar" style="height: 100%"></div>
-          </div>
-        </div>
+      
+      <!-- Console Body Grid -->
+      <div class="console-grid">
         
-        <!-- Panel 2: Defect Leakage -->
-        <div class="dashboard-panel">
-          <div class="panel-title">Production Defect Leakage</div>
-          <div class="panel-value" style="color: #3fb950;">↓ 35%</div>
-          <div class="panel-subtitle">YOY Improvement</div>
-          <div class="leakage-indicator">
-            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #8b949e; margin-bottom: 0.25rem;">
-              <span>Current Rate: 2%</span>
-              <span>Target: < 5%</span>
+        <!-- Left Column: Terminal & Radar -->
+        <div class="console-col-left">
+          <div class="console-panel terminal-panel">
+            <div class="panel-header">LIVE_EXECUTION_LOGS</div>
+            <div class="terminal-window" id="simulatedTerminal">
+              <div>> Initializing AI QA Agents...</div>
+              <div style="color: #4ade80;">> Connected to Playwright Hub</div>
             </div>
-            <div class="leakage-track"><div class="leakage-fill" style="width: 25%"></div></div>
+          </div>
+          
+          <div class="console-panel radar-panel">
+            <div class="panel-header">AI_ANOMALY_DETECTION</div>
+            <div class="radar-container">
+              <div class="radar"></div>
+              <div class="radar-text">NO LEAKAGE DETECTED</div>
+            </div>
           </div>
         </div>
 
-        <!-- Panel 3: Pipeline Status -->
-        <div class="dashboard-panel col-span-2">
-          <div class="panel-title">Live CI/CD Pipelines</div>
-          <div class="pipeline-list">
-            <div class="pipeline-item">
-              <span class="pipeline-name">web-regression-playwright</span>
-              <span class="pipeline-time">12s ago</span>
-              <span class="pipeline-badge success">PASS</span>
+        <!-- Middle Column: Heatmap & Big Metrics -->
+        <div class="console-col-mid">
+          <div class="console-panel metric-panel">
+            <div class="panel-header">SYSTEM_COVERAGE</div>
+            <div class="metric-value">98.4<span class="metric-percent">%</span></div>
+            <div class="audio-bars">
+               <div class="abar"></div><div class="abar"></div><div class="abar"></div><div class="abar"></div><div class="abar"></div><div class="abar"></div><div class="abar"></div><div class="abar"></div>
             </div>
-            <div class="pipeline-item">
-              <span class="pipeline-name">mobile-ios-e2e-suite</span>
-              <span class="pipeline-time">4m ago</span>
-              <span class="pipeline-badge success">PASS</span>
-            </div>
-            <div class="pipeline-item">
-              <span class="pipeline-name">data-bi-tableau-validation</span>
-              <span class="pipeline-time">14m ago</span>
-              <span class="pipeline-badge success">PASS</span>
-            </div>
-            <div class="pipeline-item">
-              <span class="pipeline-name">ai-script-generator-kiro</span>
-              <span class="pipeline-time">1h ago</span>
-              <span class="pipeline-badge success">PASS</span>
+          </div>
+          
+          <div class="console-panel heatmap-panel">
+            <div class="panel-header">MICROSERVICE_HEALTH_MATRIX</div>
+            <div class="heatmap-grid" id="heatmapGrid">
+              <!-- JS Populated -->
             </div>
           </div>
         </div>
+
+        <!-- Right Column: Pipelines -->
+        <div class="console-col-right">
+          <div class="console-panel pipeline-panel">
+            <div class="panel-header">ACTIVE_PIPELINES</div>
+            <div class="pipeline-flow">
+              <div class="flow-step success">
+                <span class="step-icon">📦</span>
+                <div class="step-info">
+                  <div class="step-name">Code Commit</div>
+                  <div class="step-meta">Static AI Analysis: PASS</div>
+                </div>
+              </div>
+              <div class="flow-line"></div>
+              <div class="flow-step success">
+                <span class="step-icon">🤖</span>
+                <div class="step-info">
+                  <div class="step-name">Test Generation</div>
+                  <div class="step-meta">Kiro CLI: Scripts Ready</div>
+                </div>
+              </div>
+              <div class="flow-line"></div>
+              <div class="flow-step active-pulse">
+                <span class="step-icon">🎭</span>
+                <div class="step-info">
+                  <div class="step-name">Playwright E2E</div>
+                  <div class="step-meta" style="color:var(--sunset-3);">Executing 402 tests...</div>
+                </div>
+              </div>
+              <div class="flow-line"></div>
+              <div class="flow-step pending">
+                <span class="step-icon">🚀</span>
+                <div class="step-info">
+                  <div class="step-name">Prod Deployment</div>
+                  <div class="step-meta">Awaiting QA Gate</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
       </div>
     </div>
   </section>
@@ -637,6 +659,44 @@
         }, 1500);
       });
     });
+
+    // Master Console Dashboard Logic
+    const heatmap = document.getElementById('heatmapGrid');
+    if (heatmap) {
+      for(let i=0; i<40; i++) {
+        const box = document.createElement('div');
+        box.className = 'heat-box';
+        heatmap.appendChild(box);
+      }
+      setInterval(() => {
+        const boxes = heatmap.querySelectorAll('.heat-box');
+        const randomIdx = Math.floor(Math.random() * boxes.length);
+        boxes[randomIdx].classList.add('active');
+        setTimeout(() => boxes[randomIdx].classList.remove('active'), 800);
+      }, 800);
+    }
+
+    const terminal = document.getElementById('simulatedTerminal');
+    if (terminal) {
+      const logs = [
+        "> Running E2E regression suite...",
+        "> 21 microservices active.",
+        "> AI Anomaly detection: OK",
+        "> Playwright workers: 4",
+        "> Injecting test data via API...",
+        "> Verifying Tableau BI Dashboards...",
+        "> No layout shifts detected.",
+        "> Suite passed in 1m 24s."
+      ];
+      let logIdx = 0;
+      setInterval(() => {
+        const div = document.createElement('div');
+        div.innerText = logs[logIdx % logs.length];
+        terminal.appendChild(div);
+        terminal.scrollTop = terminal.scrollHeight;
+        logIdx++;
+      }, 2000);
+    }
   </script>
 </body>
 

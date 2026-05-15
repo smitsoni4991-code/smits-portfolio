@@ -148,27 +148,34 @@ nav.scrolled {
 .hero-eyebrow {
   display: block;
   font-family: 'Inter', sans-serif;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--accent-emerald);
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  color: var(--accent-gold);
+  margin-bottom: 1.5rem;
+  font-size: 0.8rem;
+  opacity: 0.8;
 }
 
 .hero h1 {
-  font-size: clamp(2.5rem, 8vw, 5.5rem);
-  font-weight: 900; line-height: 0.95;
-  margin-bottom: 2rem;
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-weight: 900; 
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
 }
 .gradient-text {
-  color: var(--accent-lime);
+  color: var(--accent-gold);
 }
 
 .hero-subtitle {
-  font-size: 1.25rem; color: var(--text-secondary);
-  margin-bottom: 2rem; font-weight: 400; max-width: 700px; margin-inline: auto;
-  border-left: 2px solid var(--accent-lime); padding-left: 1.5rem;
+  font-size: 1.15rem; 
+  color: var(--text-secondary);
+  margin-bottom: 2rem; 
+  font-weight: 400; 
+  max-width: 650px; 
+  margin-inline: auto;
+  line-height: 1.6;
 }
 
 .hero-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-bottom: 2rem; }

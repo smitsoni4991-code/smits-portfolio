@@ -109,6 +109,41 @@
     </div>
   </div>
 
+  <!-- ─── AI Assistant Chat ─── -->
+  <section id="ai-assistant">
+    <div class="container">
+      <div class="ai-chat-layout">
+        <div class="ai-chat-info fade-up">
+          <span class="section-label">Interactive Resume</span>
+          <h2>Ask My AI Assistant</h2>
+          <p>I built this AI chat interface to quickly answer your questions about my Quality Engineering expertise. Select a prompt below to see it in action.</p>
+          <div class="ai-prompts">
+            <button class="ai-prompt-btn" data-question="playwright">"What is Smit's experience with Playwright?"</button>
+            <button class="ai-prompt-btn" data-question="ai">"How does Smit use AI in testing?"</button>
+            <button class="ai-prompt-btn" data-question="leadership">"Tell me about his leadership skills."</button>
+          </div>
+        </div>
+        <div class="ai-chat-window card fade-up delay-1">
+          <div class="ai-chat-header">
+            <div class="ai-avatar">🤖</div>
+            <div>
+              <div class="ai-name">Smit's QA-Bot</div>
+              <div class="ai-status">Online and ready</div>
+            </div>
+          </div>
+          <div class="ai-chat-messages" id="aiChatMessages">
+            <div class="message ai-message">
+              Hi! I'm an AI assistant trained on Smit's professional background. Click a question on the left to learn more about his expertise!
+            </div>
+          </div>
+          <div class="ai-chat-typing" id="aiChatTyping" style="display: none;">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ─── About ─── -->
   <section id="about">
     <div class="container">
@@ -506,6 +541,49 @@
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => {
         document.getElementById('navLinks').classList.remove('open');
+      });
+    });
+
+    // AI Chat Interface Logic
+    const chatMessages = document.getElementById('aiChatMessages');
+    const typingIndicator = document.getElementById('aiChatTyping');
+    
+    const responses = {
+      playwright: "Smit has extensive experience with Playwright. He uses it as his primary automation framework to build robust, end-to-end regression suites for complex Web and Mobile workflows using TypeScript. He has successfully integrated these suites into CI/CD pipelines to catch defects early.",
+      ai: "Smit is a pioneer in 'Shift-Left' AI testing. He actively utilizes AI-assisted workflows (like Kiro CLI) to rapidly generate automation scripts, perform root-cause analysis on failing tests, and create automated release-readiness summaries, significantly accelerating engineering velocity.",
+      leadership: "Smit is a proven Quality Engineering Leader. He has directed cross-functional SDET teams of up to 6 engineers across enterprise projects. He excels at defining full-stack test strategies, mentoring junior engineers, and communicating complex quality metrics to executive stakeholders."
+    };
+
+    document.querySelectorAll('.ai-prompt-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const questionKey = this.getAttribute('data-question');
+        const questionText = this.innerText.replace(/"/g, '');
+        
+        // Add User Message
+        const userMsg = document.createElement('div');
+        userMsg.className = 'message user-message fade-up visible';
+        userMsg.innerText = questionText;
+        chatMessages.appendChild(userMsg);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+
+        // Show typing
+        typingIndicator.style.display = 'flex';
+        
+        // Disable buttons temporarily
+        document.querySelectorAll('.ai-prompt-btn').forEach(b => b.disabled = true);
+
+        // Simulate AI response delay
+        setTimeout(() => {
+          typingIndicator.style.display = 'none';
+          
+          const aiMsg = document.createElement('div');
+          aiMsg.className = 'message ai-message fade-up visible';
+          aiMsg.innerText = responses[questionKey];
+          chatMessages.appendChild(aiMsg);
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+          
+          document.querySelectorAll('.ai-prompt-btn').forEach(b => b.disabled = false);
+        }, 1500);
       });
     });
   </script>

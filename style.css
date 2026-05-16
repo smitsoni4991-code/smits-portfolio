@@ -237,78 +237,78 @@ nav.scrolled {
 }
 .stat-label { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; margin-top: 0.25rem; }
 
-/* ─── Quality Blueprint (Approach A) ─── */
-.blueprint-card { margin-top: 3rem; background: #0a0f1e; border: 1px solid rgba(255,255,255,0.05); position: relative; }
-.blueprint-layout { display: grid; grid-template-columns: 1fr 340px; min-height: 550px; }
+/* ─── Neural Pipeline (Approach D) ─── */
+.pipeline-card { margin-top: 3rem; padding: 4rem 2rem; background: #050508; border: 1px solid rgba(255,255,255,0.05); overflow: hidden; }
 
-/* Visual Area */
-.blueprint-visual { 
-  position: relative; background: #050814; overflow: hidden; 
-  display: flex; align-items: center; justify-content: center;
+/* The Conduit */
+.pipeline-visual { 
+  position: relative; height: 120px; margin-bottom: 4rem; 
+  display: flex; align-items: center; justify-content: space-between;
 }
-.blueprint-grid {
-  position: absolute; inset: 0; 
-  background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-  background-size: 20px 20px;
-}
-
-.blueprint-svg { width: 100%; max-width: 450px; position: relative; z-index: 1; }
-.bp-line { fill: none; stroke: rgba(255,255,255,0.05); stroke-width: 1; }
-.bp-ring { fill: none; stroke: rgba(255,255,255,0.03); stroke-width: 1; stroke-dasharray: 5; }
-
-/* Live Scanner Ray */
-.bp-ray { 
-  stroke: var(--accent-gold); 
-  stroke-width: 2; 
-  stroke-linecap: round;
-  opacity: 0.6;
-  filter: drop-shadow(0 0 8px var(--accent-gold));
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+.pipeline-conduit {
+  position: absolute; left: 0; right: 0; top: 50%; height: 4px; 
+  background: rgba(255,255,255,0.05); transform: translateY(-50%);
+  box-shadow: 0 0 20px rgba(253, 224, 71, 0.05);
 }
 
-.bp-node { cursor: pointer; transition: all 0.4s; }
-.bp-node circle { fill: #0a0f1e; stroke: rgba(255,255,255,0.2); stroke-width: 2; transition: all 0.4s; }
-.bp-node text { font-size: 8px; font-weight: 800; fill: var(--text-muted); pointer-events: none; }
-
-.bp-node:hover circle { stroke: var(--accent-gold); filter: drop-shadow(0 0 8px var(--accent-gold)); }
-.bp-node.active circle { 
-  fill: var(--accent-gold); 
-  stroke: var(--accent-gold); 
-  filter: drop-shadow(0 0 15px var(--accent-gold));
-  animation: nodePulse 2s infinite;
+/* Particles */
+.pipeline-particles { position: absolute; inset: 0; pointer-events: none; }
+.particle {
+  position: absolute; top: 50%; width: 6px; height: 6px; 
+  background: var(--accent-gold); border-radius: 50%;
+  filter: blur(1px) drop-shadow(0 0 10px var(--accent-gold));
+  animation: particleFlow 4s linear infinite;
 }
-.bp-node.active text { fill: #fff; font-weight: 900; }
+.p1 { animation-delay: 0s; }
+.p2 { animation-delay: 1.5s; }
+.p3 { animation-delay: 3s; }
 
-@keyframes nodePulse {
-  0% { r: 12; stroke-opacity: 1; }
-  50% { r: 16; stroke-opacity: 0.5; }
-  100% { r: 12; stroke-opacity: 1; }
-}
-
-/* Intelligence Panel */
-.blueprint-panel { padding: 3.5rem 2.5rem; background: rgba(255,255,255,0.02); border-left: 1px solid rgba(255,255,255,0.05); }
-.panel-header { margin-bottom: 2rem; }
-.panel-header span { font-size: 0.65rem; font-weight: 900; color: var(--accent-gold); letter-spacing: 0.2em; display: block; margin-bottom: 0.5rem; }
-.panel-header h3 { font-size: 1.75rem; color: #fff; line-height: 1.2; }
-
-.blueprint-panel p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 3rem; }
-
-.bp-stats { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 3rem; }
-.bp-stat-item { border-left: 2px solid rgba(255,255,255,0.05); padding-left: 1.25rem; }
-.bps-label { font-size: 0.65rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.4rem; }
-.bps-val { font-size: 1.15rem; font-weight: 700; color: #fff; }
-
-.bp-layers { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.layer-tag { 
-  font-size: 0.65rem; font-weight: 800; color: var(--accent-gold); 
-  padding: 0.3rem 0.6rem; background: rgba(253, 224, 71, 0.05); 
-  border: 1px solid rgba(253, 224, 71, 0.15); border-radius: 0.3rem; 
-  text-transform: uppercase;
+@keyframes particleFlow {
+  0% { left: -5%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { left: 105%; opacity: 0; }
 }
 
-@media (max-width: 1100px) {
-  .blueprint-layout { grid-template-columns: 1fr; }
-  .blueprint-panel { border-left: none; border-top: 1px solid rgba(255,255,255,0.05); }
+/* Gates */
+.pipeline-gates { position: relative; width: 100%; display: flex; justify-content: space-between; z-index: 2; }
+.gate { position: relative; display: flex; flex-direction: column; align-items: center; cursor: pointer; }
+.gate span { font-size: 0.65rem; font-weight: 800; color: var(--text-muted); margin-bottom: 1rem; letter-spacing: 0.1em; transition: all 0.3s; }
+.gate-light { 
+  width: 14px; height: 14px; background: #111; border: 2px solid #222; border-radius: 50%; 
+  transition: all 0.4s; position: relative;
+}
+.gate.active span { color: #fff; font-weight: 900; transform: translateY(-5px); }
+.gate.active .gate-light { 
+  background: var(--accent-gold); border-color: #fff; 
+  box-shadow: 0 0 20px var(--accent-gold), 0 0 40px rgba(253, 224, 71, 0.3);
+}
+.gate.active::after {
+  content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 40px; height: 40px; border: 1px solid rgba(253, 224, 71, 0.2); border-radius: 50%;
+  animation: gateRipple 2s infinite;
+}
+
+@keyframes gateRipple {
+  0% { width: 20px; height: 20px; opacity: 1; }
+  100% { width: 60px; height: 60px; opacity: 0; }
+}
+
+/* Panel */
+.pipeline-panel { padding: 2.5rem; background: rgba(255,255,255,0.02); border-radius: 1.5rem; border: 1px solid rgba(255,255,255,0.05); }
+.panel-main { display: flex; justify-content: space-between; align-items: center; }
+.panel-left h3 { font-size: 1.5rem; color: #fff; margin-bottom: 0.5rem; }
+.panel-left p { font-size: 0.95rem; color: var(--text-secondary); max-width: 400px; }
+
+.panel-right { display: flex; gap: 3rem; }
+.pipe-stat { display: flex; flex-direction: column; }
+.ps-label { font-size: 0.65rem; font-weight: 800; color: var(--text-muted); letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+.ps-val { font-size: 1.25rem; font-weight: 800; color: var(--accent-gold); }
+
+@media (max-width: 900px) {
+  .panel-main { flex-direction: column; gap: 2rem; align-items: flex-start; }
+  .panel-right { gap: 1.5rem; }
+  .gate span { font-size: 0.55rem; }
 }
 
 /* ─── Section Styles ─── */

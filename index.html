@@ -84,40 +84,43 @@
             <path d="M200,50 L200,350 M50,200 L350,200" class="bp-line" />
             <circle cx="200" cy="200" r="140" class="bp-ring" />
             
+            <!-- Live Scanner Ray -->
+            <line id="bp-scanner-ray" x1="200" y1="200" x2="200" y2="50" class="bp-ray" />
+
             <!-- Nodes -->
-            <g class="bp-node" data-stage="requirements" style="transform: translate(200px, 50px)">
+            <g class="bp-node" data-stage="requirements" data-x="200" data-y="50" style="transform: translate(200px, 50px)">
               <circle r="12" />
               <text y="30" text-anchor="middle">REQS</text>
             </g>
-            <g class="bp-node" data-stage="risk" style="transform: translate(310px, 110px)">
+            <g class="bp-node" data-stage="risk" data-x="310" data-y="110" style="transform: translate(310px, 110px)">
               <circle r="12" />
               <text y="30" text-anchor="middle">RISK</text>
             </g>
-            <g class="bp-node" data-stage="strategy" style="transform: translate(350px, 200px)">
+            <g class="bp-node" data-stage="strategy" data-x="350" data-y="200" style="transform: translate(350px, 200px)">
               <circle r="12" />
               <text y="30" text-anchor="middle">STRAT</text>
             </g>
-            <g class="bp-node" data-stage="design" style="transform: translate(310px, 290px)">
+            <g class="bp-node" data-stage="design" data-x="310" data-y="290" style="transform: translate(310px, 290px)">
               <circle r="12" />
               <text y="30" text-anchor="middle">DESIGN</text>
             </g>
-            <g class="bp-node" data-stage="validation" style="transform: translate(200px, 350px)">
+            <g class="bp-node" data-stage="validation" data-x="200" data-y="350" style="transform: translate(200px, 350px)">
               <circle r="12" />
               <text y="30" text-anchor="middle">VALID</text>
             </g>
-            <g class="bp-node" data-stage="uat" style="transform: translate(90px, 290px)">
+            <g class="bp-node" data-stage="uat" data-x="90" data-y="290" style="transform: translate(90px, 290px)">
               <circle r="12" />
               <text y="30" text-anchor="middle">UAT</text>
             </g>
-            <g class="bp-node" data-stage="triage" style="transform: translate(50px, 200px)">
+            <g class="bp-node" data-stage="triage" data-x="50" data-y="200" style="transform: translate(50px, 200px)">
               <circle r="12" />
               <text y="30" text-anchor="middle">TRIAGE</text>
             </g>
-            <g class="bp-node" data-stage="readiness" style="transform: translate(90px, 110px)">
+            <g class="bp-node" data-stage="readiness" data-x="90" data-y="110" style="transform: translate(90px, 110px)">
               <circle r="12" />
               <text y="30" text-anchor="middle">READY</text>
             </g>
-            <g class="bp-node active" data-stage="monitoring" style="transform: translate(200px, 200px)">
+            <g class="bp-node" data-stage="monitoring" data-x="200" data-y="200" style="transform: translate(200px, 200px)">
               <circle r="18" />
               <text y="40" text-anchor="middle">PROD</text>
             </g>
@@ -652,6 +655,7 @@
     };
 
     const bpNodes = document.querySelectorAll('.bp-node');
+    const bpScannerRay = document.getElementById('bp-scanner-ray');
     const bpNum = document.getElementById('bp-stage-num');
     const bpTitle = document.getElementById('bp-title');
     const bpDesc = document.getElementById('bp-desc');
@@ -661,6 +665,8 @@
 
     function updateBlueprint(stage) {
       const data = bpData[stage];
+      const activeNode = document.querySelector(`.bp-node[data-stage="${stage}"]`);
+      
       bpNum.textContent = `STAGE ${data.num}`;
       bpTitle.textContent = data.title;
       bpDesc.textContent = data.desc;
@@ -672,6 +678,12 @@
       bpNodes.forEach(node => {
         node.classList.toggle('active', node.dataset.stage === stage);
       });
+
+      // Update Scanner Ray
+      if (activeNode) {
+        bpScannerRay.setAttribute('x2', activeNode.dataset.x);
+        bpScannerRay.setAttribute('y2', activeNode.dataset.y);
+      }
     }
 
     bpNodes.forEach(node => {

@@ -256,13 +256,34 @@ nav.scrolled {
 .bp-line { fill: none; stroke: rgba(255,255,255,0.05); stroke-width: 1; }
 .bp-ring { fill: none; stroke: rgba(255,255,255,0.03); stroke-width: 1; stroke-dasharray: 5; }
 
+/* Live Scanner Ray */
+.bp-ray { 
+  stroke: var(--accent-gold); 
+  stroke-width: 2; 
+  stroke-linecap: round;
+  opacity: 0.6;
+  filter: drop-shadow(0 0 8px var(--accent-gold));
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .bp-node { cursor: pointer; transition: all 0.4s; }
 .bp-node circle { fill: #0a0f1e; stroke: rgba(255,255,255,0.2); stroke-width: 2; transition: all 0.4s; }
 .bp-node text { font-size: 8px; font-weight: 800; fill: var(--text-muted); pointer-events: none; }
 
 .bp-node:hover circle { stroke: var(--accent-gold); filter: drop-shadow(0 0 8px var(--accent-gold)); }
-.bp-node.active circle { fill: var(--accent-gold); stroke: var(--accent-gold); filter: drop-shadow(0 0 15px var(--accent-gold)); }
+.bp-node.active circle { 
+  fill: var(--accent-gold); 
+  stroke: var(--accent-gold); 
+  filter: drop-shadow(0 0 15px var(--accent-gold));
+  animation: nodePulse 2s infinite;
+}
 .bp-node.active text { fill: #fff; font-weight: 900; }
+
+@keyframes nodePulse {
+  0% { r: 12; stroke-opacity: 1; }
+  50% { r: 16; stroke-opacity: 0.5; }
+  100% { r: 12; stroke-opacity: 1; }
+}
 
 /* Intelligence Panel */
 .blueprint-panel { padding: 3.5rem 2.5rem; background: rgba(255,255,255,0.02); border-left: 1px solid rgba(255,255,255,0.05); }

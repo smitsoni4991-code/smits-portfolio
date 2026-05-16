@@ -66,73 +66,87 @@
     </div>
   </section>
 
-  <!-- ─── Strategic Quality Radar: Approach C ─── -->
-  <section id="quality-radar" class="container">
+  <!-- ─── Quality Blueprint: Approach A ─── -->
+  <section id="quality-blueprint" class="container">
     <div class="exec-header fade-up">
-      <span class="section-label">RISK GOVERNANCE MODEL</span>
-      <h2 class="exec-title">Strategic Quality Radar</h2>
-      <p class="exec-subtitle">Visualizing risk mitigation across 9 strategic dimensions—turning complex quality data into actionable release intelligence.</p>
+      <span class="section-label">SYSTEM ARCHITECTURE GOVERNANCE</span>
+      <h2 class="exec-title">Technical Quality Blueprint</h2>
+      <p class="exec-subtitle">Deconstructing the full-stack architecture to apply surgical quality governance at every layer—from requirements to production monitoring.</p>
     </div>
 
-    <div class="radar-container glass-card fade-up">
-      <div class="radar-layout">
-        <!-- Left: Stage Controls -->
-        <div class="radar-controls">
-          <div class="control-grid">
-            <button class="radar-btn active" data-stage="requirements">Requirements</button>
-            <button class="radar-btn" data-stage="risk">Risk Analysis</button>
-            <button class="radar-btn" data-stage="strategy">Strategy</button>
-            <button class="radar-btn" data-stage="design">Design</button>
-            <button class="radar-btn" data-stage="validation">Validation</button>
-            <button class="radar-btn" data-stage="uat">UAT</button>
-            <button class="radar-btn" data-stage="triage">Triage</button>
-            <button class="radar-btn" data-stage="readiness">Readiness</button>
-            <button class="radar-btn" data-stage="monitoring">Monitoring</button>
-          </div>
-        </div>
-
-        <!-- Center: The Radar Chart -->
-        <div class="radar-visual">
-          <svg viewBox="0 0 400 400" class="radar-svg">
-            <!-- Background Rings -->
-            <circle cx="200" cy="200" r="150" class="radar-ring" />
-            <circle cx="200" cy="200" r="100" class="radar-ring" />
-            <circle cx="200" cy="200" r="50" class="radar-ring" />
+    <div class="blueprint-card glass-card fade-up">
+      <div class="blueprint-layout">
+        <!-- Left: The Interactive Blueprint -->
+        <div class="blueprint-visual">
+          <div class="blueprint-grid"></div>
+          <svg viewBox="0 0 400 400" class="blueprint-svg">
+            <!-- Connection Lines -->
+            <path d="M200,50 L200,350 M50,200 L350,200" class="bp-line" />
+            <circle cx="200" cy="200" r="140" class="bp-ring" />
             
-            <!-- Axes -->
-            <line x1="200" y1="200" x2="200" y2="50" class="radar-axis" />
-            <line x1="200" y1="200" x2="330" y2="125" class="radar-axis" />
-            <line x1="200" y1="200" x2="330" y2="275" class="radar-axis" />
-            <line x1="200" y1="200" x2="200" y2="350" class="radar-axis" />
-            <line x1="200" y1="200" x2="70" y2="275" class="radar-axis" />
-            <line x1="200" y1="200" x2="70" y2="125" class="radar-axis" />
-            
-            <!-- Morphing Polygon (Risk Area) -->
-            <polygon id="radar-polygon" points="" class="radar-poly" />
+            <!-- Nodes -->
+            <g class="bp-node" data-stage="requirements" style="transform: translate(200px, 50px)">
+              <circle r="12" />
+              <text y="30" text-anchor="middle">REQS</text>
+            </g>
+            <g class="bp-node" data-stage="risk" style="transform: translate(310px, 110px)">
+              <circle r="12" />
+              <text y="30" text-anchor="middle">RISK</text>
+            </g>
+            <g class="bp-node" data-stage="strategy" style="transform: translate(350px, 200px)">
+              <circle r="12" />
+              <text y="30" text-anchor="middle">STRAT</text>
+            </g>
+            <g class="bp-node" data-stage="design" style="transform: translate(310px, 290px)">
+              <circle r="12" />
+              <text y="30" text-anchor="middle">DESIGN</text>
+            </g>
+            <g class="bp-node" data-stage="validation" style="transform: translate(200px, 350px)">
+              <circle r="12" />
+              <text y="30" text-anchor="middle">VALID</text>
+            </g>
+            <g class="bp-node" data-stage="uat" style="transform: translate(90px, 290px)">
+              <circle r="12" />
+              <text y="30" text-anchor="middle">UAT</text>
+            </g>
+            <g class="bp-node" data-stage="triage" style="transform: translate(50px, 200px)">
+              <circle r="12" />
+              <text y="30" text-anchor="middle">TRIAGE</text>
+            </g>
+            <g class="bp-node" data-stage="readiness" style="transform: translate(90px, 110px)">
+              <circle r="12" />
+              <text y="30" text-anchor="middle">READY</text>
+            </g>
+            <g class="bp-node active" data-stage="monitoring" style="transform: translate(200px, 200px)">
+              <circle r="18" />
+              <text y="40" text-anchor="middle">PROD</text>
+            </g>
           </svg>
         </div>
 
-        <!-- Right: Detail Panel -->
-        <div class="radar-details">
-          <div class="detail-header">
-            <h3 id="radar-title">Release Readiness</h3>
-            <span class="status-badge">OPTIMIZED</span>
+        <!-- Right: Intelligence Panel -->
+        <div class="blueprint-panel">
+          <div class="panel-header">
+            <span id="bp-stage-num">STAGE 09</span>
+            <h3 id="bp-title">Production Monitoring</h3>
           </div>
-          <p id="radar-desc">Final Go/No-Go orchestration based on consolidated quality telemetry.</p>
+          <p id="bp-desc">Continuously monitoring production health and feedback loops to refine the quality model.</p>
           
-          <div class="radar-metrics">
-            <div class="r-metric">
-              <span class="rm-label">Risk Reduction</span>
-              <div class="rm-bar-wrap"><div id="bar-risk" class="rm-bar" style="width: 95%;"></div></div>
+          <div class="bp-stats">
+            <div class="bp-stat-item">
+              <span class="bps-label">LEADERSHIP ROLE</span>
+              <div id="bps-role" class="bps-val">Continuous Governor</div>
             </div>
-            <div class="r-metric">
-              <span class="rm-label">Test Coverage</span>
-              <div class="rm-bar-wrap"><div id="bar-cov" class="rm-bar" style="width: 92%;"></div></div>
+            <div class="bp-stat-item">
+              <span class="bps-label">STRATEGIC ROI</span>
+              <div id="bps-roi" class="bps-val">35% Leakage Reduction</div>
             </div>
-            <div class="r-metric">
-              <span class="rm-label">ROI Impact</span>
-              <div class="rm-bar-wrap"><div id="bar-roi" class="rm-bar" style="width: 88%;"></div></div>
-            </div>
+          </div>
+
+          <div class="bp-layers">
+            <div class="layer-tag">Frontend</div>
+            <div class="layer-tag">API</div>
+            <div class="layer-tag">Cloud</div>
           </div>
         </div>
       </div>
@@ -624,103 +638,58 @@
       });
     });
 
-    // Strategic Quality Radar Logic
-    const radarData = {
-      requirements: {
-        title: "Requirement Engineering",
-        desc: "Reducing upstream rework through AI-assisted ambiguity detection in enterprise PRDs.",
-        points: "200,100 250,150 250,250 200,280 150,250 150,150",
-        metrics: [85, 70, 90]
-      },
-      risk: {
-        title: "Risk Analysis",
-        desc: "Prioritizing testing across 21+ components based on business impact and code churn.",
-        points: "200,120 280,160 270,240 200,260 130,240 120,160",
-        metrics: [92, 85, 80]
-      },
-      strategy: {
-        title: "Strategic Planning",
-        desc: "Orchestrating quality roadmaps and governance gates for Medicaid and SNAP systems.",
-        points: "200,80 300,140 290,260 200,300 110,260 100,140",
-        metrics: [88, 95, 92]
-      },
-      design: {
-        title: "Architecture Design",
-        desc: "Architecting scalable automation frameworks with AI self-healing and CI/CD integration.",
-        points: "200,110 270,150 280,250 200,270 120,250 130,150",
-        metrics: [95, 90, 85]
-      },
-      validation: {
-        title: "Data Validation",
-        desc: "Ensuring 99.9% data accuracy through rigorous SQL and API contract validation.",
-        points: "200,90 290,145 300,255 200,290 100,255 110,145",
-        metrics: [98, 92, 88]
-      },
-      uat: {
-        title: "UAT Sovereignty",
-        desc: "Managing 12+ stakeholders to ensure zero-impact production releases.",
-        points: "200,130 240,170 230,230 200,250 170,230 160,170",
-        metrics: [80, 88, 95]
-      },
-      triage: {
-        title: "Intelligent Triage",
-        desc: "Accelerating resolution times through AI-driven root cause analysis of defects.",
-        points: "200,140 230,180 220,220 200,240 180,220 170,180",
-        metrics: [75, 82, 90]
-      },
-      readiness: {
-        title: "Release Readiness",
-        desc: "Consolidating all quality telemetry for a data-backed Go/No-Go decision.",
-        points: "200,60 340,130 330,270 200,340 70,270 60,130",
-        metrics: [99, 92, 99]
-      },
-      monitoring: {
-        title: "Production Health",
-        desc: "Monitoring defect leakage and performance to close the quality feedback loop.",
-        points: "200,150 220,190 210,210 200,230 190,210 180,190",
-        metrics: [70, 75, 85]
-      }
+    // Quality Blueprint Logic
+    const bpData = {
+      requirements: { num: "01", title: "Requirement Engineering", desc: "Using AI ambiguity analysis to identify data gaps and edge cases before development begins.", role: "Risk Architect", roi: "↓ 25% Rework", layers: ["Docs", "Strategy"] },
+      risk: { num: "02", title: "Risk Analysis", desc: "Modeling quality impact across 21+ components to prioritize high-value testing efforts.", role: "Quality Strategist", roi: "Optimal Coverage", layers: ["System", "Data"] },
+      strategy: { num: "03", title: "Strategic Planning", desc: "Orchestrating end-to-end quality roadmaps for Medicaid and billing ecosystems.", role: "Governance Lead", roi: "100% Alignment", layers: ["Process", "Stakeholders"] },
+      design: { num: "04", title: "Framework Design", desc: "Architecting scalable automation ecosystems with AI self-healing and contract gates.", role: "Automation Architect", roi: "↑ 3x Speed", layers: ["Code", "Framework"] },
+      validation: { num: "05", title: "Technical Validation", desc: "Executing precision SQL and API validation with 99.9% accuracy across AWS modules.", role: "Data Governor", roi: "↓ 60% Effort", layers: ["API", "DB", "AWS"] },
+      uat: { num: "06", title: "UAT Sovereignty", desc: "Managing 12+ stakeholders through rigorous Medicaid/SNAP eligibility sign-offs.", role: "Stakeholder Manager", roi: "Zero Leakage", layers: ["UI", "Business"] },
+      triage: { num: "07", title: "Intelligent Triage", desc: "Directing defect resolution cycles with AI-assisted root cause analysis.", role: "Delivery Accelerator", roi: "↓ 40% Fix Time", layers: ["DevOps", "Support"] },
+      readiness: { num: "08", title: "Release Readiness", desc: "Orchestrating the final Go/No-Go decision based on consolidated quality telemetry.", role: "Release Strategist", roi: "99.8% Success", layers: ["Executive", "Gate"] },
+      monitoring: { num: "09", title: "Production Health", desc: "Monitoring production health and feedback loops to continuously refine the quality model.", role: "Continuous Governor", roi: "35% Leakage Reduction", layers: ["Cloud", "SRE", "Users"] }
     };
 
-    const radarBtns = document.querySelectorAll('.radar-btn');
-    const rPolygon = document.getElementById('radar-polygon');
-    const rTitle = document.getElementById('radar-title');
-    const rDesc = document.getElementById('radar-desc');
-    const bRisk = document.getElementById('bar-risk');
-    const bCov = document.getElementById('bar-cov');
-    const bRoi = document.getElementById('bar-roi');
+    const bpNodes = document.querySelectorAll('.bp-node');
+    const bpNum = document.getElementById('bp-stage-num');
+    const bpTitle = document.getElementById('bp-title');
+    const bpDesc = document.getElementById('bp-desc');
+    const bpRole = document.getElementById('bps-role');
+    const bpRoi = document.getElementById('bps-roi');
+    const bpLayers = document.querySelector('.bp-layers');
 
-    function updateRadar(stage) {
-      const data = radarData[stage];
-      rTitle.textContent = data.title;
-      rDesc.textContent = data.desc;
-      rPolygon.setAttribute('points', data.points);
+    function updateBlueprint(stage) {
+      const data = bpData[stage];
+      bpNum.textContent = `STAGE ${data.num}`;
+      bpTitle.textContent = data.title;
+      bpDesc.textContent = data.desc;
+      bpRole.textContent = data.role;
+      bpRoi.textContent = data.roi;
       
-      bRisk.style.width = data.metrics[0] + '%';
-      bCov.style.width = data.metrics[1] + '%';
-      bRoi.style.width = data.metrics[2] + '%';
+      bpLayers.innerHTML = data.layers.map(l => `<div class="layer-tag">${l}</div>`).join('');
       
-      radarBtns.forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.stage === stage);
+      bpNodes.forEach(node => {
+        node.classList.toggle('active', node.dataset.stage === stage);
       });
     }
 
-    radarBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        updateRadar(btn.dataset.stage);
+    bpNodes.forEach(node => {
+      node.addEventListener('click', () => {
+        updateBlueprint(node.dataset.stage);
       });
     });
 
     // Auto-cycle
-    let radarKeys = Object.keys(radarData);
-    let radarIdx = 7; 
+    let bpKeys = Object.keys(bpData);
+    let bpIdx = 8; 
     
     setInterval(() => {
-      radarIdx = (radarIdx + 1) % radarKeys.length;
-      updateRadar(radarKeys[radarIdx]);
+      bpIdx = (bpIdx + 1) % bpKeys.length;
+      updateBlueprint(bpKeys[bpIdx]);
     }, 8000);
 
-    updateRadar('readiness'); // Init
+    updateBlueprint('monitoring'); // Init
   </script>
 </body>
 

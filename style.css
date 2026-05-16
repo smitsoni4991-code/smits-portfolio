@@ -237,48 +237,57 @@ nav.scrolled {
 }
 .stat-label { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; margin-top: 0.25rem; }
 
-/* ─── Strategic Quality Radar (Approach C) ─── */
-.radar-container { margin-top: 3rem; padding: 0; overflow: hidden; }
-.radar-layout { display: grid; grid-template-columns: 220px 1fr 300px; gap: 2rem; min-height: 500px; }
+/* ─── Quality Blueprint (Approach A) ─── */
+.blueprint-card { margin-top: 3rem; background: #0a0f1e; border: 1px solid rgba(255,255,255,0.05); position: relative; }
+.blueprint-layout { display: grid; grid-template-columns: 1fr 340px; min-height: 550px; }
 
-/* Radar Controls */
-.radar-controls { padding: 2rem; background: rgba(255,255,255,0.02); border-right: 1px solid rgba(255,255,255,0.05); }
-.control-grid { display: grid; gap: 0.5rem; }
-.radar-btn { 
-  text-align: left; padding: 0.75rem 1rem; background: transparent; border: 1px solid transparent; 
-  border-radius: 0.5rem; color: var(--text-secondary); font-size: 0.75rem; font-weight: 700; 
-  cursor: pointer; transition: all 0.3s;
+/* Visual Area */
+.blueprint-visual { 
+  position: relative; background: #050814; overflow: hidden; 
+  display: flex; align-items: center; justify-content: center;
 }
-.radar-btn:hover { background: rgba(255,255,255,0.03); color: #fff; }
-.radar-btn.active { background: rgba(253, 224, 71, 0.08); border-color: rgba(253, 224, 71, 0.2); color: var(--accent-gold); }
-
-/* Radar Visual */
-.radar-visual { display: flex; align-items: center; justify-content: center; padding: 2rem; position: relative; }
-.radar-svg { width: 100%; max-width: 380px; filter: drop-shadow(0 0 20px rgba(253, 224, 71, 0.1)); }
-.radar-ring { fill: none; stroke: rgba(255,255,255,0.05); stroke-width: 1; }
-.radar-axis { stroke: rgba(255,255,255,0.1); stroke-width: 1; stroke-dasharray: 4; }
-.radar-poly { 
-  fill: rgba(253, 224, 71, 0.15); stroke: var(--accent-gold); stroke-width: 2; 
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); 
+.blueprint-grid {
+  position: absolute; inset: 0; 
+  background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
-/* Detail Panel */
-.radar-details { padding: 3rem 2rem; background: rgba(255,255,255,0.02); border-left: 1px solid rgba(255,255,255,0.05); }
-.detail-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
-.detail-header h3 { font-size: 1.5rem; color: #fff; }
-.status-badge { font-size: 0.6rem; font-weight: 900; color: #10B981; padding: 0.2rem 0.5rem; background: rgba(16, 185, 129, 0.1); border-radius: 0.3rem; letter-spacing: 0.1em; }
-.radar-details p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 2.5rem; }
+.blueprint-svg { width: 100%; max-width: 450px; position: relative; z-index: 1; }
+.bp-line { fill: none; stroke: rgba(255,255,255,0.05); stroke-width: 1; }
+.bp-ring { fill: none; stroke: rgba(255,255,255,0.03); stroke-width: 1; stroke-dasharray: 5; }
 
-.radar-metrics { display: flex; flex-direction: column; gap: 1.5rem; }
-.r-metric { display: flex; flex-direction: column; gap: 0.5rem; }
-.rm-label { font-size: 0.7rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
-.rm-bar-wrap { height: 6px; background: rgba(255,255,255,0.05); border-radius: 3px; overflow: hidden; }
-.rm-bar { height: 100%; background: var(--accent-gold); border-radius: 3px; transition: width 1s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 0 10px rgba(253, 224, 71, 0.3); }
+.bp-node { cursor: pointer; transition: all 0.4s; }
+.bp-node circle { fill: #0a0f1e; stroke: rgba(255,255,255,0.2); stroke-width: 2; transition: all 0.4s; }
+.bp-node text { font-size: 8px; font-weight: 800; fill: var(--text-muted); pointer-events: none; }
+
+.bp-node:hover circle { stroke: var(--accent-gold); filter: drop-shadow(0 0 8px var(--accent-gold)); }
+.bp-node.active circle { fill: var(--accent-gold); stroke: var(--accent-gold); filter: drop-shadow(0 0 15px var(--accent-gold)); }
+.bp-node.active text { fill: #fff; font-weight: 900; }
+
+/* Intelligence Panel */
+.blueprint-panel { padding: 3.5rem 2.5rem; background: rgba(255,255,255,0.02); border-left: 1px solid rgba(255,255,255,0.05); }
+.panel-header { margin-bottom: 2rem; }
+.panel-header span { font-size: 0.65rem; font-weight: 900; color: var(--accent-gold); letter-spacing: 0.2em; display: block; margin-bottom: 0.5rem; }
+.panel-header h3 { font-size: 1.75rem; color: #fff; line-height: 1.2; }
+
+.blueprint-panel p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 3rem; }
+
+.bp-stats { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 3rem; }
+.bp-stat-item { border-left: 2px solid rgba(255,255,255,0.05); padding-left: 1.25rem; }
+.bps-label { font-size: 0.65rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.4rem; }
+.bps-val { font-size: 1.15rem; font-weight: 700; color: #fff; }
+
+.bp-layers { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.layer-tag { 
+  font-size: 0.65rem; font-weight: 800; color: var(--accent-gold); 
+  padding: 0.3rem 0.6rem; background: rgba(253, 224, 71, 0.05); 
+  border: 1px solid rgba(253, 224, 71, 0.15); border-radius: 0.3rem; 
+  text-transform: uppercase;
+}
 
 @media (max-width: 1100px) {
-  .radar-layout { grid-template-columns: 1fr; }
-  .radar-controls { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.05); }
-  .radar-details { border-left: none; border-top: 1px solid rgba(255,255,255,0.05); }
+  .blueprint-layout { grid-template-columns: 1fr; }
+  .blueprint-panel { border-left: none; border-top: 1px solid rgba(255,255,255,0.05); }
 }
 
 /* ─── Section Styles ─── */

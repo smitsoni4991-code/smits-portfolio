@@ -66,69 +66,55 @@
     </div>
   </section>
 
-  <!-- ─── Quality War Room Dashboard: Approach 1 ─── -->
-  <section id="quality-war-room" class="container">
+  <!-- ─── AI Quality Command Center ─── -->
+  <section id="command-center" class="container">
     <div class="exec-header fade-up">
-      <span class="section-label">Enterprise Command Center</span>
-      <h2 class="exec-title">Quality Transformation War Room</h2>
-      <p class="exec-subtitle">A live, data-driven dashboard managing release risk, team velocity, and AI-assisted governance across the enterprise ecosystem.</p>
+      <span class="section-label">EXECUTIVE LEADERSHIP MODULE</span>
+      <h1 class="exec-title" style="font-family: serif; font-size: 3rem; margin-top: 1rem;">AI Quality Command Center</h1>
+      <p class="exec-subtitle" style="font-size: 1.2rem; opacity: 0.8; max-width: 800px;">Orchestrating the 9-stage STLC leadership cycle through AI-assisted governance and data-driven decision making.</p>
     </div>
 
-    <div class="war-room-grid fade-up">
-      <!-- Left: AI Activity Stream -->
-      <div class="war-tile terminal-tile">
-        <div class="tile-header">
-          <span class="status-indicator"></span>
-          AI ACTIVITY LOG
-        </div>
-        <div id="ai-log-stream" class="log-content">
-          <div class="log-entry">> Initializing AI Quality Agent...</div>
-          <div class="log-entry">> Scanning 21+ components for risk...</div>
-          <div class="log-entry">> Analyzing API contracts (99.9% pass)...</div>
-        </div>
+    <div class="command-card glass-card fade-up">
+      <!-- Tabs Sidebar/Top -->
+      <div class="command-tabs">
+        <button class="tab-btn active" data-stage="requirements">REQUIREMENTS</button>
+        <button class="tab-btn" data-stage="risk">RISK ANALYSIS</button>
+        <button class="tab-btn" data-stage="strategy">STRATEGY</button>
+        <button class="tab-btn" data-stage="design">DESIGN</button>
+        <button class="tab-btn" data-stage="validation">VALIDATION</button>
+        <button class="tab-btn" data-stage="uat">UAT</button>
+        <button class="tab-btn" data-stage="triage">TRIAGE</button>
+        <button class="tab-btn" data-stage="readiness">READINESS</button>
+        <button class="tab-btn" data-stage="monitoring">MONITORING</button>
       </div>
 
-      <!-- Center: Release Confidence Gauge -->
-      <div class="war-tile main-tile">
-        <div class="gauge-container">
-          <div class="gauge-ring"></div>
-          <div class="gauge-value">99.8%</div>
-          <div class="gauge-label">RELEASE CONFIDENCE</div>
-        </div>
-        <div class="main-metrics">
-          <div class="mini-stat">
-            <span class="ms-label">Defect Leakage</span>
-            <span class="ms-val text-gradient">0.2%</span>
+      <!-- Main Display -->
+      <div class="command-layout">
+        <div class="command-main">
+          <h2 id="stage-title" class="stage-title">Release Readiness</h2>
+          <p id="stage-desc" class="stage-desc">Orchestrating the final Go/No-Go decision based on data-backed quality metrics and risk scores.</p>
+          
+          <div class="command-impact-grid">
+            <div class="impact-item">
+              <span class="impact-label">LEADERSHIP IMPACT</span>
+              <div id="impact-val" class="impact-val">Release Strategist</div>
+            </div>
+            <div class="impact-item">
+              <span class="impact-label">STRATEGIC ROI</span>
+              <div id="roi-val" class="impact-val">99.8% Success Rate</div>
+            </div>
           </div>
-          <div class="mini-stat">
-            <span class="ms-label">ROI Realized</span>
-            <span class="ms-val text-gradient">$154K</span>
-          </div>
         </div>
-      </div>
 
-      <!-- Right: Team & Velocity Stats -->
-      <div class="war-tile stats-tile">
-        <div class="tile-header">KEY PERFORMANCE INDICATORS</div>
-        <div class="stat-list">
-          <div class="stat-row">
-            <span>Regression Time</span>
-            <span class="trend-up">↓ 70%</span>
-          </div>
-          <div class="stat-row">
-            <span>Test Coverage</span>
-            <span class="trend-up">92%</span>
-          </div>
-          <div class="stat-row">
-            <span>Team Mentorship</span>
-            <span class="trend-up">6 Analysts</span>
-          </div>
-          <div class="stat-row">
-            <span>UAT Sign-off</span>
-            <span class="trend-up">100%</span>
+        <!-- Terminal Sidebar -->
+        <div class="command-terminal">
+          <div class="terminal-header">AI ANALYTICS CORE</div>
+          <div id="terminal-logs" class="terminal-body">
+            <div class="log-line green">| > Running final risk score...</div>
+            <div class="log-line green">| > Score: 0.002 (Minimal Risk)</div>
+            <div class="log-line green">| > Release APPROVED</div>
           </div>
         </div>
-        <div class="governance-badge">GOVERNANCE LEVEL: ARCHITECT</div>
       </div>
     </div>
   </section>
@@ -618,38 +604,110 @@
       });
     });
 
-    // War Room Dashboard Logic
-    const logEntries = [
-      "> Scanning Web/Mobile UI for regression...",
-      "> Analyzing 21+ backend components...",
-      "> Executing SQL data integrity checks...",
-      "> Optimizing Playwright locators...",
-      "> Summarizing UAT stakeholder feedback...",
-      "> AI Risk Model: Confidence at 99.8%",
-      "> Shift-left gates: PASSED",
-      "> Generating release readiness report...",
-      "> Defect Leakage monitoring active..."
-    ];
-
-    let logIndex = 0;
-    const logContainer = document.getElementById('ai-log-stream');
-
-    function updateLog() {
-      if (!logContainer) return;
-      const entry = document.createElement('div');
-      entry.className = 'log-entry fade-up visible';
-      entry.innerText = logEntries[logIndex];
-      logContainer.appendChild(entry);
-      logIndex = (logIndex + 1) % logEntries.length;
-      
-      if (logContainer.children.length > 8) {
-        logContainer.removeChild(logContainer.firstChild);
+    // AI Quality Command Center Logic
+    const commandData = {
+      requirements: {
+        title: "Requirement Engineering",
+        desc: "Using AI ambiguity analysis to identify data gaps and edge cases before development begins.",
+        impact: "Risk Architect",
+        roi: "↓ 25% Rework Cost",
+        logs: ["| > Scanning PRDs for ambiguity...", "| > 12 Data gaps identified.", "| > Requirements VALIDATED."]
+      },
+      risk: {
+        title: "Risk Analysis",
+        desc: "Modeling quality impact across 21+ cross-functional components to prioritize high-value testing.",
+        impact: "Quality Strategist",
+        roi: "Optimal Coverage",
+        logs: ["| > Modeling dependency graph...", "| > High-risk modules identified.", "| > Strategy updated."]
+      },
+      strategy: {
+        title: "Strategic Planning",
+        desc: "Orchestrating end-to-end quality roadmaps for Medicaid, SNAP, and Retail billing systems.",
+        impact: "Governance Lead",
+        roi: "100% Alignment",
+        logs: ["| > Aligning stakeholders...", "| > Quality gates defined.", "| > Roadmap baseline set."]
+      },
+      design: {
+        title: "Framework Design",
+        desc: "Architecting scalable Playwright and API automation ecosystems with AI self-healing.",
+        impact: "Automation Architect",
+        roi: "↑ 3x Speed-to-Market",
+        logs: ["| > Designing modular components...", "| > Self-healing logic active.", "| > Scalability: Verified."]
+      },
+      validation: {
+        title: "Rigorous Validation",
+        desc: "Executing precision SQL and API validation with 99.9% data accuracy across AWS modules.",
+        impact: "Data Governor",
+        roi: "↓ 60% Manual Effort",
+        logs: ["| > Running SQL integrity packs...", "| > API contracts PASSED.", "| > Data precision: 100%."]
+      },
+      uat: {
+        title: "UAT Sovereignty",
+        desc: "Leading 12+ business stakeholders through rigorous Medicaid/SNAP eligibility sign-offs.",
+        impact: "Stakeholder Manager",
+        roi: "Zero UAT Leakage",
+        logs: ["| > Collating UAT feedback...", "| > 12/12 Approvals received.", "| > Business sign-off: OK."]
+      },
+      triage: {
+        title: "Intelligent Triage",
+        desc: "Directing defect resolution cycles with AI-assisted root cause analysis.",
+        impact: "Delivery Accelerator",
+        roi: "↓ 40% Fix Time",
+        logs: ["| > Analyzing failure logs...", "| > Root cause: Memory Leak.", "| > Ticket assigned to Dev-A."]
+      },
+      readiness: {
+        title: "Release Readiness",
+        desc: "Orchestrating the final Go/No-Go decision based on data-backed quality metrics and risk scores.",
+        impact: "Release Strategist",
+        roi: "99.8% Success Rate",
+        logs: ["| > Running final risk score...", "| > Score: 0.002 (Minimal Risk)", "| > Release APPROVED"]
+      },
+      monitoring: {
+        title: "Post-Release Insight",
+        desc: "Monitoring production health and feedback loops to continuously refine the quality model.",
+        impact: "Continuous Governor",
+        roi: "35% Leakage Reduction",
+        logs: ["| > Monitoring Prod logs...", "| > Defect leakage: 0.02%", "| > Feedback loop: Closed."]
       }
-      logContainer.scrollTop = logContainer.scrollHeight;
+    };
+
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const sTitle = document.getElementById('stage-title');
+    const sDesc = document.getElementById('stage-desc');
+    const iVal = document.getElementById('impact-val');
+    const rVal = document.getElementById('roi-val');
+    const logArea = document.getElementById('terminal-logs');
+
+    function updateCommandCenter(stage) {
+      const data = commandData[stage];
+      sTitle.textContent = data.title;
+      sDesc.textContent = data.desc;
+      iVal.textContent = data.impact;
+      rVal.textContent = data.roi;
+      
+      logArea.innerHTML = data.logs.map(log => `<div class="log-line green">${log}</div>`).join('');
+      
+      tabBtns.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.stage === stage);
+      });
     }
 
-    setInterval(updateLog, 3000);
-    updateLog(); // Init
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        updateCommandCenter(btn.dataset.stage);
+      });
+    });
+
+    // Auto-cycle
+    let stageKeys = Object.keys(commandData);
+    let stageIdx = 7; // Start at Readiness like the image
+    
+    setInterval(() => {
+      stageIdx = (stageIdx + 1) % stageKeys.length;
+      updateCommandCenter(stageKeys[stageIdx]);
+    }, 8000);
+
+    updateCommandCenter('readiness'); // Init
   </script>
 </body>
 

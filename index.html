@@ -85,35 +85,69 @@
     </div>
   </section>
 
-  <!-- ─── Infinite Quality Pipeline: Approach 3 ─── -->
-  <section id="quality-pipeline" class="container">
+  <!-- ─── Quality War Room Dashboard: Approach 1 ─── -->
+  <section id="quality-war-room" class="container">
     <div class="exec-header fade-up">
-      <span class="section-label">High-Velocity Delivery</span>
-      <h2 class="exec-title">Continuous Quality Pipeline</h2>
-      <p class="exec-subtitle">A high-speed, AI-orchestrated delivery line transforming raw code into certified enterprise releases.</p>
+      <span class="section-label">Enterprise Command Center</span>
+      <h2 class="exec-title">Quality Transformation War Room</h2>
+      <p class="exec-subtitle">A live, data-driven dashboard managing release risk, team velocity, and AI-assisted governance across the enterprise ecosystem.</p>
     </div>
 
-    <div class="pipeline-container glass-card fade-up">
-      <div class="pipeline-track-wrapper">
-        <!-- The AI Scanner Beam -->
-        <div id="pipeline-scanner" class="scanner-beam">
-          <div class="scanner-glow"></div>
-          <div class="scanner-label">AI AUDIT ACTIVE</div>
+    <div class="war-room-grid fade-up">
+      <!-- Left: AI Activity Stream -->
+      <div class="war-tile terminal-tile">
+        <div class="tile-header">
+          <span class="status-indicator"></span>
+          AI ACTIVITY LOG
         </div>
-
-        <!-- The Conveyor Belt -->
-        <div class="pipeline-track" id="pipeline-track">
-          <!-- Assets will be injected here by JS -->
+        <div id="ai-log-stream" class="log-content">
+          <div class="log-entry">> Initializing AI Quality Agent...</div>
+          <div class="log-entry">> Scanning 21+ components for risk...</div>
+          <div class="log-entry">> Analyzing API contracts (99.9% pass)...</div>
         </div>
       </div>
 
-      <!-- Achievement Toast (Triggered by Scanner) -->
-      <div id="pipeline-toast" class="pipeline-toast">
-        <div class="toast-icon">⚡</div>
-        <div class="toast-body">
-          <h4 id="toast-title">Impact Detected</h4>
-          <p id="toast-desc">Scanning asset...</p>
+      <!-- Center: Release Confidence Gauge -->
+      <div class="war-tile main-tile">
+        <div class="gauge-container">
+          <div class="gauge-ring"></div>
+          <div class="gauge-value">99.8%</div>
+          <div class="gauge-label">RELEASE CONFIDENCE</div>
         </div>
+        <div class="main-metrics">
+          <div class="mini-stat">
+            <span class="ms-label">Defect Leakage</span>
+            <span class="ms-val text-gradient">0.2%</span>
+          </div>
+          <div class="mini-stat">
+            <span class="ms-label">ROI Realized</span>
+            <span class="ms-val text-gradient">$154K</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Team & Velocity Stats -->
+      <div class="war-tile stats-tile">
+        <div class="tile-header">KEY PERFORMANCE INDICATORS</div>
+        <div class="stat-list">
+          <div class="stat-row">
+            <span>Regression Time</span>
+            <span class="trend-up">↓ 70%</span>
+          </div>
+          <div class="stat-row">
+            <span>Test Coverage</span>
+            <span class="trend-up">92%</span>
+          </div>
+          <div class="stat-row">
+            <span>Team Mentorship</span>
+            <span class="trend-up">6 Analysts</span>
+          </div>
+          <div class="stat-row">
+            <span>UAT Sign-off</span>
+            <span class="trend-up">100%</span>
+          </div>
+        </div>
+        <div class="governance-badge">GOVERNANCE LEVEL: ARCHITECT</div>
       </div>
     </div>
   </section>
@@ -599,48 +633,38 @@
       });
     });
 
-    // Infinite Pipeline Logic
-    const pipelineAssets = [
-      { type: "API", label: "Payload Audit", impact: "99.9% Data Accuracy" },
-      { type: "SQL", label: "Schema Validation", impact: "Zero Leakage" },
-      { type: "UI", label: "Playwright Suite", impact: "↓ 70% Regression" },
-      { type: "UAT", label: "Stakeholder Sign-off", impact: "100% Approval" },
-      { type: "MOBILE", label: "iOS/Android Test", impact: "Zero Prod Defects" },
-      { type: "RISK", label: "Executive Report", impact: "Risk Mitigated" }
+    // War Room Dashboard Logic
+    const logEntries = [
+      "> Scanning Web/Mobile UI for regression...",
+      "> Analyzing 21+ backend components...",
+      "> Executing SQL data integrity checks...",
+      "> Optimizing Playwright locators...",
+      "> Summarizing UAT stakeholder feedback...",
+      "> AI Risk Model: Confidence at 99.8%",
+      "> Shift-left gates: PASSED",
+      "> Generating release readiness report...",
+      "> Defect Leakage monitoring active..."
     ];
 
-    const track = document.getElementById('pipeline-track');
-    const toast = document.getElementById('pipeline-toast');
-    const tTitle = document.getElementById('toast-title');
-    const tDesc = document.getElementById('toast-desc');
+    let logIndex = 0;
+    const logContainer = document.getElementById('ai-log-stream');
 
-    function createPipeline() {
-      if (!track) return;
-      // Double the assets for infinite scroll effect
-      const items = [...pipelineAssets, ...pipelineAssets];
-      track.innerHTML = items.map(a => `
-        <div class="pipeline-item">
-          <div class="item-type">${a.type}</div>
-          <div class="item-label">${a.label}</div>
-        </div>
-      `).join('');
-    }
-
-    let assetIndex = 0;
-    function cycleToast() {
-      if (!toast) return;
-      const asset = pipelineAssets[assetIndex];
-      toast.classList.add('visible');
-      tTitle.textContent = asset.type + " Verified";
-      tDesc.textContent = asset.impact;
+    function updateLog() {
+      if (!logContainer) return;
+      const entry = document.createElement('div');
+      entry.className = 'log-entry fade-up visible';
+      entry.innerText = logEntries[logIndex];
+      logContainer.appendChild(entry);
+      logIndex = (logIndex + 1) % logEntries.length;
       
-      setTimeout(() => toast.classList.remove('visible'), 2500);
-      assetIndex = (assetIndex + 1) % pipelineAssets.length;
+      if (logContainer.children.length > 8) {
+        logContainer.removeChild(logContainer.firstChild);
+      }
+      logContainer.scrollTop = logContainer.scrollHeight;
     }
 
-    createPipeline();
-    setInterval(cycleToast, 4000);
-    cycleToast(); // Init
+    setInterval(updateLog, 3000);
+    updateLog(); // Init
   </script>
 </body>
 

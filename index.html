@@ -43,19 +43,6 @@
   <section class="hero" id="hero">
     <div class="hero-content">
       <div class="hero-photo fade-up">
-        <img src="profile_perfect.png" alt="Smit Soni" />
-      </div>
-      <div class="hero-badge fade-up delay-1">
-        <span class="pulse"></span> Available for Strategic Leadership
-      </div>
-      <h1 class="fade-up delay-1">Hi, I am <span class="gradient-text">Smit Soni</span></h1>
-      <p class="hero-subtitle fade-up delay-2">I help teams reduce release risk through AI-assisted testing, UAT leadership, automation strategy, SQL/API validation, and data-driven quality governance.</p>
-      <div class="hero-tags fade-up delay-2">
-        <span class="hero-tag" style="background: rgba(124,106,255,0.2); border-color: var(--accent); color: #fff;">✨ AI-Assisted Test Gen</span>
-        <span class="hero-tag">Test Strategy & Planning</span>
-        <span class="hero-tag">CI/CD Integration</span>
-        <span class="hero-tag">Data Quality Engineering</span>
-        <span class="hero-tag">Playwright Automation</span>
         <span class="hero-tag">AWS / SQL</span>
         <span class="hero-tag">Tableau Automation</span>
         <span class="hero-tag">Risk-Based Testing</span>
@@ -85,69 +72,99 @@
     </div>
   </section>
 
-  <!-- ─── Quality War Room Dashboard: Approach 1 ─── -->
-  <section id="quality-war-room" class="container">
+  <!-- ─── Strategic Quality Governance Engine ─── -->
+  <section id="governance-engine" class="container">
     <div class="exec-header fade-up">
-      <span class="section-label">Enterprise Command Center</span>
-      <h2 class="exec-title">Quality Transformation War Room</h2>
-      <p class="exec-subtitle">A live, data-driven dashboard managing release risk, team velocity, and AI-assisted governance across the enterprise ecosystem.</p>
+      <span class="section-label">Executive Command & Control</span>
+      <h2 class="exec-title">Quality Governance Engine</h2>
+      <p class="exec-subtitle">A live simulation of my leadership methodology—orchestrating the full STLC cycle to ensure zero-impact production launches for enterprise ecosystems.</p>
     </div>
 
-    <div class="war-room-grid fade-up">
-      <!-- Left: AI Activity Stream -->
-      <div class="war-tile terminal-tile">
-        <div class="tile-header">
-          <span class="status-indicator"></span>
-          AI ACTIVITY LOG
+    <div class="governance-hud glass-card fade-up">
+      <div class="hud-layout">
+        <!-- Left: The Control Modules -->
+        <div class="hud-modules">
+          <div class="module-btn active" data-phase="discovery">
+            <span class="m-icon">🔍</span>
+            <div class="m-text">
+              <span class="m-title">Strategic Discovery</span>
+              <span class="m-sub">Requirement Analysis & Risk</span>
+            </div>
+          </div>
+          <div class="module-btn" data-phase="architecture">
+            <span class="m-icon">📐</span>
+            <div class="m-text">
+              <span class="m-title">Quality Architecture</span>
+              <span class="m-sub">Strategy & Coverage Modeling</span>
+            </div>
+          </div>
+          <div class="module-btn" data-phase="automation">
+            <span class="m-icon">🤖</span>
+            <div class="m-text">
+              <span class="m-title">Intelligent Automation</span>
+              <span class="m-sub">AI-Assisted CI/CD Scaling</span>
+            </div>
+          </div>
+          <div class="module-btn" data-phase="data">
+            <span class="m-icon">📊</span>
+            <div class="m-text">
+              <span class="m-title">Data Integrity</span>
+              <span class="m-sub">SQL, API & BI Governance</span>
+            </div>
+          </div>
+          <div class="module-btn" data-phase="uat">
+            <span class="m-icon">🤝</span>
+            <div class="m-text">
+              <span class="m-title">UAT Sovereignty</span>
+              <span class="m-sub">Stakeholder & Sign-off Mgmt</span>
+            </div>
+          </div>
         </div>
-        <div id="ai-log-stream" class="log-content">
-          <div class="log-entry">> Initializing AI Quality Agent...</div>
-          <div class="log-entry">> Scanning 21+ components for risk...</div>
-          <div class="log-entry">> Analyzing API contracts (99.9% pass)...</div>
-        </div>
-      </div>
 
-      <!-- Center: Release Confidence Gauge -->
-      <div class="war-tile main-tile">
-        <div class="gauge-container">
-          <div class="gauge-ring"></div>
-          <div class="gauge-value">99.8%</div>
-          <div class="gauge-label">RELEASE CONFIDENCE</div>
-        </div>
-        <div class="main-metrics">
-          <div class="mini-stat">
-            <span class="ms-label">Defect Leakage</span>
-            <span class="ms-val text-gradient">0.2%</span>
+        <!-- Center: The Live Detail Pane -->
+        <div class="hud-detail-pane">
+          <div class="detail-header">
+            <div class="live-indicator">
+              <span class="live-dot"></span>
+              LIVE GOVERNANCE LOGS
+            </div>
+            <h3 id="detail-title">Strategic Discovery</h3>
           </div>
-          <div class="mini-stat">
-            <span class="ms-label">ROI Realized</span>
-            <span class="ms-val text-gradient">$154K</span>
-          </div>
-        </div>
-      </div>
+          
+          <div class="detail-body">
+            <p id="detail-desc">Implementing "Shift-Left" by identifying edge cases and data gaps during the PRD phase, reducing downstream rework by 25%.</p>
+            
+            <div class="playbook-section">
+              <span class="p-label">Leadership Playbook:</span>
+              <ul id="detail-playbook">
+                <li>NLP analysis for PRD ambiguity detection</li>
+                <li>Risk-based testing prioritization</li>
+                <li>Mentoring 6 analysts on requirement scoping</li>
+              </ul>
+            </div>
 
-      <!-- Right: Team & Velocity Stats -->
-      <div class="war-tile stats-tile">
-        <div class="tile-header">KEY PERFORMANCE INDICATORS</div>
-        <div class="stat-list">
-          <div class="stat-row">
-            <span>Regression Time</span>
-            <span class="trend-up">↓ 70%</span>
-          </div>
-          <div class="stat-row">
-            <span>Test Coverage</span>
-            <span class="trend-up">92%</span>
-          </div>
-          <div class="stat-row">
-            <span>Team Mentorship</span>
-            <span class="trend-up">6 Analysts</span>
-          </div>
-          <div class="stat-row">
-            <span>UAT Sign-off</span>
-            <span class="trend-up">100%</span>
+            <div class="detail-metrics-grid">
+              <div class="d-metric">
+                <span class="dm-label">Direct Impact</span>
+                <span class="dm-val" id="detail-impact">200+ Defects Found</span>
+              </div>
+              <div class="d-metric">
+                <span class="dm-label">Release Risk</span>
+                <span class="dm-val">↓ Minimal</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="governance-badge">GOVERNANCE LEVEL: ARCHITECT</div>
+
+        <!-- Right: AI Insight Terminal -->
+        <div class="hud-terminal">
+          <div class="terminal-header">AI ANALYTICS CORE</div>
+          <div id="hud-log-stream" class="terminal-body">
+            <div class="log-line">> Scanning PRD for risk factors...</div>
+            <div class="log-line">> Ambiguity detected in Eligibility Module.</div>
+            <div class="log-line">> Risk score updated to 0.12.</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -633,38 +650,82 @@
       });
     });
 
-    // War Room Dashboard Logic
-    const logEntries = [
-      "> Scanning Web/Mobile UI for regression...",
-      "> Analyzing 21+ backend components...",
-      "> Executing SQL data integrity checks...",
-      "> Optimizing Playwright locators...",
-      "> Summarizing UAT stakeholder feedback...",
-      "> AI Risk Model: Confidence at 99.8%",
-      "> Shift-left gates: PASSED",
-      "> Generating release readiness report...",
-      "> Defect Leakage monitoring active..."
-    ];
-
-    let logIndex = 0;
-    const logContainer = document.getElementById('ai-log-stream');
-
-    function updateLog() {
-      if (!logContainer) return;
-      const entry = document.createElement('div');
-      entry.className = 'log-entry fade-up visible';
-      entry.innerText = logEntries[logIndex];
-      logContainer.appendChild(entry);
-      logIndex = (logIndex + 1) % logEntries.length;
-      
-      if (logContainer.children.length > 8) {
-        logContainer.removeChild(logContainer.firstChild);
+    // Quality Governance HUD Logic
+    const hudData = {
+      discovery: {
+        title: "Strategic Discovery",
+        desc: "Implementing 'Shift-Left' by identifying edge cases and data gaps during the PRD phase, reducing downstream rework by 25%.",
+        playbook: ["NLP analysis for PRD ambiguity detection", "Risk-based testing prioritization", "Mentoring 6 analysts on requirement scoping"],
+        impact: "200+ Defects Found",
+        logs: ["> Scanning PRD for risk factors...", "> Ambiguity detected in Eligibility Module.", "> Risk score updated: 0.12"]
+      },
+      architecture: {
+        title: "Quality Architecture",
+        desc: "Architecting a modular, component-based strategy that scales across 21+ enterprise components.",
+        playbook: ["Component-level coverage mapping", "API contract validation strategy", "Scalability modeling for Retail/Telecom"],
+        impact: "21+ Components Led",
+        logs: ["> Mapping coverage for Component A-Z...", "> Dependency graph generated.", "> Architecture validated."]
+      },
+      automation: {
+        title: "Intelligent Automation",
+        desc: "Scaling regression through AI-assisted script generation and self-healing Playwright pipelines.",
+        playbook: ["Playwright & API framework ownership", "AI-driven self-healing logic", "CI/CD quality gate orchestration"],
+        impact: "↓ 70% Regression Time",
+        logs: ["> Executing Playwright suite...", "> AI detected flaky locator: SELF-HEALING...", "> Results synced to dashboard."]
+      },
+      data: {
+        title: "Data Integrity",
+        desc: "Deep validation across SQL, API, and AWS modules for high-complexity state eligibility systems.",
+        playbook: ["SQL/API data precision checks", "60% reduction in BI validation effort", "Governing Medicaid/SNAP data sets"],
+        impact: "99.9% Data Accuracy",
+        logs: ["> Running SQL integrity checks...", "> BI report validated (60% faster).", "> Data precision: 100%."]
+      },
+      uat: {
+        title: "UAT Sovereignty",
+        desc: "Orchestrating cross-functional UAT cycles with 12+ stakeholders to ensure zero-leakage production launches.",
+        playbook: ["Stakeholder sign-off management", "35% defect leakage reduction", "Managing 12+ business users"],
+        impact: "35% Leakage Reduced",
+        logs: ["> Aggregating UAT feedback...", "> Stakeholder approvals: 100%", "> Release confidence: 99.8%"]
       }
-      logContainer.scrollTop = logContainer.scrollHeight;
+    };
+
+    const moduleBtns = document.querySelectorAll('.module-btn');
+    const dTitle = document.getElementById('detail-title');
+    const dDesc = document.getElementById('detail-desc');
+    const dPlaybook = document.getElementById('detail-playbook');
+    const dImpact = document.getElementById('detail-impact');
+    const logContainer = document.getElementById('hud-log-stream');
+
+    function updateHUD(phase) {
+      const data = hudData[phase];
+      dTitle.textContent = data.title;
+      dDesc.textContent = data.desc;
+      dImpact.textContent = data.impact;
+      
+      dPlaybook.innerHTML = data.playbook.map(item => `<li>${item}</li>`).join('');
+      
+      logContainer.innerHTML = data.logs.map(log => `<div class="log-line">${log}</div>`).join('');
+      
+      moduleBtns.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.phase === phase);
+      });
     }
 
-    setInterval(updateLog, 3000);
-    updateLog(); // Init
+    moduleBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        updateHUD(btn.dataset.phase);
+      });
+    });
+
+    // Auto-cycle for Recruiters who don't click
+    let hudIndex = 0;
+    const phases = Object.keys(hudData);
+    setInterval(() => {
+      hudIndex = (hudIndex + 1) % phases.length;
+      updateHUD(phases[hudIndex]);
+    }, 6000);
+
+    updateHUD('discovery'); // Init
   </script>
 </body>
 

@@ -237,38 +237,95 @@ nav.scrolled {
 }
 .stat-label { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; margin-top: 0.25rem; }
 
-/* ─── Quality War Room Dashboard (Approach 1) ─── */
-.war-room-grid { display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 2rem; min-height: 450px; }
-.war-tile { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 1rem; padding: 2rem; position: relative; display: flex; flex-direction: column; }
+/* ─── Quality Governance HUD (Modern Leadership) ─── */
+.governance-hud { 
+  background: rgba(10, 15, 30, 0.4); 
+  border: 1px solid rgba(253, 224, 71, 0.1); 
+  border-radius: 2rem; 
+  overflow: hidden;
+  margin-top: 3rem;
+}
 
-/* Terminal Tile */
-.terminal-tile { background: #050505; border-color: #1a1a1a; }
-.tile-header { font-size: 0.7rem; font-weight: 800; color: var(--text-muted); letter-spacing: 0.1em; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
-.status-indicator { width: 8px; height: 8px; background: #00ff00; border-radius: 50%; box-shadow: 0 0 10px #00ff00; animation: aiBlink 1.5s infinite; }
-.log-content { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #00ff00; opacity: 0.8; overflow-y: hidden; height: 300px; display: flex; flex-direction: column; gap: 0.75rem; }
-.log-entry { border-left: 2px solid rgba(0,255,0,0.2); padding-left: 0.75rem; }
+.hud-layout { 
+  display: grid; 
+  grid-template-columns: 280px 1fr 280px; 
+  min-height: 550px; 
+}
 
-/* Main Gauge Tile */
-.main-tile { align-items: center; justify-content: center; background: radial-gradient(circle at center, rgba(253, 224, 71, 0.05) 0%, transparent 70%); border-color: rgba(253, 224, 71, 0.2); }
-.gauge-container { position: relative; width: 220px; height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 2rem; }
-.gauge-ring { position: absolute; width: 100%; height: 100%; border: 10px solid rgba(255,255,255,0.05); border-top: 10px solid var(--accent-gold); border-radius: 50%; transform: rotate(45deg); box-shadow: 0 0 30px rgba(253, 224, 71, 0.1); }
-.gauge-value { font-size: 3.5rem; font-weight: 900; color: #fff; line-height: 1; }
-.gauge-label { font-size: 0.7rem; font-weight: 800; color: var(--accent-gold); letter-spacing: 0.2em; margin-top: 0.5rem; }
+/* Modules Sidebar */
+.hud-modules { 
+  background: rgba(255,255,255,0.02); 
+  border-right: 1px solid rgba(255,255,255,0.05); 
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
-.main-metrics { display: flex; gap: 3rem; width: 100%; justify-content: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem; }
-.mini-stat { text-align: center; }
-.ms-label { display: block; font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.25rem; }
-.ms-val { font-size: 1.5rem; font-weight: 800; }
+.module-btn { 
+  padding: 1.25rem; 
+  background: transparent; 
+  border: 1px solid transparent; 
+  border-radius: 1rem; 
+  display: flex; 
+  gap: 1rem; 
+  align-items: center; 
+  cursor: pointer; 
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-/* Stats Tile */
-.stat-list { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1rem; }
-.stat-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; color: var(--text-secondary); padding-bottom: 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.03); }
-.trend-up { color: var(--accent-gold); font-weight: 800; }
-.governance-badge { margin-top: auto; background: rgba(253, 224, 71, 0.1); padding: 0.75rem; border-radius: 0.5rem; font-size: 0.7rem; font-weight: 800; text-align: center; color: var(--accent-gold); border: 1px solid rgba(253, 224, 71, 0.2); }
+.module-btn:hover { background: rgba(255,255,255,0.03); }
+.module-btn.active { 
+  background: rgba(253, 224, 71, 0.08); 
+  border-color: rgba(253, 224, 71, 0.3); 
+}
+
+.m-icon { font-size: 1.25rem; opacity: 0.7; }
+.m-title { display: block; font-size: 0.85rem; font-weight: 800; color: #fff; margin-bottom: 0.15rem; }
+.m-sub { display: block; font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* Detail Pane */
+.hud-detail-pane { padding: 3rem; position: relative; }
+.detail-header { margin-bottom: 2rem; }
+.live-indicator { 
+  display: flex; align-items: center; gap: 0.5rem; 
+  font-size: 0.65rem; font-weight: 900; color: var(--accent-gold); 
+  letter-spacing: 0.15em; margin-bottom: 0.75rem;
+}
+.live-dot { 
+  width: 6px; height: 6px; background: var(--accent-gold); 
+  border-radius: 50%; box-shadow: 0 0 10px var(--accent-gold); 
+  animation: aiBlink 1.5s infinite;
+}
+
+.hud-detail-pane h3 { font-size: 2.25rem; margin-bottom: 1.5rem; color: #fff; }
+.hud-detail-pane p { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 2.5rem; }
+
+.playbook-section { margin-bottom: 2.5rem; }
+.p-label { display: block; font-size: 0.75rem; font-weight: 900; color: var(--accent-gold); text-transform: uppercase; margin-bottom: 1rem; letter-spacing: 0.1em; }
+#detail-playbook { list-style: none; padding: 0; display: grid; gap: 0.75rem; }
+#detail-playbook li { font-size: 0.95rem; color: var(--text-secondary); display: flex; align-items: center; gap: 0.75rem; }
+#detail-playbook li::before { content: '→'; color: var(--accent-gold); font-weight: 900; }
+
+.detail-metrics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; }
+.dm-label { display: block; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.5rem; }
+.dm-val { font-size: 1.5rem; font-weight: 800; color: #fff; }
+
+/* Terminal */
+.hud-terminal { 
+  background: #050505; 
+  border-left: 1px solid rgba(255,255,255,0.05); 
+  padding: 1.5rem; 
+  font-family: 'JetBrains Mono', monospace; 
+}
+.terminal-header { font-size: 0.65rem; color: #555; margin-bottom: 1.5rem; font-weight: 800; letter-spacing: 0.1em; }
+.terminal-body { display: flex; flex-direction: column; gap: 0.75rem; }
+.log-line { font-size: 0.75rem; color: #10B981; border-left: 2px solid rgba(16, 185, 129, 0.3); padding-left: 0.75rem; line-height: 1.5; }
 
 @media (max-width: 1200px) {
-  .war-room-grid { grid-template-columns: 1fr; }
-  .war-tile { min-height: 300px; }
+  .hud-layout { grid-template-columns: 1fr; }
+  .hud-modules { flex-direction: row; overflow-x: auto; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .hud-terminal { display: none; }
 }
 
 /* ─── Section Styles ─── */

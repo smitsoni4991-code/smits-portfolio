@@ -142,10 +142,12 @@
           <h2>Ask My AI Assistant</h2>
           <p>I built this AI chat interface to quickly answer your questions about my Quality Engineering expertise. Select a prompt below to see it in action.</p>
           <div class="ai-prompts">
-            <button class="ai-prompt-btn" data-question="q1">How did you reduce production bugs by 35%?</button>
-            <button class="ai-prompt-btn" data-question="q2">What is your Playwright automation strategy?</button>
-            <button class="ai-prompt-btn" data-question="q3">How do you leverage AI in testing?</button>
-            <button class="ai-prompt-btn" data-question="q4">How do you manage and mentor your QA teams?</button>
+            <button class="ai-prompt-btn" data-question="stlc">How do you lead QA across the full STLC?</button>
+            <button class="ai-prompt-btn" data-question="leadership">How do you manage QA teams & UAT stakeholders?</button>
+            <button class="ai-prompt-btn" data-question="readiness">How do you define release readiness?</button>
+            <button class="ai-prompt-btn" data-question="ai-quality">How do you use AI without compromising quality?</button>
+            <button class="ai-prompt-btn" data-question="risk">How do you reduce leakage & production risk?</button>
+            <button class="ai-prompt-btn" data-question="manager-ready">What makes you ready for QA Lead / Manager roles?</button>
           </div>
         </div>
         <div class="ai-chat-window card fade-up delay-1">
@@ -574,10 +576,12 @@
     const typingIndicator = document.getElementById('aiChatTyping');
     
     const responses = {
-      'q1': "By shifting left! I implemented automated API contracts and E2E Playwright gates directly into the CI/CD pipeline, catching defects before they ever reached the main branch.",
-      'q2': "I build scalable, data-driven Playwright frameworks. I focus on reusable page-objects, parallel execution for speed, and integrating with CI tools to ensure 98%+ coverage.",
-      'q3': "I use custom AI tools (like Kiro) to auto-generate baseline test scripts, analyze failure logs instantly, and dynamically generate complex test data, cutting test creation time in half.",
-      'q4': "I manage cross-functional teams of up to 6 SDETs. My management style is focused on mentorship and growth—I lead by example through hands-on code reviews, pair programming, and upskilling my team in modern tools like Playwright and AI-assisted testing."
+      "stlc": "I lead QA as a 'Shift-Left' architect. I start at the requirement phase, using ambiguity analysis to catch defects early—often finding 200+ issues before development begins. I then govern the strategy across 21+ components to ensure a seamless flow from unit to production.",
+      "leadership": "Management is about empowerment. I've mentored 6 QA analysts to high-velocity delivery while simultaneously managing 12+ cross-functional stakeholders. My goal is to ensure every business user and engineer is aligned on the quality gate at every stage.",
+      "readiness": "Release readiness is a data-backed Go/No-Go decision. I look at defect aging, automation coverage, and risk-based testing results. I only sign off when we hit my target 99.8% confidence score, ensuring the business is protected at launch.",
+      "ai-quality": "I use AI as a force multiplier, not a replacement. I leverage it for test case generation and log analysis, but maintain 'Human-in-the-Loop' governance for high-risk business logic. This balance reduced my BI validation effort by 60%.",
+      "risk": "I focus on 'High-Value' risk mitigation. By prioritizing core modules and leading rigorous UAT cycles, I achieved a 35% reduction in production leakage and a zero-defect launch track record for state-level eligibility systems.",
+      "manager-ready": "With 7 years of hands-on and leadership experience, I’ve proven I can scale quality for multi-million dollar projects. I don't just find bugs; I build the systems, teams, and governance frameworks that prevent them. I'm ready to lead your quality transformation."
     };
 
     document.querySelectorAll('.ai-prompt-btn').forEach(btn => {

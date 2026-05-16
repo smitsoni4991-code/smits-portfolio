@@ -619,7 +619,15 @@
           aiMsg.className = 'message ai-message fade-up visible';
           aiMsg.innerText = responses[questionKey];
           
-    // Neural Core Logic
+          chatMessages.appendChild(aiMsg);
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+          
+          document.querySelectorAll('.ai-prompt-btn').forEach(b => b.disabled = false);
+        }, 1500);
+      });
+    });
+
+    // Neural Quality Core Logic
     const neuralData = [
       { title: "AI Automation", desc: "Architecting self-healing Playwright frameworks that cut regression time by 70% and eliminate manual toil.", metric: "↓ 70% Regression Time" },
       { title: "Shift-Left", desc: "Early-stage requirement analysis to catch 200+ defects before they reach development.", metric: "200+ Defects Prevented" },
@@ -635,6 +643,8 @@
     const nMetric = document.getElementById('n-card-metric');
 
     function updateNeural() {
+      if (!nNodes.length || !nTitle) return;
+      
       // Reset nodes
       nNodes.forEach(n => n.classList.remove('active'));
       
@@ -650,8 +660,10 @@
     }
 
     // Live Auto-Pulse
-    setInterval(updateNeural, 3500);
-    updateNeural(); // Init
+    if (nNodes.length > 0) {
+      setInterval(updateNeural, 3500);
+      updateNeural(); 
+    }
   </script>
 </body>
 

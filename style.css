@@ -235,7 +235,7 @@ nav.scrolled {
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-.stat-label { font-size: 0.82r/* ─── Leadership Command HUD (Approach G) ─── */
+.stat-label { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; margin-top: 0.25rem; }
 .hud-card { margin-top: 2rem; padding: 2.5rem; background: rgba(5, 8, 15, 0.8); border: 1px solid rgba(255,255,255,0.05); border-radius: 1.5rem; }
 
 /* Executive Dials */
@@ -284,7 +284,6 @@ nav.scrolled {
 @media (max-width: 1024px) {
   .hud-dials { grid-template-columns: 1fr; gap: 1.5rem; }
   .console-grid { grid-template-columns: repeat(3, 1fr); }
-}ole-grid { grid-template-columns: repeat(3, 1fr); }
   .hud-card { padding: 2rem; }
 }
 

@@ -42,79 +42,84 @@
   <!-- ─── Hero ─── -->
   <section class="hero" id="hero">
     <div class="hero-content">
-      <div class="hero-photo fade-up">
-        <img src="profile_perfect.png" alt="Smit Soni" />
+      <div class="status-pill fade-up">
+        <span class="status-dot"></span>
+        Available for Strategic Leadership Roles
       </div>
-      <div class="hero-badge fade-up delay-1">
-        <span class="pulse"></span> Available for Strategic Leadership
-      </div>
-      <h1 class="fade-up delay-1">Hi, I am <span class="gradient-text">Smit Soni</span></h1>
-      <p class="hero-subtitle fade-up delay-2">I help teams reduce release risk through AI-assisted testing, UAT leadership, automation strategy, SQL/API validation, and data-driven quality governance.</p>
-      <div class="hero-tags fade-up delay-2">
-        <span class="hero-tag">✨ AI-Assisted Test Gen</span>
-        <span class="hero-tag">Test Strategy & Planning</span>
-        <span class="hero-tag">CI/CD Integration</span>
-        <span class="hero-tag">Data Quality Engineering</span>
-        <span class="hero-tag">Playwright Automation</span>
-        <span class="hero-tag">AWS / SQL</span>
-        <span class="hero-tag">Tableau Automation</span>
-      </div>
-      <div class="hero-btns fade-up delay-3">
-        <a href="#stlc-autopilot" class="btn btn-primary">Launch STLC Autopilot</a>
+      <h1 class="hero-title fade-up">Engineering Release Confidence through <span class="text-gradient">AI-Driven Governance.</span></h1>
+      <p class="hero-subtitle fade-up">
+        Hi, I am <span class="highlight">Smit Soni.</span> I help teams reduce release risk through AI-assisted testing, UAT leadership, automation strategy, and data-driven quality governance.
+      </p>
+      <div class="hero-cta fade-up">
+        <a href="#quality-war-room" class="btn btn-primary">Enter Quality War Room</a>
         <a href="#contact" class="btn btn-outline">Schedule Consultation</a>
       </div>
     </div>
   </section>
 
-  <!-- ─── STLC Autopilot: The AI Live Model ─── -->
-  <section id="stlc-autopilot" class="container">
-    <div class="stlc-header fade-up">
-      <span class="section-label">AI Live Model</span>
-      <h2 class="stlc-title">Autonomous Quality Engine</h2>
-      <p class="stlc-subtitle">Experience how I orchestrate the full STLC lifecycle using AI-assisted testing to reduce release risk.</p>
+  <!-- ─── Quality War Room Dashboard: Approach 1 ─── -->
+  <section id="quality-war-room" class="container">
+    <div class="exec-header fade-up">
+      <span class="section-label">Enterprise Command Center</span>
+      <h2 class="exec-title">Quality Transformation War Room</h2>
+      <p class="exec-subtitle">A live, data-driven dashboard managing release risk, team velocity, and AI-assisted governance across the enterprise ecosystem.</p>
     </div>
 
-    <div class="stlc-container glass-card fade-up">
-      <div class="stlc-visual">
-        <div class="stlc-track">
-          <div class="stlc-step active" data-step="0">
-            <div class="step-num">01</div>
-            <div class="step-label">Analysis</div>
-          </div>
-          <div class="stlc-step" data-step="1">
-            <div class="step-num">02</div>
-            <div class="step-label">Strategy</div>
-          </div>
-          <div class="stlc-step" data-step="2">
-            <div class="step-num">03</div>
-            <div class="step-label">Execution</div>
-          </div>
-          <div class="stlc-step" data-step="3">
-            <div class="step-num">04</div>
-            <div class="step-label">UAT</div>
-          </div>
-          <div class="stlc-step" data-step="4">
-            <div class="step-num">05</div>
-            <div class="step-label">Release</div>
-          </div>
+    <div class="war-room-grid fade-up">
+      <!-- Left: AI Activity Stream -->
+      <div class="war-tile terminal-tile">
+        <div class="tile-header">
+          <span class="status-indicator"></span>
+          AI ACTIVITY LOG
         </div>
-        <div class="stlc-progress-bar">
-          <div class="stlc-progress-fill" id="stlc-progress"></div>
+        <div id="ai-log-stream" class="log-content">
+          <div class="log-entry">> Initializing AI Quality Agent...</div>
+          <div class="log-entry">> Scanning 21+ components for risk...</div>
+          <div class="log-entry">> Analyzing API contracts (99.9% pass)...</div>
         </div>
       </div>
 
-      <div class="stlc-content-area">
-        <div id="stlc-card" class="stlc-card">
-          <div class="card-header">
-            <span class="ai-badge">AI INSIGHT ACTIVE</span>
-            <h3 id="card-title">Requirement Analysis</h3>
+      <!-- Center: Release Confidence Gauge -->
+      <div class="war-tile main-tile">
+        <div class="gauge-container">
+          <div class="gauge-ring"></div>
+          <div class="gauge-value">99.8%</div>
+          <div class="gauge-label">RELEASE CONFIDENCE</div>
+        </div>
+        <div class="main-metrics">
+          <div class="mini-stat">
+            <span class="ms-label">Defect Leakage</span>
+            <span class="ms-val text-gradient">0.2%</span>
           </div>
-          <p id="card-desc">Using AI to scan PRDs for ambiguity, identifying 200+ defects at the requirements stage before a single line of code is written.</p>
-          <div class="card-metric">
-            <span class="m-label">Impact:</span>
-            <span class="m-val" id="card-metric">70% Less Rework</span>
+          <div class="mini-stat">
+            <span class="ms-label">ROI Realized</span>
+            <span class="ms-val text-gradient">$154K</span>
           </div>
         </div>
+      </div>
+
+      <!-- Right: Team & Velocity Stats -->
+      <div class="war-tile stats-tile">
+        <div class="tile-header">KEY PERFORMANCE INDICATORS</div>
+        <div class="stat-list">
+          <div class="stat-row">
+            <span>Regression Time</span>
+            <span class="trend-up">↓ 70%</span>
+          </div>
+          <div class="stat-row">
+            <span>Test Coverage</span>
+            <span class="trend-up">92%</span>
+          </div>
+          <div class="stat-row">
+            <span>Team Mentorship</span>
+            <span class="trend-up">6 Analysts</span>
+          </div>
+          <div class="stat-row">
+            <span>UAT Sign-off</span>
+            <span class="trend-up">100%</span>
+          </div>
+        </div>
+        <div class="governance-badge">GOVERNANCE LEVEL: ARCHITECT</div>
       </div>
     </div>
   </section>
@@ -600,41 +605,38 @@
       });
     });
 
-    // STLC Autopilot Logic
-    const stlcData = [
-      { title: "Requirement Analysis", desc: "Using AI to scan PRDs for ambiguity, identifying 200+ defects at the requirements stage before a single line of code is written.", metric: "70% Less Rework" },
-      { title: "Test Strategy", desc: "Architecting a risk-based testing strategy for 21+ components, ensuring 100% coverage of business-critical flows.", metric: "100% Coverage" },
-      { title: "Smart Execution", desc: "Executing 1500+ automated Playwright/API tests with AI-driven self-healing locators for maximum stability.", metric: "Zero Flakiness" },
-      { title: "UAT Governance", desc: "Leading 12+ stakeholders through high-stakes Medicaid/SNAP UAT, ensuring 35% reduction in production leakage.", metric: "Zero Leakage" },
-      { title: "Release Sign-off", desc: "Providing data-backed Go/No-Go decisions for enterprise launches with 99.8% confidence score.", metric: "100% Success" }
+    // War Room Dashboard Logic
+    const logEntries = [
+      "> Scanning Web/Mobile UI for regression...",
+      "> Analyzing 21+ backend components...",
+      "> Executing SQL data integrity checks...",
+      "> Optimizing Playwright locators...",
+      "> Summarizing UAT stakeholder feedback...",
+      "> AI Risk Model: Confidence at 99.8%",
+      "> Shift-left gates: PASSED",
+      "> Generating release readiness report...",
+      "> Defect Leakage monitoring active..."
     ];
 
-    let currentStep = 0;
-    const steps = document.querySelectorAll('.stlc-step');
-    const progress = document.getElementById('stlc-progress');
-    const cardTitle = document.getElementById('card-title');
-    const cardDesc = document.getElementById('card-desc');
-    const cardMetric = document.getElementById('card-metric');
+    let logIndex = 0;
+    const logContainer = document.getElementById('ai-log-stream');
 
-    function updateSTLC() {
-      if (!steps.length || !progress) return;
+    function updateLog() {
+      if (!logContainer) return;
+      const entry = document.createElement('div');
+      entry.className = 'log-entry fade-up visible';
+      entry.innerText = logEntries[logIndex];
+      logContainer.appendChild(entry);
+      logIndex = (logIndex + 1) % logEntries.length;
       
-      steps.forEach((s, i) => {
-        s.classList.toggle('active', i === currentStep);
-      });
-      
-      progress.style.width = ((currentStep) / (stlcData.length - 1)) * 100 + "%";
-      
-      const data = stlcData[currentStep];
-      cardTitle.textContent = data.title;
-      cardDesc.textContent = data.desc;
-      cardMetric.textContent = data.metric;
-
-      currentStep = (currentStep + 1) % stlcData.length;
+      if (logContainer.children.length > 8) {
+        logContainer.removeChild(logContainer.firstChild);
+      }
+      logContainer.scrollTop = logContainer.scrollHeight;
     }
 
-    setInterval(updateSTLC, 4000);
-    updateSTLC(); // Init
+    setInterval(updateLog, 3000);
+    updateLog(); // Init
   </script>
 </body>
 

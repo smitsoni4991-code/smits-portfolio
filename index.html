@@ -66,53 +66,61 @@
     </div>
   </section>
 
-  <!-- ─── AI Quality Command Center ─── -->
-  <section id="command-center" class="container">
-    <div class="exec-header fade-up">
-      <span class="section-label">EXECUTIVE LEADERSHIP MODULE</span>
-      <h1 class="exec-title" style="font-size: 3rem; margin-top: 1rem;">AI Quality Command Center</h1>
-      <p class="exec-subtitle" style="font-size: 1.2rem; opacity: 0.8; max-width: 800px;">Orchestrating the 9-stage STLC leadership cycle through AI-assisted governance and data-driven decision making.</p>
+  <!-- ─── Live Governance Feed: Approach B ─── -->
+  <section id="governance-feed" class="container-full">
+    <div class="feed-header fade-up">
+      <div class="feed-hud">
+        <div class="hud-stat">
+          <span class="hud-label">GLOBAL RISK SCORE</span>
+          <span id="hud-risk" class="hud-val glow-green">0.021</span>
+        </div>
+        <div class="hud-stat">
+          <span class="hud-label">RELEASE CONFIDENCE</span>
+          <span id="hud-conf" class="hud-val">99.8%</span>
+        </div>
+        <div class="hud-stat">
+          <span class="hud-label">ACTIVE GOVERNANCE</span>
+          <span class="hud-val pulse-text">LIVE</span>
+        </div>
+      </div>
     </div>
 
-    <div class="command-card glass-card fade-up">
-      <!-- Tabs Sidebar/Top -->
-      <div class="command-tabs">
-        <button class="tab-btn active" data-stage="requirements">REQUIREMENTS</button>
-        <button class="tab-btn" data-stage="risk">RISK ANALYSIS</button>
-        <button class="tab-btn" data-stage="strategy">STRATEGY</button>
-        <button class="tab-btn" data-stage="design">DESIGN</button>
-        <button class="tab-btn" data-stage="validation">VALIDATION</button>
-        <button class="tab-btn" data-stage="uat">UAT</button>
-        <button class="tab-btn" data-stage="triage">TRIAGE</button>
-        <button class="tab-btn" data-stage="readiness">READINESS</button>
-        <button class="tab-btn" data-stage="monitoring">MONITORING</button>
+    <div class="feed-layout fade-up">
+      <!-- Left: Stage Selector -->
+      <div class="feed-sidebar">
+        <div class="sidebar-title">STLC PIPELINE</div>
+        <div class="stage-list">
+          <button class="stage-btn active" data-stage="requirements">01. REQUIREMENTS</button>
+          <button class="stage-btn" data-stage="risk">02. RISK ANALYSIS</button>
+          <button class="stage-btn" data-stage="strategy">03. STRATEGY</button>
+          <button class="stage-btn" data-stage="design">04. DESIGN</button>
+          <button class="stage-btn" data-stage="validation">05. VALIDATION</button>
+          <button class="stage-btn" data-stage="uat">06. UAT</button>
+          <button class="stage-btn" data-stage="triage">07. TRIAGE</button>
+          <button class="stage-btn" data-stage="readiness">08. READINESS</button>
+          <button class="stage-btn" data-stage="monitoring">09. MONITORING</button>
+        </div>
       </div>
 
-      <!-- Main Display -->
-      <div class="command-layout">
-        <div class="command-main">
-          <h2 id="stage-title" class="stage-title">Release Readiness</h2>
-          <p id="stage-desc" class="stage-desc">Orchestrating the final Go/No-Go decision based on data-backed quality metrics and risk scores.</p>
-          
-          <div class="command-impact-grid">
-            <div class="impact-item">
-              <span class="impact-label">LEADERSHIP IMPACT</span>
-              <div id="impact-val" class="impact-val">Release Strategist</div>
-            </div>
-            <div class="impact-item">
-              <span class="impact-label">STRATEGIC ROI</span>
-              <div id="roi-val" class="impact-val">99.8% Success Rate</div>
-            </div>
-          </div>
+      <!-- Center/Right: The Terminal Stream -->
+      <div class="feed-terminal">
+        <div class="terminal-top">
+          <span class="terminal-title">GOVERNANCE_STREAM_v4.2</span>
+          <div class="terminal-dots"><span></span><span></span><span></span></div>
         </div>
-
-        <!-- Terminal Sidebar -->
-        <div class="command-terminal">
-          <div class="terminal-header">AI ANALYTICS CORE</div>
-          <div id="terminal-logs" class="terminal-body">
-            <div class="log-line green">| > Running final risk score...</div>
-            <div class="log-line green">| > Score: 0.002 (Minimal Risk)</div>
-            <div class="log-line green">| > Release APPROVED</div>
+        <div id="log-stream" class="terminal-body">
+          <!-- Logs will stream here -->
+        </div>
+        
+        <!-- Impact Footer -->
+        <div class="feed-footer">
+          <div class="footer-col">
+            <span class="f-label">LEADERSHIP FOCUS</span>
+            <div id="feed-impact" class="f-val">Release Architect</div>
+          </div>
+          <div class="footer-col">
+            <span class="f-label">STRATEGIC ROI</span>
+            <div id="feed-roi" class="f-val">↓ 25% Rework</div>
           </div>
         </div>
       </div>
@@ -604,110 +612,183 @@
       });
     });
 
-    // AI Quality Command Center Logic
-    const commandData = {
+    // Live Governance Feed Logic
+    const feedData = {
       requirements: {
-        title: "Requirement Engineering",
-        desc: "Using AI ambiguity analysis to identify data gaps and edge cases before development begins.",
         impact: "Risk Architect",
         roi: "↓ 25% Rework Cost",
-        logs: ["| > Scanning PRDs for ambiguity...", "| > 12 Data gaps identified.", "| > Requirements VALIDATED."]
+        risk: "0.450",
+        conf: "85.2%",
+        logs: [
+          "[INFO] Initializing PRD Ambiguity Scan...",
+          "[SCAN] Analyzing Section 4.2: Data Retention...",
+          "[WARN] Conflict detected between Requirement A and B.",
+          "[AI] Generating clarifying questions for Stakeholders...",
+          "[GOV] 12 Gaps identified and triaged.",
+          "[STATUS] Requirements Sovereignty: STABLE"
+        ]
       },
       risk: {
-        title: "Risk Analysis",
-        desc: "Modeling quality impact across 21+ cross-functional components to prioritize high-value testing.",
         impact: "Quality Strategist",
         roi: "Optimal Coverage",
-        logs: ["| > Modeling dependency graph...", "| > High-risk modules identified.", "| > Strategy updated."]
+        risk: "0.210",
+        conf: "91.5%",
+        logs: [
+          "[AUTH] Accessing 21+ Component Metadata...",
+          "[MAP] Dependency graph generated successfully.",
+          "[RISK] High-risk cluster detected in Billing Module.",
+          "[GOV] Prioritizing regression suite for impact zones.",
+          "[AUDIT] Risk baseline set for release v1.4.",
+          "[STATUS] Risk Mitigation Strategy: ACTIVE"
+        ]
       },
       strategy: {
-        title: "Strategic Planning",
-        desc: "Orchestrating end-to-end quality roadmaps for Medicaid, SNAP, and Retail billing systems.",
         impact: "Governance Lead",
         roi: "100% Alignment",
-        logs: ["| > Aligning stakeholders...", "| > Quality gates defined.", "| > Roadmap baseline set."]
+        risk: "0.150",
+        conf: "94.0%",
+        logs: [
+          "[PLAN] Orchestrating Medicaid/SNAP roadmap...",
+          "[GOV] Quality gates defined for 5 release cycles.",
+          "[SYNC] Aligning 12+ cross-functional stakeholders...",
+          "[AUDIT] Test Strategy signed off by Leadership.",
+          "[STATUS] Governance Model: DEPLOYED"
+        ]
       },
       design: {
-        title: "Framework Design",
-        desc: "Architecting scalable Playwright and API automation ecosystems with AI self-healing.",
         impact: "Automation Architect",
         roi: "↑ 3x Speed-to-Market",
-        logs: ["| > Designing modular components...", "| > Self-healing logic active.", "| > Scalability: Verified."]
+        risk: "0.110",
+        conf: "95.5%",
+        logs: [
+          "[DEV] Architecting Playwright Modular Framework...",
+          "[AI] Self-healing logic injected into core locators.",
+          "[API] Contract validation scripts generated.",
+          "[GOV] CI/CD integration complete (Jenkins/GitLab).",
+          "[STATUS] Automation Infrastructure: ONLINE"
+        ]
       },
       validation: {
-        title: "Rigorous Validation",
-        desc: "Executing precision SQL and API validation with 99.9% data accuracy across AWS modules.",
         impact: "Data Governor",
         roi: "↓ 60% Manual Effort",
-        logs: ["| > Running SQL integrity packs...", "| > API contracts PASSED.", "| > Data precision: 100%."]
+        risk: "0.080",
+        conf: "97.8%",
+        logs: [
+          "[EXEC] Running SQL Data Integrity Packs...",
+          "[API] Validating claim eligibility endpoints...",
+          "[AWS] S3 bucket data consistency: 100%.",
+          "[GOV] Manual verification reduced by 60%.",
+          "[STATUS] Technical Validation: PASSED"
+        ]
       },
       uat: {
-        title: "UAT Sovereignty",
-        desc: "Leading 12+ business stakeholders through rigorous Medicaid/SNAP eligibility sign-offs.",
         impact: "Stakeholder Manager",
         roi: "Zero UAT Leakage",
-        logs: ["| > Collating UAT feedback...", "| > 12/12 Approvals received.", "| > Business sign-off: OK."]
+        risk: "0.040",
+        conf: "98.5%",
+        logs: [
+          "[USER] Initiating Business Acceptance Cycles...",
+          "[GOV] Managing 12+ Stakeholder sign-offs.",
+          "[UAT] Eligibility module approval: RECEIVED.",
+          "[AUDIT] Zero critical leakage reported in cycle 1.",
+          "[STATUS] UAT Sovereignty: SECURED"
+        ]
       },
       triage: {
-        title: "Intelligent Triage",
-        desc: "Directing defect resolution cycles with AI-assisted root cause analysis.",
         impact: "Delivery Accelerator",
         roi: "↓ 40% Fix Time",
-        logs: ["| > Analyzing failure logs...", "| > Root cause: Memory Leak.", "| > Ticket assigned to Dev-A."]
+        risk: "0.030",
+        conf: "99.0%",
+        logs: [
+          "[TRG] Defect incoming: Priority 1 (Billing).",
+          "[AI] Root cause analysis: Memory Leak in v2.1.",
+          "[GOV] Reassigning to Core Dev Team A.",
+          "[AUDIT] Resolution cycle time: 1.4 hours.",
+          "[STATUS] Triage Efficiency: OPTIMIZED"
+        ]
       },
       readiness: {
-        title: "Release Readiness",
-        desc: "Orchestrating the final Go/No-Go decision based on data-backed quality metrics and risk scores.",
         impact: "Release Strategist",
         roi: "99.8% Success Rate",
-        logs: ["| > Running final risk score...", "| > Score: 0.002 (Minimal Risk)", "| > Release APPROVED"]
+        risk: "0.002",
+        conf: "99.8%",
+        logs: [
+          "[GOV] Aggregating all quality gate evidence...",
+          "[AI] Running final release risk simulation.",
+          "[RISK] Score: 0.002 (Minimal Risk Zone).",
+          "[READ] All stakeholders APPROVED.",
+          "[DECISION] Go/No-Go: GO.",
+          "[STATUS] RELEASE APPROVED"
+        ]
       },
       monitoring: {
-        title: "Post-Release Insight",
-        desc: "Monitoring production health and feedback loops to continuously refine the quality model.",
         impact: "Continuous Governor",
         roi: "35% Leakage Reduction",
-        logs: ["| > Monitoring Prod logs...", "| > Defect leakage: 0.02%", "| > Feedback loop: Closed."]
+        risk: "0.001",
+        conf: "100%",
+        logs: [
+          "[POST] Monitoring production health metrics...",
+          "[GOV] Defect leakage tracking: 0.02%.",
+          "[AI] Closing feedback loop for v1.5 cycle.",
+          "[AUDIT] Total ROI realized: $154K.",
+          "[STATUS] Production Sovereignty: MAINTAINED"
+        ]
       }
     };
 
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const sTitle = document.getElementById('stage-title');
-    const sDesc = document.getElementById('stage-desc');
-    const iVal = document.getElementById('impact-val');
-    const rVal = document.getElementById('roi-val');
-    const logArea = document.getElementById('terminal-logs');
+    const stageBtns = document.querySelectorAll('.stage-btn');
+    const logStream = document.getElementById('log-stream');
+    const hudRisk = document.getElementById('hud-risk');
+    const hudConf = document.getElementById('hud-conf');
+    const fImpact = document.getElementById('feed-impact');
+    const fRoi = document.getElementById('feed-roi');
 
-    function updateCommandCenter(stage) {
-      const data = commandData[stage];
-      sTitle.textContent = data.title;
-      sDesc.textContent = data.desc;
-      iVal.textContent = data.impact;
-      rVal.textContent = data.roi;
+    function updateFeed(stage) {
+      const data = feedData[stage];
       
-      logArea.innerHTML = data.logs.map(log => `<div class="log-line green">${log}</div>`).join('');
+      // Update UI
+      hudRisk.textContent = data.risk;
+      hudConf.textContent = data.conf;
+      fImpact.textContent = data.impact;
+      fRoi.textContent = data.roi;
       
-      tabBtns.forEach(btn => {
+      // Clear and Stream Logs
+      logStream.innerHTML = '';
+      let i = 0;
+      function streamLogs() {
+        if (i < data.logs.length) {
+          const log = document.createElement('div');
+          log.className = 'log-line fade-up visible';
+          log.textContent = `> ${data.logs[i]}`;
+          logStream.appendChild(log);
+          logStream.scrollTop = logStream.scrollHeight;
+          i++;
+          setTimeout(streamLogs, 150); // High-velocity feel
+        }
+      }
+      streamLogs();
+      
+      stageBtns.forEach(btn => {
         btn.classList.toggle('active', btn.dataset.stage === stage);
       });
     }
 
-    tabBtns.forEach(btn => {
+    stageBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        updateCommandCenter(btn.dataset.stage);
+        updateFeed(btn.dataset.stage);
       });
     });
 
     // Auto-cycle
-    let stageKeys = Object.keys(commandData);
-    let stageIdx = 7; // Start at Readiness like the image
+    let feedKeys = Object.keys(feedData);
+    let feedIdx = 7; 
     
     setInterval(() => {
-      stageIdx = (stageIdx + 1) % stageKeys.length;
-      updateCommandCenter(stageKeys[stageIdx]);
-    }, 8000);
+      feedIdx = (feedIdx + 1) % feedKeys.length;
+      updateFeed(feedKeys[feedIdx]);
+    }, 10000);
 
-    updateCommandCenter('readiness'); // Init
+    updateFeed('readiness'); // Init
   </script>
 </body>
 

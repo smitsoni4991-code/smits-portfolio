@@ -237,83 +237,38 @@ nav.scrolled {
 }
 .stat-label { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; margin-top: 0.25rem; }
 
-/* ─── AI Quality Command Center (Executive HUD) ─── */
-.command-hud {
-  display: flex;
-  flex-direction: column;
-  background: rgba(10, 15, 30, 0.4);
-  border: 1px solid rgba(253, 224, 71, 0.1);
-  border-radius: 2rem;
-  overflow: hidden;
-  margin-top: 3rem;
-}
+/* ─── Quality War Room Dashboard (Approach 1) ─── */
+.war-room-grid { display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 2rem; min-height: 450px; }
+.war-tile { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 1rem; padding: 2rem; position: relative; display: flex; flex-direction: column; }
 
-.hud-nav {
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  background: rgba(255, 255, 255, 0.03);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
+/* Terminal Tile */
+.terminal-tile { background: #050505; border-color: #1a1a1a; }
+.tile-header { font-size: 0.7rem; font-weight: 800; color: var(--text-muted); letter-spacing: 0.1em; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
+.status-indicator { width: 8px; height: 8px; background: #00ff00; border-radius: 50%; box-shadow: 0 0 10px #00ff00; animation: aiBlink 1.5s infinite; }
+.log-content { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #00ff00; opacity: 0.8; overflow-y: hidden; height: 300px; display: flex; flex-direction: column; gap: 0.75rem; }
+.log-entry { border-left: 2px solid rgba(0,255,0,0.2); padding-left: 0.75rem; }
 
-.nav-item {
-  padding: 1.25rem 0.5rem;
-  text-align: center;
-  font-size: 0.6rem;
-  font-weight: 800;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  cursor: pointer;
-  transition: all 0.3s;
-  border-right: 1px solid rgba(255, 255, 255, 0.02);
-}
+/* Main Gauge Tile */
+.main-tile { align-items: center; justify-content: center; background: radial-gradient(circle at center, rgba(253, 224, 71, 0.05) 0%, transparent 70%); border-color: rgba(253, 224, 71, 0.2); }
+.gauge-container { position: relative; width: 220px; height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 2rem; }
+.gauge-ring { position: absolute; width: 100%; height: 100%; border: 10px solid rgba(255,255,255,0.05); border-top: 10px solid var(--accent-gold); border-radius: 50%; transform: rotate(45deg); box-shadow: 0 0 30px rgba(253, 224, 71, 0.1); }
+.gauge-value { font-size: 3.5rem; font-weight: 900; color: #fff; line-height: 1; }
+.gauge-label { font-size: 0.7rem; font-weight: 800; color: var(--accent-gold); letter-spacing: 0.2em; margin-top: 0.5rem; }
 
-.nav-item:last-child { border-right: none; }
-.nav-item:hover { background: rgba(255, 255, 255, 0.03); }
-.nav-item.active {
-  background: rgba(253, 224, 71, 0.08);
-  color: var(--accent-gold);
-  box-shadow: inset 0 -3px 0 var(--accent-gold);
-}
+.main-metrics { display: flex; gap: 3rem; width: 100%; justify-content: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem; }
+.mini-stat { text-align: center; }
+.ms-label { display: block; font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.25rem; }
+.ms-val { font-size: 1.5rem; font-weight: 800; }
 
-.hud-main {
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  min-height: 400px;
-}
+/* Stats Tile */
+.stat-list { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1rem; }
+.stat-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; color: var(--text-secondary); padding-bottom: 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.03); }
+.trend-up { color: var(--accent-gold); font-weight: 800; }
+.governance-badge { margin-top: auto; background: rgba(253, 224, 71, 0.1); padding: 0.75rem; border-radius: 0.5rem; font-size: 0.7rem; font-weight: 800; text-align: center; color: var(--accent-gold); border: 1px solid rgba(253, 224, 71, 0.2); }
 
-.hud-detail { padding: 3.5rem; }
-.hud-detail h3 { font-size: 2rem; margin-bottom: 1.25rem; color: #fff; font-family: 'Inter', sans-serif; font-weight: 800; }
-.hud-detail p { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 2.5rem; max-width: 700px; }
-
-.hud-impact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  padding-top: 2.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.hi-box { display: flex; flex-direction: column; gap: 0.4rem; }
-.hi-label { font-size: 0.65rem; font-weight: 900; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.15em; }
-.hi-val { font-size: 1.5rem; font-weight: 800; color: #fff; }
-
-.hud-terminal {
-  background: #050505;
-  border-left: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 1.5rem;
-  font-family: 'JetBrains Mono', monospace;
-}
-
-.terminal-header { font-size: 0.6rem; color: #444; margin-bottom: 1.5rem; font-weight: 800; letter-spacing: 0.2em; }
-.terminal-body { display: flex; flex-direction: column; gap: 0.75rem; }
-.log-line { font-size: 0.7rem; color: #10B981; border-left: 2px solid rgba(16, 185, 129, 0.2); padding-left: 0.75rem; line-height: 1.4; opacity: 0.8; }
-
-@media (max-width: 1100px) {
-  .hud-nav { grid-template-columns: repeat(3, 1fr); }
-  .hud-main { grid-template-columns: 1fr; }
-  .hud-terminal { display: none; }
-  .hud-detail { padding: 2rem; }
+@media (max-width: 1200px) {
+  .war-room-grid { grid-template-columns: 1fr; }
+  .war-tile { min-height: 300px; }
 }
 
 /* ─── Section Styles ─── */

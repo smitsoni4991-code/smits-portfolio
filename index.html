@@ -85,60 +85,61 @@
     </div>
   </section>
 
-  <!-- ─── Quality Strategic Radar: Approach 4 ─── -->
-  <section id="strategic-radar" class="container">
+  <!-- ─── Neural Quality Core: Approach 2 ─── -->
+  <section id="neural-core" class="container">
     <div class="exec-header fade-up">
-      <span class="section-label">Leadership Equilibrium</span>
-      <h2 class="exec-title">Strategic Quality Spectrum</h2>
-      <p class="exec-subtitle">A live visualization of my balanced leadership across the five pillars of modern Quality Engineering.</p>
+      <span class="section-label">Architectural Intelligence</span>
+      <h2 class="exec-title">Neural Quality Engine</h2>
+      <p class="exec-subtitle">A living map of my quality ecosystem—where AI-assisted automation, data integrity, and strategic governance converge.</p>
     </div>
 
-    <div class="radar-container glass-card fade-up">
-      <div class="radar-layout">
-        <!-- Left: The Live SVG Radar -->
-        <div class="radar-visual">
-          <svg viewBox="0 0 400 400" class="radar-svg">
-            <!-- Grid Lines -->
-            <circle cx="200" cy="200" r="150" class="radar-grid" />
-            <circle cx="200" cy="200" r="100" class="radar-grid" />
-            <circle cx="200" cy="200" r="50" class="radar-grid" />
-            
-            <!-- Axis Lines -->
-            <line x1="200" y1="50" x2="200" y2="350" class="radar-axis" />
-            <line x1="50" y1="200" x2="350" y2="200" class="radar-axis" />
-            <line x1="94" y1="94" x2="306" y2="306" class="radar-axis" />
-            <line x1="94" y1="306" x2="306" y2="94" class="radar-axis" />
-
-            <!-- Labels -->
-            <text x="200" y="30" class="radar-label">AI INNOVATION</text>
-            <text x="360" y="200" class="radar-label">AUTOMATION</text>
-            <text x="200" y="380" class="radar-label">UAT GOVERNANCE</text>
-            <text x="40" y="200" class="radar-label">DATA INTEGRITY</text>
-            <text x="310" y="80" class="radar-label">RELEASE RISK</text>
-
-            <!-- Live Polygon -->
-            <polygon id="radar-polygon" points="" class="radar-poly" />
-          </svg>
+    <div class="neural-container glass-card fade-up">
+      <div class="neural-visual">
+        <!-- The Central Engine -->
+        <div class="core-node">
+          <div class="core-glow"></div>
+          <div class="core-inner">ENGINE</div>
         </div>
 
-        <!-- Right: Dynamic Achievements -->
-        <div class="radar-info">
-          <div class="live-status-badge">
-            <span class="live-pulse"></span>
-            LIVE STRATEGY ANALYSIS
-          </div>
-          
-          <div id="radar-achievement-card" class="radar-card">
-            <h3 id="radar-focus-title">AI Innovation</h3>
-            <p id="radar-focus-desc">Leveraging Kiro CLI and autonomous agents to reduce test generation time by 50% while maintaining 98% script reliability.</p>
-            <div class="radar-metric">
-              <span class="m-val" id="radar-focus-metric">50% Efficiency Gain</span>
-            </div>
-          </div>
+        <!-- Orbital Nodes & Connections -->
+        <div class="orbital-system">
+          <svg class="neural-lines" viewBox="0 0 800 500">
+            <!-- Connection Lines -->
+            <path id="path-1" d="M400,250 L200,100" class="n-line" />
+            <path id="path-2" d="M400,250 L600,100" class="n-line" />
+            <path id="path-3" d="M400,250 L700,250" class="n-line" />
+            <path id="path-4" d="M400,250 L600,400" class="n-line" />
+            <path id="path-5" d="M400,250 L200,400" class="n-line" />
+            <path id="path-6" d="M400,250 L100,250" class="n-line" />
 
-          <div class="radar-legend">
-            <div class="legend-item"><span class="dot gold"></span> Current Leadership Focus</div>
-            <div class="legend-item"><span class="dot gray"></span> Industry Benchmark</div>
+            <!-- Data Packets (Animated) -->
+            <circle r="3" class="data-packet"><animateMotion dur="3s" repeatCount="indefinite"><mpath href="#path-1"/></animateMotion></circle>
+            <circle r="3" class="data-packet"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#path-2"/></animateMotion></circle>
+            <circle r="3" class="data-packet"><animateMotion dur="2.5s" repeatCount="indefinite"><mpath href="#path-3"/></animateMotion></circle>
+            <circle r="3" class="data-packet"><animateMotion dur="5s" repeatCount="indefinite"><mpath href="#path-4"/></animateMotion></circle>
+            <circle r="3" class="data-packet"><animateMotion dur="3.5s" repeatCount="indefinite"><mpath href="#path-5"/></animateMotion></circle>
+          </svg>
+
+          <!-- Floating Nodes -->
+          <div class="n-node node-1" data-id="0">AI Automation</div>
+          <div class="n-node node-2" data-id="1">Shift-Left</div>
+          <div class="n-node node-3" data-id="2">UAT Strategy</div>
+          <div class="n-node node-4" data-id="3">Data Integrity</div>
+          <div class="n-node node-5" data-id="4">Release Risk</div>
+        </div>
+      </div>
+
+      <!-- Live Achievement Card (Updates based on pulse) -->
+      <div class="neural-info-overlay">
+        <div class="live-status-badge">
+          <span class="live-pulse"></span>
+          AUTONOMOUS QUALITY AGENT ACTIVE
+        </div>
+        <div id="neural-card" class="neural-card">
+          <h3 id="n-card-title">AI Automation</h3>
+          <p id="n-card-desc">Architecting self-healing Playwright frameworks that cut regression time by 70% and eliminate manual toil.</p>
+          <div class="n-metric">
+            <span class="m-val" id="n-card-metric">70% Regression Reduction</span>
           </div>
         </div>
       </div>
@@ -618,41 +619,39 @@
           aiMsg.className = 'message ai-message fade-up visible';
           aiMsg.innerText = responses[questionKey];
           
-          // Strategic Radar Logic
-          const radarData = [
-            { title: "AI Innovation", desc: "Implementing autonomous test generation and self-healing pipelines using Kiro CLI and LLM integrations.", metric: "50% Efficiency Gain", points: "200,80, 290,140, 250,280, 120,250, 80,120" },
-            { title: "Automation Strategy", desc: "Architecting scalable Playwright frameworks for 21+ enterprise components with 90% automation coverage.", metric: "↓ 70% Regression Time", points: "200,120, 340,200, 230,260, 100,200, 120,100" },
-            { title: "UAT Governance", desc: "Leading cross-functional UAT cycles for Retail and Telecom, managing 12+ business users and zero-leakage production.", metric: "35% Leakage Reduction", points: "200,150, 260,200, 200,340, 140,200, 150,150" },
-            { title: "Data Integrity", desc: "Deep SQL and API validation for eligibility modules, ensuring data precision in complex state-level systems.", metric: "99.9% Data Accuracy", points: "200,140, 250,200, 230,230, 60,200, 140,140" },
-            { title: "Release Risk", desc: "Executing data-backed Go/No-Go decisions and providing strategic risk modeling for high-stakes enterprise launches.", metric: "100% Launch Success", points: "200,60, 280,100, 220,220, 180,220, 320,120" }
-          ];
+    // Neural Core Logic
+    const neuralData = [
+      { title: "AI Automation", desc: "Architecting self-healing Playwright frameworks that cut regression time by 70% and eliminate manual toil.", metric: "↓ 70% Regression Time" },
+      { title: "Shift-Left", desc: "Early-stage requirement analysis to catch 200+ defects before they reach development.", metric: "200+ Defects Prevented" },
+      { title: "UAT Strategy", desc: "Leading cross-functional UAT for Medicaid/SNAP/TANF with 12+ business users and zero leakage.", metric: "35% Leakage Reduction" },
+      { title: "Data Integrity", desc: "Deep validation across SQL, API, and AWS modules for high-complexity state eligibility systems.", metric: "99.9% Data Accuracy" },
+      { title: "Release Risk", desc: "Executive risk modeling and Go/No-Go governance for multi-million dollar enterprise launches.", metric: "100% Launch Success" }
+    ];
 
-          let radarIndex = 0;
-          const poly = document.getElementById('radar-polygon');
-          const rTitle = document.getElementById('radar-focus-title');
-          const rDesc = document.getElementById('radar-focus-desc');
-          const rMetric = document.getElementById('radar-focus-metric');
+    let neuralIndex = 0;
+    const nNodes = document.querySelectorAll('.n-node');
+    const nTitle = document.getElementById('n-card-title');
+    const nDesc = document.getElementById('n-card-desc');
+    const nMetric = document.getElementById('n-card-metric');
 
-          function updateRadar() {
-            const data = radarData[radarIndex];
-            poly.setAttribute('points', data.points);
-            rTitle.textContent = data.title;
-            rDesc.textContent = data.desc;
-            rMetric.textContent = data.metric;
-            radarIndex = (radarIndex + 1) % radarData.length;
-          }
+    function updateNeural() {
+      // Reset nodes
+      nNodes.forEach(n => n.classList.remove('active'));
+      
+      const data = neuralData[neuralIndex];
+      nNodes[neuralIndex].classList.add('active');
+      
+      // Update Card
+      nTitle.textContent = data.title;
+      nDesc.textContent = data.desc;
+      nMetric.textContent = data.metric;
 
-          // Live Auto-Pulse
-          setInterval(updateRadar, 4000);
-          updateRadar();
-          
-          chatMessages.appendChild(aiMsg);
-          chatMessages.scrollTop = chatMessages.scrollHeight;
-          
-          document.querySelectorAll('.ai-prompt-btn').forEach(b => b.disabled = false);
-        }, 1500);
-      });
-    });
+      neuralIndex = (neuralIndex + 1) % neuralData.length;
+    }
+
+    // Live Auto-Pulse
+    setInterval(updateNeural, 3500);
+    updateNeural(); // Init
   </script>
 </body>
 

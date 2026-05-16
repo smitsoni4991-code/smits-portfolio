@@ -85,63 +85,69 @@
     </div>
   </section>
 
-  <!-- ─── Neural Quality Core: Approach 2 ─── -->
-  <section id="neural-core" class="container">
+  <!-- ─── Quality War Room Dashboard: Approach 1 ─── -->
+  <section id="quality-war-room" class="container">
     <div class="exec-header fade-up">
-      <span class="section-label">Architectural Intelligence</span>
-      <h2 class="exec-title">Neural Quality Engine</h2>
-      <p class="exec-subtitle">A living map of my quality ecosystem—where AI-assisted automation, data integrity, and strategic governance converge.</p>
+      <span class="section-label">Enterprise Command Center</span>
+      <h2 class="exec-title">Quality Transformation War Room</h2>
+      <p class="exec-subtitle">A live, data-driven dashboard managing release risk, team velocity, and AI-assisted governance across the enterprise ecosystem.</p>
     </div>
 
-    <div class="neural-container glass-card fade-up">
-      <div class="neural-visual">
-        <!-- The Central Engine -->
-        <div class="core-node">
-          <div class="core-glow"></div>
-          <div class="core-inner">ENGINE</div>
+    <div class="war-room-grid fade-up">
+      <!-- Left: AI Activity Stream -->
+      <div class="war-tile terminal-tile">
+        <div class="tile-header">
+          <span class="status-indicator"></span>
+          AI ACTIVITY LOG
         </div>
-
-        <!-- Orbital Nodes & Connections -->
-        <div class="orbital-system">
-          <svg class="neural-lines" viewBox="0 0 800 500">
-            <!-- Connection Lines -->
-            <path id="path-1" d="M400,250 L200,100" class="n-line" />
-            <path id="path-2" d="M400,250 L600,100" class="n-line" />
-            <path id="path-3" d="M400,250 L700,250" class="n-line" />
-            <path id="path-4" d="M400,250 L600,400" class="n-line" />
-            <path id="path-5" d="M400,250 L200,400" class="n-line" />
-            <path id="path-6" d="M400,250 L100,250" class="n-line" />
-
-            <!-- Data Packets (Animated) -->
-            <circle r="3" class="data-packet"><animateMotion dur="3s" repeatCount="indefinite"><mpath href="#path-1"/></animateMotion></circle>
-            <circle r="3" class="data-packet"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#path-2"/></animateMotion></circle>
-            <circle r="3" class="data-packet"><animateMotion dur="2.5s" repeatCount="indefinite"><mpath href="#path-3"/></animateMotion></circle>
-            <circle r="3" class="data-packet"><animateMotion dur="5s" repeatCount="indefinite"><mpath href="#path-4"/></animateMotion></circle>
-            <circle r="3" class="data-packet"><animateMotion dur="3.5s" repeatCount="indefinite"><mpath href="#path-5"/></animateMotion></circle>
-          </svg>
-
-          <!-- Floating Nodes -->
-          <div class="n-node node-1" data-id="0">AI Automation</div>
-          <div class="n-node node-2" data-id="1">Shift-Left</div>
-          <div class="n-node node-3" data-id="2">UAT Strategy</div>
-          <div class="n-node node-4" data-id="3">Data Integrity</div>
-          <div class="n-node node-5" data-id="4">Release Risk</div>
+        <div id="ai-log-stream" class="log-content">
+          <div class="log-entry">> Initializing AI Quality Agent...</div>
+          <div class="log-entry">> Scanning 21+ components for risk...</div>
+          <div class="log-entry">> Analyzing API contracts (99.9% pass)...</div>
         </div>
       </div>
 
-      <!-- Live Achievement Card (Updates based on pulse) -->
-      <div class="neural-info-overlay">
-        <div class="live-status-badge">
-          <span class="live-pulse"></span>
-          AUTONOMOUS QUALITY AGENT ACTIVE
+      <!-- Center: Release Confidence Gauge -->
+      <div class="war-tile main-tile">
+        <div class="gauge-container">
+          <div class="gauge-ring"></div>
+          <div class="gauge-value">99.8%</div>
+          <div class="gauge-label">RELEASE CONFIDENCE</div>
         </div>
-        <div id="neural-card" class="neural-card">
-          <h3 id="n-card-title">AI Automation</h3>
-          <p id="n-card-desc">Architecting self-healing Playwright frameworks that cut regression time by 70% and eliminate manual toil.</p>
-          <div class="n-metric">
-            <span class="m-val" id="n-card-metric">70% Regression Reduction</span>
+        <div class="main-metrics">
+          <div class="mini-stat">
+            <span class="ms-label">Defect Leakage</span>
+            <span class="ms-val text-gradient">0.2%</span>
+          </div>
+          <div class="mini-stat">
+            <span class="ms-label">ROI Realized</span>
+            <span class="ms-val text-gradient">$154K</span>
           </div>
         </div>
+      </div>
+
+      <!-- Right: Team & Velocity Stats -->
+      <div class="war-tile stats-tile">
+        <div class="tile-header">KEY PERFORMANCE INDICATORS</div>
+        <div class="stat-list">
+          <div class="stat-row">
+            <span>Regression Time</span>
+            <span class="trend-up">↓ 70%</span>
+          </div>
+          <div class="stat-row">
+            <span>Test Coverage</span>
+            <span class="trend-up">92%</span>
+          </div>
+          <div class="stat-row">
+            <span>Team Mentorship</span>
+            <span class="trend-up">6 Analysts</span>
+          </div>
+          <div class="stat-row">
+            <span>UAT Sign-off</span>
+            <span class="trend-up">100%</span>
+          </div>
+        </div>
+        <div class="governance-badge">GOVERNANCE LEVEL: ARCHITECT</div>
       </div>
     </div>
   </section>
@@ -627,43 +633,38 @@
       });
     });
 
-    // Neural Quality Core Logic
-    const neuralData = [
-      { title: "AI Automation", desc: "Architecting self-healing Playwright frameworks that cut regression time by 70% and eliminate manual toil.", metric: "↓ 70% Regression Time" },
-      { title: "Shift-Left", desc: "Early-stage requirement analysis to catch 200+ defects before they reach development.", metric: "200+ Defects Prevented" },
-      { title: "UAT Strategy", desc: "Leading cross-functional UAT for Medicaid/SNAP/TANF with 12+ business users and zero leakage.", metric: "35% Leakage Reduction" },
-      { title: "Data Integrity", desc: "Deep validation across SQL, API, and AWS modules for high-complexity state eligibility systems.", metric: "99.9% Data Accuracy" },
-      { title: "Release Risk", desc: "Executive risk modeling and Go/No-Go governance for multi-million dollar enterprise launches.", metric: "100% Launch Success" }
+    // War Room Dashboard Logic
+    const logEntries = [
+      "> Scanning Web/Mobile UI for regression...",
+      "> Analyzing 21+ backend components...",
+      "> Executing SQL data integrity checks...",
+      "> Optimizing Playwright locators...",
+      "> Summarizing UAT stakeholder feedback...",
+      "> AI Risk Model: Confidence at 99.8%",
+      "> Shift-left gates: PASSED",
+      "> Generating release readiness report...",
+      "> Defect Leakage monitoring active..."
     ];
 
-    let neuralIndex = 0;
-    const nNodes = document.querySelectorAll('.n-node');
-    const nTitle = document.getElementById('n-card-title');
-    const nDesc = document.getElementById('n-card-desc');
-    const nMetric = document.getElementById('n-card-metric');
+    let logIndex = 0;
+    const logContainer = document.getElementById('ai-log-stream');
 
-    function updateNeural() {
-      if (!nNodes.length || !nTitle) return;
+    function updateLog() {
+      if (!logContainer) return;
+      const entry = document.createElement('div');
+      entry.className = 'log-entry fade-up visible';
+      entry.innerText = logEntries[logIndex];
+      logContainer.appendChild(entry);
+      logIndex = (logIndex + 1) % logEntries.length;
       
-      // Reset nodes
-      nNodes.forEach(n => n.classList.remove('active'));
-      
-      const data = neuralData[neuralIndex];
-      nNodes[neuralIndex].classList.add('active');
-      
-      // Update Card
-      nTitle.textContent = data.title;
-      nDesc.textContent = data.desc;
-      nMetric.textContent = data.metric;
-
-      neuralIndex = (neuralIndex + 1) % neuralData.length;
+      if (logContainer.children.length > 8) {
+        logContainer.removeChild(logContainer.firstChild);
+      }
+      logContainer.scrollTop = logContainer.scrollHeight;
     }
 
-    // Live Auto-Pulse
-    if (nNodes.length > 0) {
-      setInterval(updateNeural, 3500);
-      updateNeural(); 
-    }
+    setInterval(updateLog, 3000);
+    updateLog(); // Init
   </script>
 </body>
 

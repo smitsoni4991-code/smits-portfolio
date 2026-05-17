@@ -69,71 +69,86 @@
 
 
 
-  <!-- ─── AI Live Module: QE Leadership Command Center ─── -->
+  <!-- ─── AI Live Module: QE STLC Circular Quality Radar ─── -->
   <section id="stlc-autopilot" class="container">
     <div class="exec-header fade-up">
       <span class="section-label">QE GOVERNANCE COMMAND CENTER</span>
-      <h2 class="exec-title">STLC Quality Governance Autopilot</h2>
-      <p class="exec-subtitle">Select any phase along my Software Testing Life Cycle (STLC) blueprint. Watch how I orchestrate mentored engineering teams, leverage AI-assisted testing frameworks, and drive executive release decisions.</p>
+      <h2 class="exec-title">STLC Quality Governance Radar</h2>
+      <p class="exec-subtitle">Interact with my 11-stage Software Testing Life Cycle (STLC) radar. Watch how I orchestrate automated gating, database assertions, and release governance to achieve a 35% defect leakage reduction.</p>
     </div>
 
-    <!-- Main Module Frame -->
-    <div class="lcc-card glass-card fade-up">
-      
-      <!-- Horizontal Interactive Timeline Progress Bar -->
-      <div class="lcc-timeline-wrapper">
-        <div class="lcc-timeline" id="lccTimeline">
-          <!-- Timeline nodes generated dynamically by JS -->
-        </div>
-      </div>
-
-      <!-- Main Dashboard Grid -->
-      <div class="lcc-grid">
+    <!-- Main Command Center Grid -->
+    <div class="radar-dashboard glass-card fade-up">
+      <div class="radar-grid">
         
-        <!-- Column 1: Strategic Governance Brief -->
-        <div class="lcc-panel">
-          <div class="panel-tag">Strategic Governance Brief</div>
-          <div class="panel-content">
-            <h3 class="lcc-info-title" id="lccInfoTitle">Loading Phase Strategy...</h3>
-            
-            <div class="lcc-meta-badge" id="lccInfoBadge">Lead Action</div>
-            <p class="lcc-desc" id="lccInfoDesc">Details will populate here...</p>
-            
-            <div class="lcc-metric-box">
-              <span class="lcc-metric-lbl" id="lccMetricLabel">Key Telemetry Metric</span>
-              <strong class="text-gold" id="lccMetricValue">--</strong>
+        <!-- Column 1: Interactive Aerospace Radar Hub -->
+        <div class="radar-hub-column">
+          <div class="radar-hub-header">
+            <span class="hub-tag">HOLOGRAPHIC SWEEP DEPLOYED</span>
+            <div class="hub-control">
+              <span class="hub-status-light blinking"></span>
+              <span class="hub-status-txt" id="hubStatusTxt">SYS_AUTOPILOT: ACTIVE</span>
             </div>
+          </div>
+          
+          <!-- Outer Radar Container -->
+          <div class="stlc-radar-container" id="radarNodesContainer">
+            <div class="radar-ring-outer"></div>
+            <div class="radar-ring-inner"></div>
+            
+            <!-- Central Dynamic Core -->
+            <div class="radar-core" id="radarCoreBtn">
+              <div class="core-pulse"></div>
+              <span class="core-label" id="radarCoreStep">PHASE 01</span>
+              <h3 class="core-title" id="radarCoreName">REQUIREMENTS</h3>
+              <span class="core-action-hint" id="radarCoreHint">CLICK TO PAUSE</span>
+            </div>
+            
+            <!-- Surrounded Interactive Node Buttons (Rendered Dynamically by JS) -->
           </div>
         </div>
 
-        <!-- Column 2: Team Operations & Mentorship -->
-        <div class="lcc-panel">
-          <div class="panel-tag">Team Operations &amp; Mentorship</div>
-          <div class="panel-content">
-            <div class="lcc-team-header">
-              <h4>Mentored Squad (6 Analysts)</h4>
-              <span class="lcc-team-status">Active Governed State</span>
-            </div>
-            
-            <!-- Mentored Squad List -->
-            <div class="lcc-team-list" id="lccTeamList">
-              <!-- Team nodes generated dynamically -->
+        <!-- Column 2: Strategic Telemetry & Console Logs -->
+        <div class="radar-telemetry-column">
+          
+          <!-- Strategic Governance Card -->
+          <div class="telemetry-card">
+            <div class="card-tag">Strategic Governance Brief</div>
+            <div class="card-content">
+              <div class="brief-title-badge">
+                <h3 class="brief-title" id="radarBriefTitle">Shift-Left Ambiguity Parsing</h3>
+                <span class="brief-badge" id="radarBriefBadge">Quality Governance Gate</span>
+              </div>
+              
+              <p class="brief-desc" id="radarBriefDesc">Reviewing business plans and policies early. I parse SNAP calculations and billing formulas to find conflicting business rules before engineers write a single line of code...</p>
+              
+              <div class="brief-metrics-row">
+                <div class="brief-metric-box">
+                  <span class="bm-lbl">TELEMETRY KPI</span>
+                  <strong class="text-gold" id="radarBriefMetric">100% Policy Map</strong>
+                </div>
+                <div class="brief-metric-box">
+                  <span class="bm-lbl">SQUAD ASSIGNMENT</span>
+                  <strong class="text-gold" id="radarBriefSquad">John D. (Lead SDET)</strong>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Column 3: Live Engineering Console -->
-        <div class="lcc-panel console-column">
-          <div class="panel-tag">Live Engineering Console</div>
-          <div class="console-box">
-            <div class="console-header">
-              <span class="console-dot red"></span>
-              <span class="console-dot yellow"></span>
-              <span class="console-dot green"></span>
-              <span class="console-tab-name" id="consoleTab">autopilot_agent.sh</span>
+          <!-- Live Engineering Console Card -->
+          <div class="telemetry-card console-card">
+            <div class="card-tag">Live Engineering Console</div>
+            <div class="console-box">
+              <div class="console-header">
+                <span class="console-dot red"></span>
+                <span class="console-dot yellow"></span>
+                <span class="console-dot green"></span>
+                <span class="console-tab-name" id="radarConsoleTab">autopilot_agent.sh</span>
+              </div>
+              <pre class="console-code" id="radarConsoleOutput">Loading real-time execution logs...</pre>
             </div>
-            <pre class="console-code" id="lccConsoleOutput">Loading real-time execution logs...</pre>
           </div>
+
         </div>
 
       </div>
@@ -627,20 +642,13 @@
 
 
 
-    // ─── QE Leadership Command Center Logic ───
+    // ─── QE Leadership Circular Radar Logic ───
     const lccTimelineData = [
       {
         id: "req", name: "Requirements", step: "Phase 01", title: "Shift-Left Ambiguity Parsing",
         badge: "Quality Governance Gate", metricLabel: "Requirement Traceability", metricVal: "100% Policy Map",
         desc: "Reviewing business plans and policies early. I parse SNAP calculations and billing formulas to find conflicting business rules before engineers write a single line of code, reducing downstream development delays.",
-        team: [
-          { name: "John D.", role: "Lead SDET", task: "Verifying SNAP eligibility document scope" },
-          { name: "Sarah M.", role: "Automation Eng", task: "Configuring BDD Gherkin test hooks" },
-          { name: "David L.", role: "QA Analyst", task: "Validating policy matrices with stakeholders" },
-          { name: "Elena R.", role: "BI Analyst", task: "Inspecting Tableau target calculations" },
-          { name: "Sam K.", role: "Mobile SDET", task: "Synthesizing viewport requirement scope" },
-          { name: "Lisa W.", role: "API Eng", task: "Mapping schema structure specifications" }
-        ],
+        squad: "John D. (Lead SDET)",
         code: `[AI Requirement Parser]: Scanning Spec: Spectrum-Billing-v4.pdf
 [ANALYZING]: Rule 14.1 (Tax calculation cap)
 [WARNING]: Ambiguity found in client residency conditions.
@@ -648,17 +656,10 @@
 [RESULT]: Found 4 spec issues before sprint start.`
       },
       {
-        id: "risk", name: "Risk Assessment", step: "Phase 02", title: "Business Failure Threat Modeling",
+        id: "risk", name: "Risk Assessment", step: "Phase 02", title: "Failure Threat Modeling",
         badge: "Preventative Architecture", metricLabel: "Coverage Priorities", metricVal: "High Risk Isolated",
         desc: "Analyzing changes made to customer-facing code. I isolate high-volume revenue engines, billing systems, and API boundaries to design a test schedule focused on the highest business risks.",
-        team: [
-          { name: "John D.", role: "Lead SDET", task: "Calculating transaction API dependencies" },
-          { name: "Sarah M.", role: "Automation Eng", task: "Reviewing core code diff files" },
-          { name: "David L.", role: "QA Analyst", task: "Mapping risk weights inside JIRA" },
-          { name: "Elena R.", role: "BI Analyst", task: "Assessing data volume change ratios" },
-          { name: "Sam K.", role: "Mobile SDET", task: "Targeting high-churn mobile flows" },
-          { name: "Lisa W.", role: "API Eng", task: "Reviewing secure gateway credentials" }
-        ],
+        squad: "Sarah M. (Automation Eng)",
         code: `{
   "module": "Spectrum-Digital-Checkout-Portal",
   "priority": "CRITICAL_PATH",
@@ -671,14 +672,7 @@
         id: "strategy", name: "Test Strategy", step: "Phase 03", title: "Full-Stack Quality Architecture",
         badge: "Strategic Plan", metricLabel: "Components Covered", metricVal: "21+ Core Services",
         desc: "Establishing testing guardrails. I architect integrated strategies covering the frontend (browser/mobile), backend APIs, AWS data validation, and visual BI Tableau dashboards.",
-        team: [
-          { name: "John D.", role: "Lead SDET", task: "Architecting base Playwright framework wrappers" },
-          { name: "Sarah M.", role: "Automation Eng", task: "Preparing modular Page Object files" },
-          { name: "David L.", role: "QA Analyst", task: "Defining exploratory testing parameters" },
-          { name: "Elena R.", role: "BI Analyst", task: "Configuring visual dashboard check rules" },
-          { name: "Sam K.", role: "Mobile SDET", task: "Structuring simulator execution scripts" },
-          { name: "Lisa W.", role: "API Eng", task: "Integrating RestAssured assertion libraries" }
-        ],
+        squad: "David L. (QA Analyst)",
         code: `// Enterprise Governance Framework Config
 $ quality-gate-config --apply-strategy full_stack_integrated
   ├── UI Testing: Playwright (Desktop / Mobile Emulators)
@@ -690,14 +684,7 @@ $ quality-gate-config --apply-strategy full_stack_integrated
         id: "planning", name: "Test Planning", step: "Phase 04", title: "Agile Resource Governance",
         badge: "Sprint Planning", metricLabel: "Resource Scalability", metricVal: "6 SDETs Governed",
         desc: "Managing agile sprint cycles. I partition execution plans across my mentored team of 6 QA Analysts, ensuring parallel execution, clear SLAs, and highly efficient release coverage.",
-        team: [
-          { name: "John D.", role: "Lead SDET", task: "Governing sprint scope allocations" },
-          { name: "Sarah M.", role: "Automation Eng", task: "Developing checkout flow automation" },
-          { name: "David L.", role: "QA Analyst", task: "Preparing eligibility manual mocks" },
-          { name: "Elena R.", role: "BI Analyst", task: "Constructing SQL database test sets" },
-          { name: "Sam K.", role: "Mobile SDET", task: "Configuring iOS/Android tests" },
-          { name: "Lisa W.", role: "API Eng", task: "Drafting microservice contract tests" }
-        ],
+        squad: "Elena R. (BI Analyst)",
         code: `[Governance Plan]: Sprint 14 Execution Schedule
 [METRIC]: Target SLA: 48h Testing Turnaround
 [RESOURCES]:
@@ -709,14 +696,7 @@ $ quality-gate-config --apply-strategy full_stack_integrated
         id: "design", name: "Test Design", step: "Phase 05", title: "AI-Assisted Test Synthesizer",
         badge: "Engineering Innovation", metricLabel: "Script Gen Velocity", metricVal: "+150% Acceleration",
         desc: "Generating robust testing scripts. I leverage AI engines to convert technical specs into high-coverage automated assertions, allowing my team to rapidly construct edge-case matrices.",
-        team: [
-          { name: "John D.", role: "Lead SDET", task: "Configuring custom prompt models" },
-          { name: "Sarah M.", role: "Automation Eng", task: "Refactoring AI test assertions" },
-          { name: "David L.", role: "QA Analyst", task: "Auditing synthetic script accuracy" },
-          { name: "Elena R.", role: "BI Analyst", task: "Mapping schema assertions" },
-          { name: "Sam K.", role: "Mobile SDET", task: "Optimizing dynamic app locators" },
-          { name: "Lisa W.", role: "API Eng", task: "Analyzing REST JSON models" }
-        ],
+        squad: "Sam K. (Mobile SDET)",
         code: `// AI-Generated Playwright Test (Asserting Eligibility Engine)
 test('Validate SNAP Multi-member Household Calculations', async ({ page }) => {
   const portal = new SnapPortal(page);
@@ -729,14 +709,7 @@ test('Validate SNAP Multi-member Household Calculations', async ({ page }) => {
         id: "execution", name: "Test Execution", step: "Phase 06", title: "CI/CD Pipeline Gating",
         badge: "Continuous Integration", metricLabel: "Build Executions", metricVal: "1,420 Auto-Tests",
         desc: "Executing automated test suites parallel across multiple browsers and virtual environments, running automatically on commit pushes inside secure GitLab and Jenkins runners.",
-        team: [
-          { name: "John D.", role: "Lead SDET", task: "Monitoring AWS CI runner cluster" },
-          { name: "Sarah M.", role: "Automation Eng", task: "Debugging execution errors" },
-          { name: "David L.", role: "QA Analyst", task: "Reviewing daily run reports" },
-          { name: "Elena R.", role: "BI Analyst", task: "Verifying test data consistency" },
-          { name: "Sam K.", role: "Mobile SDET", task: "Assessing virtual device results" },
-          { name: "Lisa W.", role: "API Eng", task: "Auditing integration pings" }
-        ],
+        squad: "Lisa W. (API Eng)",
         code: `$ npm run test:ci --parallel-threads=10
 Running suites... (Chrome, Safari, iOS Emulations)
   ✔ User Authentication Flow (142 passed)
@@ -745,17 +718,10 @@ Running suites... (Chrome, Safari, iOS Emulations)
 [SUCCESS] 1420 assertions passed in 4m 12s.`
       },
       {
-        id: "automation", name: "Validation Tier", step: "Phase 07", title: "Database & Visual Dashboard Integrity",
-        badge: "Data Quality Engine", metricLabel: "Manual Effort Saved", metricVal: "60% reduction",
+        id: "automation", name: "Validation Tier", step: "Phase 07", title: "Database & Visual Integrity",
+        badge: "Data Quality Engine", metricLabel: "Manual Effort Saved", metricVal: "60% Saved",
         desc: "Validating backend systems. We run complex SQL checks to confirm database calculations match web states, and automate visual visual dashboard regression checks using Wiiisdom Ops.",
-        team: [
-          { name: "John D.", role: "Lead SDET", task: "Deploying Wiiisdom verification CLI" },
-          { name: "Sarah M.", role: "Automation Eng", task: "Refactoring Postgres test helpers" },
-          { name: "David L.", role: "QA Analyst", task: "Validating transaction reconciliations" },
-          { name: "Elena R.", role: "BI Analyst", task: "Writing complex analytical SQLs" },
-          { name: "Sam K.", role: "Mobile SDET", task: "Connecting API transaction logs" },
-          { name: "Lisa W.", role: "API Eng", task: "Auditing payload mappings" }
-        ],
+        squad: "John D. (Lead SDET)",
         code: `-- SQL database transaction validation
 SELECT client_id, SUM(due_amount) FROM spectrum_sales_db.transactions
 GROUP BY client_id
@@ -768,14 +734,7 @@ SELECT client_id, current_balance FROM customer_ledgers;
         id: "uat", name: "UAT Governance", step: "Phase 08", title: "Cross-Functional Alignment",
         badge: "UAT Leadership", metricLabel: "Critical Defects Caught", metricVal: "35+ Pre-Go-Live",
         desc: "Leading User Acceptance Testing. I construct testing agendas for business stakeholders, train user groups, and coordinate state regulators to guarantee software meets user needs.",
-        team: [
-          { name: "John D.", role: "Lead SDET", task: "Reviewing UAT feedback charts" },
-          { name: "Sarah M.", role: "Automation Eng", task: "Patching UI bugs raised in UAT" },
-          { name: "David L.", role: "QA Analyst", task: "Coordinating regulator test labs" },
-          { name: "Elena R.", role: "BI Analyst", task: "Validating corporate reporting needs" },
-          { name: "Sam K.", role: "Mobile SDET", task: "Supporting mobile user testing" },
-          { name: "Lisa W.", role: "API Eng", task: "Analyzing UAT proxy failures" }
-        ],
+        squad: "David L. (QA Analyst)",
         code: `UAT Governance Audit - Oregon Eligibility Rollout:
   - Regulatory policy validation checks: [PASSED]
   - 12 Cross-organizational User sessions coordinated.
@@ -786,14 +745,7 @@ SELECT client_id, current_balance FROM customer_ledgers;
         id: "triage", name: "Defect Triage", step: "Phase 09", title: "Agile Defect Board Ownership",
         badge: "Agile Governance", metricLabel: "Resolution Velocity", metricVal: "24% Cycle Reduction",
         desc: "Daily bug triage governance. I coordinate meetings with engineers, product managers, and developers to prioritize bugs and accelerate resolutions, ensuring zero sprint delays.",
-        team: [
-          { name: "John D.", role: "Lead SDET", task: "Triage board escalation manager" },
-          { name: "Sarah M.", role: "Automation Eng", task: "Validating resolved bug packages" },
-          { name: "David L.", role: "QA Analyst", task: "Filing detailed replication files" },
-          { name: "Elena R.", role: "BI Analyst", task: "Investigating analytics glitches" },
-          { name: "Sam K.", role: "Mobile SDET", task: "Tracking app crash logs" },
-          { name: "Lisa W.", role: "API Eng", task: "Tracing API gateway failures" }
-        ],
+        squad: "Sarah M. (Automation Eng)",
         code: `{
   "action": "Daily Triage Session - Smit Soni Presiding",
   "defect_id": "ERR-9104",
@@ -805,16 +757,9 @@ SELECT client_id, current_balance FROM customer_ledgers;
       },
       {
         id: "readiness", name: "Release Readiness", step: "Phase 10", title: "Enterprise Quality Governance",
-        badge: "Sign-Off Sovereignty", metricLabel: "Defects Leakage", metricVal: "35% Reduction",
+        badge: "Sign-Off Sovereignty", metricLabel: "Defect Leakage", metricVal: "35% Reduction",
         desc: "Compiling quality telemetry into a Go/No-Go report. I verify regression pass rates, SLA metrics, and security criteria to guarantee risk-free enterprise production deployments.",
-        team: [
-          { name: "John D.", role: "Lead SDET", task: "Aggregating code coverage statistics" },
-          { name: "Sarah M.", role: "Automation Eng", task: "Verifying staging stability" },
-          { name: "David L.", role: "QA Analyst", task: "Signing off functional checks" },
-          { name: "Elena R.", role: "BI Analyst", task: "Validating reporting dashboards" },
-          { name: "Sam K.", role: "Mobile SDET", task: "Approving mobile app builds" },
-          { name: "Lisa W.", role: "API Eng", task: "Certifying API stability logs" }
-        ],
+        squad: "Smit Soni (QA Lead)",
         code: `### ENTERPRISE RELEASE HEALTH SUMMARY - SYSTEM v4.12
 - Regression Suite Pass Rate: 100.0%
 - Pre-release Defects Caught: 200+
@@ -823,16 +768,9 @@ SELECT client_id, current_balance FROM customer_ledgers;
       },
       {
         id: "monitoring", name: "Prod Monitoring", step: "Phase 11", title: "Synthetic Post-Live Governance",
-        badge: "Production Safeguard", metricLabel: "Post-Release Outages", metricVal: "Zero Major Failures",
+        badge: "Production Safeguard", metricLabel: "Post-Release Outages", metricVal: "Zero Outages",
         desc: "Monitoring systems post-launch. We deploy automated synthetic scripts that test billing and checkout flows around the clock in production, alerting us to issues before customers see them.",
-        team: [
-          { name: "John D.", role: "Lead SDET", task: "Configuring Datadog health monitors" },
-          { name: "Sarah M.", role: "Automation Eng", task: "Deploying post-deploy automated tests" },
-          { name: "David L.", role: "QA Analyst", task: "Reviewing real customer logs" },
-          { name: "Elena R.", role: "BI Analyst", task: "Auditing live dashboard stats" },
-          { name: "Sam K.", role: "Mobile SDET", task: "Monitoring app store crash ratios" },
-          { name: "Lisa W.", role: "API Eng", task: "Tracing API gateway errors" }
-        ],
+        squad: "Sam K. (Mobile SDET)",
         code: `[Production Synthetic Daemon]: Triggering active checkout verify ping...
 [SYSTEM PING]: Chrome transaction mock check initialized...
 [OK] Code: 200 OK | Response Latency: 110ms | Ledger State: Synced.
@@ -840,98 +778,154 @@ SELECT client_id, current_balance FROM customer_ledgers;
       }
     ];
 
-    const timelineContainer = document.getElementById('lccTimeline');
-    const infoTitle = document.getElementById('lccInfoTitle');
-    const infoBadge = document.getElementById('lccInfoBadge');
-    const infoDesc = document.getElementById('lccInfoDesc');
-    const metricLabel = document.getElementById('lccMetricLabel');
-    const metricValue = document.getElementById('lccMetricValue');
-    const teamList = document.getElementById('lccTeamList');
-    const consoleOutput = document.getElementById('lccConsoleOutput');
+    const radarNodesContainer = document.getElementById('radarNodesContainer');
+    const radarCoreBtn = document.getElementById('radarCoreBtn');
+    const radarCoreStep = document.getElementById('radarCoreStep');
+    const radarCoreName = document.getElementById('radarCoreName');
+    const radarCoreHint = document.getElementById('radarCoreHint');
+    const hubStatusTxt = document.getElementById('hubStatusTxt');
+    
+    const radarBriefTitle = document.getElementById('radarBriefTitle');
+    const radarBriefBadge = document.getElementById('radarBriefBadge');
+    const radarBriefDesc = document.getElementById('radarBriefDesc');
+    const radarBriefMetric = document.getElementById('radarBriefMetric');
+    const radarBriefSquad = document.getElementById('radarBriefSquad');
+    const radarConsoleOutput = document.getElementById('radarConsoleOutput');
 
-    function drawLccTimeline() {
-      timelineContainer.innerHTML = "";
+    let activePhaseIndex = 0;
+    let autopilotTimer = null;
+    let isAutopilotPaused = false;
+    let typingTimer = null;
+
+    function drawRadarTimeline() {
+      // Remove any existing node buttons
+      radarNodesContainer.querySelectorAll('.radar-node-btn').forEach(btn => btn.remove());
+
       lccTimelineData.forEach((phase, index) => {
         const btn = document.createElement('button');
-        btn.className = `lcc-node-btn ${index === 0 ? 'active' : ''}`;
-        btn.dataset.id = phase.id;
+        btn.className = `radar-node-btn ${index === 0 ? 'active' : ''}`;
         btn.dataset.index = index;
-        btn.innerHTML = `
-          <span class="lcc-node-step">${phase.step}</span>
-          <span>${phase.name}</span>
-        `;
-        btn.addEventListener('click', () => selectLccPhase(index));
-        timelineContainer.appendChild(btn);
+        btn.textContent = String(index + 1).padStart(2, '0');
+
+        btn.addEventListener('click', () => {
+          pauseAutopilot();
+          selectRadarPhase(index);
+        });
+
+        radarNodesContainer.appendChild(btn);
       });
-      // Select the first phase on launch
-      updateLccDashboard(0);
+
+      positionRadarNodes();
+      selectRadarPhase(0);
+      startAutopilot();
     }
 
-    function selectLccPhase(index) {
-      document.querySelectorAll('.lcc-node-btn').forEach((btn, idx) => {
+    function positionRadarNodes() {
+      const nodes = radarNodesContainer.querySelectorAll('.radar-node-btn');
+      const rect = radarNodesContainer.getBoundingClientRect();
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const isMobile = window.innerWidth < 768;
+      const radius = isMobile ? 100 : 140; // Responsive radius in pixels
+
+      nodes.forEach((node, index) => {
+        // Position starting from top (-90 degrees or -PI/2)
+        const angle = (index * 2 * Math.PI / 11) - (Math.PI / 2);
+
+        const x = centerX + radius * Math.cos(angle) - (node.offsetWidth / 2);
+        const y = centerY + radius * Math.sin(angle) - (node.offsetHeight / 2);
+
+        node.style.left = `${x}px`;
+        node.style.top = `${y}px`;
+      });
+    }
+
+    function selectRadarPhase(index) {
+      activePhaseIndex = index;
+      const data = lccTimelineData[index];
+
+      // Update active classes on nodes
+      radarNodesContainer.querySelectorAll('.radar-node-btn').forEach((btn, idx) => {
         btn.classList.toggle('active', idx === index);
       });
-      updateLccDashboard(index);
+
+      // Update central core details
+      radarCoreStep.textContent = data.step;
+      radarCoreName.textContent = data.name;
+
+      // Update Strategic briefs
+      radarBriefTitle.textContent = data.title;
+      radarBriefBadge.textContent = data.badge;
+      radarBriefDesc.textContent = data.desc;
+      radarBriefMetric.textContent = data.metricVal;
+      radarBriefSquad.textContent = data.squad;
+
+      // Update typing console
+      printConsoleLogs(data.code);
     }
 
-    function updateLccDashboard(index) {
-      const data = lccTimelineData[index];
-      infoTitle.textContent = data.title;
-      infoBadge.textContent = data.badge;
-      infoDesc.textContent = data.desc;
-      metricLabel.textContent = data.metricLabel;
-      metricValue.textContent = data.metricVal;
-      
-      // Update mentored team workspace
-      teamList.innerHTML = "";
-      data.team.forEach(member => {
-        const item = document.createElement('div');
-        item.className = 'lcc-team-item';
-        item.innerHTML = `
-          <div class="lcc-team-avatar">${member.name.split(' ')[0][0]}${member.name.split(' ')[1][0]}</div>
-          <div class="lcc-team-info">
-            <div class="lcc-team-name-role">
-              <span class="lcc-team-name">${member.name}</span>
-              <span class="lcc-team-role">${member.role}</span>
-            </div>
-            <div class="lcc-team-task">${member.task}</div>
-          </div>
-        `;
-        teamList.appendChild(item);
-      });
+    function printConsoleLogs(text) {
+      if (typingTimer) clearTimeout(typingTimer);
+      radarConsoleOutput.textContent = "";
 
-      // Update terminal/console logs with a clean typing/stream effect
-      consoleOutput.textContent = "";
       let currentLogIdx = 0;
-      const lines = data.code.split('\n');
-      
+      const lines = text.split('\n');
+
       function printLine() {
         if (currentLogIdx < lines.length) {
-          consoleOutput.textContent += lines[currentLogIdx] + "\n";
+          radarConsoleOutput.textContent += lines[currentLogIdx] + "\n";
           currentLogIdx++;
-          setTimeout(printLine, 100);
+          radarConsoleOutput.scrollTop = radarConsoleOutput.scrollHeight;
+          typingTimer = setTimeout(printLine, 80);
         }
       }
       printLine();
     }
 
-    // Auto-cycle through the STLC phases every 12 seconds
-    let currentLccIdx = 0;
-    setInterval(() => {
-      // Pause if the recruiter is actively hovering over the dashboard area
-      if (document.querySelector('.lcc-card:hover')) return;
-      currentLccIdx = (currentLccIdx + 1) % lccTimelineData.length;
-      selectLccPhase(currentLccIdx);
-      // Auto scroll the horizontal timeline so the active element stays visible
-      const activeBtn = document.querySelector(`.lcc-node-btn[data-index="${currentLccIdx}"]`);
-      if (activeBtn) {
-        activeBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-      }
-    }, 12000);
+    function startAutopilot() {
+      if (autopilotTimer) clearInterval(autopilotTimer);
+      autopilotTimer = setInterval(() => {
+        if (isAutopilotPaused || document.querySelector('.radar-dashboard:hover')) return;
+        activePhaseIndex = (activePhaseIndex + 1) % lccTimelineData.length;
+        selectRadarPhase(activePhaseIndex);
+      }, 12000);
+    }
 
-    // Initialize the Command Center on window load
+    function pauseAutopilot() {
+      isAutopilotPaused = true;
+      hubStatusTxt.textContent = "SYS_AUTOPILOT: PAUSED";
+      const light = hubStatusTxt.parentElement.querySelector('.hub-status-light');
+      if (light) light.classList.remove('blinking');
+      radarCoreHint.textContent = "CLICK TO RESUME";
+      const pulse = document.querySelector('.core-pulse');
+      if (pulse) pulse.style.animation = "none";
+    }
+
+    function resumeAutopilot() {
+      isAutopilotPaused = false;
+      hubStatusTxt.textContent = "SYS_AUTOPILOT: ACTIVE";
+      const light = hubStatusTxt.parentElement.querySelector('.hub-status-light');
+      if (light) light.classList.add('blinking');
+      radarCoreHint.textContent = "CLICK TO PAUSE";
+      const pulse = document.querySelector('.core-pulse');
+      if (pulse) pulse.style.animation = "core-glowing 2s infinite";
+      selectRadarPhase(activePhaseIndex);
+    }
+
+    radarCoreBtn.addEventListener('click', () => {
+      if (isAutopilotPaused) {
+        resumeAutopilot();
+      } else {
+        pauseAutopilot();
+      }
+    });
+
+    window.addEventListener('resize', positionRadarNodes);
+
+    // Initialize radar on window load
     window.addEventListener('DOMContentLoaded', () => {
-      drawLccTimeline();
+      drawRadarTimeline();
     });
   </script>
 </body>

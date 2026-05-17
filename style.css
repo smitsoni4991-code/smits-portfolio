@@ -531,93 +531,232 @@ footer {
   .contact-links { flex-direction: column; align-items: center; }
 }
 
-/* ─── QE Leadership Command Center Styles ─── */
+/* ─── QE Circular Quality Radar Styles ─── */
 #stlc-autopilot {
-  padding: 5rem 0;
+  padding: 6rem 0;
 }
 
-.lcc-card {
+.radar-dashboard {
   margin-top: 2rem;
   padding: 2.5rem;
   background: rgba(5, 8, 15, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 1.5rem;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
 }
 
-/* Horizontal Interactive Timeline Scroll area */
-.lcc-timeline-wrapper {
-  overflow-x: auto;
-  padding-bottom: 1.5rem;
-  margin-bottom: 2.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  scrollbar-width: thin;
-  scrollbar-color: rgba(253, 224, 71, 0.2) transparent;
+/* Radar Grid Layout */
+.radar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  align-items: center;
 }
 
-.lcc-timeline-wrapper::-webkit-scrollbar {
-  height: 4px;
-}
-.lcc-timeline-wrapper::-webkit-scrollbar-thumb {
-  background: rgba(253, 224, 71, 0.2);
-  border-radius: 2px;
-}
-
-.lcc-timeline {
-  display: flex;
-  justify-content: space-between;
-  gap: 1.5rem;
-  min-width: 1000px;
-  position: relative;
-}
-
-.lcc-node-btn {
-  background: rgba(255, 255, 255, 0.01);
-  border: 1px solid rgba(255, 255, 255, 0.03);
-  padding: 0.65rem 1rem;
-  border-radius: 0.5rem;
-  color: var(--text-muted);
-  cursor: pointer;
-  font-size: 0.7rem;
-  font-weight: 700;
-  font-family: 'Inter', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+/* Radar Hub Column styling */
+.radar-hub-column {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.25rem;
-  flex: 1;
-  text-align: center;
+  gap: 2rem;
+  width: 100%;
 }
 
-.lcc-node-btn:hover {
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--text-primary);
-  border-color: rgba(255, 255, 255, 0.1);
+.radar-hub-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.lcc-node-btn.active {
-  background: rgba(253, 224, 71, 0.04);
-  border-color: rgba(253, 224, 71, 0.4);
-  color: var(--accent-gold);
-  box-shadow: 0 0 15px rgba(253, 224, 71, 0.08);
-}
-
-.lcc-node-step {
+.hub-tag {
   font-size: 0.55rem;
-  opacity: 0.6;
+  font-weight: 900;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
-/* Command Center Grid Layout */
-.lcc-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr 1.3fr;
+.hub-control {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hub-status-light {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981; /* Green */
+  box-shadow: 0 0 10px #10b981;
+}
+
+.hub-status-light.blinking {
+  animation: light-pulse 1.5s infinite;
+}
+
+@keyframes light-pulse {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; box-shadow: 0 0 12px #10b981; }
+  100% { opacity: 0.3; }
+}
+
+.hub-status-txt {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #10b981;
+}
+
+/* Concentric Radar Container */
+.stlc-radar-container {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(253, 224, 71, 0.02) 0%, rgba(0,0,0,0) 70%);
+  border: 1px dashed rgba(255, 255, 255, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.radar-ring-inner {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: 1px solid rgba(253, 224, 71, 0.08);
+  box-shadow: inset 0 0 20px rgba(253, 224, 71, 0.02);
+}
+
+.radar-ring-outer {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.03);
+  animation: radar-spin 80s linear infinite;
+}
+
+@keyframes radar-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Central Holographic Core */
+.radar-core {
+  position: absolute;
+  width: 144px;
+  height: 144px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(15, 23, 42, 0.98) 0%, rgba(3, 4, 8, 1) 100%);
+  border: 2px solid rgba(253, 224, 71, 0.25);
+  box-shadow: 0 0 35px rgba(253, 224, 71, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.radar-core:hover {
+  border-color: rgba(253, 224, 71, 0.55);
+  box-shadow: 0 0 45px rgba(253, 224, 71, 0.22);
+  transform: scale(1.03);
+}
+
+.core-pulse {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 50%;
+  border: 2px solid var(--accent-gold);
+  animation: core-glowing 2s infinite;
+  pointer-events: none;
+  opacity: 0;
+}
+
+@keyframes core-glowing {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.22); opacity: 0; }
+}
+
+.core-label {
+  font-size: 0.5rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.core-title {
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  margin: 0.2rem 0;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  min-height: 24px;
+}
+
+.core-action-hint {
+  font-size: 0.45rem;
+  font-weight: 800;
+  color: var(--accent-gold);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+/* Surrounded Circular Node Buttons */
+.radar-node-btn {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.radar-node-btn:hover {
+  border-color: rgba(253, 224, 71, 0.5);
+  color: var(--text-primary);
+  background: rgba(253, 224, 71, 0.05);
+}
+
+.radar-node-btn.active {
+  background: var(--accent-gold);
+  border-color: var(--accent-gold);
+  color: #000;
+  box-shadow: 0 0 20px rgba(253, 224, 71, 0.35);
+  transform: scale(1.15);
+}
+
+/* Strategic Telemetry Cards styling */
+.radar-telemetry-column {
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem;
 }
 
-.lcc-panel {
+.telemetry-card {
   background: rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.03);
   border-radius: 1rem;
@@ -626,22 +765,26 @@ footer {
   flex-direction: column;
 }
 
-.lcc-panel .panel-content {
-  flex: 1;
+.telemetry-card .card-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 1rem;
 }
 
-.lcc-info-title {
+.brief-title-badge {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brief-title {
   font-size: 1.1rem;
   font-weight: 800;
   color: var(--text-primary);
 }
 
-.lcc-meta-badge {
-  align-self: flex-start;
+.brief-badge {
   font-size: 0.6rem;
   font-weight: 900;
   letter-spacing: 0.05em;
@@ -650,15 +793,23 @@ footer {
   color: var(--accent-gold);
   padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
+  white-space: nowrap;
 }
 
-.lcc-desc {
+.brief-desc {
   font-size: 0.82rem;
   color: var(--text-secondary);
   line-height: 1.5;
+  min-height: 50px;
 }
 
-.lcc-metric-box {
+.brief-metrics-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.brief-metric-box {
   background: rgba(255, 255, 255, 0.01);
   border: 1px solid rgba(255, 255, 255, 0.03);
   padding: 0.75rem 1rem;
@@ -667,7 +818,7 @@ footer {
   flex-direction: column;
 }
 
-.lcc-metric-lbl {
+.bm-lbl {
   font-size: 0.55rem;
   font-weight: 900;
   color: var(--text-muted);
@@ -675,107 +826,20 @@ footer {
   text-transform: uppercase;
 }
 
-.lcc-metric-box strong {
-  font-size: 1.1rem;
+.brief-metric-box strong {
+  font-size: 0.95rem;
   font-weight: 800;
   margin-top: 0.25rem;
 }
 
-/* Column 2: Team Operations styling */
-.lcc-team-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.75rem;
-}
-
-.lcc-team-header h4 {
-  font-size: 0.85rem;
-  color: var(--text-primary);
-}
-
-.lcc-team-status {
-  font-size: 0.55rem;
-  font-weight: 800;
-  color: #10b981;
-  text-transform: uppercase;
-}
-
-.lcc-team-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-}
-
-.lcc-team-item {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  background: rgba(255, 255, 255, 0.01);
-  border: 1px solid rgba(255, 255, 255, 0.03);
-  padding: 0.5rem 0.75rem;
-  border-radius: 0.5rem;
-  transition: all 0.3s;
-}
-
-.lcc-team-item:hover {
-  background: rgba(255, 255, 255, 0.03);
-}
-
-.lcc-team-avatar {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: rgba(253, 224, 71, 0.1);
-  border: 1px solid rgba(253, 224, 71, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.7rem;
-  font-weight: 800;
-  color: var(--accent-gold);
-}
-
-.lcc-team-info {
-  flex: 1;
-}
-
-.lcc-team-name-role {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.lcc-team-name {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.lcc-team-role {
-  font-size: 0.55rem;
-  color: var(--text-muted);
-}
-
-.lcc-team-task {
-  font-size: 0.65rem;
-  color: var(--text-secondary);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 180px;
-  margin-top: 0.1rem;
-}
-
-/* Column 3: Live Engineering Console styling */
-.lcc-panel.console-column {
+/* Console card formatting */
+.telemetry-card.console-card {
   background: #030306;
 }
 
 .console-box {
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
 .console-header {
@@ -812,15 +876,51 @@ footer {
   word-break: break-all;
   overflow-y: auto;
   margin: 0;
-  flex: 1;
-  max-height: 280px;
+  height: 180px;
   scrollbar-width: thin;
 }
 
+/* Media Queries for full responsiveness */
 @media (max-width: 1024px) {
-  .lcc-grid {
+  .radar-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stlc-radar-container {
+    width: 280px;
+    height: 280px;
+  }
+  .radar-ring-inner {
+    width: 180px;
+    height: 180px;
+  }
+  .radar-ring-outer {
+    width: 230px;
+    height: 230px;
+  }
+  .radar-core {
+    width: 110px;
+    height: 110px;
+    padding: 0.5rem;
+  }
+  .core-title {
+    font-size: 0.65rem;
+  }
+  .radar-node-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.6rem;
+  }
+  .brief-title-badge {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .brief-metrics-row {
+    grid-template-columns: 1fr;
   }
 }
 

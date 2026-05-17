@@ -66,82 +66,81 @@
     </div>
   </section>
 
-  <!-- ─── Leadership Command HUD: Approach G ─── -->
-  <section id="leadership-hud" class="container">
+  <!-- ─── Approach I: Self-Healing Playwright Simulator ─── -->
+  <section id="playwright-simulator" class="container">
     <div class="exec-header fade-up">
-      <span class="section-label">EXECUTIVE QUALITY GOVERNANCE</span>
-      <h2 class="exec-title">Leadership Command HUD</h2>
-      <p class="exec-subtitle">A high-authority intelligence dashboard visualizing enterprise risk, release confidence, and strategic ROI across 21+ system components.</p>
+      <span class="section-label">AUTONOMOUS QUALITY ENGINEERING</span>
+      <h2 class="exec-title">Self-Healing Playwright Sandbox</h2>
+      <p class="exec-subtitle">Witness a live simulation of Smit's automated framework deploying local AI models to dynamically repair broken UI selectors in 120ms.</p>
     </div>
 
-    <div class="hud-card glass-card fade-up">
-      <!-- Top: The Executive Dials -->
-      <div class="hud-dials">
-        <div class="dial-item">
-          <div class="dial-svg-wrap">
-            <svg viewBox="0 0 100 100">
-              <circle cx="50" cy="50" r="45" class="dial-bg" />
-              <circle id="dial-velocity" cx="50" cy="50" r="45" class="dial-progress" style="stroke-dasharray: 283; stroke-dashoffset: 40;" />
-            </svg>
-            <span id="val-velocity" class="dial-val">92%</span>
-          </div>
-          <span class="dial-label">RELEASE VELOCITY</span>
+    <div class="sandbox-card glass-card fade-up">
+      <!-- Controls -->
+      <div class="sandbox-header">
+        <div class="sandbox-controls">
+          <button id="run-simulation-btn" class="sandbox-btn primary">
+            <span class="play-icon">▶</span> RUN AUTOMATION SUITE
+          </button>
+          <span class="status-badge" id="suite-status">READY</span>
         </div>
-
-        <div class="dial-item">
-          <div class="dial-svg-wrap">
-            <svg viewBox="0 0 100 100">
-              <circle cx="50" cy="50" r="45" class="dial-bg" />
-              <circle id="dial-stability" cx="50" cy="50" r="45" class="dial-progress" style="stroke-dasharray: 283; stroke-dashoffset: 10;" />
-            </svg>
-            <span id="val-stability" class="dial-val">99.8%</span>
-          </div>
-          <span class="dial-label">SYSTEM STABILITY</span>
-        </div>
-
-        <div class="dial-item">
-          <div class="dial-svg-wrap">
-            <svg viewBox="0 0 100 100">
-              <circle cx="50" cy="50" r="45" class="dial-bg" />
-              <circle id="dial-roi" cx="50" cy="50" r="45" class="dial-progress" style="stroke-dasharray: 283; stroke-dashoffset: 60;" />
-            </svg>
-            <span id="val-roi" class="dial-val">$154K</span>
-          </div>
-          <span class="dial-label">STRATEGIC ROI</span>
+        <div class="telemetry-bar-compact">
+          <span>MODEL: <strong>Llama-3-QA-Local</strong></span>
+          <span>COMPLIANCE: <strong>HIPAA SECURE</strong></span>
         </div>
       </div>
 
-      <!-- Middle: AI Intelligence Briefing with Local Telemetry -->
-      <div class="hud-briefing">
-        <div class="briefing-header">
-          <div class="header-left">
-            <span class="pulse-dot"></span>
-            <span class="briefing-title">AI ADVISOR BRIEFING</span>
-          </div>
-          <div class="telemetry-bar">
-            <span class="telemetry-tag">ENGINE: <strong id="tel-model">Hybrid-RAG-QA</strong></span>
-            <span class="telemetry-tag">CONTEXT NODE: <strong id="tel-agent">Federal Policy Database</strong></span>
-            <span class="telemetry-tag">STATUS: <strong id="tel-security">RAG ANCHORED</strong></span>
+      <div class="sandbox-grid">
+        <!-- Panel 1: Mock UI Portal -->
+        <div class="sandbox-panel mock-ui">
+          <div class="panel-tag">MOCK PORTAL VIEWPORT</div>
+          <div class="portal-container">
+            <div class="portal-form">
+              <label>Applicant Name</label>
+              <div class="mock-input">Smit Soni</div>
+              <label>Medicaid Program</label>
+              <div class="mock-input">Eligibility / SNAP</div>
+              
+              <!-- The Target Button -->
+              <button id="portal-target-btn" class="portal-btn">
+                SUBMIT APPLICATION
+              </button>
+            </div>
+            <div class="dom-inspector">
+              DOM Code: <code id="dom-code-text">&lt;button id="eligibility-submit"&gt;</code>
+            </div>
           </div>
         </div>
-        <div id="briefing-text" class="briefing-content">
-          Analyzing Medicaid ecosystem... Quality gates are OPTIMIZED. Release readiness confirmed at 99.8%.
-        </div>
-      </div>
 
-      <!-- Bottom: Command Console -->
-      <div class="hud-console">
-        <div class="console-label">STLC COMMAND CONSOLE</div>
-        <div class="console-grid">
-          <button class="hud-btn active" data-stage="requirements">REQS</button>
-          <button class="hud-btn" data-stage="risk">RISK</button>
-          <button class="hud-btn" data-stage="strategy">STRAT</button>
-          <button class="hud-btn" data-stage="design">DESIGN</button>
-          <button class="hud-btn" data-stage="validation">VALID</button>
-          <button class="hud-btn" data-stage="uat">UAT</button>
-          <button class="hud-btn" data-stage="triage">TRIAGE</button>
-          <button class="hud-btn" data-stage="readiness">READY</button>
-          <button class="hud-btn" data-stage="monitoring">PROD</button>
+        <!-- Panel 2: Live Playwright Console -->
+        <div class="sandbox-panel terminal">
+          <div class="panel-tag">PLAYWRIGHT LIVE CONSOLE</div>
+          <div class="console-body" id="console-output">
+            <div class="console-line text-muted">System ready. Click "RUN AUTOMATION SUITE" to initiate regression.</div>
+          </div>
+        </div>
+
+        <!-- Panel 3: AI Code Diff Panel -->
+        <div class="sandbox-panel code-diff">
+          <div class="panel-tag">AI HEALER DIAGNOSTICS</div>
+          <div class="diagnostic-panel">
+            <div class="diag-stat-row">
+              <div class="diag-stat">
+                <span class="ds-label">MATCH CONFIDENCE</span>
+                <span id="diag-confidence" class="ds-val">0%</span>
+              </div>
+              <div class="diag-stat">
+                <span class="ds-label">HEALING TIME</span>
+                <span id="diag-time" class="ds-val">0ms</span>
+              </div>
+            </div>
+            
+            <div class="code-diff-container">
+              <div class="diff-header">PLAYWRIGHT SCRIPT EDIT</div>
+              <pre class="diff-code" id="diff-code-display">
+<span class="text-muted">// Ready to simulate healing...</span>
+              </pre>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -632,120 +631,105 @@
       });
     });
 
-    // Leadership HUD Logic: High-Authority Professional Data with Hybrid-RAG Engine
-    const hudData = {
-      requirements: { 
-        v: 85, s: 94, r: "$22K", offsetV: 42, offsetS: 17, offsetR: 150,
-        model: "Hybrid-RAG-QA", agent: "Federal Policy Graph", security: "RAG ANCHORED (NO-HALLUCINATION)",
-        brief: "Strategic Traceability: Smit implemented a Hybrid RAG QA Engine anchored directly to SNAP/Medicaid federal policy manuals, eliminating LLM hallucinations and reducing requirements ambiguity by 25%."
-      },
-      risk: { 
-        v: 88, s: 96, r: "$45K", offsetV: 34, offsetS: 11, offsetR: 120,
-        model: "Hybrid-RAG-QA", agent: "Dependency Topology Map", security: "RAG ANCHORED (NO-HALLUCINATION)",
-        brief: "Component Governance: Smit's RAG framework maps dependency vectors across 21+ enterprise components, analyzing code churn to isolate high-risk paths in the billing ecosystem."
-      },
-      strategy: { 
-        v: 92, s: 97, r: "$80K", offsetV: 22, offsetS: 8, offsetR: 90,
-        model: "Hybrid-RAG-QA", agent: "Governance Ruleset Index", security: "RAG ANCHORED (NO-HALLUCINATION)",
-        brief: "Stakeholder Alignment: Smit orchestrated quality governance by feeding regulatory rulesets into a centralized RAG vector database, aligning 12+ cross-functional stakeholders."
-      },
-      design: { 
-        v: 98, s: 98, r: "$110K", offsetV: 5, offsetS: 5, offsetR: 70,
-        model: "Hybrid-RAG-QA", agent: "Automation Repo Index", security: "RAG ANCHORED (NO-HALLUCINATION)",
-        brief: "Automation Architecture: Smit integrated Playwright repository architecture maps with the RAG generator, resulting in 3x faster self-healing selectors and minimal maintenance."
-      },
-      validation: { 
-        v: 95, s: 99, r: "$135K", offsetV: 14, offsetS: 2, offsetR: 50,
-        model: "Hybrid-RAG-QA", agent: "Database Schema Node", security: "RAG ANCHORED (NO-HALLUCINATION)",
-        brief: "Technical Precision: Smit leveraged hybrid RAG to generate zero-error SQL validations and API contract assertions against complex AWS backend architectures."
-      },
-      uat: { 
-        v: 90, s: 99.5, r: "$142K", offsetV: 28, offsetS: 1, offsetR: 40,
-        model: "Hybrid-RAG-QA", agent: "UAT Acceptance Matrix", security: "RAG ANCHORED (NO-HALLUCINATION)",
-        brief: "UAT Sovereignty: By validating user journey flows directly against UAT knowledge nodes, Smit secured business sign-off for the SNAP eligibility module with zero leakage."
-      },
-      triage: { 
-        v: 94, s: 99, r: "$148K", offsetV: 17, offsetS: 2, offsetR: 35,
-        model: "Hybrid-RAG-QA", agent: "System Topology Graph", security: "RAG ANCHORED (NO-HALLUCINATION)",
-        brief: "Delivery Acceleration: Smit implemented RAG-based error traceback, correlating logs against system topologies to reduce defect resolution cycles by 40%."
-      },
-      readiness: { 
-        v: 96, s: 99.8, r: "$154K", offsetV: 11, offsetS: 0.5, offsetR: 20,
-        model: "Hybrid-RAG-QA", agent: "Release Compliance Node", security: "RAG ANCHORED (NO-HALLUCINATION)",
-        brief: "Release Confidence: Consolidating compliance matrices via RAG. Smit confirmed a 99.8% release confidence score, proving an automation-driven ROI of $154K."
-      },
-      monitoring: { 
-        v: 99, s: 100, r: "$154K", offsetV: 2, offsetS: 0, offsetR: 20,
-        model: "Hybrid-RAG-QA", agent: "Production Log Index", security: "RAG ANCHORED (NO-HALLUCINATION)",
-        brief: "Post-Production Health: Smit's quality model achieved a 35% reduction in production bugs, cross-referencing real-time system logs against live production knowledge nodes."
-      }
-    };
+    // Playwright Sandbox Logic: Approach I
+    const runBtn = document.getElementById('run-simulation-btn');
+    const suiteStatus = document.getElementById('suite-status');
+    const portalBtn = document.getElementById('portal-target-btn');
+    const domCode = document.getElementById('dom-code-text');
+    const consoleOutput = document.getElementById('console-output');
+    const diagConfidence = document.getElementById('diag-confidence');
+    const diagTime = document.getElementById('diag-time');
+    const diffCode = document.getElementById('diff-code-display');
 
-    const hudBtns = document.querySelectorAll('.hud-btn');
-    const briefText = document.getElementById('briefing-text');
-    const dVel = document.getElementById('dial-velocity');
-    const dStab = document.getElementById('dial-stability');
-    const dRoi = document.getElementById('dial-roi');
-    const vVel = document.getElementById('val-velocity');
-    const vStab = document.getElementById('val-stability');
-    const vRoi = document.getElementById('val-roi');
-    
-    // Telemetry Elements
-    const telModel = document.getElementById('tel-model');
-    const telAgent = document.getElementById('tel-agent');
-    const telSecurity = document.getElementById('tel-security');
+    const logs = [
+      { text: "[INFO] Initializing Playwright Test Runner...", delay: 500, type: "info" },
+      { text: "[INFO] Browser launched. Navigating to Medicaid Eligibility Portal...", delay: 1000, type: "info" },
+      { text: "[PASS] Page loaded. Parsing page structure (21+ elements verified).", delay: 800, type: "success" },
+      { text: "[ACTION] Attempting click on target selector: locator('#eligibility-submit')", delay: 1000, type: "action" },
+      { text: "[ERROR] TimeoutError: waiting for locator('#eligibility-submit') - Selector not found in DOM.", delay: 1200, type: "error" },
+      { text: "[AI-AGENT] Initializing Llama-3-QA-Local Healing Engine...", delay: 800, type: "ai" },
+      { text: "[AI-AGENT] Scanning DOM snapshot. Identified matching element: button.portal-btn", delay: 1000, type: "ai" },
+      { text: "[AI-AGENT] Matching confidence calculated: 98% based on coordinate & semantic similarity.", delay: 800, type: "ai" },
+      { text: "[HEALED] Selector updated successfully. Script auto-repaired in 120ms.", delay: 600, type: "success" },
+      { text: "[ACTION] Retrying healed selector: locator('.portal-btn')", delay: 800, type: "action" },
+      { text: "[PASS] Eligibility form submitted successfully. Database record insertion confirmed.", delay: 1000, type: "success" },
+      { text: "[INFO] Regression suite completed: 1 passed, 0 failed (1 healed).", delay: 500, type: "info" }
+    ];
 
-    function updateHud(stage) {
-      const data = hudData[stage];
-      
-      // Update Dials (Offset calculation: 283 is full circle)
-      dVel.style.strokeDashoffset = data.offsetV;
-      dStab.style.strokeDashoffset = data.offsetS;
-      dRoi.style.strokeDashoffset = data.offsetR;
-      
-      // Update Values
-      vVel.textContent = data.v + "%";
-      vStab.textContent = data.s + "%";
-      vRoi.textContent = data.r;
-      
-      // Update Telemetry Bar
-      telModel.textContent = data.model;
-      telAgent.textContent = data.agent;
-      telSecurity.textContent = data.security;
-      
-      // Update Briefing (Typewriter Effect)
-      briefText.innerHTML = '';
-      let i = 0;
-      function typeWriter() {
-        if (i < data.brief.length) {
-          briefText.innerHTML += data.brief.charAt(i);
-          i++;
-          setTimeout(typeWriter, 15);
-        }
-      }
-      typeWriter();
-      
-      hudBtns.forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.stage === stage);
-      });
+    let running = false;
+
+    function addConsoleLine(text, type) {
+      const line = document.createElement('div');
+      line.className = `console-line ${type}`;
+      line.textContent = text;
+      consoleOutput.appendChild(line);
+      consoleOutput.scrollTop = consoleOutput.scrollHeight;
     }
 
-    hudBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        updateHud(btn.dataset.stage);
-      });
-    });
+    function runSimulation() {
+      if (running) return;
+      running = true;
+      runBtn.disabled = true;
+      suiteStatus.textContent = "RUNNING";
+      suiteStatus.className = "status-badge running";
+      consoleOutput.innerHTML = "";
+      
+      // Reset Diagnostics
+      diagConfidence.textContent = "0%";
+      diagTime.textContent = "0ms";
+      diffCode.innerHTML = `<span class="text-muted">// Ready to simulate healing...</span>`;
+      
+      // Reset portal DOM
+      portalBtn.id = "portal-target-btn";
+      portalBtn.className = "portal-btn";
+      domCode.textContent = '<button id="eligibility-submit">';
+      
+      let step = 0;
 
-    // Auto-cycle
-    let hudKeys = Object.keys(hudData);
-    let hudIdx = 7; 
-    
-    setInterval(() => {
-      hudIdx = (hudIdx + 1) % hudKeys.length;
-      updateHud(hudKeys[hudIdx]);
-    }, 10000);
+      function executeStep() {
+        if (step >= logs.length) {
+          running = false;
+          runBtn.disabled = false;
+          suiteStatus.textContent = "PASSED (HEALED)";
+          suiteStatus.className = "status-badge passed";
+          return;
+        }
 
-    updateHud('readiness'); // Init
+        const log = logs[step];
+        
+        // Dynamic DOM changes during simulation
+        if (log.type === "error") {
+          // Dev changed the DOM dynamically
+          portalBtn.id = "btn-new-id";
+          portalBtn.className = "portal-btn modified-element";
+          domCode.textContent = '<button id="btn-new-id" class="portal-btn modified-element">';
+          domCode.style.color = "#EF4444";
+        }
+        
+        if (log.type === "ai") {
+          domCode.style.color = "#F59E0B";
+        }
+
+        if (log.type === "healed") {
+          diagConfidence.textContent = "98%";
+          diagTime.textContent = "120ms";
+          domCode.style.color = "#10B981";
+          
+          diffCode.innerHTML = `
+<span class="diff-removed">- await page.locator('#eligibility-submit').click();</span>
+<span class="diff-added">+ await page.locator('.portal-btn').click(); // HEALED</span>
+          `;
+        }
+
+        addConsoleLine(log.text, log.type);
+        step++;
+        setTimeout(executeStep, log.delay);
+      }
+
+      executeStep();
+    }
+
+    runBtn.addEventListener('click', runSimulation);
   </script>
 </body>
 

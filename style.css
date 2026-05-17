@@ -236,64 +236,109 @@ nav.scrolled {
   background-clip: text;
 }
 .stat-label { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; margin-top: 0.25rem; }
-.hud-card { margin-top: 2rem; padding: 2.5rem; background: rgba(5, 8, 15, 0.8); border: 1px solid rgba(255,255,255,0.05); border-radius: 1.5rem; }
 
-/* Executive Dials */
-.hud-dials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 2.5rem; }
-.dial-item { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
-.dial-svg-wrap { position: relative; width: 110px; height: 110px; }
-.dial-svg-wrap svg { transform: rotate(-90deg); }
-.dial-bg { fill: none; stroke: rgba(255,255,255,0.03); stroke-width: 10; }
-.dial-progress { 
-  fill: none; stroke: var(--accent-gold); stroke-width: 10; stroke-linecap: round;
-  transition: stroke-dashoffset 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-  filter: drop-shadow(0 0 8px rgba(253, 224, 71, 0.3));
-}
-.dial-val { 
-  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
-  font-size: 1.15rem; font-weight: 900; color: #fff; font-family: 'JetBrains Mono', monospace;
-}
-.dial-label { font-size: 0.6rem; font-weight: 900; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; }
+/* ─── Playwright Sandbox Simulator (Approach I) ─── */
+.sandbox-card { margin-top: 2rem; padding: 2.5rem; background: rgba(5, 8, 15, 0.85); border: 1px solid rgba(255,255,255,0.05); border-radius: 1.5rem; }
 
-/* Intelligence Briefing */
-.hud-briefing { 
-  background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); 
-  border-radius: 1rem; padding: 1.5rem 2rem; margin-bottom: 2.5rem; position: relative;
-  min-height: 90px;
-}
-.briefing-header { 
+/* Sandbox Header & Controls */
+.sandbox-header { 
   display: flex; justify-content: space-between; align-items: center; 
-  margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.03);
+  margin-bottom: 2rem; padding-bottom: 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.05);
 }
-.header-left { display: flex; align-items: center; gap: 0.6rem; }
-.pulse-dot { width: 6px; height: 6px; background: #EF4444; border-radius: 50%; animation: aiBlink 1.5s infinite; }
-.briefing-title { font-size: 0.6rem; font-weight: 900; color: var(--text-muted); letter-spacing: 0.1em; }
+.sandbox-controls { display: flex; align-items: center; gap: 1.5rem; }
+.sandbox-btn { 
+  padding: 0.8rem 1.75rem; font-size: 0.75rem; font-weight: 800; border-radius: 0.5rem; 
+  cursor: pointer; border: none; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.sandbox-btn.primary { 
+  background: var(--accent-gold); color: #000; 
+  box-shadow: 0 0 15px rgba(253, 224, 71, 0.2); 
+}
+.sandbox-btn.primary:hover:not(:disabled) { 
+  background: #fff; transform: translateY(-2px); 
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+}
+.sandbox-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
-/* Telemetry tags */
-.telemetry-bar { display: flex; gap: 1.5rem; }
-.telemetry-tag { font-size: 0.6rem; font-weight: 800; color: var(--text-muted); letter-spacing: 0.05em; text-transform: uppercase; }
-.telemetry-tag strong { color: var(--accent-gold); font-weight: 900; font-family: 'Inter', sans-serif; }
-.briefing-content { font-size: 0.95rem; color: #fff; line-height: 1.5; font-weight: 500; }
+.status-badge { 
+  font-size: 0.65rem; font-weight: 900; padding: 0.4rem 0.8rem; border-radius: 0.3rem; 
+  letter-spacing: 0.05em; background: rgba(255,255,255,0.05); color: var(--text-muted); 
+}
+.status-badge.running { background: rgba(245, 158, 11, 0.1); color: #F59E0B; border: 1px solid rgba(245, 158, 11, 0.2); }
+.status-badge.passed { background: rgba(16, 185, 129, 0.1); color: #10B981; border: 1px solid rgba(16, 185, 129, 0.2); }
 
-/* Command Console */
-.hud-console { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem; }
-.console-label { font-size: 0.55rem; font-weight: 900; color: var(--text-muted); letter-spacing: 0.15em; margin-bottom: 1rem; text-align: center; }
-.console-grid { display: grid; grid-template-columns: repeat(9, 1fr); gap: 0.5rem; }
-.hud-btn { 
-  padding: 0.6rem 0.3rem; background: transparent; border: 1px solid rgba(255,255,255,0.05); 
-  border-radius: 0.4rem; color: var(--text-muted); font-size: 0.55rem; font-weight: 800; 
+.telemetry-bar-compact { display: flex; gap: 1.5rem; font-size: 0.65rem; color: var(--text-muted); letter-spacing: 0.05em; }
+.telemetry-bar-compact strong { color: var(--accent-gold); }
+
+/* Sandbox Grid */
+.sandbox-grid { display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 1.5rem; min-height: 280px; }
+.sandbox-panel { 
+  background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255,255,255,0.03); 
+  border-radius: 1rem; padding: 1.25rem; position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+}
+.panel-tag { 
+  font-size: 0.55rem; font-weight: 900; color: var(--text-muted); 
+  letter-spacing: 0.1em; margin-bottom: 1rem; text-transform: uppercase; 
+}
+
+/* Panel 1: Mock UI Form */
+.portal-container { 
+  flex: 1; display: flex; flex-direction: column; justify-content: space-between; 
+  background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.02);
+  border-radius: 0.75rem; padding: 1.25rem;
+}
+.portal-form label { font-size: 0.55rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.3rem; display: block; }
+.mock-input { 
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); 
+  padding: 0.5rem 0.75rem; font-size: 0.75rem; color: #fff; border-radius: 0.4rem; 
+  margin-bottom: 0.75rem; font-weight: 500;
+}
+.portal-btn { 
+  width: 100%; padding: 0.65rem; font-size: 0.65rem; font-weight: 800; border-radius: 0.4rem; 
+  border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: #fff; 
   cursor: pointer; transition: all 0.3s;
 }
-.hud-btn:hover { background: rgba(255,255,255,0.03); color: #fff; }
-.hud-btn.active { 
-  background: rgba(253, 224, 71, 0.08); border-color: rgba(253, 224, 71, 0.3); 
-  color: var(--accent-gold); box-shadow: 0 0 10px rgba(253, 224, 71, 0.1);
+.portal-btn.modified-element { background: rgba(239, 68, 68, 0.05); border-color: rgba(239, 68, 68, 0.3); }
+.dom-inspector { font-size: 0.6rem; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 0.75rem; margin-top: 0.75rem; }
+.dom-inspector code { font-family: 'JetBrains Mono', monospace; color: var(--accent-gold); transition: color 0.4s; }
+
+/* Panel 2: Live Console Terminal */
+.console-body { 
+  flex: 1; background: #020204; border: 1px solid rgba(255,255,255,0.03); 
+  border-radius: 0.75rem; padding: 1rem; font-family: 'JetBrains Mono', monospace; 
+  font-size: 0.65rem; line-height: 1.5; overflow-y: auto; max-height: 220px;
 }
+.console-line { margin-bottom: 0.5rem; word-break: break-all; }
+.console-line.info { color: #888; }
+.console-line.success { color: #10B981; }
+.console-line.action { color: #fff; }
+.console-line.error { color: #EF4444; font-weight: bold; }
+.console-line.ai { color: #F59E0B; }
+
+/* Panel 3: AI Diagnostics */
+.diagnostic-panel { flex: 1; display: flex; flex-direction: column; gap: 1rem; }
+.diag-stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.diag-stat { 
+  background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.03); 
+  padding: 0.75rem; border-radius: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;
+}
+.ds-label { font-size: 0.5rem; font-weight: 900; color: var(--text-muted); letter-spacing: 0.05em; }
+.ds-val { font-size: 0.95rem; font-weight: 800; color: var(--accent-gold); font-family: 'JetBrains Mono', monospace; }
+
+.code-diff-container { 
+  flex: 1; background: #030306; border: 1px solid rgba(255,255,255,0.05); 
+  border-radius: 0.5rem; padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem;
+}
+.diff-header { font-size: 0.55rem; font-weight: 800; color: var(--text-muted); letter-spacing: 0.05em; }
+.diff-code { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; line-height: 1.4; color: #fff; margin: 0; white-space: pre-wrap; }
+.diff-removed { color: #EF4444; display: block; background: rgba(239, 68, 68, 0.05); padding: 0.1rem 0.3rem; border-radius: 0.2rem; }
+.diff-added { color: #10B981; display: block; background: rgba(16, 185, 129, 0.05); padding: 0.1rem 0.3rem; border-radius: 0.2rem; font-weight: bold; }
 
 @media (max-width: 1024px) {
-  .hud-dials { grid-template-columns: 1fr; gap: 1.5rem; }
-  .console-grid { grid-template-columns: repeat(3, 1fr); }
-  .hud-card { padding: 2rem; }
+  .sandbox-grid { grid-template-columns: 1fr; }
+  .sandbox-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
 }
 
 /* ─── Section Styles ─── */

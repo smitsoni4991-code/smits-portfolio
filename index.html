@@ -119,9 +119,9 @@
             <span class="briefing-title">AI ADVISOR BRIEFING</span>
           </div>
           <div class="telemetry-bar">
-            <span class="telemetry-tag">MODEL: <strong id="tel-model">Llama-3-QA-70B</strong></span>
-            <span class="telemetry-tag">AGENT: <strong id="tel-agent">Ambiguity Parser</strong></span>
-            <span class="telemetry-tag">SECURITY: <strong id="tel-security">LOCAL / SECURE</strong></span>
+            <span class="telemetry-tag">ENGINE: <strong id="tel-model">Hybrid-RAG-QA</strong></span>
+            <span class="telemetry-tag">CONTEXT NODE: <strong id="tel-agent">Federal Policy Database</strong></span>
+            <span class="telemetry-tag">STATUS: <strong id="tel-security">RAG ANCHORED</strong></span>
           </div>
         </div>
         <div id="briefing-text" class="briefing-content">
@@ -632,52 +632,52 @@
       });
     });
 
-    // Leadership HUD Logic: High-Authority Professional Data with Llama-3 Local Engine
+    // Leadership HUD Logic: High-Authority Professional Data with Hybrid-RAG Engine
     const hudData = {
       requirements: { 
         v: 85, s: 94, r: "$22K", offsetV: 42, offsetS: 17, offsetR: 150,
-        model: "Llama-3-QA-70B", agent: "Ambiguity Parser v2.1", security: "SECURE LOCAL / HIPAA",
-        brief: "Strategic Traceability: Smit implemented AI-driven requirement analysis for Medicaid/SNAP modules, identifying 12 core ambiguity gaps and preventing $22K in upstream rework costs."
+        model: "Hybrid-RAG-QA", agent: "Federal Policy Graph", security: "RAG ANCHORED (NO-HALLUCINATION)",
+        brief: "Strategic Traceability: Smit implemented a Hybrid RAG QA Engine anchored directly to SNAP/Medicaid federal policy manuals, eliminating LLM hallucinations and reducing requirements ambiguity by 25%."
       },
       risk: { 
         v: 88, s: 96, r: "$45K", offsetV: 34, offsetS: 11, offsetR: 120,
-        model: "Llama-3-QA-70B", agent: "Risk Severity Modeler", security: "SECURE LOCAL / HIPAA",
-        brief: "Component Governance: Smit is modeling risk across 21+ enterprise components, prioritizing testing efforts based on code churn and business impact for the Billing ecosystem."
+        model: "Hybrid-RAG-QA", agent: "Dependency Topology Map", security: "RAG ANCHORED (NO-HALLUCINATION)",
+        brief: "Component Governance: Smit's RAG framework maps dependency vectors across 21+ enterprise components, analyzing code churn to isolate high-risk paths in the billing ecosystem."
       },
       strategy: { 
         v: 92, s: 97, r: "$80K", offsetV: 22, offsetS: 8, offsetR: 90,
-        model: "Llama-3-QA-70B", agent: "STLC Roadmap Planner", security: "SECURE LOCAL / HIPAA",
-        brief: "Stakeholder Alignment: Smit successfully orchestrated the global quality roadmap, aligning 12+ cross-functional stakeholders and ensuring 100% compliance with enterprise release gates."
+        model: "Hybrid-RAG-QA", agent: "Governance Ruleset Index", security: "RAG ANCHORED (NO-HALLUCINATION)",
+        brief: "Stakeholder Alignment: Smit orchestrated quality governance by feeding regulatory rulesets into a centralized RAG vector database, aligning 12+ cross-functional stakeholders."
       },
       design: { 
         v: 98, s: 98, r: "$110K", offsetV: 5, offsetS: 5, offsetR: 70,
-        model: "Llama-3-QA-70B", agent: "Playwright Code Synthesizer", security: "SECURE LOCAL / HIPAA",
-        brief: "Automation Architecture: Smit designed a scalable Playwright framework featuring AI self-healing. Result: 3x faster execution and 60% reduction in framework maintenance effort."
+        model: "Hybrid-RAG-QA", agent: "Automation Repo Index", security: "RAG ANCHORED (NO-HALLUCINATION)",
+        brief: "Automation Architecture: Smit integrated Playwright repository architecture maps with the RAG generator, resulting in 3x faster self-healing selectors and minimal maintenance."
       },
       validation: { 
         v: 95, s: 99, r: "$135K", offsetV: 14, offsetS: 2, offsetR: 50,
-        model: "Llama-3-QA-70B", agent: "Precision Data Guard", security: "SECURE LOCAL / HIPAA",
-        brief: "Technical Precision: Smit ensured 99.9% data accuracy across claim eligibility endpoints through rigorous SQL validation and API contract testing within AWS environments."
+        model: "Hybrid-RAG-QA", agent: "Database Schema Node", security: "RAG ANCHORED (NO-HALLUCINATION)",
+        brief: "Technical Precision: Smit leveraged hybrid RAG to generate zero-error SQL validations and API contract assertions against complex AWS backend architectures."
       },
       uat: { 
         v: 90, s: 99.5, r: "$142K", offsetV: 28, offsetS: 1, offsetR: 40,
-        model: "Llama-3-QA-70B", agent: "Stakeholder Gatekeeper", security: "SECURE LOCAL / HIPAA",
-        brief: "UAT Sovereignty: Smit led the Business Acceptance cycles for 12+ stakeholders, delivering the SNAP Eligibility module with ZERO reported UAT leakage into production."
+        model: "Hybrid-RAG-QA", agent: "UAT Acceptance Matrix", security: "RAG ANCHORED (NO-HALLUCINATION)",
+        brief: "UAT Sovereignty: By validating user journey flows directly against UAT knowledge nodes, Smit secured business sign-off for the SNAP eligibility module with zero leakage."
       },
       triage: { 
         v: 94, s: 99, r: "$148K", offsetV: 17, offsetS: 2, offsetR: 35,
-        model: "Llama-3-QA-70B", agent: "Root Cause Classifier", security: "SECURE LOCAL / HIPAA",
-        brief: "Delivery Acceleration: By implementing AI-assisted root cause analysis, Smit reduced the defect resolution cycle time by 40% for critical production-path items."
+        model: "Hybrid-RAG-QA", agent: "System Topology Graph", security: "RAG ANCHORED (NO-HALLUCINATION)",
+        brief: "Delivery Acceleration: Smit implemented RAG-based error traceback, correlating logs against system topologies to reduce defect resolution cycles by 40%."
       },
       readiness: { 
         v: 96, s: 99.8, r: "$154K", offsetV: 11, offsetS: 0.5, offsetR: 20,
-        model: "Llama-3-QA-70B", agent: "Release Predictor Engine", security: "SECURE LOCAL / HIPAA",
-        brief: "Release Confidence: Final telemetry consolidated. Smit has confirmed a 99.8% release confidence score, achieving an automation-driven ROI of $154K for the current fiscal year."
+        model: "Hybrid-RAG-QA", agent: "Release Compliance Node", security: "RAG ANCHORED (NO-HALLUCINATION)",
+        brief: "Release Confidence: Consolidating compliance matrices via RAG. Smit confirmed a 99.8% release confidence score, proving an automation-driven ROI of $154K."
       },
       monitoring: { 
         v: 99, s: 100, r: "$154K", offsetV: 2, offsetS: 0, offsetR: 20,
-        model: "Llama-3-QA-70B", agent: "Drift & Anomaly Monitor", security: "SECURE LOCAL / HIPAA",
-        brief: "Post-Production Health: Smit's quality model achieved a 35% reduction in production bugs, maintaining a defect leakage rate of 0.02% across the live Medicaid system."
+        model: "Hybrid-RAG-QA", agent: "Production Log Index", security: "RAG ANCHORED (NO-HALLUCINATION)",
+        brief: "Post-Production Health: Smit's quality model achieved a 35% reduction in production bugs, cross-referencing real-time system logs against live production knowledge nodes."
       }
     };
 

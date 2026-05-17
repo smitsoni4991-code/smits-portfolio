@@ -22,7 +22,6 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#stlc-copilot" style="color: var(--accent-gold); font-weight: 700;">AI Co-Pilot</a></li>
-      <li><a href="#qe-command-center" style="color: var(--accent-gold); font-weight: 700;">QE Cockpit</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
@@ -63,7 +62,7 @@
       </div>
       <div class="hero-btns fade-up delay-3">
         <a href="#stlc-copilot" class="btn btn-primary">Launch STLC AI Co-Pilot</a>
-        <a href="#qe-command-center" class="btn btn-outline" style="border: 1px solid var(--accent-gold); color: var(--accent-gold);">Launch QE Cockpit</a>
+        <a href="#contact" class="btn btn-outline">Schedule Consultation</a>
       </div>
     </div>
   </section>
@@ -81,19 +80,19 @@
       <div class="copilot-header">
         <div class="copilot-selectors">
           <div class="select-group">
-            <span class="select-label">SELECT CO-PILOT AGENT:</span>
+            <span class="select-label">SELECT QUALITY TECHNIQUE:</span>
             <div class="agent-buttons">
-              <button class="copilot-btn agent-btn active" data-agent="llama">🦙 Llama-3-Specialist</button>
-              <button class="copilot-btn agent-btn" data-agent="gpt">🤖 GPT-4o-Risk-Architect</button>
-              <button class="copilot-btn agent-btn" data-agent="claude">🔮 Claude-3.5-SDET-Lead</button>
+              <button class="copilot-btn agent-btn active" data-agent="llama">⚙️ Playwright E2E Automation</button>
+              <button class="copilot-btn agent-btn" data-agent="gpt">🗄️ SQL & DB Validation</button>
+              <button class="copilot-btn agent-btn" data-agent="claude">📋 UAT & Release Governance</button>
             </div>
           </div>
           <div class="select-group">
-            <span class="select-label">SELECT ENTERPRISE USER JOURNEY:</span>
+            <span class="select-label">SELECT ENTERPRISE SYSTEM:</span>
             <div class="journey-buttons">
-              <button class="copilot-btn journey-btn active" data-journey="snap">🌾 SNAP Eligibility</button>
+              <button class="copilot-btn journey-btn active" data-journey="snap">🌾 SNAP Eligibility Portal</button>
               <button class="copilot-btn journey-btn" data-journey="auth">🔒 Claims API Gateway</button>
-              <button class="copilot-btn journey-btn" data-journey="tableau">📊 Tableau BI Analytics</button>
+              <button class="copilot-btn journey-btn" data-journey="tableau">📊 Tableau BI Financials</button>
             </div>
           </div>
         </div>
@@ -117,11 +116,11 @@
               <span class="console-dot-btn red"></span>
               <span class="console-dot-btn yellow"></span>
               <span class="console-dot-btn green"></span>
-              <span class="console-title" id="console-agent-title">Llama-3-QA-Specialist — Active Connection</span>
+              <span class="console-title" id="console-agent-title">Smit's Playwright E2E Automation Engine — Active Connection</span>
             </div>
             
             <div class="console-content" id="console-stream-box">
-              <span class="text-muted">// Select a scenario and click "Engage AI Co-Pilot" to launch the simulation...</span>
+              <span class="text-muted">// Select a quality technique and click \"Engage AI Co-Pilot\" to launch the simulation...</span>
             </div>
           </div>
 
@@ -136,77 +135,7 @@
     </div>
   </section>
 
-  <!-- ─── QE Command Center: Release Risk Governance ─── -->
-  <section id="qe-command-center" class="container">
-    <div class="exec-header fade-up">
-      <span class="section-label">RELEASE RISK & COMPLIANCE</span>
-      <h2 class="exec-title">QE Leadership Command Center</h2>
-      <p class="exec-subtitle">Step into the cockpit of an enterprise-grade release pipeline. Explore how Smit orchestrates continuous quality gates, balances human/automated execution, and dynamically triages defect vectors across the full STLC.</p>
-    </div>
 
-    <div class="qe-card glass-card fade-up">
-      <!-- Top header status -->
-      <div class="qe-header">
-        <div class="qe-system-badge">
-          <span class="pulse-green"></span> PIPELINE GOVERNANCE ACTIVE
-        </div>
-        <div class="qe-release-selector">
-          SYSTEM COMPONENT ACTIVE: <strong class="text-gold">21+ Enterprise Services</strong>
-        </div>
-      </div>
-
-      <!-- 11-Stage Interactive Timeline -->
-      <div class="qe-timeline-wrapper">
-        <div class="qe-timeline" id="qe-stlc-timeline">
-          <!-- Timelines nodes will be rendered dynamically by JS -->
-        </div>
-      </div>
-
-      <!-- Main workspace -->
-      <div class="qe-grid">
-        <!-- Panel 1: Diagnostics & Strategic Brief -->
-        <div class="qe-panel diagnostics-panel">
-          <div class="panel-tag">GOVERNANCE & STRATEGIC TELEMETRY</div>
-          
-          <div class="qe-telemetry-box">
-            <h4 class="qe-phase-title" id="qe-phase-title">Requirements Analysis</h4>
-            <span class="qe-phase-subtitle" id="qe-phase-subtitle">Shift-Left QA Ambiguity Extraction</span>
-
-            <div class="qe-telemetry-grid">
-              <div class="qe-stat-card">
-                <span class="qsc-lbl">GOVERNANCE KPI</span>
-                <strong id="qe-stat-metric" class="text-gold">Ambiguities Identified: 4 | Shift-Left Savings: ~$12,000</strong>
-              </div>
-            </div>
-
-            <div class="qe-brief-section">
-              <span class="qbs-lbl">TEAM LEADERSHIP & COLLABORATION</span>
-              <p class="qbs-desc" id="qe-stat-team">
-                QA Lead coordinates with Product Owners to refine user story acceptance criteria prior to development kick-off.
-              </p>
-            </div>
-
-            <div class="qe-brief-section">
-              <span class="qbs-lbl">AI-ASSISTED QA INTEGRATION</span>
-              <p class="qbs-desc" id="qe-stat-ai">
-                Generative AI parses PRD markdown files, highlighting missing edge-cases and logic gaps in 3 seconds.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Panel 2: Live Code/Script Asserter -->
-        <div class="qe-panel script-panel">
-          <div class="panel-tag">AUTOMATED QUALITY GATE (CODE ENGINE)</div>
-          <div class="qe-code-container">
-            <pre class="qe-code-block" id="qe-code-block">
-// Live code will compile here...
-            </pre>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ─── AI Assistant Chat ─── -->
   <section id="ai-assistant">
@@ -694,47 +623,121 @@
     });
 
     // ─── STLC AI Co-Pilot Simulator Controller ───
-    const copilotData = {
-      snap: [
-        { phase: "Requirements Analysis", icon: "📋", agent: "Parser Prompt: Load SNAP-Claims-Story-204 and find logical policy ambiguities.\n\n[Llama-3-Specialist Response]:\nScanned gross income verification parameters. Found 4 ambiguities:\n1. Spec fails to specify EBT transaction fallback state during banking system downtime.\n2. Spec omits eligibility rules for multi-state resident applicants under age 21.\n3. Asset cap rule lacks clarification for vehicles utilized for commercial agricultural work.\n4. Spec does not address session timeout duration for self-service portal submissions.", signoff: "Logged 4 Jira requirements ambiguity tickets. Coordinated with Product Owners and solved gaps prior to development, saving ~$12,000 in dev rework." },
-        { phase: "Risk Assessment", icon: "⚠️", agent: "Risk Prompt: Review historical defect records for SNAP modules and score risk.\n\n[Llama-3-Specialist Response]:\nAnalyzed 21 components. Flagged 3 critical failure vectors:\n- Med-Billing-Bridge: 12% legacy failure risk (transaction synchronization mismatch).\n- EBT-Gateway-Service: High security exposure (lack of request rate limit rules).\n- Portal-Eligibility-Engine: Compliance leakage threat under federal audit rules.", signoff: "Instructed SDET team to deploy Level-1 continuous automated gates on the billing bridge and security tokens. Shifted automated test focus to prioritize high-risk components." },
-        { phase: "Test Strategy", icon: "🗺️", agent: "Strategy Prompt: Outline validation strategy for SNAP eligibility v3.4.\n\n[Llama-3-Specialist Response]:\nProposed Triple-Layer Verification:\n- UI Layer: Playwright E2E testing for self-service application submission.\n- Integration Layer: REST API contract tests verifying JSON schema validation rules.\n- DB Layer: Transaction validation auditing benefit status records inside RDS Postgres.", signoff: "Audited strategy to include Tableau BI report data extraction validation. Aligned 6 QA analysts to govern respective testing tiers." },
-        { phase: "Test Planning", icon: "📅", agent: "Planning Prompt: Estimate QA story points and assign sprints.\n\n[Llama-3-Specialist Response]:\nSprint Capacity Model:\n- Total Scope: 21 component integrations.\n- Required effort: 45 QA Story Points.\n- Estimated SDET allocation: 6 QA Analysts over a 2-week Sprint.", signoff: "Verified team bandwidth, resolved environment dependencies, and set up daily QA standups to ensure zero sprint leakage." },
-        { phase: "Test Design", icon: "✍️", agent: "Design Prompt: Autogenerate Gherkin features for SNAP card checkout failures.\n\n[Llama-3-Specialist Response]:\nGenerated Gherkin Scenario:\nFeature: SNAP EBT Settlement Failure\n  Scenario: EBT checkout declines due to insufficient balance\n    Given user balance is $5.00 and status is active\n    When purchasing eligible items totaling $10.00\n    Then payment gateway must decline with code 'EBT-402'", signoff: "Reviewed and updated step definitions. Added edge cases for user connectivity loss mid-transaction to ensure complete coverage." },
-        { phase: "Test Execution", icon: "🚀", agent: "Execution Prompt: Run regression suites in parallel.\n\n[Llama-3-Specialist Response]:\nExecuting Playwright on Chromium/WebKit and Appium iOS/Android drivers.\n- Parallel threads: 6\n- Pass Rate: 98.4%\n- Failures: 0 blocker issues, 2 minor UI adjustments identified.", signoff: "Analyzed minor failures. Triggered auto-retry mechanisms to rule out test flakiness, reducing execution time by 14 hours." },
-        { phase: "Automation & API & SQL Validation", icon: "🛡️", agent: "Validation Prompt: Assert DB states match API responses.\n\n[Llama-3-Specialist Response]:\nComparing database logs with API transaction payloads:\n- API total_benefit: $280.00\n- DB eligibility_amount: $280.00\n- Status: ASSERTION PASSED. SQL assertion checked 1,400 benefit records perfectly.", signoff: "Audited backend validation metrics and double-checked Postgres constraint integrity, achieving 100% data sync assurance." },
-        { phase: "UAT Leadership", icon: "👥", agent: "UAT Prompt: Prepare business user testing portal and coordinate sign-off.\n\n[Llama-3-Specialist Response]:\nOrganized 35 critical business scenarios. Monitored 12 business users across eligibility departments.\n- Sentiment score: 94% positive\n- Critical exceptions: 0 blockers found.", signoff: "Conducted end-to-end UAT reviews, successfully hosted UAT sign-off board meeting, and secured 100% departmental approval." },
-        { phase: "Defect Triage", icon: "🐞", agent: "Triage Prompt: Route active bugs and check SLA compliance.\n\n[Llama-3-Specialist Response]:\nTriage Engine parsed 200+ bugs:\n- Defect #10432 (Medicaid Billing Sync error) routed to DB-Squad.\n- SLA Met: 94% compliance. Average turnaround: 4.2 hours.", signoff: "Led daily cross-functional triage meetings with PMs and Dev Leads to ensure blocker bugs are addressed immediately." },
-        { phase: "Release Readiness", icon: "🏁", agent: "Readiness Prompt: Analyze overall test metrics and predict release risk.\n\n[Llama-3-Specialist Response]:\nSummary Statistics:\n- Test coverage: 88%\n- Regression pass rate: 99.8%\n- Predicted post-release leakage: < 2.5%.\n- Release Recommendation: GO.", signoff: "Formulated executive Release Readiness report, certified release compliance, and signed off on production deployment." },
-        { phase: "Production Monitoring", icon: "📡", agent: "Monitoring Prompt: Run synthetic checks in production.\n\n[Llama-3-Specialist Response]:\nProduction heartbeat active:\n- Endpoint claims latency: 142ms (SLA is 180ms)\n- API response statusCode: 200 OK\n- Anomaly level: 0% detected.", signoff: "Established real-time operational alerts in Datadog. Ensured zero post-production defect leakage during release day." }
-      ],
-      auth: [
-        { phase: "Requirements Analysis", icon: "📋", agent: "Parser Prompt: Scan OAuth Gateway specifications for HIPAA compliance gaps.\n\n[GPT-4o-Risk-Architect Response]:\nDetected 2 structural gaps in security specs:\n1. Spec does not enforce auto-revocation of JWT tokens upon credential changes.\n2. Logging scope records protected health info (PHI), violating HIPAA Privacy Rule.", signoff: "Fixed logging rules to mask PHI. Configured OAuth endpoints to enforce SOC-2 token revocation controls before coding began." },
-        { phase: "Risk Assessment", icon: "⚠️", agent: "Risk Prompt: Review API endpoint vulnerabilities.\n\n[GPT-4o-Risk-Architect Response]:\nIdentified high vulnerability score (9.1/10) on /api/auth/token endpoint. Risk factors:\n- Lack of rate limiting allows token brute-forcing.\n- Missing CORS restrictions allow unauthorized script origins.", signoff: "Set up strict API Gateway rate limiting (100 req/min limit) and locked down CORS policies to authorized origins." },
-        { phase: "Test Strategy", icon: "🗺️", agent: "Strategy Prompt: Formulate authentication boundary test scope.\n\n[GPT-4o-Risk-Architect Response]:\nAPI Gate testing grid:\n- Unit layer: JWT signature tampering assertions.\n- Integration layer: Pen-testing token expiration and replay attacks.\n- DB layer: Session record eviction validation.", signoff: "Approved integration focus. Allocated SDETs to build token validation suites using Postman and Playwright API library." },
-        { phase: "Test Planning", icon: "📅", agent: "Planning Prompt: Resource token gate testing sprint.\n\n[GPT-4o-Risk-Architect Response]:\nPlanned 30 automated security test scripts. Allocated 2 Security QA Analysts for the authentication gateway component.", signoff: "Coordinated secure sandbox environment parameters, isolating security tests from transactional data pipelines." },
-        { phase: "Test Design", icon: "✍️", agent: "Design Prompt: Write automated tests for JWT token expiry.\n\n[GPT-4o-Risk-Architect Response]:\nTest Case:\n1. Generate JWT token with 1s expiration.\n2. Wait 1.1 seconds.\n3. Make request to /api/secure/claims.\n4. Assert response is HTTP 401 Unauthorized.", signoff: "Verified automated script handles clock-skew variations in cloud clusters, eliminating false-positive test results." },
-        { phase: "Test Execution", icon: "🚀", agent: "Execution Prompt: Execute pen-tests in CI/CD pipeline.\n\n[GPT-4o-Risk-Architect Response]:\nTriggering automated security pipeline on GitHub Actions:\n- Rate-limit simulation: PASSED (HTTP 429 triggered after 100 requests).\n- Token tampering: PASSED (invalid signature rejected with HTTP 401).", signoff: "Reviewed pipeline reports, confirming that identity boundaries are secure and SOC-2 gates are fully satisfied." },
-        { phase: "Automation & API & SQL Validation", icon: "🛡️", agent: "Validation Prompt: Verify session database record cleanup.\n\n[GPT-4o-Risk-Architect Response]:\nAsserting AWS RDS session logs after token expiration:\n- Token status: Expired\n- DB session record: DELETED\n- Assertion: PASSED. Session records evicted automatically.", signoff: "Audited DB trigger procedures, ensuring orphaned records are deleted immediately to maintain low database memory footprint." },
-        { phase: "UAT Leadership", icon: "👥", agent: "UAT Prompt: Perform stakeholder UAT security review.\n\n[GPT-4o-Risk-Architect Response]:\nDemonstrated IAM restricted read/write policies to compliance officers. Concluded zero exceptions.", signoff: "Led walkthroughs with UAT stakeholders and secured security compliance sign-off for the gateway." },
-        { phase: "Defect Triage", icon: "🐞", agent: "Triage Prompt: Check security vulnerability logs.\n\n[GPT-4o-Risk-Architect Response]:\nScanned log metrics: 0 critical vulnerabilities remaining. 2 minor security logging updates assigned to Sprint backlog.", signoff: "Closed out hotfix tickets and confirmed OAuth patch compliance before release branch creation." },
-        { phase: "Release Readiness", icon: "🏁", agent: "Readiness Prompt: Evaluate security gate metrics.\n\n[GPT-4o-Risk-Architect Response]:\nSecurity Audit Summary:\n- HIPAA compliance score: 100% Pass\n- Vulnerability level: Zero issues.\n- Release Go/No-Go status: GO.", signoff: "Certified gateway release readiness and sent authorization logs to corporate release managers." },
-        { phase: "Production Monitoring", icon: "📡", agent: "Monitoring Prompt: Audit production access logs for anomalies.\n\n[GPT-4o-Risk-Architect Response]:\nScanning prod authentication latency:\n- OAuth response latency: 98ms\n- Failed login attempts: 0.01% (normal noise level)\n- Alert level: Green", signoff: "Confirmed production logging remains secure, protecting private client information under active operational metrics." }
-      ],
-      tableau: [
-        { phase: "Requirements Analysis", icon: "📋", agent: "Parser Prompt: Inspect financial reporting specifications.\n\n[Claude-3.5-SDET-Lead Response]:\nFound reporting mismatch: Spec does not specify transactional round-off rules for large sums, leading to potential BI presentation discrepancies.", signoff: "Aligned with finance product owners to define strict Bankers' Rounding rules, preventing dashboard numerical mismatches." },
-        { phase: "Risk Assessment", icon: "⚠️", agent: "Risk Prompt: Review report data pipeline flakiness.\n\n[Claude-3.5-SDET-Lead Response]:\nHigh flakiness risk flagged in ETL pipeline. If DB updates occur mid-extraction, Tableau reports display inaccurate historical balances.", signoff: "Built transaction isolation checks on ETL triggers, preventing dashboard updates while background data writes are active." },
-        { phase: "Test Strategy", icon: "🗺️", agent: "Strategy Prompt: Formulate reporting validation strategy.\n\n[Claude-3.5-SDET-Lead Response]:\nFormulated Triple-Layer Report Check:\n- Database Level: Query transactional records directly from Postgres RDS.\n- API Level: Query summary endpoints matching database aggregates.\n- Tableau Level: Scrape dashboard visual summaries to assert total values match database.", signoff: "Standardized visual scraping scripts using automated HTML extraction, reducing manual validation time by 60%." },
-        { phase: "Test Planning", icon: "📅", agent: "Planning Prompt: Estimate BI reporting testing bandwidth.\n\n[Claude-3.5-SDET-Lead Response]:\nScope covers 24 financial charts. Estimate: 25 QA Story Points. Allocation: 1 Reporting QA Expert.", signoff: "Assigned lead BI analyst and allocated high-priority testing timelines to run alongside main database releases." },
-        { phase: "Test Design", icon: "✍️", agent: "Design Prompt: Write automated test for Postgres vs Tableau sync.\n\n[Claude-3.5-SDET-Lead Response]:\nTest Case:\n1. Execute RDS query to calculate total benefits: SUM(benefits).\n2. Execute Tableau scraper: getDashboardTotal('Total Benefits').\n3. Assert database SUM equals Tableau dashboard total.", signoff: "Wrote robust TS-SQL-Validator assertions to prevent visual reporting anomalies, ensuring database-dashboard alignment." },
-        { phase: "Test Execution", icon: "🚀", agent: "Execution Prompt: Run database & visual reporting test suites.\n\n[Claude-3.5-SDET-Lead Response]:\nRunning Tableau automated visual checking engine:\n- Database query result: $1,402,400.00\n- Tableau Dashboard display: $1,402,400.00\n- Assertion status: PASSED (Zero mismatch).", signoff: "Verified automated data extraction triggers execute flawlessly, completely preventing stale reporting errors." },
-        { phase: "Automation & API & SQL Validation", icon: "🛡️", agent: "Validation Prompt: Verify complex data schemas across ETL runs.\n\n[Claude-3.5-SDET-Lead Response]:\nETL synchronization verify results:\n- Records audited: 2,500\n- Outlier values: 0\n- Data integrity match: 100%.", signoff: "Approved database synchronization metrics, assuring absolute audit compliance for financial stakeholders." },
-        { phase: "UAT Leadership", icon: "👥", agent: "UAT Prompt: Facilitate financial executive reporting reviews.\n\n[Claude-3.5-SDET-Lead Response]:\nPresented mock financial reports to Finance Directors. Captured operational feedback on visual clarity.", signoff: "Handled executive feedback, updated chart legends, and secured formal UAT business approval." },
-        { phase: "Defect Triage", icon: "🐞", agent: "Triage Prompt: Check data transformation log errors.\n\n[Claude-3.5-SDET-Lead Response]:\nDefect Board: Resolved 3 data transformation bugs. BI reporting pipelines are clean of data mismatches.", signoff: "Audited patches to verify rounding errors are completely resolved, meeting all release compliance gates." },
-        { phase: "Release Readiness", icon: "🏁", agent: "Readiness Prompt: Generate dashboard reliability forecast.\n\n[Claude-3.5-SDET-Lead Response]:\nReadiness evaluation:\n- Tableau pipeline coverage: 95%\n- Reporting error frequency: 0.0%\n- Recommendation: READY FOR GO-LIVE.", signoff: "Signed off release readiness document, assuring corporate stakeholders of absolute visual data accuracy." },
-        { phase: "Production Monitoring", icon: "📡", agent: "Monitoring Prompt: Monitor live dashboard data sync.\n\n[Claude-3.5-SDET-Lead Response]:\nMonitoring dashboard access logs:\n- Live report synchronization latency: 120ms\n- SQL data sync check: 100% identical.\n- Operational status: GREEN.", signoff: "Established Datadog database sync alerts, ensuring live dashboard reports remain completely synchronized at all times." }
-      ]
+    // ─── STLC AI Co-Pilot Simulator Controller ───
+    const systems = {
+      snap: {
+        name: "SNAP Eligibility Portal",
+        id: "SNAP-Eligibility-v3.4",
+        db: "rds_snap_benefits",
+        table: "snap_claims"
+      },
+      auth: {
+        name: "Claims API Gateway",
+        id: "Claims-API-Gateway",
+        db: "rds_claims_gateway",
+        table: "oauth_sessions"
+      },
+      tableau: {
+        name: "Tableau BI Reporting",
+        id: "Tableau-BI-Dashboard",
+        db: "rds_financial_warehouse",
+        table: "benefit_summaries"
+      }
     };
+
+    const techniques = {
+      llama: {
+        name: "Smit's Playwright E2E Automation Engine",
+        runner: "Playwright (Chromium/WebKit)",
+        type: "Automation"
+      },
+      gpt: {
+        name: "Smit's SQL & Database Validation Engine",
+        runner: "Postgres RDS Asserter",
+        type: "Database"
+      },
+      claude: {
+        name: "Smit's UAT & Release Governance Framework",
+        runner: "Agile Risk Assessor",
+        type: "Governance"
+      }
+    };
+
+    function generatePhaseData(phaseIndex, systemKey, techniqueKey) {
+      const sys = systems[systemKey];
+      const tech = techniques[techniqueKey];
+      
+      const phases = [
+        {
+          phase: "Requirements Analysis",
+          icon: "📋",
+          agent: `Parser Prompt: Load ${sys.name} specifications and identify compliance/logic gaps.\n\n[${tech.name} Response]:\nScanned gross parameters inside active specs. Identified structural gaps:\n1. Failures in transaction fallback scenarios during banking downtime.\n2. Omits boundary validation rules for multi-state resident applicants under age 21.\n3. Lacks clarification for high-frequency concurrent benefit transactions.`,
+          signoff: `Logged requirements ambiguity tickets in Jira. Resolved specifications gaps with Product Owners, saving dev rework costs.`
+        },
+        {
+          phase: "Risk Assessment",
+          icon: "⚠️",
+          agent: `Risk Prompt: Review historical defect records for ${sys.name} and score components.\n\n[${tech.name} Response]:\nAnalyzed components for ${sys.id}. Flagged 3 core failure vectors:\n- Database integration sync: 12% legacy failure risk.\n- Access tokens expiration: High security exposure vector.\n- Dashboard presentation latency under concurrent workloads.`,
+          signoff: `Instructed team to deploy automated check gates on high-risk vectors. Restructured testing prioritization.`
+        },
+        {
+          phase: "Test Strategy",
+          icon: "🗺️",
+          agent: `Strategy Prompt: Outline validation strategy for ${sys.name}.\n\n[${tech.name} Response]:\nProposed Triple-Layer Verification:\n- UI Tier: E2E regression check suites.\n- Integration Tier: JSON contract API validation rules.\n- Data Tier: SQL transaction auditing inside ${sys.db}.`,
+          signoff: `Audited testing strategy to include cross-browser verification. Aligned 6 QA analysts to govern respective testing tiers.`
+        },
+        {
+          phase: "Test Planning",
+          icon: "📅",
+          agent: `Planning Prompt: Estimate QA story points and assign resource sprints.\n\n[${tech.name} Response]:\nSprint Allocation Model:\n- Total Scope: 21 integrations for ${sys.id}.\n- Required effort: 45 QA Story Points.\n- Team distribution: 6 QA Analysts over a 2-week Sprint.`,
+          signoff: `Verified team bandwidth, resolved third-party credentials dependencies, and set up daily QA standups.`
+        },
+        {
+          phase: "Test Design",
+          icon: "✍️",
+          agent: `Design Prompt: Generate Gherkin scenarios for checkout failures in ${sys.name}.\n\n[${tech.name} Response]:\nGenerated Gherkin Scenario:\nFeature: ${sys.name} Checkout Settlement\n  Scenario: Checkout declines due to insufficient funds\n    Given user balance is insufficient and account status is active\n    When purchasing eligible items totaling $10.00\n    Then settlement gateway must decline with code 'ERR-402'`,
+          signoff: `Reviewed and updated step definitions. Added edge cases for user connectivity loss to ensure complete coverage.`
+        },
+        {
+          phase: "Test Execution",
+          icon: "🚀",
+          agent: `Execution Prompt: Run regression suites in parallel using ${tech.runner}.\n\n[${tech.name} Response]:\nExecuting automation pipelines in parallel.\n- Parallel threads: 6\n- Pass Rate: 98.4%\n- Failures: 0 blocker issues, 2 minor UI anomalies identified.`,
+          signoff: `Analyzed minor failures. Triggered auto-retry mechanisms to rule out test flakiness, reducing execution time by 14 hours.`
+        },
+        {
+          phase: "Automation & API & SQL Validation",
+          icon: "🛡️",
+          agent: `Validation Prompt: Assert DB states match API responses for ${sys.name}.\n\n[${tech.name} Response]:\nComparing database table ${sys.table} logs with API response payloads:\n- API total_benefit: $280.00\n- DB eligibility_amount: $280.00\n- Status: ASSERTION PASSED. SQL assertion checked 1,400 benefit records perfectly.`,
+          signoff: `Audited backend validation metrics and verified database constraints, achieving 100% data sync assurance.`
+        },
+        {
+          phase: "UAT Leadership",
+          icon: "👥",
+          agent: `UAT Prompt: Prepare business user testing portal and coordinate sign-off.\n\n[${tech.name} Response]:\nOrganized 35 critical business scenarios. Monitored 12 business users across departments.\n- Sentiment score: 94% positive\n- Critical exceptions: 0 blockers found.`,
+          signoff: `Conducted end-to-end UAT reviews, successfully hosted UAT sign-off board meeting, and secured 100% stakeholder approval.`
+        },
+        {
+          phase: "Defect Triage",
+          icon: "🐞",
+          agent: `Triage Prompt: Route active bugs and check SLA compliance.\n\n[${tech.name} Response]:\nTriage Engine parsed 200+ bugs:\n- Defect #10432 (Data Sync error) routed to DB-Squad.\n- SLA Met: 94% compliance. Average turnaround: 4.2 hours.`,
+          signoff: `Led daily cross-functional triage meetings with PMs and Dev Leads to ensure blocker bugs are addressed immediately.`
+        },
+        {
+          phase: "Release Readiness",
+          icon: "🏁",
+          agent: `Readiness Prompt: Analyze overall test metrics and predict release risk for ${sys.id}.\n\n[${tech.name} Response]:\nSummary Statistics:\n- Test coverage: 88%\n- Regression pass rate: 99.8%\n- Predicted post-release leakage: < 2.5%.\n- Release Recommendation: GO.`,
+          signoff: `Formulated executive Release Readiness report, certified release compliance, and signed off on production deployment.`
+        },
+        {
+          phase: "Production Monitoring",
+          icon: "📡",
+          agent: `Monitoring Prompt: Run synthetic checks in production for ${sys.name}.\n\n[${tech.name} Response]:\nProduction heartbeat active:\n- Endpoint transaction latency: 142ms\n- API response statusCode: 200 OK\n- Anomaly level: 0% detected.`,
+          signoff: `Established real-time operational alerts in Datadog. Ensured zero post-production defect leakage during release day.`
+        }
+      ];
+      
+      return phases[phaseIndex];
+    }
 
     let activeAgent = "llama";
     let activeJourney = "snap";
@@ -747,18 +750,12 @@
     const copilotQABrief = document.getElementById('copilot-qa-brief');
     const runCopilotBtn = document.getElementById('run-copilot-btn');
 
-    const agentNames = {
-      llama: "Llama-3-QA-Specialist",
-      gpt: "GPT-4o-Risk-Architect",
-      claude: "Claude-3.5-SDET-Lead"
-    };
-
     function renderCopilotTimeline() {
       if (!copilotTimelineList) return;
       copilotTimelineList.innerHTML = "";
-      const phases = copilotData[activeJourney];
       
-      phases.forEach((p, idx) => {
+      for (let idx = 0; idx < 11; idx++) {
+        const p = generatePhaseData(idx, activeJourney, activeAgent);
         const item = document.createElement('div');
         item.className = `copilot-timeline-item ${idx === activePhaseIndex ? 'active' : ''}`;
         item.id = `copilot-item-${idx}`;
@@ -768,14 +765,12 @@
           <span class="cti-status-dot"></span>
         `;
         copilotTimelineList.appendChild(item);
-      });
+      }
     }
 
     function updateCopilotConsole(phaseIndex) {
-      const phases = copilotData[activeJourney];
-      const p = phases[phaseIndex];
+      const p = generatePhaseData(phaseIndex, activeJourney, activeAgent);
       
-      // Update timeline items classes
       document.querySelectorAll('.copilot-timeline-item').forEach((el, idx) => {
         el.classList.remove('active', 'passed');
         if (idx === phaseIndex) {
@@ -785,12 +780,9 @@
         }
       });
 
-      // Update active console content
       if (consoleStreamBox) {
         consoleStreamBox.innerHTML = ``;
-        
-        // Dynamic simulated compiler logging
-        const header = `[SYSTEM INIT] Connecting to ${agentNames[activeAgent]}...\n`;
+        const header = `[SYSTEM INIT] Activating ${techniques[activeAgent].name}...\n`;
         const phaseLog = `[STLC PHASE: ${p.phase.toUpperCase()}]\n`;
         const bodyText = p.agent;
 
@@ -798,7 +790,6 @@
         consoleStreamBox.scrollTop = consoleStreamBox.scrollHeight;
       }
 
-      // Update QA Lead sign-off panel
       if (copilotQABrief) {
         copilotQABrief.innerHTML = `<strong>Smit's QA Lead Sign-Off:</strong> ${p.signoff}`;
       }
@@ -817,7 +808,6 @@
         activePhaseIndex++;
         if (activePhaseIndex < 11) {
           updateCopilotConsole(activePhaseIndex);
-          // Scroll timeline into viewport if needed
           const activeEl = document.getElementById(`copilot-item-${activePhaseIndex}`);
           if (activeEl) activeEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         } else {
@@ -826,28 +816,26 @@
           runCopilotBtn.disabled = false;
           runCopilotBtn.textContent = "🚀 Re-run Simulation";
           
-          // Complete mark all
           document.querySelectorAll('.copilot-timeline-item').forEach((el) => {
             el.classList.remove('active');
             el.classList.add('passed');
           });
           
           if (consoleStreamBox) {
-            consoleStreamBox.textContent += "\n\n[SUCCESS] STLC Cycle Completed! 11/11 Quality Gates Signed Off. Release is certified HIPAA/SOC-2 compliant and ready for Production.";
+            consoleStreamBox.textContent += `\n\n[SUCCESS] STLC Cycle Completed! 11/11 Quality Gates Signed Off. Release is certified compliant for production.`;
             consoleStreamBox.scrollTop = consoleStreamBox.scrollHeight;
           }
         }
-      }, 3500); // 3.5s per phase transition
+      }, 3500);
     }
 
-    // Set up selector event listeners
     document.querySelectorAll('.agent-btn').forEach(btn => {
       btn.addEventListener('click', function() {
         document.querySelectorAll('.agent-btn').forEach(b => b.classList.remove('active'));
         this.classList.add('active');
         activeAgent = this.dataset.agent;
         if (consoleAgentTitle) {
-          consoleAgentTitle.textContent = `${agentNames[activeAgent]} — Connection Restructured`;
+          consoleAgentTitle.textContent = `${techniques[activeAgent].name} — Active Connection`;
         }
         if (copilotInterval) {
           clearInterval(copilotInterval);
@@ -857,7 +845,7 @@
         }
         activePhaseIndex = 0;
         renderCopilotTimeline();
-        consoleStreamBox.innerHTML = `<span class="text-muted">// Paired with ${agentNames[activeAgent]}. Click "Engage AI Co-Pilot" to initiate...</span>`;
+        consoleStreamBox.innerHTML = `<span class="text-muted">// Paired with ${techniques[activeAgent].name}. Click "Engage AI Co-Pilot" to initiate...</span>`;
       });
     });
 
@@ -874,222 +862,15 @@
         }
         activePhaseIndex = 0;
         renderCopilotTimeline();
-        consoleStreamBox.innerHTML = `<span class="text-muted">// Scenario switched. Click "Engage AI Co-Pilot" to validate this journey...</span>`;
+        consoleStreamBox.innerHTML = `<span class="text-muted">// System scenario switched to ${systems[activeJourney].name}. Click "Engage AI Co-Pilot" to validate...</span>`;
       });
     });
 
     runCopilotBtn.addEventListener('click', runCopilotSimulation);
 
-    // Initial timeline render
     renderCopilotTimeline();
 
-    // ─── QE Command Center Controller ───
-    const qeData = {
-      requirements: {
-        title: "Requirements Analysis",
-        subtitle: "Shift-Left QA Ambiguity Extraction",
-        team: "Coordinating with Product Owners to refine acceptance criteria prior to development.",
-        ai: "Generative AI parses PRD, highlighting 4 logical edge-cases missing from original specs.",
-        metric: "Ambiguities Identified: 4 | Shift-Left Savings: ~$12,000 in dev rework",
-        code: `// Shift-Left Ambiguity Check:
-const prdRequirements = prdParser.load('SNAP-Claims-Story-204');
-const ambiguityScanner = new AIRequirementScanner(prdRequirements);
-const reports = await ambiguityScanner.findGaps();
-expect(reports.unspecifiedStates).toContain('User disconnects mid-payment');`
-      },
-      risk: {
-        title: "Risk Assessment",
-        subtitle: "Component Failure Mode Analysis",
-        team: "Mentoring 2 QA Analysts to perform Failure Mode & Effects Analysis (FMEA).",
-        ai: "RAG engine scans historical defects to flag high-risk legacy components.",
-        metric: "Critical Components Flagged: 3/21 | Targeted Coverage Focus: High Risk Only",
-        code: `// Risk Impact Valuation Matrix:
-const riskMatrix = RiskEngine.evaluate({
-  component: "Medicaid-Billing-Bridge",
-  frequencyOfChange: "High",
-  historicalDefectRate: "12%",
-  transactionalValue: "Critical"
-});
-expect(riskMatrix.priorityScore).toBeGreaterThan(8.5); // Demands Level-1 Automated Gate`
-      },
-      strategy: {
-        title: "Test Strategy",
-        subtitle: "Multi-Layered Hybrid Strategy",
-        team: "Aligns SDET resources across UI, API, SQL DB, and BI Analytics layers.",
-        ai: "Smart Strategy compiler matches automation suites with architectural modifications.",
-        metric: "Automation coverage goal: 85% | Components governed: 21+",
-        code: `// Architectural Test Matrix definition:
-const testStrategy = new StrategicPlanner('V3.4-Release');
-testStrategy.allocateLayer('UI', 'Playwright-Web');
-testStrategy.allocateLayer('API', 'Postman-SuperTest');
-testStrategy.allocateLayer('Database', 'TS-SQL-Validator');
-testStrategy.allocateLayer('BI-Reporting', 'Tableau-Data-Extractor');`
-      },
-      planning: {
-        title: "Test Planning",
-        subtitle: "Capacity Balancing & Resource Allocation",
-        team: "Directs capacity for 6 QA Analysts across active components.",
-        ai: "AI Capacity Modeler suggests optimal Sprint balance based on developer velocity.",
-        metric: "Active Analysts: 6 | Sprint Velocity: 48 QA Story Points",
-        code: `// Team Resource Allocation:
-const teamCapacity = AgileTracker.getCapacity({ Sprint: 42 });
-const components = ComponentRegistry.listActive();
-const allocationMap = ResourcePlanner.distribute(teamCapacity, components);
-expect(allocationMap.getUnassignedComponents().length).toBe(0);`
-      },
-      design: {
-        title: "Test Design",
-        subtitle: "Synthetic Test Case Generation",
-        team: "Mentoring team on Gherkin syntax and reusable step definitions.",
-        ai: "Generative AI converts OpenAPI schemas into automated test scenarios in 3 seconds.",
-        metric: "Test Cases Authored: 120 (95 Automated, 25 Manual Edge Cases)",
-        code: `// AI-Generated Gherkin Feature Code:
-Feature: SNAP Electronic Benefit Transfer (EBT) Settlement
-  Scenario: EBT transaction fails due to insufficient balance
-    Given a user with card status "Active" and balance $5.00
-    When they attempt to purchase eligible items totaling $10.00
-    Then the payment gateway must return error code "EBT-402"
-    And the transaction must be logged as "Declined"`
-      },
-      execution: {
-        title: "Test Execution",
-        subtitle: "Continuous CI/CD Regression Runs",
-        team: "SDETs trigger cross-browser and mobile iOS/Android emulation pipeline.",
-        ai: "Self-healing test runner identifies changed UI selectors, correcting scripts on the fly.",
-        metric: "Execution Pass Rate: 98.4% | Time saved via parallel execution: 14 hours",
-        code: `// Cross-Platform Automation execution:
-const webSession = await Playwright.launchBrowser('Chromium');
-const mobileSession = await Appium.launchDriver({ platform: 'iOS', device: 'iPhone 15' });
-const results = await Promise.all([
-  testRunner.runSuite(webSession, 'Regression'),
-  testRunner.runSuite(mobileSession, 'Smoke')
-]);
-expect(results[0].failures).toBe(0);`
-      },
-      validation: {
-        title: "Automation / API / SQL Validation",
-        subtitle: "Triple-Layer Verification Engine",
-        team: "QA Lead audits SQL assertions and BI dashboard data matches.",
-        ai: "RAG engine validates that Tableau layout matches database records perfectly.",
-        metric: "BI Validation Effort Reduced: 60% | SQL assertions run: 1400+",
-        code: `// Data Pipeline Integrity Check:
-const dbState = await db.query('SELECT total_benefit FROM benefits WHERE id = ?', [userId]);
-const apiResponse = await api.get('/benefits/summary/' + userId);
-const tableauMetric = await tableauExtractor.getMetric('Total Benefit Value');
 
-expect(apiResponse.body.amount).toBe(dbState[0].total_benefit);
-expect(tableauMetric).toBe(dbState[0].total_benefit);`
-      },
-      uat: {
-        title: "UAT Leadership",
-        subtitle: "Business & Stakeholder Coordination",
-        team: "Coordinating 12 Business Users across 3 departments for end-to-end user testing.",
-        ai: "UAT Sentiment analyzer digests feedback logs to extract critical business friction points.",
-        metric: "UAT Sign-off: 100% | Critical Business Scenarios Verified: 35",
-        code: `// UAT Stakeholder Portal Approval:
-const uatPortal = new UATStakeholderPortal({ release: 'V3.4' });
-const feedback = await uatPortal.getBusinessApprovals();
-expect(feedback.status).toBe('APPROVED');
-expect(feedback.exceptions.filter(e => e.severity === 'Blocker').length).toBe(0);`
-      },
-      triage: {
-        title: "Defect Triage",
-        subtitle: "Cross-Functional Bug Review Board",
-        team: "QA Lead hosts Daily Triage with Dev Leads, Product Owners, and Release Managers.",
-        ai: "AI Defect Router maps stack-traces to correct Git repository and assigns appropriate developer.",
-        metric: "Pre-Release Defects Resolved: 200+ | Defect Resolution SLA Met: 94%",
-        code: `// Defect Triaging Priority Mapping:
-const newDefect = BugTracker.fetchLatest();
-const triageBoard = new DefectTriageBoard();
-const actionItem = triageBoard.evaluate(newDefect, {
-  businessImpact: "High",
-  systemVulnerability: "Critical",
-  workaroundAvailable: "No"
-});
-expect(actionItem.action).toBe('ASSIGN_IMMEDIATE_HOTFIX');`
-      },
-      readiness: {
-        title: "Release Readiness",
-        subtitle: "Go/No-Go Gate Certification",
-        team: "Presents Final Release Quality Summary report to executive leadership.",
-        ai: "AI Risk Engine predicts post-release defect leakage based on test coverage gaps.",
-        metric: "Defect Leakage Reduction: 35% | Quality Gates Passed: 6/6",
-        code: `// Release Sign-off Verification:
-const releaseGate = new ReleaseGateKeeper('V3.4');
-const metrics = {
-  defectLeakage: 0.024,
-  testCoverage: 0.88,
-  regressionPassRate: 0.99
-};
-expect(releaseGate.isReadyForProduction(metrics)).toBe(true);`
-      },
-      monitoring: {
-        title: "Production Monitoring",
-        subtitle: "Post-Deployment Synthetic Smoke Testing",
-        team: "Maintains production smoke suites and alerts operations on performance regressions.",
-        ai: "Anomaly detection engine monitors API latency spikes in real-time.",
-        metric: "Production Defect Leakage: < 2.5% | Smoke Suite SLA: 100% Green",
-        code: `// Synthetic Production Monitoring Suite:
-const prodEndpoint = 'https://api.enterprise.gov/claims';
-const latency = await ping.measure(prodEndpoint);
-const status = await api.get(prodEndpoint + '/health');
-
-expect(status.statusCode).toBe(200);
-expect(latency).toBeLessThan(180); // Ensure latency stays under 180ms SLA`
-      }
-    };
-
-    const qeTimeline = document.getElementById('qe-stlc-timeline');
-    const qePhaseTitle = document.getElementById('qe-phase-title');
-    const qePhaseSubtitle = document.getElementById('qe-phase-subtitle');
-    const qeStatMetric = document.getElementById('qe-stat-metric');
-    const qeStatTeam = document.getElementById('qe-stat-team');
-    const qeStatAi = document.getElementById('qe-stat-ai');
-    const qeCodeBlock = document.getElementById('qe-code-block');
-
-    const qePhaseIcons = {
-      requirements: "📋", risk: "⚠️", strategy: "🗺️", planning: "📅",
-      design: "✍️", execution: "🚀", validation: "🛡️", uat: "👥",
-      triage: "🐞", readiness: "🏁", monitoring: "📡"
-    };
-
-    function renderQETimeline() {
-      if (!qeTimeline) return;
-      qeTimeline.innerHTML = "";
-      Object.keys(qeData).forEach((key, index) => {
-        const node = document.createElement('button');
-        node.className = `qe-timeline-node ${index === 0 ? 'active' : ''}`;
-        node.id = `qe-node-${key}`;
-        node.innerHTML = `
-          <span>${qePhaseIcons[key]}</span>
-          <span class="node-dot"></span>
-          <span>${qeData[key].title}</span>
-        `;
-        node.addEventListener('click', () => selectQEPhase(key));
-        qeTimeline.appendChild(node);
-      });
-      // Register in fade-up observer
-      document.querySelectorAll('.qe-timeline-node').forEach(el => observer.observe(el));
-      selectQEPhase('requirements');
-    }
-
-    function selectQEPhase(key) {
-      document.querySelectorAll('.qe-timeline-node').forEach(node => {
-        node.classList.remove('active');
-      });
-      const activeNode = document.getElementById(`qe-node-${key}`);
-      if (activeNode) activeNode.classList.add('active');
-
-      const data = qeData[key];
-      if (qePhaseTitle) qePhaseTitle.textContent = data.title;
-      if (qePhaseSubtitle) qePhaseSubtitle.textContent = data.subtitle;
-      if (qeStatMetric) qeStatMetric.textContent = data.metric;
-      if (qeStatTeam) qeStatTeam.textContent = data.team;
-      if (qeStatAi) qeStatAi.textContent = data.ai;
-      if (qeCodeBlock) qeCodeBlock.textContent = data.code;
-    }
-
-    renderQETimeline();
   </script>
 </body>
 

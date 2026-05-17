@@ -237,108 +237,99 @@ nav.scrolled {
 }
 .stat-label { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; margin-top: 0.25rem; }
 
-/* ─── Playwright Sandbox Simulator (Approach I) ─── */
-.sandbox-card { margin-top: 2rem; padding: 2.5rem; background: rgba(5, 8, 15, 0.85); border: 1px solid rgba(255,255,255,0.05); border-radius: 1.5rem; }
+/* ─── Risk Regression Simulator (Approach K) ─── */
+.risk-card { margin-top: 2rem; padding: 2.5rem; background: rgba(5, 8, 15, 0.85); border: 1px solid rgba(255,255,255,0.05); border-radius: 1.5rem; }
 
-/* Sandbox Header & Controls */
-.sandbox-header { 
-  display: flex; justify-content: space-between; align-items: center; 
-  margin-bottom: 2rem; padding-bottom: 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-.sandbox-controls { display: flex; align-items: center; gap: 1.5rem; }
-.sandbox-btn { 
-  padding: 0.8rem 1.75rem; font-size: 0.75rem; font-weight: 800; border-radius: 0.5rem; 
-  cursor: pointer; border: none; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.5rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.sandbox-btn.primary { 
-  background: var(--accent-gold); color: #000; 
-  box-shadow: 0 0 15px rgba(253, 224, 71, 0.2); 
-}
-.sandbox-btn.primary:hover:not(:disabled) { 
-  background: #fff; transform: translateY(-2px); 
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
-}
-.sandbox-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-
-.status-badge { 
-  font-size: 0.65rem; font-weight: 900; padding: 0.4rem 0.8rem; border-radius: 0.3rem; 
-  letter-spacing: 0.05em; background: rgba(255,255,255,0.05); color: var(--text-muted); 
-}
-.status-badge.running { background: rgba(245, 158, 11, 0.1); color: #F59E0B; border: 1px solid rgba(245, 158, 11, 0.2); }
-.status-badge.passed { background: rgba(16, 185, 129, 0.1); color: #10B981; border: 1px solid rgba(16, 185, 129, 0.2); }
-
-.telemetry-bar-compact { display: flex; gap: 1.5rem; font-size: 0.65rem; color: var(--text-muted); letter-spacing: 0.05em; }
-.telemetry-bar-compact strong { color: var(--accent-gold); }
-
-/* Sandbox Grid */
-.sandbox-grid { display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 1.5rem; min-height: 280px; }
-.sandbox-panel { 
+/* Grid Layout */
+.risk-grid { display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 2rem; }
+.risk-panel { 
   background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255,255,255,0.03); 
-  border-radius: 1rem; padding: 1.25rem; position: relative; overflow: hidden;
-  display: flex; flex-direction: column;
+  border-radius: 1rem; padding: 1.5rem; display: flex; flex-direction: column;
 }
 .panel-tag { 
   font-size: 0.55rem; font-weight: 900; color: var(--text-muted); 
-  letter-spacing: 0.1em; margin-bottom: 1rem; text-transform: uppercase; 
+  letter-spacing: 0.1em; margin-bottom: 1.5rem; text-transform: uppercase; 
 }
 
-/* Panel 1: Mock UI Form */
-.portal-container { 
-  flex: 1; display: flex; flex-direction: column; justify-content: space-between; 
-  background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.02);
-  border-radius: 0.75rem; padding: 1.25rem;
-}
-.portal-form label { font-size: 0.55rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.3rem; display: block; }
-.mock-input { 
-  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); 
-  padding: 0.5rem 0.75rem; font-size: 0.75rem; color: #fff; border-radius: 0.4rem; 
-  margin-bottom: 0.75rem; font-weight: 500;
-}
-.portal-btn { 
-  width: 100%; padding: 0.65rem; font-size: 0.65rem; font-weight: 800; border-radius: 0.4rem; 
-  border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: #fff; 
-  cursor: pointer; transition: all 0.3s;
-}
-.portal-btn.modified-element { background: rgba(239, 68, 68, 0.05); border-color: rgba(239, 68, 68, 0.3); }
-.dom-inspector { font-size: 0.6rem; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 0.75rem; margin-top: 0.75rem; }
-.dom-inspector code { font-family: 'JetBrains Mono', monospace; color: var(--accent-gold); transition: color 0.4s; }
-
-/* Panel 2: Live Console Terminal */
-.console-body { 
-  flex: 1; background: #020204; border: 1px solid rgba(255,255,255,0.03); 
-  border-radius: 0.75rem; padding: 1rem; font-family: 'JetBrains Mono', monospace; 
-  font-size: 0.65rem; line-height: 1.5; overflow-y: auto; max-height: 220px;
-}
-.console-line { margin-bottom: 0.5rem; word-break: break-all; }
-.console-line.info { color: #888; }
-.console-line.success { color: #10B981; }
-.console-line.action { color: #fff; }
-.console-line.error { color: #EF4444; font-weight: bold; }
-.console-line.ai { color: #F59E0B; }
-
-/* Panel 3: AI Diagnostics */
-.diagnostic-panel { flex: 1; display: flex; flex-direction: column; gap: 1rem; }
-.diag-stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.diag-stat { 
+/* Panel 1: Component Grid */
+.component-matrix-grid { display: grid; grid-template-columns: 1fr; gap: 0.75rem; flex: 1; }
+.component-node { 
+  display: flex; align-items: center; gap: 1rem; padding: 1rem; 
   background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.03); 
-  padding: 0.75rem; border-radius: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;
+  border-radius: 0.75rem; color: #fff; cursor: pointer; text-align: left; 
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.ds-label { font-size: 0.5rem; font-weight: 900; color: var(--text-muted); letter-spacing: 0.05em; }
-.ds-val { font-size: 0.95rem; font-weight: 800; color: var(--accent-gold); font-family: 'JetBrains Mono', monospace; }
+.component-node:hover { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.1); }
+.component-node.active { 
+  background: rgba(253, 224, 71, 0.04); border-color: rgba(253, 224, 71, 0.3); 
+  box-shadow: 0 0 15px rgba(253, 224, 71, 0.08); 
+}
+.node-icon { font-size: 1.1rem; }
+.node-name { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); transition: color 0.3s; }
+.component-node.active .node-name { color: var(--accent-gold); }
 
-.code-diff-container { 
-  flex: 1; background: #030306; border: 1px solid rgba(255,255,255,0.05); 
-  border-radius: 0.5rem; padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem;
+/* Panel 2: Impact Tree Map */
+.impact-map-container { 
+  flex: 1; display: flex; flex-direction: column; align-items: center; 
+  justify-content: center; background: rgba(255,255,255,0.01); 
+  border-radius: 0.75rem; padding: 1.5rem; border: 1px solid rgba(255,255,255,0.02);
 }
-.diff-header { font-size: 0.55rem; font-weight: 800; color: var(--text-muted); letter-spacing: 0.05em; }
-.diff-code { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; line-height: 1.4; color: #fff; margin: 0; white-space: pre-wrap; }
-.diff-removed { color: #EF4444; display: block; background: rgba(239, 68, 68, 0.05); padding: 0.1rem 0.3rem; border-radius: 0.2rem; }
-.diff-added { color: #10B981; display: block; background: rgba(16, 185, 129, 0.05); padding: 0.1rem 0.3rem; border-radius: 0.2rem; font-weight: bold; }
+.impact-node { 
+  font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700;
+  padding: 0.75rem 1.25rem; border-radius: 0.5rem; text-align: center;
+  transition: all 0.4s;
+}
+.impact-node.main { 
+  background: rgba(253, 224, 71, 0.08); border: 1px solid var(--accent-gold); 
+  color: var(--accent-gold); font-size: 0.75rem;
+  box-shadow: 0 0 15px rgba(253, 224, 71, 0.1);
+}
+.impact-connector { font-size: 0.8rem; color: var(--text-muted); margin: 0.75rem 0; font-weight: bold; }
+.impact-sub-grid { display: flex; gap: 1rem; width: 100%; justify-content: center; margin-bottom: 1.25rem; }
+.impact-node.sub { 
+  background: rgba(239, 68, 68, 0.08); border: 1px solid #EF4444; 
+  color: #EF4444; flex: 1; max-width: 140px;
+}
+.impact-alert { 
+  width: 100%; text-align: center; font-size: 0.65rem; font-weight: 800;
+  color: #F59E0B; background: rgba(245, 158, 11, 0.06); 
+  border: 1px solid rgba(245, 158, 11, 0.2); border-radius: 0.4rem; padding: 0.6rem;
+}
+
+/* Panel 3: Governance Dashboard */
+.gov-metrics-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+.gov-stat-item { 
+  background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.03); 
+  padding: 1rem; border-radius: 0.75rem; display: flex; flex-direction: column; gap: 0.35rem;
+}
+.gsi-label { font-size: 0.5rem; font-weight: 900; color: var(--text-muted); letter-spacing: 0.05em; }
+.gsi-val { font-size: 0.9rem; font-weight: 900; font-family: 'JetBrains Mono', monospace; }
+.gsi-val.risk-critical { color: #EF4444; }
+.gsi-val.risk-high { color: #F59E0B; }
+.gsi-val.risk-medium { color: #3B82F6; }
+.gsi-val.risk-low { color: #10B981; }
+
+.gov-detail-box { 
+  background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.03); 
+  padding: 1.25rem; border-radius: 0.75rem; margin-bottom: 1.5rem; flex: 1;
+}
+.gdb-label { font-size: 0.55rem; font-weight: 900; color: var(--text-muted); letter-spacing: 0.05em; margin-bottom: 0.65rem; text-transform: uppercase; }
+.gdb-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.25rem; }
+.scope-tag { 
+  font-size: 0.55rem; font-weight: 800; padding: 0.3rem 0.6rem; border-radius: 0.3rem; 
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.05); color: #fff;
+}
+.gdb-brief { font-size: 0.72rem; color: #fff; line-height: 1.5; font-weight: 500; min-height: 70px; margin: 0; }
+
+.gov-release-gauge { 
+  border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1rem; 
+  display: flex; justify-content: space-between; align-items: center;
+}
+.grg-label { font-size: 0.55rem; font-weight: 900; color: var(--text-muted); letter-spacing: 0.05em; }
+.grg-val { font-size: 1.2rem; font-weight: 900; color: var(--accent-gold); font-family: 'JetBrains Mono', monospace; }
 
 @media (max-width: 1024px) {
-  .sandbox-grid { grid-template-columns: 1fr; }
-  .sandbox-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .risk-grid { grid-template-columns: 1fr; }
 }
 
 /* ─── Section Styles ─── */

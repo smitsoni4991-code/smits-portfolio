@@ -66,80 +66,94 @@
     </div>
   </section>
 
-  <!-- ─── Approach I: Self-Healing Playwright Simulator ─── -->
-  <section id="playwright-simulator" class="container">
+  <!-- ─── Approach K: AI Risk-Weighted Regression Simulator ─── -->
+  <section id="risk-simulator" class="container">
     <div class="exec-header fade-up">
-      <span class="section-label">AUTONOMOUS QUALITY ENGINEERING</span>
-      <h2 class="exec-title">Self-Healing Playwright Sandbox</h2>
-      <p class="exec-subtitle">Witness a live simulation of Smit's automated framework deploying local AI models to dynamically repair broken UI selectors in 120ms.</p>
+      <span class="section-label">PREDICTIVE GOVERNANCE</span>
+      <h2 class="exec-title">AI Risk-Weighted Regression Simulator</h2>
+      <p class="exec-subtitle">Interact with Smit's dependency mapping engine. Commit changes to high-churn modules to witness targeted test selection, automated risk containment, and release confidence scoring.</p>
     </div>
 
-    <div class="sandbox-card glass-card fade-up">
-      <!-- Controls -->
-      <div class="sandbox-header">
-        <div class="sandbox-controls">
-          <button id="run-simulation-btn" class="sandbox-btn primary">
-            <span class="play-icon">▶</span> RUN AUTOMATION SUITE
-          </button>
-          <span class="status-badge" id="suite-status">READY</span>
+    <div class="risk-card glass-card fade-up">
+      <div class="risk-grid">
+        <!-- Panel 1: Interactive Component Matrix -->
+        <div class="risk-panel matrix-column">
+          <div class="panel-tag">21+ ENTERPRISE COMPONENTS</div>
+          <div class="component-matrix-grid">
+            <button class="component-node active" data-component="eligibility">
+              <span class="node-icon">👤</span>
+              <span class="node-name">Medicaid UI Portal</span>
+            </button>
+            <button class="component-node" data-component="billing">
+              <span class="node-icon">💳</span>
+              <span class="node-name">Billing Engine</span>
+            </button>
+            <button class="component-node" data-component="snapapi">
+              <span class="node-icon">🔌</span>
+              <span class="node-name">SNAP API Gateway</span>
+            </button>
+            <button class="component-node" data-component="awsdb">
+              <span class="node-icon">🗄️</span>
+              <span class="node-name">AWS SQL Database</span>
+            </button>
+            <button class="component-node" data-component="identity">
+              <span class="node-icon">🔒</span>
+              <span class="node-name">Auth Manager</span>
+            </button>
+            <button class="component-node" data-component="notifications">
+              <span class="node-icon">✉️</span>
+              <span class="node-name">Notification Hub</span>
+            </button>
+          </div>
         </div>
-        <div class="telemetry-bar-compact">
-          <span>MODEL: <strong>Llama-3-QA-Local</strong></span>
-          <span>COMPLIANCE: <strong>HIPAA SECURE</strong></span>
-        </div>
-      </div>
 
-      <div class="sandbox-grid">
-        <!-- Panel 1: Mock UI Portal -->
-        <div class="sandbox-panel mock-ui">
-          <div class="panel-tag">MOCK PORTAL VIEWPORT</div>
-          <div class="portal-container">
-            <div class="portal-form">
-              <label>Applicant Name</label>
-              <div class="mock-input">Smit Soni</div>
-              <label>Medicaid Program</label>
-              <div class="mock-input">Eligibility / SNAP</div>
-              
-              <!-- The Target Button -->
-              <button id="portal-target-btn" class="portal-btn">
-                SUBMIT APPLICATION
-              </button>
+        <!-- Panel 2: Live Dependency Impact Map -->
+        <div class="risk-panel impact-column">
+          <div class="panel-tag">AI IMPACT PROPAGATION</div>
+          <div class="impact-map-container">
+            <div class="impact-node main" id="impact-root">Medicaid UI Portal</div>
+            <div class="impact-connector">▼</div>
+            <div class="impact-sub-grid">
+              <div class="impact-node sub" id="node-dep1">SNAP API Gateway</div>
+              <div class="impact-node sub" id="node-dep2">AWS SQL Database</div>
             </div>
-            <div class="dom-inspector">
-              DOM Code: <code id="dom-code-text">&lt;button id="eligibility-submit"&gt;</code>
+            <div class="impact-alert" id="impact-warning-box">
+              AI Scan: 2 downstream dependencies impacted.
             </div>
           </div>
         </div>
 
-        <!-- Panel 2: Live Playwright Console -->
-        <div class="sandbox-panel terminal">
-          <div class="panel-tag">PLAYWRIGHT LIVE CONSOLE</div>
-          <div class="console-body" id="console-output">
-            <div class="console-line text-muted">System ready. Click "RUN AUTOMATION SUITE" to initiate regression.</div>
+        <!-- Panel 3: Executive Governance Dashboard -->
+        <div class="risk-panel dashboard-column">
+          <div class="panel-tag">EXECUTIVE QUALITY GOVERNANCE</div>
+          <div class="gov-metrics-panel">
+            <div class="gov-stat-item">
+              <span class="gsi-label">RISK FACTOR</span>
+              <span id="gov-risk" class="gsi-val risk-critical">CRITICAL</span>
+            </div>
+            <div class="gov-stat-item">
+              <span class="gsi-label">TEST RUN-TIME OPTIMIZATION</span>
+              <span id="gov-savings" class="gsi-val text-gold">SAVED 65%</span>
+            </div>
           </div>
-        </div>
 
-        <!-- Panel 3: AI Code Diff Panel -->
-        <div class="sandbox-panel code-diff">
-          <div class="panel-tag">AI HEALER DIAGNOSTICS</div>
-          <div class="diagnostic-panel">
-            <div class="diag-stat-row">
-              <div class="diag-stat">
-                <span class="ds-label">MATCH CONFIDENCE</span>
-                <span id="diag-confidence" class="ds-val">0%</span>
-              </div>
-              <div class="diag-stat">
-                <span class="ds-label">HEALING TIME</span>
-                <span id="diag-time" class="ds-val">0ms</span>
-              </div>
+          <div class="gov-detail-box">
+            <div class="gdb-label">TARGET REGRESSION SCOPE</div>
+            <div class="gdb-tags" id="gov-scope-tags">
+              <span class="scope-tag">Playwright E2E</span>
+              <span class="scope-tag">API Contract Gate</span>
+              <span class="scope-tag">Access validation</span>
             </div>
-            
-            <div class="code-diff-container">
-              <div class="diff-header">PLAYWRIGHT SCRIPT EDIT</div>
-              <pre class="diff-code" id="diff-code-display">
-<span class="text-muted">// Ready to simulate healing...</span>
-              </pre>
-            </div>
+
+            <div class="gdb-label">AI MITIGATION BRIEF</div>
+            <p class="gdb-brief" id="gov-brief-text">
+              UI components hold critical customer validation structures. AI deployed 21 target accessibility and full-scale end-to-end verification suites to contain upstream code churn.
+            </p>
+          </div>
+
+          <div class="gov-release-gauge">
+            <span class="grg-label">FINAL RELEASE CONFIDENCE</span>
+            <span id="gov-confidence" class="grg-val">99.5%</span>
           </div>
         </div>
       </div>
@@ -631,105 +645,158 @@
       });
     });
 
-    // Playwright Sandbox Logic: Approach I
-    const runBtn = document.getElementById('run-simulation-btn');
-    const suiteStatus = document.getElementById('suite-status');
-    const portalBtn = document.getElementById('portal-target-btn');
-    const domCode = document.getElementById('dom-code-text');
-    const consoleOutput = document.getElementById('console-output');
-    const diagConfidence = document.getElementById('diag-confidence');
-    const diagTime = document.getElementById('diag-time');
-    const diffCode = document.getElementById('diff-code-display');
-
-    const logs = [
-      { text: "[INFO] Initializing Playwright Test Runner...", delay: 500, type: "info" },
-      { text: "[INFO] Browser launched. Navigating to Medicaid Eligibility Portal...", delay: 1000, type: "info" },
-      { text: "[PASS] Page loaded. Parsing page structure (21+ elements verified).", delay: 800, type: "success" },
-      { text: "[ACTION] Attempting click on target selector: locator('#eligibility-submit')", delay: 1000, type: "action" },
-      { text: "[ERROR] TimeoutError: waiting for locator('#eligibility-submit') - Selector not found in DOM.", delay: 1200, type: "error" },
-      { text: "[AI-AGENT] Initializing Llama-3-QA-Local Healing Engine...", delay: 800, type: "ai" },
-      { text: "[AI-AGENT] Scanning DOM snapshot. Identified matching element: button.portal-btn", delay: 1000, type: "ai" },
-      { text: "[AI-AGENT] Matching confidence calculated: 98% based on coordinate & semantic similarity.", delay: 800, type: "ai" },
-      { text: "[HEALED] Selector updated successfully. Script auto-repaired in 120ms.", delay: 600, type: "success" },
-      { text: "[ACTION] Retrying healed selector: locator('.portal-btn')", delay: 800, type: "action" },
-      { text: "[PASS] Eligibility form submitted successfully. Database record insertion confirmed.", delay: 1000, type: "success" },
-      { text: "[INFO] Regression suite completed: 1 passed, 0 failed (1 healed).", delay: 500, type: "info" }
-    ];
-
-    let running = false;
-
-    function addConsoleLine(text, type) {
-      const line = document.createElement('div');
-      line.className = `console-line ${type}`;
-      line.textContent = text;
-      consoleOutput.appendChild(line);
-      consoleOutput.scrollTop = consoleOutput.scrollHeight;
-    }
-
-    function runSimulation() {
-      if (running) return;
-      running = true;
-      runBtn.disabled = true;
-      suiteStatus.textContent = "RUNNING";
-      suiteStatus.className = "status-badge running";
-      consoleOutput.innerHTML = "";
-      
-      // Reset Diagnostics
-      diagConfidence.textContent = "0%";
-      diagTime.textContent = "0ms";
-      diffCode.innerHTML = `<span class="text-muted">// Ready to simulate healing...</span>`;
-      
-      // Reset portal DOM
-      portalBtn.id = "portal-target-btn";
-      portalBtn.className = "portal-btn";
-      domCode.textContent = '<button id="eligibility-submit">';
-      
-      let step = 0;
-
-      function executeStep() {
-        if (step >= logs.length) {
-          running = false;
-          runBtn.disabled = false;
-          suiteStatus.textContent = "PASSED (HEALED)";
-          suiteStatus.className = "status-badge passed";
-          return;
-        }
-
-        const log = logs[step];
-        
-        // Dynamic DOM changes during simulation
-        if (log.type === "error") {
-          // Dev changed the DOM dynamically
-          portalBtn.id = "btn-new-id";
-          portalBtn.className = "portal-btn modified-element";
-          domCode.textContent = '<button id="btn-new-id" class="portal-btn modified-element">';
-          domCode.style.color = "#EF4444";
-        }
-        
-        if (log.type === "ai") {
-          domCode.style.color = "#F59E0B";
-        }
-
-        if (log.type === "healed") {
-          diagConfidence.textContent = "98%";
-          diagTime.textContent = "120ms";
-          domCode.style.color = "#10B981";
-          
-          diffCode.innerHTML = `
-<span class="diff-removed">- await page.locator('#eligibility-submit').click();</span>
-<span class="diff-added">+ await page.locator('.portal-btn').click(); // HEALED</span>
-          `;
-        }
-
-        addConsoleLine(log.text, log.type);
-        step++;
-        setTimeout(executeStep, log.delay);
+    // Risk Simulator Data Mapping
+    const riskData = {
+      eligibility: {
+        name: "Medicaid UI Portal",
+        risk: "CRITICAL",
+        riskClass: "risk-critical",
+        savings: "SAVED 65%",
+        scope: ["Playwright E2E", "Accessibility audit", "Cross-Browser Gateway"],
+        brief: "UI components hold critical eligibility verification routes. The AI deployed target visual regression, structural accessibility checks, and cross-browser execution suites, skipping backend database testing to optimize coverage.",
+        confidence: "99.5%",
+        deps: ["SNAP API Gateway", "AWS SQL Database"],
+        warning: "AI Scan: 2 core gateway dependencies impacted."
+      },
+      billing: {
+        name: "Billing Engine",
+        risk: "HIGH",
+        riskClass: "risk-high",
+        savings: "SAVED 78%",
+        scope: ["SQL Integrity Suite", "API Contract Validator", "AWS Security Scan"],
+        brief: "Financial calculations and ledger records require high database stability. The AI bypassed UI testing entirely, executing transaction-path SQL validations and schema-drift assertions to assure 100% processing accuracy.",
+        confidence: "99.8%",
+        deps: ["AWS SQL Database"],
+        warning: "AI Scan: 1 database dependency impacted."
+      },
+      snapapi: {
+        name: "SNAP API Gateway",
+        risk: "HIGH",
+        riskClass: "risk-high",
+        savings: "SAVED 82%",
+        scope: ["REST Mock Runner", "Payload Scheme Guard", "Performance Test Suite"],
+        brief: "High-volume data parsing gateway. AI targeting checked contract schema consistency, payload boundaries, and high-frequency stress telemetry. Playwright UI gates bypassed.",
+        confidence: "99.9%",
+        deps: ["AWS SQL Database", "Notification Hub"],
+        warning: "AI Scan: 2 dependent microservices impacted."
+      },
+      awsdb: {
+        name: "AWS SQL Database",
+        risk: "CRITICAL",
+        riskClass: "risk-critical",
+        savings: "SAVED 50%",
+        scope: ["Database Schema Guard", "SQL Eligibility Check", "AWS Encryption Validator"],
+        brief: "Central storage of active claims data. Smit's framework prioritized data-tier integrity testing, ensuring zero records divergence while skipping interface layer scripts.",
+        confidence: "100%",
+        deps: [],
+        warning: "AI Scan: Database tier change - Direct system impact contained."
+      },
+      identity: {
+        name: "Auth Manager",
+        risk: "MEDIUM",
+        riskClass: "risk-medium",
+        savings: "SAVED 90%",
+        scope: ["OAuth token validator", "AWS IAM Scanner"],
+        brief: "Enterprise verification tier. Security regression maps target OAuth structure stability, access control barriers, and API endpoint verification. Standard regression skipped.",
+        confidence: "100%",
+        deps: ["SNAP API Gateway"],
+        warning: "AI Scan: 1 security authorization gateway impacted."
+      },
+      notifications: {
+        name: "Notification Hub",
+        risk: "LOW",
+        riskClass: "risk-low",
+        savings: "SAVED 95%",
+        scope: ["SMTP Mock Checker", "SQS Queue Listener"],
+        brief: "Asynchronous communication layers. Tested via SQS payload listeners and mock email validation gates. Saved 95% of suite execution costs by skipping all main pipelines.",
+        confidence: "100%",
+        deps: [],
+        warning: "AI Scan: Low risk utility change - Local validation complete."
       }
+    };
 
-      executeStep();
+    const compNodes = document.querySelectorAll('.component-node');
+    const impactRoot = document.getElementById('impact-root');
+    const nodeDep1 = document.getElementById('node-dep1');
+    const nodeDep2 = document.getElementById('node-dep2');
+    const warningBox = document.getElementById('impact-warning-box');
+    const govRisk = document.getElementById('gov-risk');
+    const govSavings = document.getElementById('gov-savings');
+    const govScopeTags = document.getElementById('gov-scope-tags');
+    const govBriefText = document.getElementById('gov-brief-text');
+    const govConfidence = document.getElementById('gov-confidence');
+
+    function updateRiskSimulator(componentKey) {
+      const data = riskData[componentKey];
+      
+      // Update nodes
+      compNodes.forEach(node => {
+        node.classList.toggle('active', node.dataset.component === componentKey);
+      });
+
+      // Update Impact Tree
+      impactRoot.textContent = data.name;
+      
+      // Reset dependencies
+      nodeDep1.style.display = 'none';
+      nodeDep2.style.display = 'none';
+      
+      if (data.deps.length > 0) {
+        nodeDep1.style.display = 'block';
+        nodeDep1.textContent = data.deps[0];
+        
+        if (data.deps[1]) {
+          nodeDep2.style.display = 'block';
+          nodeDep2.textContent = data.deps[1];
+        }
+      }
+      
+      warningBox.textContent = data.warning;
+
+      // Update Executive Panel
+      govRisk.textContent = data.risk;
+      govRisk.className = `gsi-val ${data.riskClass}`;
+      govSavings.textContent = data.savings;
+      govConfidence.textContent = data.confidence;
+
+      // Update Tags
+      govScopeTags.innerHTML = '';
+      data.scope.forEach(tag => {
+        const span = document.createElement('span');
+        span.className = 'scope-tag';
+        span.textContent = tag;
+        govScopeTags.appendChild(span);
+      });
+
+      // Update Brief (Typewriter Effect)
+      govBriefText.innerHTML = '';
+      let i = 0;
+      function typeBrief() {
+        if (i < data.brief.length) {
+          govBriefText.innerHTML += data.brief.charAt(i);
+          i++;
+          setTimeout(typeBrief, 12);
+        }
+      }
+      typeBrief();
     }
 
-    runBtn.addEventListener('click', runSimulation);
+    compNodes.forEach(node => {
+      node.addEventListener('click', () => {
+        updateRiskSimulator(node.dataset.component);
+      });
+    });
+
+    // Auto-cycle simulation
+    let riskKeys = Object.keys(riskData);
+    let riskIdx = 0;
+    setInterval(() => {
+      if (document.querySelector('.component-node:hover')) return; // Pause on hover
+      riskIdx = (riskIdx + 1) % riskKeys.length;
+      updateRiskSimulator(riskKeys[riskIdx]);
+    }, 12000);
+
+    updateRiskSimulator('eligibility'); // Initialize
   </script>
 </body>
 

@@ -619,3 +619,297 @@ footer {
   .hero h1 { font-size: 2rem; }
   .contact-links { flex-direction: column; align-items: center; }
 }
+
+/* ─── QE Leadership Command Center Styles ─── */
+#stlc-autopilot {
+  padding: 5rem 0;
+}
+
+.lcc-card {
+  margin-top: 2rem;
+  padding: 2.5rem;
+  background: rgba(5, 8, 15, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+/* Horizontal Interactive Timeline Scroll area */
+.lcc-timeline-wrapper {
+  overflow-x: auto;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(253, 224, 71, 0.2) transparent;
+}
+
+.lcc-timeline-wrapper::-webkit-scrollbar {
+  height: 4px;
+}
+.lcc-timeline-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(253, 224, 71, 0.2);
+  border-radius: 2px;
+}
+
+.lcc-timeline {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-width: 1000px;
+  position: relative;
+}
+
+.lcc-node-btn {
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 0.65rem 1rem;
+  border-radius: 0.5rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  flex: 1;
+  text-align: center;
+}
+
+.lcc-node-btn:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.lcc-node-btn.active {
+  background: rgba(253, 224, 71, 0.04);
+  border-color: rgba(253, 224, 71, 0.4);
+  color: var(--accent-gold);
+  box-shadow: 0 0 15px rgba(253, 224, 71, 0.08);
+}
+
+.lcc-node-step {
+  font-size: 0.55rem;
+  opacity: 0.6;
+}
+
+/* Command Center Grid Layout */
+.lcc-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1.3fr;
+  gap: 1.5rem;
+}
+
+.lcc-panel {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.lcc-panel .panel-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.lcc-info-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.lcc-meta-badge {
+  align-self: flex-start;
+  font-size: 0.6rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: rgba(253, 224, 71, 0.1);
+  color: var(--accent-gold);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.lcc-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.lcc-metric-box {
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.lcc-metric-lbl {
+  font-size: 0.55rem;
+  font-weight: 900;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.lcc-metric-box strong {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-top: 0.25rem;
+}
+
+/* Column 2: Team Operations styling */
+.lcc-team-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.lcc-team-header h4 {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+
+.lcc-team-status {
+  font-size: 0.55rem;
+  font-weight: 800;
+  color: #10b981;
+  text-transform: uppercase;
+}
+
+.lcc-team-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.lcc-team-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+}
+
+.lcc-team-item:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.lcc-team-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(253, 224, 71, 0.1);
+  border: 1px solid rgba(253, 224, 71, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--accent-gold);
+}
+
+.lcc-team-info {
+  flex: 1;
+}
+
+.lcc-team-name-role {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lcc-team-name {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.lcc-team-role {
+  font-size: 0.55rem;
+  color: var(--text-muted);
+}
+
+.lcc-team-task {
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px;
+  margin-top: 0.1rem;
+}
+
+/* Column 3: Live Engineering Console styling */
+.lcc-panel.console-column {
+  background: #030306;
+}
+
+.console-box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.console-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 0.75rem;
+}
+
+.console-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.console-dot.red { background: #ef4444; }
+.console-dot.yellow { background: #eab308; }
+.console-dot.green { background: #22c55e; }
+
+.console-tab-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  margin-left: 0.5rem;
+}
+
+.console-code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  line-height: 1.45;
+  color: #a7f3d0;
+  white-space: pre-wrap;
+  word-break: break-all;
+  overflow-y: auto;
+  margin: 0;
+  flex: 1;
+  max-height: 280px;
+  scrollbar-width: thin;
+}
+
+@media (max-width: 1024px) {
+  .lcc-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+

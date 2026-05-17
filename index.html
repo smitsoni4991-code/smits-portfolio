@@ -21,6 +21,7 @@
     <div class="nav-logo">Smit Soni</div>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
+      <li><a href="#stlc-autopilot">STLC Autopilot</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
@@ -134,6 +135,77 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── AI Live Module: QE Leadership Command Center ─── -->
+  <section id="stlc-autopilot" class="container">
+    <div class="exec-header fade-up">
+      <span class="section-label">QE GOVERNANCE COMMAND CENTER</span>
+      <h2 class="exec-title">STLC Quality Governance Autopilot</h2>
+      <p class="exec-subtitle">Select any phase along my Software Testing Life Cycle (STLC) blueprint. Watch how I orchestrate mentored engineering teams, leverage AI-assisted testing frameworks, and drive executive release decisions.</p>
+    </div>
+
+    <!-- Main Module Frame -->
+    <div class="lcc-card glass-card fade-up">
+      
+      <!-- Horizontal Interactive Timeline Progress Bar -->
+      <div class="lcc-timeline-wrapper">
+        <div class="lcc-timeline" id="lccTimeline">
+          <!-- Timeline nodes generated dynamically by JS -->
+        </div>
+      </div>
+
+      <!-- Main Dashboard Grid -->
+      <div class="lcc-grid">
+        
+        <!-- Column 1: Strategic Governance Brief -->
+        <div class="lcc-panel">
+          <div class="panel-tag">Strategic Governance Brief</div>
+          <div class="panel-content">
+            <h3 class="lcc-info-title" id="lccInfoTitle">Loading Phase Strategy...</h3>
+            
+            <div class="lcc-meta-badge" id="lccInfoBadge">Lead Action</div>
+            <p class="lcc-desc" id="lccInfoDesc">Details will populate here...</p>
+            
+            <div class="lcc-metric-box">
+              <span class="lcc-metric-lbl" id="lccMetricLabel">Key Telemetry Metric</span>
+              <strong class="text-gold" id="lccMetricValue">--</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Team Operations & Mentorship -->
+        <div class="lcc-panel">
+          <div class="panel-tag">Team Operations &amp; Mentorship</div>
+          <div class="panel-content">
+            <div class="lcc-team-header">
+              <h4>Mentored Squad (6 Analysts)</h4>
+              <span class="lcc-team-status">Active Governed State</span>
+            </div>
+            
+            <!-- Mentored Squad List -->
+            <div class="lcc-team-list" id="lccTeamList">
+              <!-- Team nodes generated dynamically -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 3: Live Engineering Console -->
+        <div class="lcc-panel console-column">
+          <div class="panel-tag">Live Engineering Console</div>
+          <div class="console-box">
+            <div class="console-header">
+              <span class="console-dot red"></span>
+              <span class="console-dot yellow"></span>
+              <span class="console-dot green"></span>
+              <span class="console-tab-name" id="consoleTab">autopilot_agent.sh</span>
+            </div>
+            <pre class="console-code" id="lccConsoleOutput">Loading real-time execution logs...</pre>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -830,13 +902,320 @@ expect(rateLimitedCount).toBeGreaterThan(50);`
     let journeyKeys = Object.keys(flowData);
     let journeyIdx = 0;
     setInterval(() => {
-      if (document.querySelector('.flow-card:hover')) return; // Pause on hover
+      if (document.querySelector('.flow-card:hover') || document.querySelector('.lcc-card:hover')) return; // Pause on hover
       journeyIdx = (journeyIdx + 1) % journeyKeys.length;
       const targetBtn = document.querySelector(`.flow-select-btn[data-journey="${journeyKeys[journeyIdx]}"]`);
       if (targetBtn) targetBtn.click();
     }, 15000);
 
     drawJourneyNodes('snap'); // Initialize
+
+    // ─── QE Leadership Command Center Logic ───
+    const lccTimelineData = [
+      {
+        id: "req", name: "Requirements", step: "Phase 01", title: "Shift-Left Ambiguity Parsing",
+        badge: "Quality Governance Gate", metricLabel: "Requirement Traceability", metricVal: "100% Policy Map",
+        desc: "Reviewing business plans and policies early. I parse SNAP calculations and billing formulas to find conflicting business rules before engineers write a single line of code, reducing downstream development delays.",
+        team: [
+          { name: "John D.", role: "Lead SDET", task: "Verifying SNAP eligibility document scope" },
+          { name: "Sarah M.", role: "Automation Eng", task: "Configuring BDD Gherkin test hooks" },
+          { name: "David L.", role: "QA Analyst", task: "Validating policy matrices with stakeholders" },
+          { name: "Elena R.", role: "BI Analyst", task: "Inspecting Tableau target calculations" },
+          { name: "Sam K.", role: "Mobile SDET", task: "Synthesizing viewport requirement scope" },
+          { name: "Lisa W.", role: "API Eng", task: "Mapping schema structure specifications" }
+        ],
+        code: `[AI Requirement Parser]: Scanning Spec: Spectrum-Billing-v4.pdf
+[ANALYZING]: Rule 14.1 (Tax calculation cap)
+[WARNING]: Ambiguity found in client residency conditions.
+[STRATEGY]: Re-routed definition logic to Product Manager.
+[RESULT]: Found 4 spec issues before sprint start.`
+      },
+      {
+        id: "risk", name: "Risk Assessment", step: "Phase 02", title: "Business Failure Threat Modeling",
+        badge: "Preventative Architecture", metricLabel: "Coverage Priorities", metricVal: "High Risk Isolated",
+        desc: "Analyzing changes made to customer-facing code. I isolate high-volume revenue engines, billing systems, and API boundaries to design a test schedule focused on the highest business risks.",
+        team: [
+          { name: "John D.", role: "Lead SDET", task: "Calculating transaction API dependencies" },
+          { name: "Sarah M.", role: "Automation Eng", task: "Reviewing core code diff files" },
+          { name: "David L.", role: "QA Analyst", task: "Mapping risk weights inside JIRA" },
+          { name: "Elena R.", role: "BI Analyst", task: "Assessing data volume change ratios" },
+          { name: "Sam K.", role: "Mobile SDET", task: "Targeting high-churn mobile flows" },
+          { name: "Lisa W.", role: "API Eng", task: "Reviewing secure gateway credentials" }
+        ],
+        code: `{
+  "module": "Spectrum-Digital-Checkout-Portal",
+  "priority": "CRITICAL_PATH",
+  "historical_stability": "85% (Requires regression sweep)",
+  "vulnerable_nodes": ["/checkout/confirm", "/billing/ledger"],
+  "mitigation": "Enforcing parallel Playwright E2E browser tests"
+}`
+      },
+      {
+        id: "strategy", name: "Test Strategy", step: "Phase 03", title: "Full-Stack Quality Architecture",
+        badge: "Strategic Plan", metricLabel: "Components Covered", metricVal: "21+ Core Services",
+        desc: "Establishing testing guardrails. I architect integrated strategies covering the frontend (browser/mobile), backend APIs, AWS data validation, and visual BI Tableau dashboards.",
+        team: [
+          { name: "John D.", role: "Lead SDET", task: "Architecting base Playwright framework wrappers" },
+          { name: "Sarah M.", role: "Automation Eng", task: "Preparing modular Page Object files" },
+          { name: "David L.", role: "QA Analyst", task: "Defining exploratory testing parameters" },
+          { name: "Elena R.", role: "BI Analyst", task: "Configuring visual dashboard check rules" },
+          { name: "Sam K.", role: "Mobile SDET", task: "Structuring simulator execution scripts" },
+          { name: "Lisa W.", role: "API Eng", task: "Integrating RestAssured assertion libraries" }
+        ],
+        code: `// Enterprise Governance Framework Config
+$ quality-gate-config --apply-strategy full_stack_integrated
+  ├── UI Testing: Playwright (Desktop / Mobile Emulators)
+  ├── API Layer: JSON Schema contract assertions
+  ├── Database: Complex SQL transaction checks
+  └── Analytics: Wiiisdom Ops Visual Tableau scans`
+      },
+      {
+        id: "planning", name: "Test Planning", step: "Phase 04", title: "Agile Resource Governance",
+        badge: "Sprint Planning", metricLabel: "Resource Scalability", metricVal: "6 SDETs Governed",
+        desc: "Managing agile sprint cycles. I partition execution plans across my mentored team of 6 QA Analysts, ensuring parallel execution, clear SLAs, and highly efficient release coverage.",
+        team: [
+          { name: "John D.", role: "Lead SDET", task: "Governing sprint scope allocations" },
+          { name: "Sarah M.", role: "Automation Eng", task: "Developing checkout flow automation" },
+          { name: "David L.", role: "QA Analyst", task: "Preparing eligibility manual mocks" },
+          { name: "Elena R.", role: "BI Analyst", task: "Constructing SQL database test sets" },
+          { name: "Sam K.", role: "Mobile SDET", task: "Configuring iOS/Android tests" },
+          { name: "Lisa W.", role: "API Eng", task: "Drafting microservice contract tests" }
+        ],
+        code: `[Governance Plan]: Sprint 14 Execution Schedule
+[METRIC]: Target SLA: 48h Testing Turnaround
+[RESOURCES]:
+  - Automation squad: SDET-1, SDET-2, SDET-5
+  - Backend/Pipeline: Analyst-3, Analyst-4, Analyst-6
+[STATUS]: Env config matching Stage v2.4 initialized.`
+      },
+      {
+        id: "design", name: "Test Design", step: "Phase 05", title: "AI-Assisted Test Synthesizer",
+        badge: "Engineering Innovation", metricLabel: "Script Gen Velocity", metricVal: "+150% Acceleration",
+        desc: "Generating robust testing scripts. I leverage AI engines to convert technical specs into high-coverage automated assertions, allowing my team to rapidly construct edge-case matrices.",
+        team: [
+          { name: "John D.", role: "Lead SDET", task: "Configuring custom prompt models" },
+          { name: "Sarah M.", role: "Automation Eng", task: "Refactoring AI test assertions" },
+          { name: "David L.", role: "QA Analyst", task: "Auditing synthetic script accuracy" },
+          { name: "Elena R.", role: "BI Analyst", task: "Mapping schema assertions" },
+          { name: "Sam K.", role: "Mobile SDET", task: "Optimizing dynamic app locators" },
+          { name: "Lisa W.", role: "API Eng", task: "Analyzing REST JSON models" }
+        ],
+        code: `// AI-Generated Playwright Test (Asserting Eligibility Engine)
+test('Validate SNAP Multi-member Household Calculations', async ({ page }) => {
+  const portal = new SnapPortal(page);
+  await portal.submitDetails({ members: 4, grossIncome: 3000 });
+  // Dynamic Selector validation
+  await expect(portal.eligibilityStatus).toHaveText('ELIGIBLE_APPROVED');
+});`
+      },
+      {
+        id: "execution", name: "Test Execution", step: "Phase 06", title: "CI/CD Pipeline Gating",
+        badge: "Continuous Integration", metricLabel: "Build Executions", metricVal: "1,420 Auto-Tests",
+        desc: "Executing automated test suites parallel across multiple browsers and virtual environments, running automatically on commit pushes inside secure GitLab and Jenkins runners.",
+        team: [
+          { name: "John D.", role: "Lead SDET", task: "Monitoring AWS CI runner cluster" },
+          { name: "Sarah M.", role: "Automation Eng", task: "Debugging execution errors" },
+          { name: "David L.", role: "QA Analyst", task: "Reviewing daily run reports" },
+          { name: "Elena R.", role: "BI Analyst", task: "Verifying test data consistency" },
+          { name: "Sam K.", role: "Mobile SDET", task: "Assessing virtual device results" },
+          { name: "Lisa W.", role: "API Eng", task: "Auditing integration pings" }
+        ],
+        code: `$ npm run test:ci --parallel-threads=10
+Running suites... (Chrome, Safari, iOS Emulations)
+  ✔ User Authentication Flow (142 passed)
+  ✔ Billing Ledger POST requests (98 passed)
+  ✔ SNAP Eligibility Core Matrix (230 passed)
+[SUCCESS] 1420 assertions passed in 4m 12s.`
+      },
+      {
+        id: "automation", name: "Validation Tier", step: "Phase 07", title: "Database & Visual Dashboard Integrity",
+        badge: "Data Quality Engine", metricLabel: "Manual Effort Saved", metricVal: "60% reduction",
+        desc: "Validating backend systems. We run complex SQL checks to confirm database calculations match web states, and automate visual visual dashboard regression checks using Wiiisdom Ops.",
+        team: [
+          { name: "John D.", role: "Lead SDET", task: "Deploying Wiiisdom verification CLI" },
+          { name: "Sarah M.", role: "Automation Eng", task: "Refactoring Postgres test helpers" },
+          { name: "David L.", role: "QA Analyst", task: "Validating transaction reconciliations" },
+          { name: "Elena R.", role: "BI Analyst", task: "Writing complex analytical SQLs" },
+          { name: "Sam K.", role: "Mobile SDET", task: "Connecting API transaction logs" },
+          { name: "Lisa W.", role: "API Eng", task: "Auditing payload mappings" }
+        ],
+        code: `-- SQL database transaction validation
+SELECT client_id, SUM(due_amount) FROM spectrum_sales_db.transactions
+GROUP BY client_id
+EXCEPT
+SELECT client_id, current_balance FROM customer_ledgers;
+
+>> [RESULT]: 0 matching discrepancies. Data pipeline is completely healthy.`
+      },
+      {
+        id: "uat", name: "UAT Governance", step: "Phase 08", title: "Cross-Functional Alignment",
+        badge: "UAT Leadership", metricLabel: "Critical Defects Caught", metricVal: "35+ Pre-Go-Live",
+        desc: "Leading User Acceptance Testing. I construct testing agendas for business stakeholders, train user groups, and coordinate state regulators to guarantee software meets user needs.",
+        team: [
+          { name: "John D.", role: "Lead SDET", task: "Reviewing UAT feedback charts" },
+          { name: "Sarah M.", role: "Automation Eng", task: "Patching UI bugs raised in UAT" },
+          { name: "David L.", role: "QA Analyst", task: "Coordinating regulator test labs" },
+          { name: "Elena R.", role: "BI Analyst", task: "Validating corporate reporting needs" },
+          { name: "Sam K.", role: "Mobile SDET", task: "Supporting mobile user testing" },
+          { name: "Lisa W.", role: "API Eng", task: "Analyzing UAT proxy failures" }
+        ],
+        code: `UAT Governance Audit - Oregon Eligibility Rollout:
+  - Regulatory policy validation checks: [PASSED]
+  - 12 Cross-organizational User sessions coordinated.
+  - 35+ critical policy defects identified and resolved.
+  - Business sign-off status: [FULLY AUTHORIZED]`
+      },
+      {
+        id: "triage", name: "Defect Triage", step: "Phase 09", title: "Agile Defect Board Ownership",
+        badge: "Agile Governance", metricLabel: "Resolution Velocity", metricVal: "24% Cycle Reduction",
+        desc: "Daily bug triage governance. I coordinate meetings with engineers, product managers, and developers to prioritize bugs and accelerate resolutions, ensuring zero sprint delays.",
+        team: [
+          { name: "John D.", role: "Lead SDET", task: "Triage board escalation manager" },
+          { name: "Sarah M.", role: "Automation Eng", task: "Validating resolved bug packages" },
+          { name: "David L.", role: "QA Analyst", task: "Filing detailed replication files" },
+          { name: "Elena R.", role: "BI Analyst", task: "Investigating analytics glitches" },
+          { name: "Sam K.", role: "Mobile SDET", task: "Tracking app crash logs" },
+          { name: "Lisa W.", role: "API Eng", task: "Tracing API gateway failures" }
+        ],
+        code: `{
+  "action": "Daily Triage Session - Smit Soni Presiding",
+  "defect_id": "ERR-9104",
+  "component": "Spectrum-Digital-Billing-API",
+  "severity": "CRITICAL",
+  "owner": "Sprint Team 4 Lead Developer",
+  "status": "ASSIGNED (SLA Target: 4h Resolution)"
+}`
+      },
+      {
+        id: "readiness", name: "Release Readiness", step: "Phase 10", title: "Enterprise Quality Governance",
+        badge: "Sign-Off Sovereignty", metricLabel: "Defects Leakage", metricVal: "35% Reduction",
+        desc: "Compiling quality telemetry into a Go/No-Go report. I verify regression pass rates, SLA metrics, and security criteria to guarantee risk-free enterprise production deployments.",
+        team: [
+          { name: "John D.", role: "Lead SDET", task: "Aggregating code coverage statistics" },
+          { name: "Sarah M.", role: "Automation Eng", task: "Verifying staging stability" },
+          { name: "David L.", role: "QA Analyst", task: "Signing off functional checks" },
+          { name: "Elena R.", role: "BI Analyst", task: "Validating reporting dashboards" },
+          { name: "Sam K.", role: "Mobile SDET", task: "Approving mobile app builds" },
+          { name: "Lisa W.", role: "API Eng", task: "Certifying API stability logs" }
+        ],
+        code: `### ENTERPRISE RELEASE HEALTH SUMMARY - SYSTEM v4.12
+- Regression Suite Pass Rate: 100.0%
+- Pre-release Defects Caught: 200+
+- Production Outage Risk Probability: < 0.02%
+- Smit Soni - Quality Engineering Lead: [APPROVED FOR DEPLOYMENT]`
+      },
+      {
+        id: "monitoring", name: "Prod Monitoring", step: "Phase 11", title: "Synthetic Post-Live Governance",
+        badge: "Production Safeguard", metricLabel: "Post-Release Outages", metricVal: "Zero Major Failures",
+        desc: "Monitoring systems post-launch. We deploy automated synthetic scripts that test billing and checkout flows around the clock in production, alerting us to issues before customers see them.",
+        team: [
+          { name: "John D.", role: "Lead SDET", task: "Configuring Datadog health monitors" },
+          { name: "Sarah M.", role: "Automation Eng", task: "Deploying post-deploy automated tests" },
+          { name: "David L.", role: "QA Analyst", task: "Reviewing real customer logs" },
+          { name: "Elena R.", role: "BI Analyst", task: "Auditing live dashboard stats" },
+          { name: "Sam K.", role: "Mobile SDET", task: "Monitoring app store crash ratios" },
+          { name: "Lisa W.", role: "API Eng", task: "Tracing API gateway errors" }
+        ],
+        code: `[Production Synthetic Daemon]: Triggering active checkout verify ping...
+[SYSTEM PING]: Chrome transaction mock check initialized...
+[OK] Code: 200 OK | Response Latency: 110ms | Ledger State: Synced.
+[MONITOR STATE]: STABLE. 0 outages reported post-deployment.`
+      }
+    ];
+
+    const timelineContainer = document.getElementById('lccTimeline');
+    const infoTitle = document.getElementById('lccInfoTitle');
+    const infoBadge = document.getElementById('lccInfoBadge');
+    const infoDesc = document.getElementById('lccInfoDesc');
+    const metricLabel = document.getElementById('lccMetricLabel');
+    const metricValue = document.getElementById('lccMetricValue');
+    const teamList = document.getElementById('lccTeamList');
+    const consoleOutput = document.getElementById('lccConsoleOutput');
+
+    function drawLccTimeline() {
+      timelineContainer.innerHTML = "";
+      lccTimelineData.forEach((phase, index) => {
+        const btn = document.createElement('button');
+        btn.className = `lcc-node-btn ${index === 0 ? 'active' : ''}`;
+        btn.dataset.id = phase.id;
+        btn.dataset.index = index;
+        btn.innerHTML = `
+          <span class="lcc-node-step">${phase.step}</span>
+          <span>${phase.name}</span>
+        `;
+        btn.addEventListener('click', () => selectLccPhase(index));
+        timelineContainer.appendChild(btn);
+      });
+      // Select the first phase on launch
+      updateLccDashboard(0);
+    }
+
+    function selectLccPhase(index) {
+      document.querySelectorAll('.lcc-node-btn').forEach((btn, idx) => {
+        btn.classList.toggle('active', idx === index);
+      });
+      updateLccDashboard(index);
+    }
+
+    function updateLccDashboard(index) {
+      const data = lccTimelineData[index];
+      infoTitle.textContent = data.title;
+      infoBadge.textContent = data.badge;
+      infoDesc.textContent = data.desc;
+      metricLabel.textContent = data.metricLabel;
+      metricValue.textContent = data.metricVal;
+      
+      // Update mentored team workspace
+      teamList.innerHTML = "";
+      data.team.forEach(member => {
+        const item = document.createElement('div');
+        item.className = 'lcc-team-item';
+        item.innerHTML = `
+          <div class="lcc-team-avatar">${member.name.split(' ')[0][0]}${member.name.split(' ')[1][0]}</div>
+          <div class="lcc-team-info">
+            <div class="lcc-team-name-role">
+              <span class="lcc-team-name">${member.name}</span>
+              <span class="lcc-team-role">${member.role}</span>
+            </div>
+            <div class="lcc-team-task">${member.task}</div>
+          </div>
+        `;
+        teamList.appendChild(item);
+      });
+
+      // Update terminal/console logs with a clean typing/stream effect
+      consoleOutput.textContent = "";
+      let currentLogIdx = 0;
+      const lines = data.code.split('\n');
+      
+      function printLine() {
+        if (currentLogIdx < lines.length) {
+          consoleOutput.textContent += lines[currentLogIdx] + "\n";
+          currentLogIdx++;
+          setTimeout(printLine, 100);
+        }
+      }
+      printLine();
+    }
+
+    // Auto-cycle through the STLC phases every 12 seconds
+    let currentLccIdx = 0;
+    setInterval(() => {
+      // Pause if the recruiter is actively hovering over the dashboard area
+      if (document.querySelector('.lcc-card:hover')) return;
+      currentLccIdx = (currentLccIdx + 1) % lccTimelineData.length;
+      selectLccPhase(currentLccIdx);
+      // Auto scroll the horizontal timeline so the active element stays visible
+      const activeBtn = document.querySelector(`.lcc-node-btn[data-index="${currentLccIdx}"]`);
+      if (activeBtn) {
+        activeBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+    }, 12000);
+
+    // Initialize the Command Center on window load
+    window.addEventListener('DOMContentLoaded', () => {
+      drawLccTimeline();
+    });
   </script>
 </body>
 

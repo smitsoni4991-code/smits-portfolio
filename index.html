@@ -21,7 +21,7 @@
     <div class="nav-logo">Smit Soni</div>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
-      <li><a href="#stlc-autopilot">STLC Autopilot</a></li>
+      <li><a href="#qe-command-center" style="color: var(--accent-gold); font-weight: 700;">QE Cockpit</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
@@ -61,96 +61,152 @@
         <span class="hero-tag">Tableau Automation</span>
       </div>
       <div class="hero-btns fade-up delay-3">
-        <a href="#stlc-autopilot" class="btn btn-primary">Launch STLC Autopilot</a>
+        <a href="#qe-command-center" class="btn btn-primary">Launch QE Command Center</a>
         <a href="#contact" class="btn btn-outline">Schedule Consultation</a>
       </div>
     </div>
   </section>
 
-
-
-  <!-- ─── AI Live Module: QE STLC Circular Quality Radar ─── -->
-  <section id="stlc-autopilot" class="container">
+  <!-- ─── Approach L: Autonomous Test Flow Generator ─── -->
+  <section id="flow-generator" class="container">
     <div class="exec-header fade-up">
-      <span class="section-label">QE GOVERNANCE COMMAND CENTER</span>
-      <h2 class="exec-title">STLC Quality Governance Radar</h2>
-      <p class="exec-subtitle">Interact with my 11-stage Software Testing Life Cycle (STLC) radar. Watch how I orchestrate automated gating, database assertions, and release governance to achieve a 35% defect leakage reduction.</p>
+      <span class="section-label">AUTONOMOUS FLOW MAPPING</span>
+      <h2 class="exec-title">Autonomous Test Flow Generator</h2>
+      <p class="exec-subtitle">Select an enterprise user journey. Watch Smit's local Llama engine dynamically compile end-to-end quality structures across UI, API, Database, and Regulatory layers.</p>
     </div>
 
-    <!-- Main Command Center Grid -->
-    <div class="radar-dashboard glass-card fade-up">
-      <div class="radar-grid">
-        
-        <!-- Column 1: Interactive Aerospace Radar Hub -->
-        <div class="radar-hub-column">
-          <div class="radar-hub-header">
-            <span class="hub-tag">HOLOGRAPHIC SWEEP DEPLOYED</span>
-            <div class="hub-control">
-              <span class="hub-status-light blinking"></span>
-              <span class="hub-status-txt" id="hubStatusTxt">SYS_AUTOPILOT: ACTIVE</span>
-            </div>
-          </div>
-          
-          <!-- Outer Radar Container -->
-          <div class="stlc-radar-container" id="radarNodesContainer">
-            <div class="radar-ring-outer"></div>
-            <div class="radar-ring-inner"></div>
-            
-            <!-- Central Dynamic Core -->
-            <div class="radar-core" id="radarCoreBtn">
-              <div class="core-pulse"></div>
-              <span class="core-label" id="radarCoreStep">PHASE 01</span>
-              <h3 class="core-title" id="radarCoreName">REQUIREMENTS</h3>
-              <span class="core-action-hint" id="radarCoreHint">CLICK TO PAUSE</span>
-            </div>
-            
-            <!-- Surrounded Interactive Node Buttons (Rendered Dynamically by JS) -->
+    <div class="flow-card glass-card fade-up">
+      <!-- Top controls -->
+      <div class="flow-header">
+        <div class="flow-selector-group">
+          <button class="flow-select-btn active" data-journey="snap">
+            <span>🌾</span> SNAP Eligibility Journey
+          </button>
+          <button class="flow-select-btn" data-journey="billing">
+            <span>💳</span> Billing Settlement
+          </button>
+          <button class="flow-select-btn" data-journey="auth">
+            <span>🔒</span> Identity & Access Gate
+          </button>
+        </div>
+        <div class="flow-compile-status">
+          ENGINE: <strong class="text-gold">Hybrid-RAG-QA</strong>
+        </div>
+      </div>
+
+      <div class="flow-grid">
+        <!-- Panel 1: Live Interactive Node Canvas -->
+        <div class="flow-panel canvas-column">
+          <div class="panel-tag">AUTONOMOUS QUALITY MAP CANVAS</div>
+          <div class="canvas-viewport" id="flow-canvas-nodes">
+            <!-- Dynamic Nodes Rendered Here -->
           </div>
         </div>
 
-        <!-- Column 2: Strategic Telemetry & Console Logs -->
-        <div class="radar-telemetry-column">
+        <!-- Panel 2: Technical Node Diagnostics -->
+        <div class="flow-panel diagnostic-column">
+          <div class="panel-tag">INTEGRATION DIAGNOSTICS</div>
+          <div class="diag-detail-box">
+            <h4 class="diag-node-title" id="diag-flow-title">Select a node to inspect</h4>
+            
+            <div class="diag-telemetry-row">
+              <div class="dtr-stat">
+                <span class="dtr-lbl">VALIDATION METRIC</span>
+                <strong id="diag-flow-metric" class="text-gold">--</strong>
+              </div>
+              <div class="dtr-stat">
+                <span class="dtr-lbl">TEST TIER</span>
+                <strong id="diag-flow-tier" class="text-gold">--</strong>
+              </div>
+            </div>
+
+            <div class="diag-code-box">
+              <span class="dcb-lbl">TECHNICAL ASSIGNMENT</span>
+              <pre class="dcb-code" id="diag-flow-code">
+<span class="text-muted">// Select a flowchart node...</span>
+              </pre>
+            </div>
+
+            <div class="diag-brief-box">
+              <span class="dbb-lbl">STRATEGIC ROI BRIEF</span>
+              <p class="dbb-desc" id="diag-flow-brief">
+                Select any visual flowchart node in the canvas to inspect Smit's targeted automated assertions, compliance validation scripts, and engineering impact.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── QE Command Center: Release Risk Governance ─── -->
+  <section id="qe-command-center" class="container">
+    <div class="exec-header fade-up">
+      <span class="section-label">RELEASE RISK & COMPLIANCE</span>
+      <h2 class="exec-title">QE Leadership Command Center</h2>
+      <p class="exec-subtitle">Step into the cockpit of an enterprise-grade release pipeline. Explore how Smit orchestrates continuous quality gates, balances human/automated execution, and dynamically triages defect vectors across the full STLC.</p>
+    </div>
+
+    <div class="qe-card glass-card fade-up">
+      <!-- Top header status -->
+      <div class="qe-header">
+        <div class="qe-system-badge">
+          <span class="pulse-green"></span> PIPELINE GOVERNANCE ACTIVE
+        </div>
+        <div class="qe-release-selector">
+          SYSTEM COMPONENT ACTIVE: <strong class="text-gold">21+ Enterprise Services</strong>
+        </div>
+      </div>
+
+      <!-- 11-Stage Interactive Timeline -->
+      <div class="qe-timeline-wrapper">
+        <div class="qe-timeline" id="qe-stlc-timeline">
+          <!-- Timelines nodes will be rendered dynamically by JS -->
+        </div>
+      </div>
+
+      <!-- Main workspace -->
+      <div class="qe-grid">
+        <!-- Panel 1: Diagnostics & Strategic Brief -->
+        <div class="qe-panel diagnostics-panel">
+          <div class="panel-tag">GOVERNANCE & STRATEGIC TELEMETRY</div>
           
-          <!-- Strategic Governance Card -->
-          <div class="telemetry-card">
-            <div class="card-tag">Strategic Governance Brief</div>
-            <div class="card-content">
-              <div class="brief-title-badge">
-                <h3 class="brief-title" id="radarBriefTitle">Shift-Left Ambiguity Parsing</h3>
-                <span class="brief-badge" id="radarBriefBadge">Quality Governance Gate</span>
-              </div>
-              
-              <p class="brief-desc" id="radarBriefDesc">Reviewing business plans and policies early. I parse SNAP calculations and billing formulas to find conflicting business rules before engineers write a single line of code...</p>
-              
-              <div class="brief-metrics-row">
-                <div class="brief-metric-box">
-                  <span class="bm-lbl">TELEMETRY KPI</span>
-                  <strong class="text-gold" id="radarBriefMetric">100% Policy Map</strong>
-                </div>
-                <div class="brief-metric-box">
-                  <span class="bm-lbl">SQUAD ASSIGNMENT</span>
-                  <strong class="text-gold" id="radarBriefSquad">John D. (Lead SDET)</strong>
-                </div>
+          <div class="qe-telemetry-box">
+            <h4 class="qe-phase-title" id="qe-phase-title">Requirements Analysis</h4>
+            <span class="qe-phase-subtitle" id="qe-phase-subtitle">Shift-Left QA Ambiguity Extraction</span>
+
+            <div class="qe-telemetry-grid">
+              <div class="qe-stat-card">
+                <span class="qsc-lbl">GOVERNANCE KPI</span>
+                <strong id="qe-stat-metric" class="text-gold">Ambiguities Identified: 4 | Shift-Left Savings: ~$12,000</strong>
               </div>
             </div>
-          </div>
 
-          <!-- Live Engineering Console Card -->
-          <div class="telemetry-card console-card">
-            <div class="card-tag">Live Engineering Console</div>
-            <div class="console-box">
-              <div class="console-header">
-                <span class="console-dot red"></span>
-                <span class="console-dot yellow"></span>
-                <span class="console-dot green"></span>
-                <span class="console-tab-name" id="radarConsoleTab">autopilot_agent.sh</span>
-              </div>
-              <pre class="console-code" id="radarConsoleOutput">Loading real-time execution logs...</pre>
+            <div class="qe-brief-section">
+              <span class="qbs-lbl">TEAM LEADERSHIP & COLLABORATION</span>
+              <p class="qbs-desc" id="qe-stat-team">
+                QA Lead coordinates with Product Owners to refine user story acceptance criteria prior to development kick-off.
+              </p>
+            </div>
+
+            <div class="qe-brief-section">
+              <span class="qbs-lbl">AI-ASSISTED QA INTEGRATION</span>
+              <p class="qbs-desc" id="qe-stat-ai">
+                Generative AI parses PRD markdown files, highlighting missing edge-cases and logic gaps in 3 seconds.
+              </p>
             </div>
           </div>
-
         </div>
 
+        <!-- Panel 2: Live Code/Script Asserter -->
+        <div class="qe-panel script-panel">
+          <div class="panel-tag">AUTOMATED QUALITY GATE (CODE ENGINE)</div>
+          <div class="qe-code-container">
+            <pre class="qe-code-block" id="qe-code-block">
+// Live code will compile here...
+            </pre>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -640,293 +696,428 @@
       });
     });
 
+    // Flow Generator Interactive Logic: Approach L
+    const flowSelectorBtns = document.querySelectorAll('.flow-select-btn');
+    const canvasViewport = document.getElementById('flow-canvas-nodes');
+    const diagTitle = document.getElementById('diag-flow-title');
+    const diagMetric = document.getElementById('diag-flow-metric');
+    const diagTier = document.getElementById('diag-flow-tier');
+    const diagCode = document.getElementById('diag-flow-code');
+    const diagBrief = document.getElementById('diag-flow-brief');
 
+    const flowData = {
+      snap: [
+        {
+          id: "snap-prd", name: "PRD Policy Parser", tier: "Requirements", metric: "100% Policy Traceability",
+          brief: "Smit's compliance scanning engine parses complex SNAP policy rules (e.g. income caps vs household size) and generates structured test models directly from regulatory manuals.",
+          code: `// AI Requirement Tracing:
+const rule = MedicaidPolicyDB.getRule('SNAP-Income-Limit');
+expect(rule.maxGrossIncome('HouseholdSize: 4')).toBe(3003); // HIPAA compliant`
+        },
+        {
+          id: "snap-ui", name: "Playwright UI Gate", tier: "Frontend E2E", metric: "Self-Healed (Zero Maintenance)",
+          brief: "Simulates full end-to-end SNAP benefit applications, processing UI validation, dynamic selectors, and client portal responsiveness across various responsive design viewports.",
+          code: `// Playwright Self-Healing Selector:
+await page.locator('.btn-eligible-submit').click();
+await expect(page.locator('#success-badge')).toBeVisible();`
+        },
+        {
+          id: "snap-api", name: "Eligibility API Gate", tier: "Integration Tier", metric: "99.99% Contract Match",
+          brief: "Smit executes JSON contract matching, stress testing eligibility endpoints running inside secure AWS API Gateways, ensuring correct application schema serialization.",
+          code: `// API Schema Validation:
+const response = await request.post('/api/snap/eligibility', { data: applicant });
+expect(response.status()).toBe(200);
+expect(response.json()).toMatchSchema(snapEligibilitySchema);`
+        },
+        {
+          id: "snap-db", name: "AWS SQL Claim Assert", tier: "Database Layer", metric: "Zero Records Divergence",
+          brief: "Direct database layer verification. Checks system state logic inside secure RDS databases, verifying claims logs are correctly updated in accordance with the transaction logs.",
+          code: `// SQL Verification Query:
+const records = await db.query(
+  'SELECT status FROM snap_claims WHERE applicant_id = ?', 
+  [applicantId]
+);
+expect(records[0].status).toBe('ELIGIBLE_APPROVED');`
+        },
+        {
+          id: "snap-compliance", name: "UAT Sign-off Gateway", tier: "User Acceptance", metric: "Zero Production Leakage",
+          brief: "Governance gatekeeping. Organizes regulatory stakeholder validations for state eligibility releases, establishing full trace verification with absolute UAT sovereignty.",
+          code: `// UAT Telemetry Matrix:
+const complianceScore = await complianceEngine.assessRelease('SNAP-v2.0');
+expect(complianceScore.hasPassedAllGates()).toBe(true);
+console.log('ROI Generated: $154K Saved');`
+        }
+      ],
+      billing: [
+        {
+          id: "bill-rules", name: "Transaction Parser", tier: "Business Rules", metric: "100% Logic Match",
+          brief: "Scans claim processing logs to capture complex transaction fees and payment calculations, mapping them to financial rules before testing starts.",
+          code: `// Rule Mapping:
+const feeRule = BillingMatrix.getRule('ClaimProcessingFee');
+expect(feeRule.calculateFee(5000)).toBe(12.50);`
+        },
+        {
+          id: "bill-api", name: "Ledger API Assert", tier: "Integration Tier", metric: "0.2ms Latency Guarantee",
+          brief: "Verifies double-entry ledger postings against the banking backend API, ensuring correct accounts are credited/debited securely.",
+          code: `// Ledger API Contract Check:
+const ledgerResult = await bankApi.postTransaction(transactionPayload);
+expect(ledgerResult.ledgerStatus).toBe('BALANCED_POSTED');`
+        },
+        {
+          id: "bill-db", name: "DB Transaction Rollback", tier: "Database Layer", metric: "ACID Compliant",
+          brief: "Tests transaction rollback performance under severe simulated server failure, ensuring zero database data corruption.",
+          code: `// Database Rollback Test:
+await db.beginTransaction();
+await db.execute('UPDATE accounts SET balance = balance - 100');
+// Simulated error triggers rollback
+await db.rollback();
+const balance = await db.getBalance(accountId);
+expect(balance).toBe(originalBalance);`
+        },
+        {
+          id: "bill-report", name: "Tableau Automation", tier: "Analytics Verification", metric: "Zero Reporting Outliers",
+          brief: "Automated verification of reporting pipelines. Uses database triggers to verify that Tableau visual dashboards accurately reflect the backend transactional state.",
+          code: `// Tableau Data Matcher:
+const tableauData = await tableauConnector.fetchDashboardData('Executive-Billing');
+const rawDbData = await db.query('SELECT SUM(amount) FROM transactions');
+expect(tableauData.totalVolume).toBe(rawDbData[0].sum);`
+        }
+      ],
+      auth: [
+        {
+          id: "auth-jwt", name: "OAuth JWT Validator", tier: "Identity Gate", metric: "Zero Session Vulnerability",
+          brief: "Validates JSON Web Token signature verification, key expiration structures, and security scopes inside token payloads.",
+          code: `// JWT Security Test:
+const token = jwt.sign({ scope: 'medicaid:write' }, secret, { expiresIn: '1s' });
+await sleep(1050); // wait for expiry
+expect(authEngine.validate(token)).toThrow('TokenExpiredError');`
+        },
+        {
+          id: "auth-iam", name: "AWS IAM Restriction Scanner", tier: "Infrastructure Gate", metric: "HIPAA Compliant Roles",
+          brief: "Ensures secure cloud boundary containment by scanning AWS IAM roles, validating that test systems cannot write to production database instances.",
+          code: `// IAM Restriction Sweep:
+const executionRole = aws.getIAMRole('QA-Automation-Executor');
+expect(executionRole.canWriteToBucket('prod-medicaid-claims')).toBe(false);`
+        },
+        {
+          id: "auth-rate", name: "API Rate-Limit Simulator", tier: "Load Gateway", metric: "Rate Limiting Enforced",
+          brief: "Simulates distributed Denial of Service (DDoS) requests against critical API gateways, verifying that rate limiting instantly redirects excess traffic.",
+          code: `// API Rate-Limit verification:
+const requests = Array(150).fill().map(() => api.get('/auth/status'));
+const responses = await Promise.all(requests);
+const rateLimitedCount = responses.filter(r => r.status === 429).length;
+expect(rateLimitedCount).toBeGreaterThan(50);`
+        }
+      ]
+    };
 
-    // ─── QE Leadership Circular Radar Logic ───
-    const lccTimelineData = [
-      {
-        id: "req", name: "Requirements", step: "Phase 01", title: "Shift-Left Ambiguity Parsing",
-        badge: "Quality Governance Gate", metricLabel: "Requirement Traceability", metricVal: "100% Policy Map",
-        desc: "Reviewing business plans and policies early. I parse SNAP calculations and billing formulas to find conflicting business rules before engineers write a single line of code, reducing downstream development delays.",
-        squad: "John D. (Lead SDET)",
-        code: `[AI Requirement Parser]: Scanning Spec: Spectrum-Billing-v4.pdf
-[ANALYZING]: Rule 14.1 (Tax calculation cap)
-[WARNING]: Ambiguity found in client residency conditions.
-[STRATEGY]: Re-routed definition logic to Product Manager.
-[RESULT]: Found 4 spec issues before sprint start.`
-      },
-      {
-        id: "risk", name: "Risk Assessment", step: "Phase 02", title: "Failure Threat Modeling",
-        badge: "Preventative Architecture", metricLabel: "Coverage Priorities", metricVal: "High Risk Isolated",
-        desc: "Analyzing changes made to customer-facing code. I isolate high-volume revenue engines, billing systems, and API boundaries to design a test schedule focused on the highest business risks.",
-        squad: "Sarah M. (Automation Eng)",
-        code: `{
-  "module": "Spectrum-Digital-Checkout-Portal",
-  "priority": "CRITICAL_PATH",
-  "historical_stability": "85% (Requires regression sweep)",
-  "vulnerable_nodes": ["/checkout/confirm", "/billing/ledger"],
-  "mitigation": "Enforcing parallel Playwright E2E browser tests"
-}`
-      },
-      {
-        id: "strategy", name: "Test Strategy", step: "Phase 03", title: "Full-Stack Quality Architecture",
-        badge: "Strategic Plan", metricLabel: "Components Covered", metricVal: "21+ Core Services",
-        desc: "Establishing testing guardrails. I architect integrated strategies covering the frontend (browser/mobile), backend APIs, AWS data validation, and visual BI Tableau dashboards.",
-        squad: "David L. (QA Analyst)",
-        code: `// Enterprise Governance Framework Config
-$ quality-gate-config --apply-strategy full_stack_integrated
-  ├── UI Testing: Playwright (Desktop / Mobile Emulators)
-  ├── API Layer: JSON Schema contract assertions
-  ├── Database: Complex SQL transaction checks
-  └── Analytics: Wiiisdom Ops Visual Tableau scans`
-      },
-      {
-        id: "planning", name: "Test Planning", step: "Phase 04", title: "Agile Resource Governance",
-        badge: "Sprint Planning", metricLabel: "Resource Scalability", metricVal: "6 SDETs Governed",
-        desc: "Managing agile sprint cycles. I partition execution plans across my mentored team of 6 QA Analysts, ensuring parallel execution, clear SLAs, and highly efficient release coverage.",
-        squad: "Elena R. (BI Analyst)",
-        code: `[Governance Plan]: Sprint 14 Execution Schedule
-[METRIC]: Target SLA: 48h Testing Turnaround
-[RESOURCES]:
-  - Automation squad: SDET-1, SDET-2, SDET-5
-  - Backend/Pipeline: Analyst-3, Analyst-4, Analyst-6
-[STATUS]: Env config matching Stage v2.4 initialized.`
-      },
-      {
-        id: "design", name: "Test Design", step: "Phase 05", title: "AI-Assisted Test Synthesizer",
-        badge: "Engineering Innovation", metricLabel: "Script Gen Velocity", metricVal: "+150% Acceleration",
-        desc: "Generating robust testing scripts. I leverage AI engines to convert technical specs into high-coverage automated assertions, allowing my team to rapidly construct edge-case matrices.",
-        squad: "Sam K. (Mobile SDET)",
-        code: `// AI-Generated Playwright Test (Asserting Eligibility Engine)
-test('Validate SNAP Multi-member Household Calculations', async ({ page }) => {
-  const portal = new SnapPortal(page);
-  await portal.submitDetails({ members: 4, grossIncome: 3000 });
-  // Dynamic Selector validation
-  await expect(portal.eligibilityStatus).toHaveText('ELIGIBLE_APPROVED');
-});`
-      },
-      {
-        id: "execution", name: "Test Execution", step: "Phase 06", title: "CI/CD Pipeline Gating",
-        badge: "Continuous Integration", metricLabel: "Build Executions", metricVal: "1,420 Auto-Tests",
-        desc: "Executing automated test suites parallel across multiple browsers and virtual environments, running automatically on commit pushes inside secure GitLab and Jenkins runners.",
-        squad: "Lisa W. (API Eng)",
-        code: `$ npm run test:ci --parallel-threads=10
-Running suites... (Chrome, Safari, iOS Emulations)
-  ✔ User Authentication Flow (142 passed)
-  ✔ Billing Ledger POST requests (98 passed)
-  ✔ SNAP Eligibility Core Matrix (230 passed)
-[SUCCESS] 1420 assertions passed in 4m 12s.`
-      },
-      {
-        id: "automation", name: "Validation Tier", step: "Phase 07", title: "Database & Visual Integrity",
-        badge: "Data Quality Engine", metricLabel: "Manual Effort Saved", metricVal: "60% Saved",
-        desc: "Validating backend systems. We run complex SQL checks to confirm database calculations match web states, and automate visual visual dashboard regression checks using Wiiisdom Ops.",
-        squad: "John D. (Lead SDET)",
-        code: `-- SQL database transaction validation
-SELECT client_id, SUM(due_amount) FROM spectrum_sales_db.transactions
-GROUP BY client_id
-EXCEPT
-SELECT client_id, current_balance FROM customer_ledgers;
+    let activeJourney = "snap";
 
->> [RESULT]: 0 matching discrepancies. Data pipeline is completely healthy.`
-      },
-      {
-        id: "uat", name: "UAT Governance", step: "Phase 08", title: "Cross-Functional Alignment",
-        badge: "UAT Leadership", metricLabel: "Critical Defects Caught", metricVal: "35+ Pre-Go-Live",
-        desc: "Leading User Acceptance Testing. I construct testing agendas for business stakeholders, train user groups, and coordinate state regulators to guarantee software meets user needs.",
-        squad: "David L. (QA Analyst)",
-        code: `UAT Governance Audit - Oregon Eligibility Rollout:
-  - Regulatory policy validation checks: [PASSED]
-  - 12 Cross-organizational User sessions coordinated.
-  - 35+ critical policy defects identified and resolved.
-  - Business sign-off status: [FULLY AUTHORIZED]`
-      },
-      {
-        id: "triage", name: "Defect Triage", step: "Phase 09", title: "Agile Defect Board Ownership",
-        badge: "Agile Governance", metricLabel: "Resolution Velocity", metricVal: "24% Cycle Reduction",
-        desc: "Daily bug triage governance. I coordinate meetings with engineers, product managers, and developers to prioritize bugs and accelerate resolutions, ensuring zero sprint delays.",
-        squad: "Sarah M. (Automation Eng)",
-        code: `{
-  "action": "Daily Triage Session - Smit Soni Presiding",
-  "defect_id": "ERR-9104",
-  "component": "Spectrum-Digital-Billing-API",
-  "severity": "CRITICAL",
-  "owner": "Sprint Team 4 Lead Developer",
-  "status": "ASSIGNED (SLA Target: 4h Resolution)"
-}`
-      },
-      {
-        id: "readiness", name: "Release Readiness", step: "Phase 10", title: "Enterprise Quality Governance",
-        badge: "Sign-Off Sovereignty", metricLabel: "Defect Leakage", metricVal: "35% Reduction",
-        desc: "Compiling quality telemetry into a Go/No-Go report. I verify regression pass rates, SLA metrics, and security criteria to guarantee risk-free enterprise production deployments.",
-        squad: "Smit Soni (QA Lead)",
-        code: `### ENTERPRISE RELEASE HEALTH SUMMARY - SYSTEM v4.12
-- Regression Suite Pass Rate: 100.0%
-- Pre-release Defects Caught: 200+
-- Production Outage Risk Probability: < 0.02%
-- Smit Soni - Quality Engineering Lead: [APPROVED FOR DEPLOYMENT]`
-      },
-      {
-        id: "monitoring", name: "Prod Monitoring", step: "Phase 11", title: "Synthetic Post-Live Governance",
-        badge: "Production Safeguard", metricLabel: "Post-Release Outages", metricVal: "Zero Outages",
-        desc: "Monitoring systems post-launch. We deploy automated synthetic scripts that test billing and checkout flows around the clock in production, alerting us to issues before customers see them.",
-        squad: "Sam K. (Mobile SDET)",
-        code: `[Production Synthetic Daemon]: Triggering active checkout verify ping...
-[SYSTEM PING]: Chrome transaction mock check initialized...
-[OK] Code: 200 OK | Response Latency: 110ms | Ledger State: Synced.
-[MONITOR STATE]: STABLE. 0 outages reported post-deployment.`
-      }
-    ];
+    function drawJourneyNodes(journeyKey) {
+      canvasViewport.innerHTML = "";
+      const nodes = flowData[journeyKey];
+      
+      nodes.forEach((node, index) => {
+        // Draw connector if not first
+        if (index > 0) {
+          const connector = document.createElement('div');
+          connector.className = 'flow-canvas-connector';
+          connector.textContent = "➔";
+          canvasViewport.appendChild(connector);
+        }
 
-    const radarNodesContainer = document.getElementById('radarNodesContainer');
-    const radarCoreBtn = document.getElementById('radarCoreBtn');
-    const radarCoreStep = document.getElementById('radarCoreStep');
-    const radarCoreName = document.getElementById('radarCoreName');
-    const radarCoreHint = document.getElementById('radarCoreHint');
-    const hubStatusTxt = document.getElementById('hubStatusTxt');
-    
-    const radarBriefTitle = document.getElementById('radarBriefTitle');
-    const radarBriefBadge = document.getElementById('radarBriefBadge');
-    const radarBriefDesc = document.getElementById('radarBriefDesc');
-    const radarBriefMetric = document.getElementById('radarBriefMetric');
-    const radarBriefSquad = document.getElementById('radarBriefSquad');
-    const radarConsoleOutput = document.getElementById('radarConsoleOutput');
+        // Draw node
+        const nodeEl = document.createElement('div');
+        nodeEl.className = 'flow-canvas-node';
+        nodeEl.id = node.id;
+        nodeEl.dataset.index = index;
+        
+        nodeEl.innerHTML = `
+          <div class="fcn-icon">⚙️</div>
+          <div class="fcn-meta">
+            <span class="fcn-tier">${node.tier}</span>
+            <span class="fcn-name">${node.name}</span>
+          </div>
+        `;
 
-    let activePhaseIndex = 0;
-    let autopilotTimer = null;
-    let isAutopilotPaused = false;
-    let typingTimer = null;
-
-    function drawRadarTimeline() {
-      // Remove any existing node buttons
-      radarNodesContainer.querySelectorAll('.radar-node-btn').forEach(btn => btn.remove());
-
-      lccTimelineData.forEach((phase, index) => {
-        const btn = document.createElement('button');
-        btn.className = `radar-node-btn ${index === 0 ? 'active' : ''}`;
-        btn.dataset.index = index;
-        btn.textContent = String(index + 1).padStart(2, '0');
-
-        btn.addEventListener('click', () => {
-          pauseAutopilot();
-          selectRadarPhase(index);
+        nodeEl.addEventListener('click', () => {
+          selectFlowNode(journeyKey, index);
         });
 
-        radarNodesContainer.appendChild(btn);
+        canvasViewport.appendChild(nodeEl);
       });
 
-      positionRadarNodes();
-      selectRadarPhase(0);
-      startAutopilot();
-    }
+      // Step-by-step draw animation
+      const flowNodes = document.querySelectorAll('.flow-canvas-node');
+      const flowConnectors = document.querySelectorAll('.flow-canvas-connector');
+      
+      flowNodes.forEach(n => n.classList.remove('drawn', 'selected'));
+      flowConnectors.forEach(c => c.classList.remove('drawn'));
 
-    function positionRadarNodes() {
-      const nodes = radarNodesContainer.querySelectorAll('.radar-node-btn');
-      const rect = radarNodesContainer.getBoundingClientRect();
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-
-      const isMobile = window.innerWidth < 768;
-      const radius = isMobile ? 100 : 140; // Responsive radius in pixels
-
-      nodes.forEach((node, index) => {
-        // Position starting from top (-90 degrees or -PI/2)
-        const angle = (index * 2 * Math.PI / 11) - (Math.PI / 2);
-
-        const x = centerX + radius * Math.cos(angle) - (node.offsetWidth / 2);
-        const y = centerY + radius * Math.sin(angle) - (node.offsetHeight / 2);
-
-        node.style.left = `${x}px`;
-        node.style.top = `${y}px`;
-      });
-    }
-
-    function selectRadarPhase(index) {
-      activePhaseIndex = index;
-      const data = lccTimelineData[index];
-
-      // Update active classes on nodes
-      radarNodesContainer.querySelectorAll('.radar-node-btn').forEach((btn, idx) => {
-        btn.classList.toggle('active', idx === index);
-      });
-
-      // Update central core details
-      radarCoreStep.textContent = data.step;
-      radarCoreName.textContent = data.name;
-
-      // Update Strategic briefs
-      radarBriefTitle.textContent = data.title;
-      radarBriefBadge.textContent = data.badge;
-      radarBriefDesc.textContent = data.desc;
-      radarBriefMetric.textContent = data.metricVal;
-      radarBriefSquad.textContent = data.squad;
-
-      // Update typing console
-      printConsoleLogs(data.code);
-    }
-
-    function printConsoleLogs(text) {
-      if (typingTimer) clearTimeout(typingTimer);
-      radarConsoleOutput.textContent = "";
-
-      let currentLogIdx = 0;
-      const lines = text.split('\n');
-
-      function printLine() {
-        if (currentLogIdx < lines.length) {
-          radarConsoleOutput.textContent += lines[currentLogIdx] + "\n";
-          currentLogIdx++;
-          radarConsoleOutput.scrollTop = radarConsoleOutput.scrollHeight;
-          typingTimer = setTimeout(printLine, 80);
+      let current = 0;
+      function animateNode() {
+        if (current < flowNodes.length) {
+          flowNodes[current].classList.add('drawn');
+          if (current > 0) {
+            flowConnectors[current - 1].classList.add('drawn');
+          }
+          current++;
+          setTimeout(animateNode, 200);
+        } else {
+          // Select first node by default once rendering finishes
+          selectFlowNode(journeyKey, 0);
         }
       }
-      printLine();
+      animateNode();
     }
 
-    function startAutopilot() {
-      if (autopilotTimer) clearInterval(autopilotTimer);
-      autopilotTimer = setInterval(() => {
-        if (isAutopilotPaused || document.querySelector('.radar-dashboard:hover')) return;
-        activePhaseIndex = (activePhaseIndex + 1) % lccTimelineData.length;
-        selectRadarPhase(activePhaseIndex);
-      }, 12000);
+    function selectFlowNode(journeyKey, index) {
+      const nodes = flowData[journeyKey];
+      const node = nodes[index];
+      const flowNodes = document.querySelectorAll('.flow-canvas-node');
+      
+      flowNodes.forEach((n, idx) => {
+        n.classList.toggle('selected', idx === index);
+      });
+
+      // Update Diagnostics
+      diagTitle.textContent = node.name;
+      diagMetric.textContent = node.metric;
+      diagTier.textContent = node.tier;
+      diagBrief.textContent = node.brief;
+      
+      // Update Code
+      diagCode.textContent = node.code;
     }
 
-    function pauseAutopilot() {
-      isAutopilotPaused = true;
-      hubStatusTxt.textContent = "SYS_AUTOPILOT: PAUSED";
-      const light = hubStatusTxt.parentElement.querySelector('.hub-status-light');
-      if (light) light.classList.remove('blinking');
-      radarCoreHint.textContent = "CLICK TO RESUME";
-      const pulse = document.querySelector('.core-pulse');
-      if (pulse) pulse.style.animation = "none";
-    }
+    flowSelectorBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        flowSelectorBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeJourney = btn.dataset.journey;
+        drawJourneyNodes(activeJourney);
+      });
+    });
 
-    function resumeAutopilot() {
-      isAutopilotPaused = false;
-      hubStatusTxt.textContent = "SYS_AUTOPILOT: ACTIVE";
-      const light = hubStatusTxt.parentElement.querySelector('.hub-status-light');
-      if (light) light.classList.add('blinking');
-      radarCoreHint.textContent = "CLICK TO PAUSE";
-      const pulse = document.querySelector('.core-pulse');
-      if (pulse) pulse.style.animation = "core-glowing 2s infinite";
-      selectRadarPhase(activePhaseIndex);
-    }
+    // Auto-cycle journeys
+    let journeyKeys = Object.keys(flowData);
+    let journeyIdx = 0;
+    setInterval(() => {
+      if (document.querySelector('.flow-card:hover')) return; // Pause on hover
+      journeyIdx = (journeyIdx + 1) % journeyKeys.length;
+      const targetBtn = document.querySelector(`.flow-select-btn[data-journey="${journeyKeys[journeyIdx]}"]`);
+      if (targetBtn) targetBtn.click();
+    }, 15000);
 
-    radarCoreBtn.addEventListener('click', () => {
-      if (isAutopilotPaused) {
-        resumeAutopilot();
-      } else {
-        pauseAutopilot();
+    drawJourneyNodes('snap'); // Initialize
+
+    // ─── QE Command Center Controller ───
+    const qeData = {
+      requirements: {
+        title: "Requirements Analysis",
+        subtitle: "Shift-Left QA Ambiguity Extraction",
+        team: "Coordinating with Product Owners to refine acceptance criteria prior to development.",
+        ai: "Generative AI parses PRD, highlighting 4 logical edge-cases missing from original specs.",
+        metric: "Ambiguities Identified: 4 | Shift-Left Savings: ~$12,000 in dev rework",
+        code: `// Shift-Left Ambiguity Check:
+const prdRequirements = prdParser.load('SNAP-Claims-Story-204');
+const ambiguityScanner = new AIRequirementScanner(prdRequirements);
+const reports = await ambiguityScanner.findGaps();
+expect(reports.unspecifiedStates).toContain('User disconnects mid-payment');`
+      },
+      risk: {
+        title: "Risk Assessment",
+        subtitle: "Component Failure Mode Analysis",
+        team: "Mentoring 2 QA Analysts to perform Failure Mode & Effects Analysis (FMEA).",
+        ai: "RAG engine scans historical defects to flag high-risk legacy components.",
+        metric: "Critical Components Flagged: 3/21 | Targeted Coverage Focus: High Risk Only",
+        code: `// Risk Impact Valuation Matrix:
+const riskMatrix = RiskEngine.evaluate({
+  component: "Medicaid-Billing-Bridge",
+  frequencyOfChange: "High",
+  historicalDefectRate: "12%",
+  transactionalValue: "Critical"
+});
+expect(riskMatrix.priorityScore).toBeGreaterThan(8.5); // Demands Level-1 Automated Gate`
+      },
+      strategy: {
+        title: "Test Strategy",
+        subtitle: "Multi-Layered Hybrid Strategy",
+        team: "Aligns SDET resources across UI, API, SQL DB, and BI Analytics layers.",
+        ai: "Smart Strategy compiler matches automation suites with architectural modifications.",
+        metric: "Automation coverage goal: 85% | Components governed: 21+",
+        code: `// Architectural Test Matrix definition:
+const testStrategy = new StrategicPlanner('V3.4-Release');
+testStrategy.allocateLayer('UI', 'Playwright-Web');
+testStrategy.allocateLayer('API', 'Postman-SuperTest');
+testStrategy.allocateLayer('Database', 'TS-SQL-Validator');
+testStrategy.allocateLayer('BI-Reporting', 'Tableau-Data-Extractor');`
+      },
+      planning: {
+        title: "Test Planning",
+        subtitle: "Capacity Balancing & Resource Allocation",
+        team: "Directs capacity for 6 QA Analysts across active components.",
+        ai: "AI Capacity Modeler suggests optimal Sprint balance based on developer velocity.",
+        metric: "Active Analysts: 6 | Sprint Velocity: 48 QA Story Points",
+        code: `// Team Resource Allocation:
+const teamCapacity = AgileTracker.getCapacity({ Sprint: 42 });
+const components = ComponentRegistry.listActive();
+const allocationMap = ResourcePlanner.distribute(teamCapacity, components);
+expect(allocationMap.getUnassignedComponents().length).toBe(0);`
+      },
+      design: {
+        title: "Test Design",
+        subtitle: "Synthetic Test Case Generation",
+        team: "Mentoring team on Gherkin syntax and reusable step definitions.",
+        ai: "Generative AI converts OpenAPI schemas into automated test scenarios in 3 seconds.",
+        metric: "Test Cases Authored: 120 (95 Automated, 25 Manual Edge Cases)",
+        code: `// AI-Generated Gherkin Feature Code:
+Feature: SNAP Electronic Benefit Transfer (EBT) Settlement
+  Scenario: EBT transaction fails due to insufficient balance
+    Given a user with card status "Active" and balance $5.00
+    When they attempt to purchase eligible items totaling $10.00
+    Then the payment gateway must return error code "EBT-402"
+    And the transaction must be logged as "Declined"`
+      },
+      execution: {
+        title: "Test Execution",
+        subtitle: "Continuous CI/CD Regression Runs",
+        team: "SDETs trigger cross-browser and mobile iOS/Android emulation pipeline.",
+        ai: "Self-healing test runner identifies changed UI selectors, correcting scripts on the fly.",
+        metric: "Execution Pass Rate: 98.4% | Time saved via parallel execution: 14 hours",
+        code: `// Cross-Platform Automation execution:
+const webSession = await Playwright.launchBrowser('Chromium');
+const mobileSession = await Appium.launchDriver({ platform: 'iOS', device: 'iPhone 15' });
+const results = await Promise.all([
+  testRunner.runSuite(webSession, 'Regression'),
+  testRunner.runSuite(mobileSession, 'Smoke')
+]);
+expect(results[0].failures).toBe(0);`
+      },
+      validation: {
+        title: "Automation / API / SQL Validation",
+        subtitle: "Triple-Layer Verification Engine",
+        team: "QA Lead audits SQL assertions and BI dashboard data matches.",
+        ai: "RAG engine validates that Tableau layout matches database records perfectly.",
+        metric: "BI Validation Effort Reduced: 60% | SQL assertions run: 1400+",
+        code: `// Data Pipeline Integrity Check:
+const dbState = await db.query('SELECT total_benefit FROM benefits WHERE id = ?', [userId]);
+const apiResponse = await api.get('/benefits/summary/' + userId);
+const tableauMetric = await tableauExtractor.getMetric('Total Benefit Value');
+
+expect(apiResponse.body.amount).toBe(dbState[0].total_benefit);
+expect(tableauMetric).toBe(dbState[0].total_benefit);`
+      },
+      uat: {
+        title: "UAT Leadership",
+        subtitle: "Business & Stakeholder Coordination",
+        team: "Coordinating 12 Business Users across 3 departments for end-to-end user testing.",
+        ai: "UAT Sentiment analyzer digests feedback logs to extract critical business friction points.",
+        metric: "UAT Sign-off: 100% | Critical Business Scenarios Verified: 35",
+        code: `// UAT Stakeholder Portal Approval:
+const uatPortal = new UATStakeholderPortal({ release: 'V3.4' });
+const feedback = await uatPortal.getBusinessApprovals();
+expect(feedback.status).toBe('APPROVED');
+expect(feedback.exceptions.filter(e => e.severity === 'Blocker').length).toBe(0);`
+      },
+      triage: {
+        title: "Defect Triage",
+        subtitle: "Cross-Functional Bug Review Board",
+        team: "QA Lead hosts Daily Triage with Dev Leads, Product Owners, and Release Managers.",
+        ai: "AI Defect Router maps stack-traces to correct Git repository and assigns appropriate developer.",
+        metric: "Pre-Release Defects Resolved: 200+ | Defect Resolution SLA Met: 94%",
+        code: `// Defect Triaging Priority Mapping:
+const newDefect = BugTracker.fetchLatest();
+const triageBoard = new DefectTriageBoard();
+const actionItem = triageBoard.evaluate(newDefect, {
+  businessImpact: "High",
+  systemVulnerability: "Critical",
+  workaroundAvailable: "No"
+});
+expect(actionItem.action).toBe('ASSIGN_IMMEDIATE_HOTFIX');`
+      },
+      readiness: {
+        title: "Release Readiness",
+        subtitle: "Go/No-Go Gate Certification",
+        team: "Presents Final Release Quality Summary report to executive leadership.",
+        ai: "AI Risk Engine predicts post-release defect leakage based on test coverage gaps.",
+        metric: "Defect Leakage Reduction: 35% | Quality Gates Passed: 6/6",
+        code: `// Release Sign-off Verification:
+const releaseGate = new ReleaseGateKeeper('V3.4');
+const metrics = {
+  defectLeakage: 0.024,
+  testCoverage: 0.88,
+  regressionPassRate: 0.99
+};
+expect(releaseGate.isReadyForProduction(metrics)).toBe(true);`
+      },
+      monitoring: {
+        title: "Production Monitoring",
+        subtitle: "Post-Deployment Synthetic Smoke Testing",
+        team: "Maintains production smoke suites and alerts operations on performance regressions.",
+        ai: "Anomaly detection engine monitors API latency spikes in real-time.",
+        metric: "Production Defect Leakage: < 2.5% | Smoke Suite SLA: 100% Green",
+        code: `// Synthetic Production Monitoring Suite:
+const prodEndpoint = 'https://api.enterprise.gov/claims';
+const latency = await ping.measure(prodEndpoint);
+const status = await api.get(prodEndpoint + '/health');
+
+expect(status.statusCode).toBe(200);
+expect(latency).toBeLessThan(180); // Ensure latency stays under 180ms SLA`
       }
-    });
+    };
 
-    window.addEventListener('resize', positionRadarNodes);
+    const qeTimeline = document.getElementById('qe-stlc-timeline');
+    const qePhaseTitle = document.getElementById('qe-phase-title');
+    const qePhaseSubtitle = document.getElementById('qe-phase-subtitle');
+    const qeStatMetric = document.getElementById('qe-stat-metric');
+    const qeStatTeam = document.getElementById('qe-stat-team');
+    const qeStatAi = document.getElementById('qe-stat-ai');
+    const qeCodeBlock = document.getElementById('qe-code-block');
 
-    // Initialize radar on window load
-    window.addEventListener('DOMContentLoaded', () => {
-      drawRadarTimeline();
-    });
+    const qePhaseIcons = {
+      requirements: "📋", risk: "⚠️", strategy: "🗺️", planning: "📅",
+      design: "✍️", execution: "🚀", validation: "🛡️", uat: "👥",
+      triage: "🐞", readiness: "🏁", monitoring: "📡"
+    };
+
+    function renderQETimeline() {
+      if (!qeTimeline) return;
+      qeTimeline.innerHTML = "";
+      Object.keys(qeData).forEach((key, index) => {
+        const node = document.createElement('button');
+        node.className = `qe-timeline-node ${index === 0 ? 'active' : ''}`;
+        node.id = `qe-node-${key}`;
+        node.innerHTML = `
+          <span>${qePhaseIcons[key]}</span>
+          <span class="node-dot"></span>
+          <span>${qeData[key].title}</span>
+        `;
+        node.addEventListener('click', () => selectQEPhase(key));
+        qeTimeline.appendChild(node);
+      });
+      // Register in fade-up observer
+      document.querySelectorAll('.qe-timeline-node').forEach(el => observer.observe(el));
+      selectQEPhase('requirements');
+    }
+
+    function selectQEPhase(key) {
+      document.querySelectorAll('.qe-timeline-node').forEach(node => {
+        node.classList.remove('active');
+      });
+      const activeNode = document.getElementById(`qe-node-${key}`);
+      if (activeNode) activeNode.classList.add('active');
+
+      const data = qeData[key];
+      if (qePhaseTitle) qePhaseTitle.textContent = data.title;
+      if (qePhaseSubtitle) qePhaseSubtitle.textContent = data.subtitle;
+      if (qeStatMetric) qeStatMetric.textContent = data.metric;
+      if (qeStatTeam) qeStatTeam.textContent = data.team;
+      if (qeStatAi) qeStatAi.textContent = data.ai;
+      if (qeCodeBlock) qeCodeBlock.textContent = data.code;
+    }
+
+    renderQETimeline();
   </script>
 </body>
 

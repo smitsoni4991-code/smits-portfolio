@@ -237,12 +237,30 @@ nav.scrolled {
 }
 .stat-label { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; margin-top: 0.25rem; }
 
-/* ─── Risk Regression Simulator (Approach K) ─── */
-.risk-card { margin-top: 2rem; padding: 2.5rem; background: rgba(5, 8, 15, 0.85); border: 1px solid rgba(255,255,255,0.05); border-radius: 1.5rem; }
+/* ─── Flow Generator Simulator (Approach L) ─── */
+.flow-card { margin-top: 2rem; padding: 2.5rem; background: rgba(5, 8, 15, 0.85); border: 1px solid rgba(255,255,255,0.05); border-radius: 1.5rem; }
+
+/* Selector Tabs */
+.flow-header { 
+  display: flex; justify-content: space-between; align-items: center; 
+  margin-bottom: 2rem; padding-bottom: 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.flow-selector-group { display: flex; gap: 1rem; }
+.flow-select-btn { 
+  padding: 0.75rem 1.5rem; font-size: 0.75rem; font-weight: 800; border-radius: 0.5rem; 
+  cursor: pointer; border: 1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.02); color: var(--text-muted); 
+  display: flex; align-items: center; gap: 0.5rem; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.flow-select-btn:hover { background: rgba(255,255,255,0.04); color: #fff; }
+.flow-select-btn.active { 
+  background: rgba(253, 224, 71, 0.04); border-color: rgba(253, 224, 71, 0.3); color: var(--accent-gold);
+  box-shadow: 0 0 15px rgba(253, 224, 71, 0.08); 
+}
+.flow-compile-status { font-size: 0.65rem; color: var(--text-muted); letter-spacing: 0.05em; }
 
 /* Grid Layout */
-.risk-grid { display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 2rem; }
-.risk-panel { 
+.flow-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2rem; }
+.flow-panel { 
   background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255,255,255,0.03); 
   border-radius: 1rem; padding: 1.5rem; display: flex; flex-direction: column;
 }
@@ -251,85 +269,63 @@ nav.scrolled {
   letter-spacing: 0.1em; margin-bottom: 1.5rem; text-transform: uppercase; 
 }
 
-/* Panel 1: Component Grid */
-.component-matrix-grid { display: grid; grid-template-columns: 1fr; gap: 0.75rem; flex: 1; }
-.component-node { 
-  display: flex; align-items: center; gap: 1rem; padding: 1rem; 
+/* Panel 1: Flow Canvas Viewport */
+.canvas-viewport { 
+  flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 0.75rem;
+  background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.02); border-radius: 0.75rem; padding: 2rem;
+}
+.flow-canvas-node { 
+  display: flex; align-items: center; gap: 1rem; padding: 0.75rem 1.25rem; width: 100%; max-width: 320px;
+  background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.03); border-radius: 0.75rem; 
+  cursor: pointer; opacity: 0; transform: translateY(10px); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.flow-canvas-node.drawn { opacity: 0.7; transform: translateY(0); }
+.flow-canvas-node.drawn:hover { opacity: 1; background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.1); }
+.flow-canvas-node.drawn.selected { 
+  opacity: 1; background: rgba(253, 224, 71, 0.04); border-color: rgba(253, 224, 71, 0.4); 
+  box-shadow: 0 0 15px rgba(253, 224, 71, 0.08); transform: scale(1.03);
+}
+.fcn-icon { font-size: 1.1rem; color: var(--text-muted); }
+.flow-canvas-node.selected .fcn-icon { color: var(--accent-gold); }
+
+.fcn-meta { display: flex; flex-direction: column; gap: 0.2rem; }
+.fcn-tier { font-size: 0.5rem; font-weight: 900; color: var(--text-muted); letter-spacing: 0.05em; text-transform: uppercase; }
+.fcn-name { font-size: 0.75rem; font-weight: 700; color: #fff; }
+
+.flow-canvas-connector { 
+  font-size: 0.75rem; color: var(--text-muted); opacity: 0; transition: opacity 0.3s; transform: rotate(90deg);
+}
+.flow-canvas-connector.drawn { opacity: 0.4; }
+
+/* Panel 2: Diagnostics Dashboard */
+.diag-detail-box { flex: 1; display: flex; flex-direction: column; gap: 1.25rem; }
+.diag-node-title { font-size: 0.95rem; font-weight: 800; color: #fff; margin: 0; }
+
+.diag-telemetry-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.dtr-stat { 
   background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.03); 
-  border-radius: 0.75rem; color: #fff; cursor: pointer; text-align: left; 
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0.75rem 1rem; border-radius: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;
 }
-.component-node:hover { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.1); }
-.component-node.active { 
-  background: rgba(253, 224, 71, 0.04); border-color: rgba(253, 224, 71, 0.3); 
-  box-shadow: 0 0 15px rgba(253, 224, 71, 0.08); 
-}
-.node-icon { font-size: 1.1rem; }
-.node-name { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); transition: color 0.3s; }
-.component-node.active .node-name { color: var(--accent-gold); }
+.dtr-lbl { font-size: 0.5rem; font-weight: 900; color: var(--text-muted); letter-spacing: 0.05em; }
+.dtr-stat strong { font-size: 0.8rem; font-weight: 800; font-family: 'JetBrains Mono', monospace; }
 
-/* Panel 2: Impact Tree Map */
-.impact-map-container { 
-  flex: 1; display: flex; flex-direction: column; align-items: center; 
-  justify-content: center; background: rgba(255,255,255,0.01); 
-  border-radius: 0.75rem; padding: 1.5rem; border: 1px solid rgba(255,255,255,0.02);
+.diag-code-box { 
+  background: #030306; border: 1px solid rgba(255,255,255,0.05); 
+  border-radius: 0.5rem; padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem;
 }
-.impact-node { 
-  font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 700;
-  padding: 0.75rem 1.25rem; border-radius: 0.5rem; text-align: center;
-  transition: all 0.4s;
-}
-.impact-node.main { 
-  background: rgba(253, 224, 71, 0.08); border: 1px solid var(--accent-gold); 
-  color: var(--accent-gold); font-size: 0.75rem;
-  box-shadow: 0 0 15px rgba(253, 224, 71, 0.1);
-}
-.impact-connector { font-size: 0.8rem; color: var(--text-muted); margin: 0.75rem 0; font-weight: bold; }
-.impact-sub-grid { display: flex; gap: 1rem; width: 100%; justify-content: center; margin-bottom: 1.25rem; }
-.impact-node.sub { 
-  background: rgba(239, 68, 68, 0.08); border: 1px solid #EF4444; 
-  color: #EF4444; flex: 1; max-width: 140px;
-}
-.impact-alert { 
-  width: 100%; text-align: center; font-size: 0.65rem; font-weight: 800;
-  color: #F59E0B; background: rgba(245, 158, 11, 0.06); 
-  border: 1px solid rgba(245, 158, 11, 0.2); border-radius: 0.4rem; padding: 0.6rem;
-}
+.dcb-lbl { font-size: 0.55rem; font-weight: 900; color: var(--text-muted); letter-spacing: 0.05em; text-transform: uppercase; }
+.dcb-code { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; line-height: 1.45; color: #fff; margin: 0; white-space: pre-wrap; overflow-x: auto; }
 
-/* Panel 3: Governance Dashboard */
-.gov-metrics-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
-.gov-stat-item { 
+.diag-brief-box { 
   background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.03); 
-  padding: 1rem; border-radius: 0.75rem; display: flex; flex-direction: column; gap: 0.35rem;
+  padding: 1rem; border-radius: 0.5rem; display: flex; flex-direction: column; gap: 0.4rem;
 }
-.gsi-label { font-size: 0.5rem; font-weight: 900; color: var(--text-muted); letter-spacing: 0.05em; }
-.gsi-val { font-size: 0.9rem; font-weight: 900; font-family: 'JetBrains Mono', monospace; }
-.gsi-val.risk-critical { color: #EF4444; }
-.gsi-val.risk-high { color: #F59E0B; }
-.gsi-val.risk-medium { color: #3B82F6; }
-.gsi-val.risk-low { color: #10B981; }
-
-.gov-detail-box { 
-  background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.03); 
-  padding: 1.25rem; border-radius: 0.75rem; margin-bottom: 1.5rem; flex: 1;
-}
-.gdb-label { font-size: 0.55rem; font-weight: 900; color: var(--text-muted); letter-spacing: 0.05em; margin-bottom: 0.65rem; text-transform: uppercase; }
-.gdb-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.25rem; }
-.scope-tag { 
-  font-size: 0.55rem; font-weight: 800; padding: 0.3rem 0.6rem; border-radius: 0.3rem; 
-  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.05); color: #fff;
-}
-.gdb-brief { font-size: 0.72rem; color: #fff; line-height: 1.5; font-weight: 500; min-height: 70px; margin: 0; }
-
-.gov-release-gauge { 
-  border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1rem; 
-  display: flex; justify-content: space-between; align-items: center;
-}
-.grg-label { font-size: 0.55rem; font-weight: 900; color: var(--text-muted); letter-spacing: 0.05em; }
-.grg-val { font-size: 1.2rem; font-weight: 900; color: var(--accent-gold); font-family: 'JetBrains Mono', monospace; }
+.dbb-lbl { font-size: 0.55rem; font-weight: 900; color: var(--text-muted); letter-spacing: 0.05em; text-transform: uppercase; }
+.dbb-desc { font-size: 0.72rem; color: #fff; line-height: 1.5; font-weight: 500; margin: 0; min-height: 50px; }
 
 @media (max-width: 1024px) {
-  .risk-grid { grid-template-columns: 1fr; }
+  .flow-grid { grid-template-columns: 1fr; }
+  .flow-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
 }
 
 /* ─── Section Styles ─── */

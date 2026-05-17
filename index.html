@@ -66,94 +66,72 @@
     </div>
   </section>
 
-  <!-- ─── Approach K: AI Risk-Weighted Regression Simulator ─── -->
-  <section id="risk-simulator" class="container">
+  <!-- ─── Approach L: Autonomous Test Flow Generator ─── -->
+  <section id="flow-generator" class="container">
     <div class="exec-header fade-up">
-      <span class="section-label">PREDICTIVE GOVERNANCE</span>
-      <h2 class="exec-title">AI Risk-Weighted Regression Simulator</h2>
-      <p class="exec-subtitle">Interact with Smit's dependency mapping engine. Commit changes to high-churn modules to witness targeted test selection, automated risk containment, and release confidence scoring.</p>
+      <span class="section-label">AUTONOMOUS FLOW MAPPING</span>
+      <h2 class="exec-title">Autonomous Test Flow Generator</h2>
+      <p class="exec-subtitle">Select an enterprise user journey. Watch Smit's local Llama engine dynamically compile end-to-end quality structures across UI, API, Database, and Regulatory layers.</p>
     </div>
 
-    <div class="risk-card glass-card fade-up">
-      <div class="risk-grid">
-        <!-- Panel 1: Interactive Component Matrix -->
-        <div class="risk-panel matrix-column">
-          <div class="panel-tag">21+ ENTERPRISE COMPONENTS</div>
-          <div class="component-matrix-grid">
-            <button class="component-node active" data-component="eligibility">
-              <span class="node-icon">👤</span>
-              <span class="node-name">Medicaid UI Portal</span>
-            </button>
-            <button class="component-node" data-component="billing">
-              <span class="node-icon">💳</span>
-              <span class="node-name">Billing Engine</span>
-            </button>
-            <button class="component-node" data-component="snapapi">
-              <span class="node-icon">🔌</span>
-              <span class="node-name">SNAP API Gateway</span>
-            </button>
-            <button class="component-node" data-component="awsdb">
-              <span class="node-icon">🗄️</span>
-              <span class="node-name">AWS SQL Database</span>
-            </button>
-            <button class="component-node" data-component="identity">
-              <span class="node-icon">🔒</span>
-              <span class="node-name">Auth Manager</span>
-            </button>
-            <button class="component-node" data-component="notifications">
-              <span class="node-icon">✉️</span>
-              <span class="node-name">Notification Hub</span>
-            </button>
+    <div class="flow-card glass-card fade-up">
+      <!-- Top controls -->
+      <div class="flow-header">
+        <div class="flow-selector-group">
+          <button class="flow-select-btn active" data-journey="snap">
+            <span>🌾</span> SNAP Eligibility Journey
+          </button>
+          <button class="flow-select-btn" data-journey="billing">
+            <span>💳</span> Billing Settlement
+          </button>
+          <button class="flow-select-btn" data-journey="auth">
+            <span>🔒</span> Identity & Access Gate
+          </button>
+        </div>
+        <div class="flow-compile-status">
+          ENGINE: <strong class="text-gold">Hybrid-RAG-QA</strong>
+        </div>
+      </div>
+
+      <div class="flow-grid">
+        <!-- Panel 1: Live Interactive Node Canvas -->
+        <div class="flow-panel canvas-column">
+          <div class="panel-tag">AUTONOMOUS QUALITY MAP CANVAS</div>
+          <div class="canvas-viewport" id="flow-canvas-nodes">
+            <!-- Dynamic Nodes Rendered Here -->
           </div>
         </div>
 
-        <!-- Panel 2: Live Dependency Impact Map -->
-        <div class="risk-panel impact-column">
-          <div class="panel-tag">AI IMPACT PROPAGATION</div>
-          <div class="impact-map-container">
-            <div class="impact-node main" id="impact-root">Medicaid UI Portal</div>
-            <div class="impact-connector">▼</div>
-            <div class="impact-sub-grid">
-              <div class="impact-node sub" id="node-dep1">SNAP API Gateway</div>
-              <div class="impact-node sub" id="node-dep2">AWS SQL Database</div>
-            </div>
-            <div class="impact-alert" id="impact-warning-box">
-              AI Scan: 2 downstream dependencies impacted.
-            </div>
-          </div>
-        </div>
-
-        <!-- Panel 3: Executive Governance Dashboard -->
-        <div class="risk-panel dashboard-column">
-          <div class="panel-tag">EXECUTIVE QUALITY GOVERNANCE</div>
-          <div class="gov-metrics-panel">
-            <div class="gov-stat-item">
-              <span class="gsi-label">RISK FACTOR</span>
-              <span id="gov-risk" class="gsi-val risk-critical">CRITICAL</span>
-            </div>
-            <div class="gov-stat-item">
-              <span class="gsi-label">TEST RUN-TIME OPTIMIZATION</span>
-              <span id="gov-savings" class="gsi-val text-gold">SAVED 65%</span>
-            </div>
-          </div>
-
-          <div class="gov-detail-box">
-            <div class="gdb-label">TARGET REGRESSION SCOPE</div>
-            <div class="gdb-tags" id="gov-scope-tags">
-              <span class="scope-tag">Playwright E2E</span>
-              <span class="scope-tag">API Contract Gate</span>
-              <span class="scope-tag">Access validation</span>
+        <!-- Panel 2: Technical Node Diagnostics -->
+        <div class="flow-panel diagnostic-column">
+          <div class="panel-tag">INTEGRATION DIAGNOSTICS</div>
+          <div class="diag-detail-box">
+            <h4 class="diag-node-title" id="diag-flow-title">Select a node to inspect</h4>
+            
+            <div class="diag-telemetry-row">
+              <div class="dtr-stat">
+                <span class="dtr-lbl">VALIDATION METRIC</span>
+                <strong id="diag-flow-metric" class="text-gold">--</strong>
+              </div>
+              <div class="dtr-stat">
+                <span class="dtr-lbl">TEST TIER</span>
+                <strong id="diag-flow-tier" class="text-gold">--</strong>
+              </div>
             </div>
 
-            <div class="gdb-label">AI MITIGATION BRIEF</div>
-            <p class="gdb-brief" id="gov-brief-text">
-              UI components hold critical customer validation structures. AI deployed 21 target accessibility and full-scale end-to-end verification suites to contain upstream code churn.
-            </p>
-          </div>
+            <div class="diag-code-box">
+              <span class="dcb-lbl">TECHNICAL ASSIGNMENT</span>
+              <pre class="dcb-code" id="diag-flow-code">
+<span class="text-muted">// Select a flowchart node...</span>
+              </pre>
+            </div>
 
-          <div class="gov-release-gauge">
-            <span class="grg-label">FINAL RELEASE CONFIDENCE</span>
-            <span id="gov-confidence" class="grg-val">99.5%</span>
+            <div class="diag-brief-box">
+              <span class="dbb-lbl">STRATEGIC ROI BRIEF</span>
+              <p class="dbb-desc" id="diag-flow-brief">
+                Select any visual flowchart node in the canvas to inspect Smit's targeted automated assertions, compliance validation scripts, and engineering impact.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -645,158 +623,220 @@
       });
     });
 
-    // Risk Simulator Data Mapping
-    const riskData = {
-      eligibility: {
-        name: "Medicaid UI Portal",
-        risk: "CRITICAL",
-        riskClass: "risk-critical",
-        savings: "SAVED 65%",
-        scope: ["Playwright E2E", "Accessibility audit", "Cross-Browser Gateway"],
-        brief: "UI components hold critical eligibility verification routes. The AI deployed target visual regression, structural accessibility checks, and cross-browser execution suites, skipping backend database testing to optimize coverage.",
-        confidence: "99.5%",
-        deps: ["SNAP API Gateway", "AWS SQL Database"],
-        warning: "AI Scan: 2 core gateway dependencies impacted."
-      },
-      billing: {
-        name: "Billing Engine",
-        risk: "HIGH",
-        riskClass: "risk-high",
-        savings: "SAVED 78%",
-        scope: ["SQL Integrity Suite", "API Contract Validator", "AWS Security Scan"],
-        brief: "Financial calculations and ledger records require high database stability. The AI bypassed UI testing entirely, executing transaction-path SQL validations and schema-drift assertions to assure 100% processing accuracy.",
-        confidence: "99.8%",
-        deps: ["AWS SQL Database"],
-        warning: "AI Scan: 1 database dependency impacted."
-      },
-      snapapi: {
-        name: "SNAP API Gateway",
-        risk: "HIGH",
-        riskClass: "risk-high",
-        savings: "SAVED 82%",
-        scope: ["REST Mock Runner", "Payload Scheme Guard", "Performance Test Suite"],
-        brief: "High-volume data parsing gateway. AI targeting checked contract schema consistency, payload boundaries, and high-frequency stress telemetry. Playwright UI gates bypassed.",
-        confidence: "99.9%",
-        deps: ["AWS SQL Database", "Notification Hub"],
-        warning: "AI Scan: 2 dependent microservices impacted."
-      },
-      awsdb: {
-        name: "AWS SQL Database",
-        risk: "CRITICAL",
-        riskClass: "risk-critical",
-        savings: "SAVED 50%",
-        scope: ["Database Schema Guard", "SQL Eligibility Check", "AWS Encryption Validator"],
-        brief: "Central storage of active claims data. Smit's framework prioritized data-tier integrity testing, ensuring zero records divergence while skipping interface layer scripts.",
-        confidence: "100%",
-        deps: [],
-        warning: "AI Scan: Database tier change - Direct system impact contained."
-      },
-      identity: {
-        name: "Auth Manager",
-        risk: "MEDIUM",
-        riskClass: "risk-medium",
-        savings: "SAVED 90%",
-        scope: ["OAuth token validator", "AWS IAM Scanner"],
-        brief: "Enterprise verification tier. Security regression maps target OAuth structure stability, access control barriers, and API endpoint verification. Standard regression skipped.",
-        confidence: "100%",
-        deps: ["SNAP API Gateway"],
-        warning: "AI Scan: 1 security authorization gateway impacted."
-      },
-      notifications: {
-        name: "Notification Hub",
-        risk: "LOW",
-        riskClass: "risk-low",
-        savings: "SAVED 95%",
-        scope: ["SMTP Mock Checker", "SQS Queue Listener"],
-        brief: "Asynchronous communication layers. Tested via SQS payload listeners and mock email validation gates. Saved 95% of suite execution costs by skipping all main pipelines.",
-        confidence: "100%",
-        deps: [],
-        warning: "AI Scan: Low risk utility change - Local validation complete."
-      }
+    // Flow Generator Interactive Logic: Approach L
+    const flowSelectorBtns = document.querySelectorAll('.flow-select-btn');
+    const canvasViewport = document.getElementById('flow-canvas-nodes');
+    const diagTitle = document.getElementById('diag-flow-title');
+    const diagMetric = document.getElementById('diag-flow-metric');
+    const diagTier = document.getElementById('diag-flow-tier');
+    const diagCode = document.getElementById('diag-flow-code');
+    const diagBrief = document.getElementById('diag-flow-brief');
+
+    const flowData = {
+      snap: [
+        {
+          id: "snap-prd", name: "PRD Policy Parser", tier: "Requirements", metric: "100% Policy Traceability",
+          brief: "Smit's compliance scanning engine parses complex SNAP policy rules (e.g. income caps vs household size) and generates structured test models directly from regulatory manuals.",
+          code: `// AI Requirement Tracing:
+const rule = MedicaidPolicyDB.getRule('SNAP-Income-Limit');
+expect(rule.maxGrossIncome('HouseholdSize: 4')).toBe(3003); // HIPAA compliant`
+        },
+        {
+          id: "snap-ui", name: "Playwright UI Gate", tier: "Frontend E2E", metric: "Self-Healed (Zero Maintenance)",
+          brief: "Simulates full end-to-end SNAP benefit applications, processing UI validation, dynamic selectors, and client portal responsiveness across various responsive design viewports.",
+          code: `// Playwright Self-Healing Selector:
+await page.locator('.btn-eligible-submit').click();
+await expect(page.locator('#success-badge')).toBeVisible();`
+        },
+        {
+          id: "snap-api", name: "Eligibility API Gate", tier: "Integration Tier", metric: "99.99% Contract Match",
+          brief: "Smit executes JSON contract matching, stress testing eligibility endpoints running inside secure AWS API Gateways, ensuring correct application schema serialization.",
+          code: `// API Schema Validation:
+const response = await request.post('/api/snap/eligibility', { data: applicant });
+expect(response.status()).toBe(200);
+expect(response.json()).toMatchSchema(snapEligibilitySchema);`
+        },
+        {
+          id: "snap-db", name: "AWS SQL Claim Assert", tier: "Database Layer", metric: "Zero Records Divergence",
+          brief: "Direct database layer verification. Checks system state logic inside secure RDS databases, verifying claims logs are correctly updated in accordance with the transaction logs.",
+          code: `// SQL Verification Query:
+const records = await db.query(
+  'SELECT status FROM snap_claims WHERE applicant_id = ?', 
+  [applicantId]
+);
+expect(records[0].status).toBe('ELIGIBLE_APPROVED');`
+        },
+        {
+          id: "snap-compliance", name: "UAT Sign-off Gateway", tier: "User Acceptance", metric: "Zero Production Leakage",
+          brief: "Governance gatekeeping. Organizes regulatory stakeholder validations for state eligibility releases, establishing full trace verification with absolute UAT sovereignty.",
+          code: `// UAT Telemetry Matrix:
+const complianceScore = await complianceEngine.assessRelease('SNAP-v2.0');
+expect(complianceScore.hasPassedAllGates()).toBe(true);
+console.log('ROI Generated: $154K Saved');`
+        }
+      ],
+      billing: [
+        {
+          id: "bill-rules", name: "Transaction Parser", tier: "Business Rules", metric: "100% Logic Match",
+          brief: "Scans claim processing logs to capture complex transaction fees and payment calculations, mapping them to financial rules before testing starts.",
+          code: `// Rule Mapping:
+const feeRule = BillingMatrix.getRule('ClaimProcessingFee');
+expect(feeRule.calculateFee(5000)).toBe(12.50);`
+        },
+        {
+          id: "bill-api", name: "Ledger API Assert", tier: "Integration Tier", metric: "0.2ms Latency Guarantee",
+          brief: "Verifies double-entry ledger postings against the banking backend API, ensuring correct accounts are credited/debited securely.",
+          code: `// Ledger API Contract Check:
+const ledgerResult = await bankApi.postTransaction(transactionPayload);
+expect(ledgerResult.ledgerStatus).toBe('BALANCED_POSTED');`
+        },
+        {
+          id: "bill-db", name: "DB Transaction Rollback", tier: "Database Layer", metric: "ACID Compliant",
+          brief: "Tests transaction rollback performance under severe simulated server failure, ensuring zero database data corruption.",
+          code: `// Database Rollback Test:
+await db.beginTransaction();
+await db.execute('UPDATE accounts SET balance = balance - 100');
+// Simulated error triggers rollback
+await db.rollback();
+const balance = await db.getBalance(accountId);
+expect(balance).toBe(originalBalance);`
+        },
+        {
+          id: "bill-report", name: "Tableau Automation", tier: "Analytics Verification", metric: "Zero Reporting Outliers",
+          brief: "Automated verification of reporting pipelines. Uses database triggers to verify that Tableau visual dashboards accurately reflect the backend transactional state.",
+          code: `// Tableau Data Matcher:
+const tableauData = await tableauConnector.fetchDashboardData('Executive-Billing');
+const rawDbData = await db.query('SELECT SUM(amount) FROM transactions');
+expect(tableauData.totalVolume).toBe(rawDbData[0].sum);`
+        }
+      ],
+      auth: [
+        {
+          id: "auth-jwt", name: "OAuth JWT Validator", tier: "Identity Gate", metric: "Zero Session Vulnerability",
+          brief: "Validates JSON Web Token signature verification, key expiration structures, and security scopes inside token payloads.",
+          code: `// JWT Security Test:
+const token = jwt.sign({ scope: 'medicaid:write' }, secret, { expiresIn: '1s' });
+await sleep(1050); // wait for expiry
+expect(authEngine.validate(token)).toThrow('TokenExpiredError');`
+        },
+        {
+          id: "auth-iam", name: "AWS IAM Restriction Scanner", tier: "Infrastructure Gate", metric: "HIPAA Compliant Roles",
+          brief: "Ensures secure cloud boundary containment by scanning AWS IAM roles, validating that test systems cannot write to production database instances.",
+          code: `// IAM Restriction Sweep:
+const executionRole = aws.getIAMRole('QA-Automation-Executor');
+expect(executionRole.canWriteToBucket('prod-medicaid-claims')).toBe(false);`
+        },
+        {
+          id: "auth-rate", name: "API Rate-Limit Simulator", tier: "Load Gateway", metric: "Rate Limiting Enforced",
+          brief: "Simulates distributed Denial of Service (DDoS) requests against critical API gateways, verifying that rate limiting instantly redirects excess traffic.",
+          code: `// API Rate-Limit verification:
+const requests = Array(150).fill().map(() => api.get('/auth/status'));
+const responses = await Promise.all(requests);
+const rateLimitedCount = responses.filter(r => r.status === 429).length;
+expect(rateLimitedCount).toBeGreaterThan(50);`
+        }
+      ]
     };
 
-    const compNodes = document.querySelectorAll('.component-node');
-    const impactRoot = document.getElementById('impact-root');
-    const nodeDep1 = document.getElementById('node-dep1');
-    const nodeDep2 = document.getElementById('node-dep2');
-    const warningBox = document.getElementById('impact-warning-box');
-    const govRisk = document.getElementById('gov-risk');
-    const govSavings = document.getElementById('gov-savings');
-    const govScopeTags = document.getElementById('gov-scope-tags');
-    const govBriefText = document.getElementById('gov-brief-text');
-    const govConfidence = document.getElementById('gov-confidence');
+    let activeJourney = "snap";
 
-    function updateRiskSimulator(componentKey) {
-      const data = riskData[componentKey];
+    function drawJourneyNodes(journeyKey) {
+      canvasViewport.innerHTML = "";
+      const nodes = flowData[journeyKey];
       
-      // Update nodes
-      compNodes.forEach(node => {
-        node.classList.toggle('active', node.dataset.component === componentKey);
-      });
+      nodes.forEach((node, index) => {
+        // Draw connector if not first
+        if (index > 0) {
+          const connector = document.createElement('div');
+          connector.className = 'flow-canvas-connector';
+          connector.textContent = "➔";
+          canvasViewport.appendChild(connector);
+        }
 
-      // Update Impact Tree
-      impactRoot.textContent = data.name;
-      
-      // Reset dependencies
-      nodeDep1.style.display = 'none';
-      nodeDep2.style.display = 'none';
-      
-      if (data.deps.length > 0) {
-        nodeDep1.style.display = 'block';
-        nodeDep1.textContent = data.deps[0];
+        // Draw node
+        const nodeEl = document.createElement('div');
+        nodeEl.className = 'flow-canvas-node';
+        nodeEl.id = node.id;
+        nodeEl.dataset.index = index;
         
-        if (data.deps[1]) {
-          nodeDep2.style.display = 'block';
-          nodeDep2.textContent = data.deps[1];
-        }
-      }
-      
-      warningBox.textContent = data.warning;
+        nodeEl.innerHTML = `
+          <div class="fcn-icon">⚙️</div>
+          <div class="fcn-meta">
+            <span class="fcn-tier">${node.tier}</span>
+            <span class="fcn-name">${node.name}</span>
+          </div>
+        `;
 
-      // Update Executive Panel
-      govRisk.textContent = data.risk;
-      govRisk.className = `gsi-val ${data.riskClass}`;
-      govSavings.textContent = data.savings;
-      govConfidence.textContent = data.confidence;
+        nodeEl.addEventListener('click', () => {
+          selectFlowNode(journeyKey, index);
+        });
 
-      // Update Tags
-      govScopeTags.innerHTML = '';
-      data.scope.forEach(tag => {
-        const span = document.createElement('span');
-        span.className = 'scope-tag';
-        span.textContent = tag;
-        govScopeTags.appendChild(span);
+        canvasViewport.appendChild(nodeEl);
       });
 
-      // Update Brief (Typewriter Effect)
-      govBriefText.innerHTML = '';
-      let i = 0;
-      function typeBrief() {
-        if (i < data.brief.length) {
-          govBriefText.innerHTML += data.brief.charAt(i);
-          i++;
-          setTimeout(typeBrief, 12);
+      // Step-by-step draw animation
+      const flowNodes = document.querySelectorAll('.flow-canvas-node');
+      const flowConnectors = document.querySelectorAll('.flow-canvas-connector');
+      
+      flowNodes.forEach(n => n.classList.remove('drawn', 'selected'));
+      flowConnectors.forEach(c => c.classList.remove('drawn'));
+
+      let current = 0;
+      function animateNode() {
+        if (current < flowNodes.length) {
+          flowNodes[current].classList.add('drawn');
+          if (current > 0) {
+            flowConnectors[current - 1].classList.add('drawn');
+          }
+          current++;
+          setTimeout(animateNode, 200);
+        } else {
+          // Select first node by default once rendering finishes
+          selectFlowNode(journeyKey, 0);
         }
       }
-      typeBrief();
+      animateNode();
     }
 
-    compNodes.forEach(node => {
-      node.addEventListener('click', () => {
-        updateRiskSimulator(node.dataset.component);
+    function selectFlowNode(journeyKey, index) {
+      const nodes = flowData[journeyKey];
+      const node = nodes[index];
+      const flowNodes = document.querySelectorAll('.flow-canvas-node');
+      
+      flowNodes.forEach((n, idx) => {
+        n.classList.toggle('selected', idx === index);
+      });
+
+      // Update Diagnostics
+      diagTitle.textContent = node.name;
+      diagMetric.textContent = node.metric;
+      diagTier.textContent = node.tier;
+      diagBrief.textContent = node.brief;
+      
+      // Update Code
+      diagCode.textContent = node.code;
+    }
+
+    flowSelectorBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        flowSelectorBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeJourney = btn.dataset.journey;
+        drawJourneyNodes(activeJourney);
       });
     });
 
-    // Auto-cycle simulation
-    let riskKeys = Object.keys(riskData);
-    let riskIdx = 0;
+    // Auto-cycle journeys
+    let journeyKeys = Object.keys(flowData);
+    let journeyIdx = 0;
     setInterval(() => {
-      if (document.querySelector('.component-node:hover')) return; // Pause on hover
-      riskIdx = (riskIdx + 1) % riskKeys.length;
-      updateRiskSimulator(riskKeys[riskIdx]);
-    }, 12000);
+      if (document.querySelector('.flow-card:hover')) return; // Pause on hover
+      journeyIdx = (journeyIdx + 1) % journeyKeys.length;
+      const targetBtn = document.querySelector(`.flow-select-btn[data-journey="${journeyKeys[journeyIdx]}"]`);
+      if (targetBtn) targetBtn.click();
+    }, 15000);
 
-    updateRiskSimulator('eligibility'); // Initialize
+    drawJourneyNodes('snap'); // Initialize
   </script>
 </body>
 

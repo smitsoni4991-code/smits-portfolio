@@ -111,11 +111,18 @@
         </div>
       </div>
 
-      <!-- Middle: AI Intelligence Briefing -->
+      <!-- Middle: AI Intelligence Briefing with Local Telemetry -->
       <div class="hud-briefing">
         <div class="briefing-header">
-          <span class="pulse-dot"></span>
-          <span class="briefing-title">AI ADVISOR BRIEFING</span>
+          <div class="header-left">
+            <span class="pulse-dot"></span>
+            <span class="briefing-title">AI ADVISOR BRIEFING</span>
+          </div>
+          <div class="telemetry-bar">
+            <span class="telemetry-tag">MODEL: <strong id="tel-model">Llama-3-QA-70B</strong></span>
+            <span class="telemetry-tag">AGENT: <strong id="tel-agent">Ambiguity Parser</strong></span>
+            <span class="telemetry-tag">SECURITY: <strong id="tel-security">LOCAL / SECURE</strong></span>
+          </div>
         </div>
         <div id="briefing-text" class="briefing-content">
           Analyzing Medicaid ecosystem... Quality gates are OPTIMIZED. Release readiness confirmed at 99.8%.
@@ -625,42 +632,51 @@
       });
     });
 
-    // Leadership HUD Logic: High-Authority Professional Data
+    // Leadership HUD Logic: High-Authority Professional Data with Llama-3 Local Engine
     const hudData = {
       requirements: { 
         v: 85, s: 94, r: "$22K", offsetV: 42, offsetS: 17, offsetR: 150,
+        model: "Llama-3-QA-70B", agent: "Ambiguity Parser v2.1", security: "SECURE LOCAL / HIPAA",
         brief: "Strategic Traceability: Smit implemented AI-driven requirement analysis for Medicaid/SNAP modules, identifying 12 core ambiguity gaps and preventing $22K in upstream rework costs."
       },
       risk: { 
         v: 88, s: 96, r: "$45K", offsetV: 34, offsetS: 11, offsetR: 120,
+        model: "Llama-3-QA-70B", agent: "Risk Severity Modeler", security: "SECURE LOCAL / HIPAA",
         brief: "Component Governance: Smit is modeling risk across 21+ enterprise components, prioritizing testing efforts based on code churn and business impact for the Billing ecosystem."
       },
       strategy: { 
         v: 92, s: 97, r: "$80K", offsetV: 22, offsetS: 8, offsetR: 90,
+        model: "Llama-3-QA-70B", agent: "STLC Roadmap Planner", security: "SECURE LOCAL / HIPAA",
         brief: "Stakeholder Alignment: Smit successfully orchestrated the global quality roadmap, aligning 12+ cross-functional stakeholders and ensuring 100% compliance with enterprise release gates."
       },
       design: { 
         v: 98, s: 98, r: "$110K", offsetV: 5, offsetS: 5, offsetR: 70,
+        model: "Llama-3-QA-70B", agent: "Playwright Code Synthesizer", security: "SECURE LOCAL / HIPAA",
         brief: "Automation Architecture: Smit designed a scalable Playwright framework featuring AI self-healing. Result: 3x faster execution and 60% reduction in framework maintenance effort."
       },
       validation: { 
         v: 95, s: 99, r: "$135K", offsetV: 14, offsetS: 2, offsetR: 50,
+        model: "Llama-3-QA-70B", agent: "Precision Data Guard", security: "SECURE LOCAL / HIPAA",
         brief: "Technical Precision: Smit ensured 99.9% data accuracy across claim eligibility endpoints through rigorous SQL validation and API contract testing within AWS environments."
       },
       uat: { 
         v: 90, s: 99.5, r: "$142K", offsetV: 28, offsetS: 1, offsetR: 40,
+        model: "Llama-3-QA-70B", agent: "Stakeholder Gatekeeper", security: "SECURE LOCAL / HIPAA",
         brief: "UAT Sovereignty: Smit led the Business Acceptance cycles for 12+ stakeholders, delivering the SNAP Eligibility module with ZERO reported UAT leakage into production."
       },
       triage: { 
         v: 94, s: 99, r: "$148K", offsetV: 17, offsetS: 2, offsetR: 35,
-        brief: "Delivery Acceleration: By implementing AI-assisted root cause analysis, Smit reduced the defect resolution cycle time by 40% for critical priority items."
+        model: "Llama-3-QA-70B", agent: "Root Cause Classifier", security: "SECURE LOCAL / HIPAA",
+        brief: "Delivery Acceleration: By implementing AI-assisted root cause analysis, Smit reduced the defect resolution cycle time by 40% for critical production-path items."
       },
       readiness: { 
         v: 96, s: 99.8, r: "$154K", offsetV: 11, offsetS: 0.5, offsetR: 20,
+        model: "Llama-3-QA-70B", agent: "Release Predictor Engine", security: "SECURE LOCAL / HIPAA",
         brief: "Release Confidence: Final telemetry consolidated. Smit has confirmed a 99.8% release confidence score, achieving an automation-driven ROI of $154K for the current fiscal year."
       },
       monitoring: { 
         v: 99, s: 100, r: "$154K", offsetV: 2, offsetS: 0, offsetR: 20,
+        model: "Llama-3-QA-70B", agent: "Drift & Anomaly Monitor", security: "SECURE LOCAL / HIPAA",
         brief: "Post-Production Health: Smit's quality model achieved a 35% reduction in production bugs, maintaining a defect leakage rate of 0.02% across the live Medicaid system."
       }
     };
@@ -673,6 +689,11 @@
     const vVel = document.getElementById('val-velocity');
     const vStab = document.getElementById('val-stability');
     const vRoi = document.getElementById('val-roi');
+    
+    // Telemetry Elements
+    const telModel = document.getElementById('tel-model');
+    const telAgent = document.getElementById('tel-agent');
+    const telSecurity = document.getElementById('tel-security');
 
     function updateHud(stage) {
       const data = hudData[stage];
@@ -686,6 +707,11 @@
       vVel.textContent = data.v + "%";
       vStab.textContent = data.s + "%";
       vRoi.textContent = data.r;
+      
+      // Update Telemetry Bar
+      telModel.textContent = data.model;
+      telAgent.textContent = data.agent;
+      telSecurity.textContent = data.security;
       
       // Update Briefing (Typewriter Effect)
       briefText.innerHTML = '';

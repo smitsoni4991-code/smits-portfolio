@@ -261,9 +261,18 @@ nav.scrolled {
   border-radius: 1rem; padding: 1.5rem 2rem; margin-bottom: 2.5rem; position: relative;
   min-height: 90px;
 }
-.briefing-header { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem; }
+.briefing-header { 
+  display: flex; justify-content: space-between; align-items: center; 
+  margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.header-left { display: flex; align-items: center; gap: 0.6rem; }
 .pulse-dot { width: 6px; height: 6px; background: #EF4444; border-radius: 50%; animation: aiBlink 1.5s infinite; }
 .briefing-title { font-size: 0.6rem; font-weight: 900; color: var(--text-muted); letter-spacing: 0.1em; }
+
+/* Telemetry tags */
+.telemetry-bar { display: flex; gap: 1.5rem; }
+.telemetry-tag { font-size: 0.6rem; font-weight: 800; color: var(--text-muted); letter-spacing: 0.05em; text-transform: uppercase; }
+.telemetry-tag strong { color: var(--accent-gold); font-weight: 900; font-family: 'Inter', sans-serif; }
 .briefing-content { font-size: 0.95rem; color: #fff; line-height: 1.5; font-weight: 500; }
 
 /* Command Console */

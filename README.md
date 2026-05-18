@@ -4,9 +4,9 @@
 
 # Hi there, I'm Smit Soni 👋
 
-### Quality Engineering Leader | Full-Stack Test Strategy (Web, Mobile, Data/BI)
+### Quality Engineering Leader | QA Strategy, UAT, Web, Mobile & Data/BI Testing
 
-I don’t just find bugs; I build engineering cultures where quality is architected from day one. With 7+ years of experience across Telecom, Healthcare, and Retail, I specialize in transforming traditional QA processes into high-velocity, shift-left automation pipelines. 
+I don’t just find bugs; I help teams build quality into every stage of delivery. With 6+ years of experience across Telecom, Healthcare, and Retail, I specialize in QA leadership, UAT coordination, risk-based test strategy, API testing, SQL validation, BI/dashboard testing, and release-readiness support.
 
 *   **Location:** St. Louis, MO
 *   **Portfolio:** [Smit Soni | Quality Engineering Leader](https://smits-portfolio-lilac.vercel.app/)
@@ -14,24 +14,24 @@ I don’t just find bugs; I build engineering cultures where quality is architec
 ---
 
 ## 🚀 Key Highlights
-*   🎯 **Team Leadership:** Directing cross-functional SDET teams & scaling enterprise automation.
-*   🤖 **Shift-Left & CI/CD:** Integrating tests into pipelines, gating PRs, & AI-assisted generation.
-*   📊 **Data Quality Engineering:** Validating massive datasets & BI dashboards with PySpark & SQL.
-*   🏢 **Business Impact:** Safeguarding telecom/healthcare revenue & driving DORA metrics.
+*   🎯 **Team Leadership:** Leading QA/UAT coordination, mentoring QA analysts, and supporting cross-functional delivery teams.
+*   🧪 **QA Strategy & UAT:** Building risk-based test plans, regression coverage, acceptance criteria validation, and release-readiness checkpoints.
+*   📊 **Data Quality Engineering:** Validating BI dashboards, AWS Athena datasets, and enterprise data flows using SQL, Tableau, Power BI, and Wiiisdom Ops.
+*   🏢 **Business Impact:** Reducing release risk across telecom, healthcare, and retail systems through defect triage, stakeholder alignment, and quality governance.
 *   📈 **Measurable Results:** 35% Defect Leakage Reduced, 200+ Defects Caught Pre-Release, 21+ Components Led.
 
 ---
 
 ## 🛠 Tech Stack
 
-**Test Infrastructure**
-*   Playwright / Selenium | Appium (iOS/Android) | API Automation (Postman/SoapUI) | AI-Assisted Test Gen
+**Test Management & QA Delivery**
+*   Manual Testing | Functional Testing | Regression Testing | UAT Leadership | Test Planning | AI-Assisted Test Design
 
-**Data Quality**
-*   PySpark | Complex SQL | AWS Data Pipelines | Tableau / Power BI | Wiiisdom Ops
+**API, Data & BI Validation**
+*   API Testing (Postman/SoapUI) | Complex SQL | Database Validation | AWS Athena / S3 | Tableau / Power BI | Wiiisdom Ops
 
-**Release Engineering**
-*   CI/CD Pipelines (GitHub Actions, Jenkins, GitLab CI) | AWS DevOps | Docker | DORA Metrics
+**Release Quality & Collaboration**
+*   Jira | HP ALM / Octane | TestRail | Defect Triage | Release Readiness Reporting | Agile/Scrum QA Delivery
 
 ---
 
